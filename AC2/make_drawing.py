@@ -73,19 +73,19 @@ doc.header["$INSUNITS"] = 4
 doc.header["$MEASUREMENT"] = 1
 doc.header["$LUNITS"] = 2
 doc.header["$LUPREC"] = 2
-doc.header["$LTSCALE"] = 0.15
+doc.header["$LTSCALE"] = 0.3
 doc.header["$LWDISPLAY"] = 1
 
 # acadiso.lin patterns
 doc.linetypes.add("HIDDEN", pattern=[9.525, 6.35, -3.175],
                   description="Hidden __ __ __ __ __")
-doc.linetypes.add("CENTER", pattern=[50.8, 31.75, -6.35, 6.35, -6.35],
-                  description="Center ____ _ ____ _ ____")
+doc.linetypes.add("CENTER2", pattern=[25.4, 15.875, -3.175, 3.175, -3.175],
+                  description="Center (.5x) ___ _ ___ _ ___")
 
 LAYERS = {  # name: (ACI color, linetype, lineweight in 1/100 mm)
     "VISIBLE": (7, "Continuous", 50),
     "HIDDEN": (1, "HIDDEN", 25),
-    "CENTER": (3, "CENTER", 18),
+    "CENTER": (3, "CENTER2", 18),
     "DIMENSIONS": (6, "Continuous", 18),
     "TEXT": (7, "Continuous", 25),
 }
