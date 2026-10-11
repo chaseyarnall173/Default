@@ -29,6 +29,7 @@ B_CX, B_CZ = B_TOPW + B_R, B_H                        # arc centre (45.6, 37)
 B_ARC_END_X = B_CX - math.sqrt(B_R**2 - (B_H - B_LIP) ** 2)   # meets lip
 B_STUD_X = (8.0,)
 B_TUBE_X, B_TUBE_R = (16.0, 32.0), 6.5
+TUBE_RECESS = 2.0        # tubes stop this far above the bottom of each piece
 
 # A - 2x4 arch
 A_X0, A_L, A_Z0, A_H = 0.0, 64.0, B_H, 38.0
@@ -72,7 +73,7 @@ doc.header["$INSUNITS"] = 4
 doc.header["$MEASUREMENT"] = 1
 doc.header["$LUNITS"] = 2
 doc.header["$LUPREC"] = 2
-doc.header["$LTSCALE"] = 0.3
+doc.header["$LTSCALE"] = 0.15
 doc.header["$LWDISPLAY"] = 1
 
 # acadiso.lin patterns
@@ -85,7 +86,7 @@ LAYERS = {  # name: (ACI color, linetype, lineweight in 1/100 mm)
     "VISIBLE": (7, "Continuous", 50),
     "HIDDEN": (1, "HIDDEN", 25),
     "CENTER": (3, "CENTER", 18),
-    "DIMENSIONS": (4, "Continuous", 18),
+    "DIMENSIONS": (6, "Continuous", 18),
     "TEXT": (7, "Continuous", 25),
 }
 for name, (color, lt, lw) in LAYERS.items():
@@ -187,6 +188,21 @@ for x in B_STUD_X:
 x = A_STUD_X[3]
 open_box(x - STUD_R, A_Z1, x + STUD_R, A_Z1 + STUD_H, "HIDDEN")
 vcl(x, A_Z1, A_Z1 + STUD_H)
+
+
+def tube_front(x, r, z_bot, top_z):
+    """Hidden outline of an underside tube: two sides, bottom, centerline."""
+    xl, xr = x - r, x + r
+    poly([(xl, top_z(xl)), (xl, z_bot), (xr, z_bot), (xr, top_z(xr))],
+         "HIDDEN")
+    vcl(x, z_bot, top_z(x))
+
+
+for x in B_TUBE_X:
+    tube_front(x, B_TUBE_R, TUBE_RECESS, ramp_z)
+tube_front(A_TUBE_X, A_TUBE_R, A_OPEN_Z + TUBE_RECESS, lambda _: A_Z1)
+for x in C_TUBE_X:
+    tube_front(x, C_TUBE_R, C_Z0 + TUBE_RECESS, c_top_z)
 cmark((B_CX, B_CZ))
 cmark((C_CX, C_CZ))
 
@@ -265,6 +281,13 @@ for y in ROW_Y:
                  z0 + STUD_H, "HIDDEN")
         vcl(RIGHT_OX + y, z0, z0 + STUD_H)
 line(R(0, A_OPEN_Z), R(W, A_OPEN_Z), "HIDDEN")        # top of arch opening
+for r, z_bot, z_top in ((B_TUBE_R, TUBE_RECESS, B_H),
+                        (A_TUBE_R, A_OPEN_Z + TUBE_RECESS, A_Z1),
+                        (C_TUBE_R, C_Z0 + TUBE_RECESS, C_Z1)):
+    poly([R(TUBE_Y - r, z_top), R(TUBE_Y - r, z_bot), R(TUBE_Y + r, z_bot),
+          R(TUBE_Y + r, z_top)], "HIDDEN")
+vcl(RIGHT_OX + TUBE_Y, TUBE_RECESS, B_H)
+vcl(RIGHT_OX + TUBE_Y, A_OPEN_Z + TUBE_RECESS, C_Z1)
 
 # right-view dimensions (5)
 lin_dim(R(0, 0), R(W, 0), base=R(0, -10))                             # 31
@@ -284,9 +307,8 @@ notes = "\\P".join([
     "3. Small vertical ribs along the inside bottom edges of each piece "
     "are not shown.",
     "4. LEGO/DUPLO text is not shown; studs are shown as single circles.",
-    "5. Underside tubes are shown only as hidden circles in the top view "
-    "(hidden tube lines omitted); studs plugged into the piece above are "
-    "shown hidden.",
+    "5. Hidden lines show the underside tubes (ending about 2 mm above the "
+    "bottom of each piece) and the studs plugged into the piece above.",
     "6. Tangent edges (curved surface blending into a flat surface) are "
     "not drawn.",
     "7. Third-angle projection.",
