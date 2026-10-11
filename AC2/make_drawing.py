@@ -37,7 +37,7 @@ A_LEG, A_OPEN_H = 16.0, 19.0
 A_Z1 = A_Z0 + A_H                                     # 75
 A_OPEN_Z = A_Z0 + A_OPEN_H                            # 56
 A_STUD_X = (8.0, 24.0, 40.0, 56.0)
-A_TUBE_X, A_TUBE_R = 32.0, 4.5
+A_TUBE_X, A_TUBE_R = 32.0, 6.5
 
 # C - curved-top brick
 C_X0, C_L, C_H, C_R = 48.0, 48.0, 19.0, 17.19
@@ -241,7 +241,7 @@ for y in ROW_Y:
     hcl(TOP_OY + y, studs_top[0] - STUD_R, studs_top[-1] + STUD_R)
 tubes = [(x, B_TUBE_R) for x in B_TUBE_X] + [(A_TUBE_X, A_TUBE_R)] + \
         [(x, C_TUBE_R) for x in C_TUBE_X]
-for x, r in tubes:
+for x, r in sorted(set(tubes)):          # arch tube sits on ramp tube 2
     circle(T(x, TUBE_Y), r, "HIDDEN")
 for x in sorted({x for x, _ in tubes}):
     line(T(x, TUBE_Y - 6.5 - 2), T(x, TUBE_Y + 6.5 + 2), "CENTER")
