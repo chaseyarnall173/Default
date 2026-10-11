@@ -180,6 +180,13 @@ for x in A_STUD_X[:3]:
 for x in C_STUD_X:
     open_box(x - STUD_R, C_Z1, x + STUD_R, C_Z1 + STUD_H, "VISIBLE")
     vcl(x, C_Z1, C_Z1 + STUD_H)
+# hidden: studs plugged into the piece above
+for x in B_STUD_X:
+    open_box(x - STUD_R, B_H, x + STUD_R, B_H + STUD_H, "HIDDEN")
+    vcl(x, B_H, B_H + STUD_H)
+x = A_STUD_X[3]
+open_box(x - STUD_R, A_Z1, x + STUD_R, A_Z1 + STUD_H, "HIDDEN")
+vcl(x, A_Z1, A_Z1 + STUD_H)
 cmark((B_CX, B_CZ))
 cmark((C_CX, C_CZ))
 
@@ -253,10 +260,10 @@ for y in ROW_Y:
     open_box(RIGHT_OX + y - STUD_R, C_Z1, RIGHT_OX + y + STUD_R,
              C_Z1 + STUD_H, "VISIBLE")
     vcl(RIGHT_OX + y, C_Z1, C_Z1 + STUD_H)
-    # arch studs hidden behind the curved brick
-    open_box(RIGHT_OX + y - STUD_R, A_Z1, RIGHT_OX + y + STUD_R,
-             A_Z1 + STUD_H, "HIDDEN")
-    vcl(RIGHT_OX + y, A_Z1, A_Z1 + STUD_H)
+    for z0 in (B_H, A_Z1):            # B's studs in A, A's studs behind/in C
+        open_box(RIGHT_OX + y - STUD_R, z0, RIGHT_OX + y + STUD_R,
+                 z0 + STUD_H, "HIDDEN")
+        vcl(RIGHT_OX + y, z0, z0 + STUD_H)
 line(R(0, A_OPEN_Z), R(W, A_OPEN_Z), "HIDDEN")        # top of arch opening
 
 # right-view dimensions (5)
@@ -277,8 +284,9 @@ notes = "\\P".join([
     "3. Small vertical ribs along the inside bottom edges of each piece "
     "are not shown.",
     "4. LEGO/DUPLO text is not shown; studs are shown as single circles.",
-    "5. Underside tubes are shown only as hidden circles in the top view; "
-    "hidden tube lines and studs plugged into the piece above are not shown.",
+    "5. Underside tubes are shown only as hidden circles in the top view "
+    "(hidden tube lines omitted); studs plugged into the piece above are "
+    "shown hidden.",
     "6. Tangent edges (curved surface blending into a flat surface) are "
     "not drawn.",
     "7. Third-angle projection.",
