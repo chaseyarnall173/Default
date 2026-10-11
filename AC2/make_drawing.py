@@ -6,7 +6,7 @@ z = up. Third-angle layout: TOP view above FRONT, RIGHT view to its right.
 Pieces
   B  ramp brick    x 0-47,   z 0-37   (tall back at x=0, R29.6 concave ramp)
   A  2x4 arch      x 0-64,   z 37-75  (opening x 16-48, 19 tall), on B's studs
-  C  curved brick  x 48-100, z 75-104 (R17.19 round on the right end), on A
+  C  curved brick  x 48-100, z 75-94  (R17.19 round on the right end), on A
 """
 import math
 import sys
@@ -39,9 +39,9 @@ A_STUD_X = (8.0, 24.0, 40.0, 56.0)
 A_TUBE_X, A_TUBE_R = 32.0, 4.5
 
 # C - curved-top brick
-C_X0, C_L, C_H, C_R = 48.0, 52.0, 29.0, 17.19
+C_X0, C_L, C_H, C_R = 48.0, 52.0, 19.0, 17.19
 C_X1, C_Z0 = C_X0 + C_L, A_Z1                         # 100, 75
-C_Z1 = C_Z0 + C_H                                     # 104
+C_Z1 = C_Z0 + C_H                                     # 94
 C_CX, C_CZ = C_X1 - C_R, C_Z1 - C_R                   # arc centre
 C_STUD_X = (C_X0 + 8.0, C_X0 + 24.0)                  # 56, 72
 C_TUBE_X, C_TUBE_R = (C_X0 + 16.0, C_X0 + 32.0), 6.5  # 64, 80
