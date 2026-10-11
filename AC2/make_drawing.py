@@ -180,25 +180,6 @@ for x in A_STUD_X[:3]:
 for x in C_STUD_X:
     open_box(x - STUD_R, C_Z1, x + STUD_R, C_Z1 + STUD_H, "VISIBLE")
     vcl(x, C_Z1, C_Z1 + STUD_H)
-# hidden: studs plugged into the piece above
-for x in B_STUD_X:
-    open_box(x - STUD_R, B_H, x + STUD_R, B_H + STUD_H, "HIDDEN")
-    vcl(x, B_H, B_H + STUD_H)
-x = A_STUD_X[3]
-open_box(x - STUD_R, A_Z1, x + STUD_R, A_Z1 + STUD_H, "HIDDEN")
-vcl(x, A_Z1, A_Z1 + STUD_H)
-# hidden: underside tubes
-for x in B_TUBE_X:
-    for xe in (x - B_TUBE_R, x + B_TUBE_R):
-        line((xe, 0), (xe, ramp_z(xe)), "HIDDEN")
-    vcl(x, 0, ramp_z(x))
-for xe in (A_TUBE_X - A_TUBE_R, A_TUBE_X + A_TUBE_R):
-    line((xe, A_OPEN_Z), (xe, A_Z1), "HIDDEN")
-vcl(A_TUBE_X, A_OPEN_Z, A_Z1)
-for x in C_TUBE_X:
-    for xe in (x - C_TUBE_R, x + C_TUBE_R):
-        line((xe, C_Z0), (xe, c_top_z(xe)), "HIDDEN")
-    vcl(x, C_Z0, c_top_z(x))
 cmark((B_CX, B_CZ))
 cmark((C_CX, C_CZ))
 
@@ -272,19 +253,11 @@ for y in ROW_Y:
     open_box(RIGHT_OX + y - STUD_R, C_Z1, RIGHT_OX + y + STUD_R,
              C_Z1 + STUD_H, "VISIBLE")
     vcl(RIGHT_OX + y, C_Z1, C_Z1 + STUD_H)
-    for z0 in (B_H, A_Z1):            # B's studs in A, A's studs behind/in C
-        open_box(RIGHT_OX + y - STUD_R, z0, RIGHT_OX + y + STUD_R,
-                 z0 + STUD_H, "HIDDEN")
-        vcl(RIGHT_OX + y, z0, z0 + STUD_H)
+    # arch studs hidden behind the curved brick
+    open_box(RIGHT_OX + y - STUD_R, A_Z1, RIGHT_OX + y + STUD_R,
+             A_Z1 + STUD_H, "HIDDEN")
+    vcl(RIGHT_OX + y, A_Z1, A_Z1 + STUD_H)
 line(R(0, A_OPEN_Z), R(W, A_OPEN_Z), "HIDDEN")        # top of arch opening
-for s in (-1, 1):
-    line(R(TUBE_Y + s * B_TUBE_R, 0), R(TUBE_Y + s * B_TUBE_R, B_H), "HIDDEN")
-    line(R(TUBE_Y + s * A_TUBE_R, A_OPEN_Z), R(TUBE_Y + s * A_TUBE_R, A_Z1),
-         "HIDDEN")
-    line(R(TUBE_Y + s * C_TUBE_R, C_Z0), R(TUBE_Y + s * C_TUBE_R, C_Z1),
-         "HIDDEN")
-vcl(RIGHT_OX + TUBE_Y, 0, B_H)
-vcl(RIGHT_OX + TUBE_Y, A_OPEN_Z, C_Z1)
 
 # right-view dimensions (5)
 lin_dim(R(0, 0), R(W, 0), base=R(0, -10))                             # 31
@@ -304,8 +277,8 @@ notes = "\\P".join([
     "3. Small vertical ribs along the inside bottom edges of each piece "
     "are not shown.",
     "4. LEGO/DUPLO text is not shown; studs are shown as single circles.",
-    "5. Hidden lines show the underside tubes and the studs plugged into "
-    "the piece above.",
+    "5. Underside tubes are shown only as hidden circles in the top view; "
+    "hidden tube lines and studs plugged into the piece above are not shown.",
     "6. Tangent edges (curved surface blending into a flat surface) are "
     "not drawn.",
     "7. Third-angle projection.",
