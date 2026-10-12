@@ -11,6 +11,8 @@ re-run `python3 make_labyrinth.py`.
 | `Labyrinth_Template_FullSize.pdf` | Same floor on one 13 × 13 in page (plotter / large printer) |
 | `Labyrinth_board_top.png` | Top view of the finished board (slides, report) |
 | `Labyrinth_preview.png` | Picture of the DXF: sheet 1 + sheet 2 |
+| `pico/servo_test.py` | Bench test for one servo: centre, sweep, step response, smallest visible step |
+| `pico/joystick_servos.py` | Joystick drives both servos, with deadzone, expo, smoothing and a level button: the start of the real control loop |
 
 ![Top view](Labyrinth_board_top.png)
 
@@ -193,6 +195,20 @@ For the electronics side (Benny):
 - Worth trying: two knobs (potentiometers), like the classic wooden
   labyrinth. A knob turns 270°; a thumbstick moves about 1 cm. That makes
   fine control much easier.
+
+## Bench test the servos (before building anything)
+
+1. Open the Pico in Thonny (*Tools → Options → Interpreter → MicroPython
+   (Raspberry Pi Pico)*). Open `pico/servo_test.py` and press F5. Wiring is
+   in the top of each file. The servos need their own 5–6 V supply (4×AA
+   pack or a 3 A adapter), with its ground tied to the Pico's GND.
+2. Do step 1 of the test (centre) **before** pushing a horn on. Every servo
+   is then mounted with its horn at the same middle position.
+3. Write down the smallest step you could see in step 4. That number, plus
+   the linkage table above, is your answer to the professor's
+   fine-control question.
+4. Then run `pico/joystick_servos.py` with both servos. Tune `SWING`,
+   `EXPO`, `SMOOTH` and `TRIM_X/Y` once they're on the cardboard board.
 
 ## Still to decide
 
