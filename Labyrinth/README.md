@@ -188,8 +188,10 @@ For the electronics side (Benny):
 - Use only light smoothing plus a small deadzone at joystick centre. Heavy
   averaging is what makes control feel laggy.
 - Map stick position directly to board angle, capped at ±6°.
-- Power the servos from their own 5–6 V supply, not the Pico. Two 25 kg
-  servos can pull a few amps when they push. Connect the grounds together.
+- Power the servos from VBUS (USB 5 V), never 3V3. A balanced board on a
+  geared-down linkage keeps their current low. A 25 kg servo straining
+  against a jam can pull far more than USB gives, so make sure nothing
+  binds.
 - Run the joystick from **3V3**, not 5 V. The Pico's ADC pins max out at
   3.3 V.
 - Worth trying: two knobs (potentiometers), like the classic wooden
@@ -200,8 +202,14 @@ For the electronics side (Benny):
 
 1. Open the Pico in Thonny (*Tools → Options → Interpreter → MicroPython
    (Raspberry Pi Pico)*). Open `pico/servo_test.py` and press F5. Wiring is
-   in the top of each file. The servos need their own 5–6 V supply (4×AA
-   pack or a 3 A adapter), with its ground tied to the Pico's GND.
+   is in the top of each file. With USB power only, each servo runs from
+   **VBUS (pin 40)**, which is the USB 5 V, and GND. Never use 3V3.
+   Test one unloaded servo at a time. If the Pico resets or Thonny
+   disconnects when a servo moves, the USB port is running out of current.
+   Try another port (a USB 3 / USB-C port usually gives more). If your kit
+   has an electrolytic capacitor of 100 µF or more, put it across the servo
+   power: long leg to VBUS, striped side to GND. Run one servo at a time
+   until the other one moves without trouble.
 2. Do step 1 of the test (centre) **before** pushing a horn on. Every servo
    is then mounted with its horn at the same middle position.
 3. Write down the smallest step you could see in step 4. That number, plus

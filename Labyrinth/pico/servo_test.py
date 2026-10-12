@@ -1,11 +1,13 @@
 """Bench test for ONE 25 kg servo (DS3225-style, 270 degree) on a Pico.
 
-Wiring - the servo gets its OWN 5-6 V supply, never the Pico's 3V3 pin:
-  servo brown/black wire          -> supply (-)  AND  Pico GND (pin 38)
-  servo red wire                  -> supply (+)  4x AA pack (6 V) or a
-                                     5-6 V adapter rated 3 A or more
-  servo orange/yellow/white wire  -> Pico GP16 (pin 21)
-The two grounds MUST be joined or the servo will twitch randomly.
+Wiring - USB power only (Pico plugged into the laptop):
+  servo brown/black wire          -> Pico GND   (pin 38)
+  servo red wire                  -> Pico VBUS  (pin 40, the USB 5 V)
+  servo orange/yellow/white wire  -> Pico GP16  (pin 21)
+Never put the red wire on 3V3 (pin 36). Test ONE servo at a time with
+nothing attached to the horn. If Thonny disconnects or the Pico resets
+when the servo moves, the USB port can't supply enough current - unplug
+the servo's red wire and see the notes in README.md.
 
 Run in Thonny (F5). Tape a straw or ruler to the horn so small moves are
 easy to see, and watch the printed angles.

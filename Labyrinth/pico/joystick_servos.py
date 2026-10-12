@@ -6,7 +6,9 @@ Wiring
   joystick VRx  -> GP26 (pin 31)       VRy -> GP27 (pin 32)
   joystick SW   -> GP22 (pin 29)       hold the button = board goes level
   servo X signal -> GP16 (pin 21)      servo Y signal -> GP17 (pin 22)
-  both servos red/black -> their own 5-6 V supply, supply (-) -> Pico GND
+  both servos red -> VBUS (pin 40, USB 5 V)   brown/black -> GND (pin 38)
+  Get one servo working on its own first. Two servos moving fast at the
+  same time can draw more than a laptop USB port gives.
 
 Leave the stick alone for the first second while it calibrates its centre.
 Save it on the Pico as main.py to make it run whenever the Pico powers up.
