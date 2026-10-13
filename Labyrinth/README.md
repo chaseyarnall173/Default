@@ -38,7 +38,7 @@ both every time it runs.
 **Why START is a ring, not a divot.** A ball sitting in a hole only rolls
 out once the board tilts more than asin(hole ÷ ball). A ⅜ in divot under a ⅝
 in ball needs 37° of tilt to escape, and this board only tilts about 6°. The
-start is instead a dead-end pocket with a thin scored ring. The ball stays
+start is instead a dead-end pocket with a thin engraved ring. The ball stays
 put while the board is level. If you really want a detent, a 1/16 in hole
 releases the ball at about 6°. Test that in cardboard first.
 
@@ -85,8 +85,8 @@ Decimal, 0.000, Inches. If you ever start your own drawing, pick the
 | Layer | Colour | Laser does | Contents |
 |---|---|---|---|
 | `CUT` | red, 0.00 mm lineweight | cuts through | floor outline, trapdoor opening, every strip, flap |
-| `SCORE` | blue | light vector line | wall footprints (where to glue), drill rings + crosshairs, start ring |
-| `ENGRAVE` | black | raster engrave | START, 1, 3, 5, and "THE LABYRINTH" on the front rim |
+| `ENGRAVE` | blue | engraves the outline on the surface | wall footprints (where to glue), drill rings + crosshairs, start ring |
+| `RASTER` | black | rasters (filled-in engraving) | START, 1, 3, 5, and "THE LABYRINTH" on the front rim |
 | `REFERENCE` | grey, **plot off** | nothing | sheet outlines, piece letters, drill sizes, notes |
 
 Before drawing anything, set the current layer: Layers panel dropdown, or
@@ -108,7 +108,7 @@ Before drawing anything, set the current layer: Layers panel dropdown, or
 | `J` (JOIN) | glue segments into one closed outline (the laser needs closed shapes) |
 | `OVERKILL` | deletes duplicate lines (a doubled line gets cut twice and burns) |
 
-**Example: add a LOSS hole.** Set layer `SCORE` current. `C`, then click the
+**Example: add a LOSS hole.** Set layer `ENGRAVE` current. `C`, then click the
 cell centre (OSNAP *Midpoint* of the two wall faces, or type its
 coordinates), then `D`, then `0.875`. Draw the crosshair with `L`.
 
@@ -124,12 +124,12 @@ DXF, so do AutoCAD-only edits in your `.dwg` copy once the maze is final.
 ### Sending it to the laser (Milestone 3)
 
 1. Ask FYELIC: bed size, sheet size sold at the bookstore, which file they
-   want (DWG / DXF / PDF), what colours mean cut vs. engrave, and their
+   want (DWG / DXF / PDF), what colours mean cut vs. engrave vs. raster (ours: red / blue / black), and their
    kerf. The 12 × 16 bed here comes from a 2018 FYE guide.
 2. Measure your plywood with calipers. "⅛ in" laser ply is often 3 mm
    (0.118 in). Put the real number in `T`, re-run, and the walls and
    footprints adjust.
-3. Keep engraving on the floor light (fast, low power). A deep raster
+3. Keep rastering on the floor light (fast, low power). A deep raster
    pocket can trap the ball, the same way a divot would.
 4. Run `OVERKILL`, then check the CUT layer: closed shapes only, nothing
    outside the dashed ¼ in border.
@@ -145,7 +145,7 @@ DXF, so do AutoCAD-only edits in your `.dwg` copy once the maze is final.
 
 Drill the holes **after** laser cutting and **before** gluing walls. Clamp
 the floor face-up on scrap wood and put the Forstner bit's centre point on
-the scored crosshair. The scored ring marks where the hole's edge should
+the engraved crosshair. The engraved ring marks where the hole's edge should
 land. Lower the bit until it just touches: if the bit's rim doesn't line up
 with the ring, re-centre before cutting through.
 

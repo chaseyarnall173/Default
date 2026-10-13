@@ -252,10 +252,10 @@ def frac(d):
 
 def build_floor(runs):
     # where each wall strip gets glued (rims sit flush with the edge, so
-    # their outline would score on top of the cut line - reference only)
+    # their outline would engrave on top of the cut line - reference only)
     for r in runs:
         x0, y0, x1, y1 = r["rect"]
-        rect(x0, y0, x1, y1, "REFERENCE" if r["rim"] else "SCORE", "floor",
+        rect(x0, y0, x1, y1, "REFERENCE" if r["rim"] else "ENGRAVE", "floor",
              wall=True)
         cx, cy = (x0 + x1) / 2, (y0 + y1) / 2
         if not r["rim"]:
@@ -264,25 +264,25 @@ def build_floor(runs):
     for cell, f in sorted(FEATURES.items()):
         cx, cy = centre(cell)
         if f == "S":
-            add("circle", "SCORE", "floor", c=(cx, cy + 0.12),
+            add("circle", "ENGRAVE", "floor", c=(cx, cy + 0.12),
                 r=START_RING_D / 2)
-            text("START", cx, cy - 0.40, 0.12, "ENGRAVE", "floor")
+            text("START", cx, cy - 0.40, 0.12, "RASTER", "floor")
         elif f == "T":
             build_trapdoor(cell, cx, cy)
         else:
             d = HOLE_D[f]
             # drill guide: ring at the finished size + crosshair for the bit
-            add("circle", "SCORE", "floor", c=(cx, cy), r=d / 2, hole=f)
+            add("circle", "ENGRAVE", "floor", c=(cx, cy), r=d / 2, hole=f)
             k = d / 2 * 0.8
-            add("line", "SCORE", "floor", p=((cx - k, cy), (cx + k, cy)))
-            add("line", "SCORE", "floor", p=((cx, cy - k), (cx, cy + k)))
+            add("line", "ENGRAVE", "floor", p=((cx - k, cy), (cx + k, cy)))
+            add("line", "ENGRAVE", "floor", p=((cx, cy - k), (cx, cy + k)))
             text("DRILL " + frac(d), cx, cy + 0.17, 0.065, "REFERENCE",
                  "floor")
             if f in "135":
                 mouth = neighbours(cell)[0]
                 mx, my = centre(mouth)
                 ux, uy = cell[1] - mouth[1], mouth[0] - cell[0]
-                text(f, mx + 0.30 * ux, my + 0.30 * uy, 0.26, "ENGRAVE",
+                text(f, mx + 0.30 * ux, my + 0.30 * uy, 0.26, "RASTER",
                      "floor")
     # drawn last so the cut outline sits on top of the rim footprints
     rect(0, 0, BOARD, BOARD, "CUT", "floor")
@@ -364,7 +364,7 @@ def build_sheets(placed, nxt, regions):
     for s, x, y, w, L, name in placed:
         rect(x, y, x + w, y + L, "CUT", "sheet")
         if name == "RIM-FRONT":
-            text("THE LABYRINTH", x + w / 2, y + L / 2, 0.42, "ENGRAVE",
+            text("THE LABYRINTH", x + w / 2, y + L / 2, 0.42, "RASTER",
                  "sheet", rot=90)
         else:
             text(name, x + w / 2, y + L / 2, min(0.18, w * 0.4),
@@ -394,7 +394,7 @@ def write_dxf(path, notes):
     doc.header["$LUNITS"] = 2
     doc.header["$LUPREC"] = 3
     doc.header["$LTSCALE"] = 0.25
-    for name, color in (("CUT", 1), ("SCORE", 5), ("ENGRAVE", 7),
+    for name, color in (("CUT", 1), ("ENGRAVE", 5), ("RASTER", 7),
                         ("REFERENCE", 8)):
         layer = doc.layers.add(name, color=color, lineweight=0)
         if name == "REFERENCE":
@@ -428,8 +428,8 @@ def write_dxf(path, notes):
 
 
 # ------------------------------------------------------- matplotlib output
-LAYER_STYLE = {"CUT": ("#d62728", 0.9), "SCORE": ("#1f5fbf", 0.6),
-               "ENGRAVE": ("#111111", 0.6), "REFERENCE": ("#8a8a8a", 0.4)}
+LAYER_STYLE = {"CUT": ("#d62728", 0.9), "ENGRAVE": ("#1f5fbf", 0.6),
+               "RASTER": ("#111111", 0.6), "REFERENCE": ("#8a8a8a", 0.4)}
 
 
 def draw(ax, shapes, tf, mono=False, font_scale=1.0):
@@ -512,7 +512,7 @@ def write_board_top(path):
         elif sh["kind"] == "circle":
             ax.add_patch(Circle(sh["c"], sh["r"], fill=False, ec="#2a6f2a",
                                 lw=1.5, zorder=2))
-        elif sh["kind"] == "text" and sh["layer"] == "ENGRAVE":
+        elif sh["kind"] == "text" and sh["layer"] == "RASTER":
             ax.text(*sh["pos"], sh["s"], fontsize=sh["h"] * 72 / 0.716 * 0.6,
                     ha="center", va="center", color="#3b2a14",
                     weight="bold", zorder=4)
@@ -688,8 +688,9 @@ def main():
         sheet_of.setdefault(name, set()).add(s + 1)
     notes = [
         "THE LABYRINTH - GE1501 GROUP 1 - LASER LAYOUT (inches, 1:1)",
-        "Layers: CUT (red) cut through | SCORE (blue) light vector line, "
-        "wall footprints and drill guides | ENGRAVE (black) raster text | "
+        "Layers: CUT (red) cut through | ENGRAVE (blue) outline engraved on "
+        "the surface: wall footprints and drill guides | RASTER (black) "
+        "filled-in engraving: text | "
         "REFERENCE (grey) not plotted",
         "Holes are NOT laser cut: drill them on the drill press with the bit "
         "size in each ring (Forstner, board clamped on scrap).",
