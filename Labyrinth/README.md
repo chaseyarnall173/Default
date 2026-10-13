@@ -11,6 +11,7 @@ re-run `python3 make_labyrinth.py`.
 | `Labyrinth_Template_FullSize.pdf` | Same floor on one 13 × 13 in page (plotter / large printer) |
 | `Labyrinth_board_top.png` | Top view of the finished board (slides, report) |
 | `Labyrinth_preview.png` | Picture of the DXF: sheet 1 + sheet 2 |
+| `Labyrinth_two_axis.mp4` | 27 s animation of how the two tilt axes move (`make_animation.py` rebuilds it) |
 | `pico/servo_test.py` | Bench test for one servo: centre, sweep, step response, smallest visible step |
 | `pico/joystick_servos.py` | Joystick drives both servos, with deadzone, expo, smoothing and a level button: the start of the real control loop |
 
