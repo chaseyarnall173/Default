@@ -11,7 +11,8 @@ re-run `python3 make_labyrinth.py`.
 | `Labyrinth_Template_FullSize.pdf` | Same floor on one 13 × 13 in page (plotter / large printer) |
 | `Labyrinth_board_top.png` | Top view of the finished board (slides, report) |
 | `Labyrinth_preview.png` | Picture of the DXF: sheet 1 + sheet 2 |
-| `Labyrinth_3D.scr` | AutoCAD script: in a new drawing type `SCRIPT` and pick it to build the 3D board (`make_autocad_script.py` rebuilds it) |
+| `Labyrinth_3D.scr` | AutoCAD script: in a new drawing type `SCRIPT` and pick it to build the whole game in 3D, board and outside (`make_autocad_script.py` rebuilds it) |
+| `Labyrinth_3D_frame.scr` | Only the outside (frame, pins, servos on the stands, posts, base), for a drawing that already has the board |
 | `Labyrinth_two_axis.mp4` | 27 s animation of how the two tilt axes move (`make_animation.py` rebuilds it) |
 | `pico/servo_test.py` | Bench test for one servo: centre, sweep, step response, smallest visible step |
 | `pico/joystick_servos.py` | Joystick drives both servos, with deadzone, expo, smoothing and a level button: the start of the real control loop |
