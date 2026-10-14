@@ -1,0 +1,191 @@
+/* ===== Light, Waves & Radiation — book stylesheet (print) ===== */
+@page { size: Letter; margin: 0.85in 0.9in 0.85in 0.9in; }
+@page cover { margin: 0; }
+section.cover { page: cover; }
+
+:root {
+  --ink: #1f2933; --muted: #52606d; --rule: #d9dee5; --paper: #ffffff;
+  --e-field: #d1495b; --b-field: #2e6fdb; --light: #e09f1f; --electron: #12a39a;
+  --nucleus: #8d5a97; --matter: #9aa5b1; --accent: #0b6e4f;
+  --key: #2e6fdb; --key-bg: #eef4fd;
+  --analogy: #0b8a5f; --analogy-bg: #ecf8f3;
+  --myth: #c2410c; --myth-bg: #fdf1ec;
+  --rabbit: #7c3aed; --rabbit-bg: #f5f0fe;
+  --asked: #a86a12; --asked-bg: #fdf7e9;
+  --hailmary: #1e3a5f; --hailmary-bg: #edf1f7;
+  --example: #3e4c59; --example-bg: #f5f7fa;
+  --matsci: #0f766e; --matsci-bg: #eaf6f5;
+}
+
+html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+body {
+  background: var(--paper); color: var(--ink);
+  font-family: "Bitstream Charter", "Charter", "Liberation Serif", serif;
+  font-size: 10.6pt; line-height: 1.48; margin: 0;
+  hyphens: auto; -webkit-hyphens: auto;
+  font-kerning: normal;
+}
+p { margin: 0 0 0.62em 0; text-align: justify; orphans: 3; widows: 3; }
+a { color: var(--key); text-decoration: none; }
+strong { font-weight: bold; }
+em { font-style: italic; }
+sub, sup { line-height: 0; }
+ul, ol { margin: 0.2em 0 0.7em 0; padding-left: 1.4em; }
+li { margin: 0.15em 0; }
+h1, h2, h3, h4, .box-title, figcaption, table, .chapter-num, .part-label, .eq-label, .toc {
+  font-family: "Inter", "Liberation Sans", sans-serif;
+}
+h2 { font-size: 15pt; font-weight: 700; color: var(--ink); margin: 1.35em 0 0.45em; line-height: 1.2;
+     break-after: avoid; page-break-after: avoid; letter-spacing: -0.01em; }
+h3 { font-size: 11.6pt; font-weight: 650; color: var(--ink); margin: 1.1em 0 0.35em; line-height: 1.25;
+     break-after: avoid; page-break-after: avoid; }
+h4 { font-size: 10pt; font-weight: 700; margin: 0.9em 0 0.3em; break-after: avoid; }
+h2 .sec-num, h3 .sec-num { color: var(--key); margin-right: 0.35em; }
+
+/* ---------- Chapter openers ---------- */
+section.chapter, section.frontback { break-before: page; page-break-before: always; }
+.chapter-opener { margin-bottom: 1.6em; }
+.chapter-num { font-size: 10pt; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--key); }
+h1.chapter-title { font-family: "Inter Display", "Inter", sans-serif; font-size: 27pt; font-weight: 750; line-height: 1.08;
+  margin: 0.15em 0 0.4em; letter-spacing: -0.02em; color: var(--ink); }
+.chapter-opener::after { content: ""; display: block; height: 3px; width: 64px; background: var(--key); margin-top: 0.9em; }
+.chapter-hook { font-size: 11.4pt; font-style: italic; color: var(--muted); text-align: left; margin-bottom: 1em; }
+.big-picture, .learning-goals {
+  border: 1px solid var(--rule); border-radius: 6px; padding: 0.6em 0.9em 0.4em; margin: 0.7em 0;
+  break-inside: avoid; background: #fafbfc;
+}
+.big-picture h4, .learning-goals h4 { margin-top: 0.1em; font-size: 8.8pt; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
+
+/* ---------- Part pages ---------- */
+section.part { break-before: page; page-break-before: always; height: 9.2in; display: flex; flex-direction: column; justify-content: center; }
+.part-label { font-size: 11pt; letter-spacing: 0.3em; text-transform: uppercase; color: var(--key); font-weight: 700; }
+section.part h1 { font-family: "Inter Display", "Inter", sans-serif; font-size: 34pt; margin: 0.2em 0 0.4em; line-height: 1.05; letter-spacing: -0.02em; }
+section.part p { font-size: 12pt; color: var(--muted); max-width: 5in; text-align: left; }
+section.part ul { font-family: "Inter", sans-serif; font-size: 10.5pt; color: var(--ink); list-style: none; padding: 0; }
+section.part li { padding: 0.25em 0; border-bottom: 1px solid var(--rule); max-width: 5in; }
+
+/* ---------- Boxes ---------- */
+.box { border-left: 4px solid var(--c); background: var(--bg); border-radius: 0 6px 6px 0;
+  padding: 0.55em 0.95em 0.35em; margin: 0.95em 0 1.05em; break-inside: avoid; page-break-inside: avoid; }
+.box.long, .box.example { break-inside: auto; page-break-inside: auto; }
+.box p { text-align: left; }
+.box p:last-child, .box ul:last-child, .box ol:last-child { margin-bottom: 0.3em; }
+.box-title { font-size: 8.4pt; font-weight: 800; letter-spacing: 0.13em; text-transform: uppercase; color: var(--c); margin-bottom: 0.3em; }
+.box-title .sub { text-transform: none; letter-spacing: 0; font-weight: 650; color: var(--ink); font-size: 9.6pt; margin-left: 0.4em; }
+.box.key      { --c: var(--key); --bg: var(--key-bg); }
+.box.analogy  { --c: var(--analogy); --bg: var(--analogy-bg); }
+.box.myth     { --c: var(--myth); --bg: var(--myth-bg); }
+.box.rabbit   { --c: var(--rabbit); --bg: var(--rabbit-bg); }
+.box.asked    { --c: var(--asked); --bg: var(--asked-bg); }
+.box.hailmary { --c: var(--hailmary); --bg: var(--hailmary-bg); }
+.box.example  { --c: var(--example); --bg: var(--example-bg); }
+.box.matsci   { --c: var(--matsci); --bg: var(--matsci-bg); }
+.box.asked .question { font-style: italic; font-size: 11pt; color: var(--asked); margin-bottom: 0.45em; }
+.box.myth .myth-line strong { color: var(--myth); }
+.box.example .given { color: var(--muted); }
+.box.example .answer { font-weight: bold; border-top: 1px dashed #c4ccd5; padding-top: 0.35em; }
+
+/* ---------- Equations ---------- */
+.equation { position: relative; margin: 0.6em 0 0.8em; padding: 0.15em 3.2em; break-inside: avoid; }
+.equation[data-eq]::after { content: "(" attr(data-eq) ")"; position: absolute; right: 0; top: 50%; transform: translateY(-50%);
+  font-family: "Inter", sans-serif; font-size: 9pt; color: var(--muted); }
+.equation.boxed .katex-display { border: 1.5px solid var(--key); border-radius: 6px; padding: 0.45em 0.8em; display: table; margin: 0.4em auto; background: var(--key-bg); }
+.katex { font-size: 1.08em; }
+.katex-display { margin: 0.35em 0; }
+.where { font-size: 9.6pt; color: var(--muted); margin-top: -0.3em; text-align: left; }
+
+/* ---------- Figures ---------- */
+figure { margin: 1em 0 1.15em; text-align: center; break-inside: avoid; page-break-inside: avoid; }
+figure img, figure svg { max-width: 100%; height: auto; }
+figure.narrow img, figure.narrow svg { max-width: 72%; }
+figure.small img, figure.small svg { max-width: 52%; }
+figcaption { font-size: 8.6pt; line-height: 1.4; color: var(--muted); text-align: left; margin-top: 0.45em; padding: 0 0.3em; }
+figcaption .fig-num { font-weight: 700; color: var(--ink); margin-right: 0.35em; }
+
+/* ---------- Tables ---------- */
+table { border-collapse: collapse; width: 100%; font-size: 8.6pt; line-height: 1.35; margin: 0.8em 0 1em; break-inside: avoid; }
+table caption { caption-side: top; text-align: left; font-size: 8.6pt; color: var(--muted); padding-bottom: 0.4em; }
+table caption .tab-num { font-weight: 700; color: var(--ink); margin-right: 0.35em; }
+th { background: #eef1f5; font-weight: 700; text-align: left; padding: 0.35em 0.5em; border-bottom: 1.5px solid #9aa5b1; }
+td { padding: 0.32em 0.5em; border-bottom: 1px solid var(--rule); vertical-align: top; }
+tr:nth-child(even) td { background: #fafbfc; }
+
+/* ---------- End-of-chapter ---------- */
+.summary { border-top: 2px solid var(--ink); margin-top: 1.8em; padding-top: 0.3em; }
+.summary h2, .check h2 { margin-top: 0.5em; font-size: 13pt; }
+.check ol > li { margin-bottom: 0.45em; }
+.check .tag { font-family: "Inter", sans-serif; font-size: 7.6pt; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--muted); border: 1px solid var(--rule); border-radius: 3px; padding: 0 0.3em; margin-right: 0.35em; }
+
+/* ---------- Answers (back matter) ---------- */
+.answers h3 { border-bottom: 1px solid var(--rule); padding-bottom: 0.2em; }
+.answers ol > li { margin-bottom: 0.5em; }
+
+/* ---------- Misc ---------- */
+.nowrap { white-space: nowrap; }
+.small { font-size: 9pt; }
+.muted { color: var(--muted); }
+.center { text-align: center; }
+.pagebreak { break-before: page; page-break-before: always; }
+.keep { break-inside: avoid; }
+
+/* ---------- Front / back matter (generated) ---------- */
+h1.fm-title { font-family: "Inter Display", "Inter", sans-serif; font-size: 26pt; font-weight: 750; letter-spacing: -0.02em;
+  margin: 0 0 0.5em; line-height: 1.1; }
+h1.fm-title::after { content: ""; display: block; height: 3px; width: 64px; background: var(--key); margin-top: 0.35em; }
+.fm-lead { font-size: 11pt; color: var(--muted); text-align: left; margin-bottom: 1.2em; }
+.toc-list { font-family: "Inter", sans-serif; font-size: 9.6pt; }
+.toc-list > div { display: flex; align-items: baseline; break-inside: avoid; }
+.toc-list > div > a:first-child { color: var(--ink); flex: 0 1 auto; }
+.toc-list > div::after { content: none; }
+.toc-list > div > a.pg { order: 3; color: var(--ink); min-width: 2.2em; text-align: right; font-variant-numeric: tabular-nums; }
+.toc-list > div > a:first-child::after { content: ""; }
+.toc-list > div { gap: 0; }
+.toc-list > div > a:first-child { white-space: normal; }
+.toc-list > div::before { content: ""; order: 2; flex: 1 1 auto; border-bottom: 1px dotted #b8c0ca; margin: 0 0.4em 0.28em; min-width: 1em; }
+.toc-fm { margin: 0.15em 0; font-weight: 600; }
+.toc-part { margin: 1.0em 0 0.25em; font-weight: 800; font-size: 10.4pt; text-transform: uppercase; letter-spacing: 0.06em; }
+.toc-part > a:first-child { color: var(--key) !important; }
+.toc-ch { margin: 0.45em 0 0.1em; font-weight: 650; font-size: 10.2pt; }
+.toc-sec { margin: 0.06em 0 0.06em 2.1em; color: var(--muted); font-size: 9pt; }
+.toc-sec > a:first-child { color: var(--muted) !important; }
+.toc-n { display: inline-block; min-width: 2.1em; color: var(--key); font-weight: 700; }
+.toc-sec .toc-n { min-width: 2.6em; font-weight: 600; color: #7b8794; }
+section.part .toc-n { min-width: 1.6em; }
+
+.qi-ch { font-size: 10.5pt; color: var(--key); margin: 1.1em 0 0.35em; text-transform: uppercase; letter-spacing: 0.05em; }
+.qi { border-left: 3px solid var(--asked); background: var(--asked-bg); padding: 0.4em 0.75em 0.35em; margin: 0 0 0.5em;
+  border-radius: 0 5px 5px 0; break-inside: avoid; }
+.qi-q { font-style: italic; font-size: 10.6pt; display: flex; justify-content: space-between; gap: 1em; }
+.qi-q > a:first-child { color: var(--asked); }
+.qi-pg { font-family: "Inter", sans-serif; font-style: normal; font-size: 8.6pt; color: var(--muted); white-space: nowrap; }
+.qi-pg a { color: var(--muted); font-weight: 700; }
+.qi-a { font-size: 9.8pt; margin-top: 0.15em; text-align: left; }
+
+.mr { margin: 0 0 0.7em; break-inside: avoid; border-bottom: 1px solid var(--rule); padding-bottom: 0.5em; }
+.mr-myth { display: flex; gap: 0.6em; align-items: baseline; font-size: 10pt; }
+.mr-myth .qi-pg { margin-left: auto; }
+.mr-real { display: flex; gap: 0.6em; align-items: baseline; font-size: 9.8pt; margin-top: 0.2em; color: var(--ink); }
+.mr-label { font-family: "Inter", sans-serif; font-size: 7.4pt; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase;
+  color: #fff; background: var(--myth); border-radius: 3px; padding: 0.1em 0.45em; flex: 0 0 auto; min-width: 4.6em; text-align: center; }
+.mr-label.real { background: var(--accent); }
+
+table.fs td:nth-child(2) { white-space: nowrap; }
+table.fs { font-size: 8.8pt; }
+.gl-cols { column-count: 2; column-gap: 2em; }
+p.gl { text-align: left; font-size: 9.2pt; line-height: 1.4; margin: 0 0 0.5em; break-inside: avoid; }
+.gl-ch { color: #7b8794; font-family: "Inter", sans-serif; font-size: 7.6pt; }
+ul.src { font-size: 8.8pt; line-height: 1.4; text-align: left; }
+ul.src a { word-break: break-all; color: var(--muted); }
+.ans-ch { font-size: 9.8pt; }
+.ans-ch h3 { margin-top: 1.4em; color: var(--key); }
+.ans-ch p { text-align: left; }
+.legend { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5em 0.9em; margin: 0.5em 0 1em; }
+.legend .box { margin: 0; padding: 0.4em 0.75em 0.25em; font-size: 9.4pt; }
+.legend .box p { margin-bottom: 0.15em; }
+.prologue-step { display: flex; gap: 0.75em; margin: 0 0 0.75em; break-inside: avoid; }
+.prologue-step .stepnum { flex: 0 0 1.9em; height: 1.9em; border-radius: 50%; background: var(--key); color: #fff;
+  font-family: "Inter", sans-serif; font-weight: 800; font-size: 10pt; display: flex; align-items: center; justify-content: center; margin-top: 0.15em; }
+.prologue-step .stepbody p { margin-bottom: 0.3em; }
+.prologue-step .stepbody h3 { margin: 0.1em 0 0.25em; }
+.prologue-step .chref { font-family: "Inter", sans-serif; font-size: 8.2pt; font-weight: 700; color: var(--key); letter-spacing: 0.04em; }
