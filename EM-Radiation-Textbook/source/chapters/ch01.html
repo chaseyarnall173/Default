@@ -1,0 +1,168 @@
+<section class="chapter" id="ch01">
+<div class="chapter-opener">
+  <div class="chapter-num">Chapter 1</div>
+  <h1 class="chapter-title">Electromagnetic Waves: Ripples in Fields</h1>
+  <p class="chapter-hook">Your Wi-Fi signal, the sunlight on your desk and the glow of a red-hot stove burner are the same kind of thing: ripples in invisible fields that fill all of space. This chapter is about what is actually doing the rippling.</p>
+  <div class="big-picture"><h4>The big picture</h4><ul>
+    <li>Every charge is surrounded by an electric field; moving charges also make a magnetic field. Fields are real physical things that store energy.</li>
+    <li>Shake a charge and kinks in its field race outward at the speed of light. That traveling ripple is an electromagnetic (EM) wave.</li>
+    <li>In the wave, a changing electric field makes a magnetic field and vice versa, so the wave carries itself. No medium is needed.</li>
+    <li>A wave is described by wavelength, frequency (\(c = \lambda f\)), amplitude (intensity \(\propto\) amplitude²) and polarization.</li>
+  </ul></div>
+  <div class="learning-goals"><h4>After this chapter you can</h4><ul>
+    <li>Explain in plain words what is &ldquo;waving&rdquo; in light.</li>
+    <li>Sketch the E and B fields of a light wave and state how they are oriented.</li>
+    <li>Convert between wavelength and frequency with \(c = \lambda f\).</li>
+    <li>Explain why light crosses empty space while sound cannot.</li>
+    <li>Predict how intensity changes when the field amplitude changes.</li>
+    <li>Explain how polarized sunglasses cut glare.</li>
+  </ul></div>
+</div>
+
+<h2 id="ch01-1"><span class="sec-num">1.1</span>Charges and fields: the invisible stage</h2>
+<p>Everything in this book starts with <strong>electric charge</strong>, a property of particles like electrons (negative) and protons (positive). Like charges repel and opposite charges attract, even across empty space.</p>
+<p>Physicists describe that reach-across-space push with a <strong>field</strong>: a quantity that has a value and a direction at every point in space. The <strong>electric field</strong> \(\vec E\) at a point is the force a small test charge \(q\) would feel there, per unit charge: \(\vec E = \vec F / q\). Its units are newtons per coulomb, which is the same as volts per meter (V/m).</p>
+<p>Moving charges (currents) create a second field, the <strong>magnetic field</strong> \(\vec B\), measured in teslas (T). It pushes on other moving charges. Figure 1.1 shows both.</p>
+<figure id="fig-1-1"><img src="figures/ch01-fields.svg" alt="Left: red electric field lines pointing radially outward from a positive charge, with a test charge q feeling a force F = qE along a line. Right: a vertical wire carrying current upward, encircled by blue magnetic field loops.">
+<figcaption><span class="fig-num">Figure 1.1</span> (a) The electric field of a positive charge points away from it; a test charge placed anywhere feels a force along the field. (b) A current is wrapped in loops of magnetic field. Field lines are a map: they show the direction of the field at each point, and their crowding shows its strength.</figcaption></figure>
+<div class="box analogy"><div class="box-title">Analogy</div><p>A field is like a weather map of the wind: at every point there is an arrow with a size and a direction. You can&rsquo;t see the air, but you can see what it does to a leaf. You can&rsquo;t see the field either, but you can see what it does to a charge.</p></div>
+<p>Fields are not just bookkeeping. They store energy, carry momentum and, crucially, they take time to change. If a charge moves, the field far away does not update instantly. The &ldquo;news&rdquo; spreads outward at a finite speed, the speed of light. That delay is what makes waves possible.</p>
+
+<h2 id="ch01-2"><span class="sec-num">1.2</span>Shake a charge, make a wave</h2>
+<p>Suppose a charge sits still, then is jerked upward a short distance. Close to the charge, the field already points from the new position. Far away, the news has not arrived, so the field still points from the old position. In between, the field lines must connect, and they do it with a <strong>kink</strong> (Figure 1.2a). That kink travels outward at speed \(c\), and it is a pulse of electromagnetic radiation.</p>
+<p>Now keep wiggling the charge up and down. Each wiggle launches another kink, and the field out in space flips up, down, up, down in step with the source (Figure 1.2b). That repeating pattern, racing outward, is an <strong>electromagnetic wave</strong>.</p>
+<figure id="fig-1-2"><img src="figures/ch01-wiggling-charge.svg" alt="Left: field lines of a charge that was jerked upward; inside a dashed circle the lines point from the new position, outside a larger circle they point from the old position, and kinks connect them. Right: an antenna with electrons sloshing up and down sends out a train of electric field arrows alternating up and down, spaced one wavelength apart.">
+<figcaption><span class="fig-num">Figure 1.2</span> (a) Jerk a charge once and a kink in its field lines spreads outward at speed \(c\). (b) Wiggle charges up and down continuously, as an antenna does, and the kinks form a wave train. The arrows show the electric field at points along a line out from the antenna; the magnetic field (not drawn) points into and out of the page.</figcaption></figure>
+<p>Two rules follow, and they run the whole book:</p>
+<ul>
+  <li><strong>Only accelerating charges radiate.</strong> A charge sitting still has a static field. A charge coasting at constant velocity carries its field along with it. Only speeding up, slowing down or changing direction makes kinks.</li>
+  <li><strong>Waves push charges.</strong> When the wave reaches another charge, its electric field shoves that charge back and forth at the wave&rsquo;s frequency.</li>
+</ul>
+<p>A Wi-Fi router uses both rules. An alternating current drives electrons up and down its antenna about 2.4 billion times per second, which launches the wave. In your laptop&rsquo;s antenna, the arriving electric field drives electrons back and forth, producing a tiny alternating current that the receiver decodes. Many antennas are about a half or a quarter of a wavelength long, because charges slosh most strongly when the length matches the wave.</p>
+<div class="box key"><div class="box-title">Key Idea</div><p>Accelerating charges make electromagnetic waves, and electromagnetic waves accelerate charges. Antennas, light bulbs, atoms and the Sun all emit by shaking charges; eyes, cameras and antennas all detect by being shaken. Light from atoms (Chapter 5) and from hot objects (Chapter 9) works the same way, with electrons as the wiggling charges.</p></div>
+
+<h2 id="ch01-3"><span class="sec-num">1.3</span>The self-sustaining wave</h2>
+<p>Once a wave leaves the antenna, it no longer needs the antenna. Two laws of electromagnetism keep it going on its own:</p>
+<ul>
+  <li><strong>Faraday&rsquo;s law:</strong> a changing magnetic field creates an electric field. This is how generators and induction cooktops work.</li>
+  <li><strong>Maxwell&rsquo;s addition:</strong> a changing electric field creates a magnetic field.</li>
+</ul>
+<p>In a wave, the oscillating E field creates an oscillating B field, which creates an oscillating E field a little farther along, and so on (Figure 1.3). The two fields regenerate each other as they travel, with no charges or material needed.</p>
+<figure id="fig-1-3"><img src="figures/ch01-leapfrog.svg" alt="Cycle diagram: a changing E field creates a B field; the changing B field creates an E field; the cycle repeats and marches forward at c = 1/sqrt(mu0 epsilon0).">
+<figcaption><span class="fig-num">Figure 1.3</span> The leapfrog that makes light self-sustaining. Each changing field creates the other, slightly farther along, so the pair propagates through empty space.</figcaption></figure>
+<p>In 1865 James Clerk Maxwell worked out how fast this leapfrog travels. The speed depends only on two constants that describe electricity and magnetism, \(\varepsilon_0\) and \(\mu_0\):</p>
+<div class="equation" data-eq="1.1">\[ c = \frac{1}{\sqrt{\mu_0 \varepsilon_0}} = \frac{1}{\sqrt{(1.257\times10^{-6})(8.854\times10^{-12})}}\ \text{m/s} = 3.00\times10^{8}\ \text{m/s} \]</div>
+<p>That number matched the measured speed of light. Maxwell concluded that light is an electromagnetic wave, and in 1887&ndash;88 Heinrich Hertz confirmed it by making and detecting radio waves with sparks.</p>
+<p>Figure 1.4 is the standard picture of a light wave far from its source, called a <strong>plane wave</strong>. Notice three things:</p>
+<ul>
+  <li>\(\vec E\), \(\vec B\) and the direction of travel are all perpendicular to each other, so EM waves are <strong>transverse</strong>.</li>
+  <li>E and B rise and fall together (they are in phase).</li>
+  <li>Their sizes are locked together: \(B = E/c\). Because \(c\) is huge, B is numerically tiny in teslas, but it carries exactly as much energy as E.</li>
+</ul>
+<figure id="fig-1-4"><img src="figures/ch01-plane-wave.svg" alt="Three-dimensional sketch of a plane wave: a red electric field sinusoid oscillating in a vertical plane and a blue magnetic field sinusoid oscillating in a horizontal plane, both along a horizontal axis labeled direction of travel, speed c; one wavelength is marked between two crests.">
+<figcaption><span class="fig-num">Figure 1.4</span> A snapshot of a plane EM wave. The red arrows show the electric field and the blue arrows the magnetic field at points along the beam. The whole pattern slides to the right at speed \(c\). E and B are drawn the same size for clarity; in SI units \(B_0 = E_0/c\).</figcaption></figure>
+<div class="box asked"><div class="box-title">You Asked</div><p class="question">&ldquo;How does EM radiation actually work &mdash; what is physically waving?&rdquo;</p>
+<p>The electric and magnetic fields themselves are what wave: at each point the light passes through, the strength and direction of the electric field (and the magnetic field with it) swing back and forth, hundreds of trillions of times per second for visible light. Nothing material moves along the beam.</p>
+<p>The field is a property of space itself, the &ldquo;push a charge would feel here.&rdquo; So the most concrete way to picture light is to imagine a single electron sitting in the beam. As the wave passes, the electron is shoved up, then down, then up, at the wave&rsquo;s frequency. That shove is the light.</p>
+<p>This is also the root of everything in your color rabbit hole. All interactions of light with matter start with the wave&rsquo;s electric field shaking electrons. What happens next depends on the frequency. Electrons that can resonate at that frequency absorb the energy, and electrons that can&rsquo;t simply re-radiate it or let it pass. That sorting by frequency is what makes objects colored (Chapters 5&ndash;7). One twist is coming: the energy turns out to be delivered in lumps called photons (Chapter 2).</p></div>
+<div class="box myth"><div class="box-title">Myth vs. Reality</div>
+<p class="myth-line"><strong>Myth:</strong> The wavy line in drawings of light is the path the light travels, snaking up and down through space.</p>
+<p><strong>Reality:</strong> The wavy line is a graph. It plots the field&rsquo;s strength and direction at points along a perfectly straight beam. The light goes straight; only the field value at each point oscillates.</p></div>
+
+<h2 id="ch01-4"><span class="sec-num">1.4</span>No medium needed</h2>
+<p>Sound is a pressure wave: air molecules bump into their neighbors. Remove the air and sound stops, which is why space is silent. Water waves need water, and waves on a guitar string need the string.</p>
+<p>Light is different because the thing that waves, the field, exists in empty space. Sunlight crosses 150 million kilometers of near-vacuum and reaches you in about 8.3 minutes. No sound from the Sun ever arrives.</p>
+<div class="box analogy"><div class="box-title">Analogy</div><p>In a stadium &ldquo;wave,&rdquo; the pattern sweeps around the stadium but each fan just stands up and sits down in place. In light, the pattern sweeps forward at \(c\), while the field at each point just swings back and forth. The difference: light needs no fans.</p></div>
+<div class="box myth"><div class="box-title">Myth vs. Reality</div>
+<p class="myth-line"><strong>Myth:</strong> Space must be filled with some invisible substance that carries light, the way air carries sound.</p>
+<p><strong>Reality:</strong> Nineteenth-century physicists believed exactly this and called the substance the &ldquo;luminiferous aether.&rdquo; In 1887 Michelson and Morley tried to detect Earth moving through it and found nothing. Light needs no medium; it is a self-sustaining pattern in the fields.</p></div>
+<div class="box rabbit"><div class="box-title">Rabbit Hole <span class="sub">(optional) &mdash; Why is light&rsquo;s speed the same for everyone?</span></div><p>Safe to skip. Maxwell&rsquo;s formula gives \(c\) from \(\varepsilon_0\) and \(\mu_0\) alone, with no mention of who is measuring. In 1905 Einstein took this seriously: every observer, however they move, measures light in vacuum at the same speed. Keeping that true forces time and length themselves to stretch for fast-moving observers, which is special relativity. For this book, the takeaway is simpler: \(c = 299{,}792{,}458\) m/s exactly in vacuum, and we round it to \(3.00\times10^8\) m/s.</p></div>
+
+<h2 id="ch01-5"><span class="sec-num">1.5</span>Describing a wave: wavelength, frequency, amplitude</h2>
+<p>Four numbers describe a simple EM wave (Figure 1.5):</p>
+<ul>
+  <li><strong>Wavelength</strong> \(\lambda\): the distance from one crest to the next, in meters.</li>
+  <li><strong>Frequency</strong> \(f\): how many crests pass a point each second, in hertz (Hz = 1/s).</li>
+  <li><strong>Period</strong> \(T = 1/f\): the time for one full cycle at a fixed point.</li>
+  <li><strong>Amplitude</strong> \(E_0\): the peak electric field strength, in V/m.</li>
+</ul>
+<figure id="fig-1-5"><img src="figures/ch01-wave-anatomy.svg" alt="Two sine curves. Left: field versus position at one instant, with the wavelength marked crest to crest and the amplitude marked from the axis to a trough. Right: field versus time at one point, with the period marked crest to crest.">
+<figcaption><span class="fig-num">Figure 1.5</span> The same wave viewed two ways. (a) Freeze time and look along the beam: the repeat distance is the wavelength. (b) Stand at one spot and watch: the repeat time is the period, and the frequency is how many repeats happen per second.</figcaption></figure>
+<p>In one period, a crest moves forward exactly one wavelength. Speed is distance over time, so \(c = \lambda / T\), or:</p>
+<div class="equation boxed" data-eq="1.2">\[ c = \lambda f \]</div>
+<p class="where">where \(c = 3.00\times10^8\) m/s in vacuum, \(\lambda\) is the wavelength (m) and \(f\) is the frequency (Hz).</p>
+<p>Because \(c\) is fixed, wavelength and frequency are locked together: long wavelength means low frequency, and short wavelength means high frequency. In a material such as glass or water, light travels slower than \(c\). The frequency stays the same and the wavelength shrinks (Chapter 6).</p>
+<div class="box example"><div class="box-title">Worked Example 1.1 <span class="sub">&mdash; Wi-Fi, FM radio and green light</span></div>
+<p class="given"><strong>Given:</strong> Wi-Fi at \(f = 2.4\) GHz; an FM station at 100 MHz; green light with \(\lambda = 550\) nm.</p>
+<p><strong>Find:</strong> the wavelength of the first two and the frequency and period of the third.</p>
+<p><strong>Think:</strong> All three are EM waves in air (essentially vacuum speed), so \(c = \lambda f\) applies to each. Convert prefixes first: G = \(10^9\), M = \(10^6\), n = \(10^{-9}\).</p>
+<p>\[ \lambda_\text{Wi-Fi} = \frac{c}{f} = \frac{3.00\times10^{8}\ \text{m/s}}{2.4\times10^{9}\ \text{Hz}} = 0.125\ \text{m} = 12.5\ \text{cm} \]</p>
+<p>\[ \lambda_\text{FM} = \frac{3.00\times10^{8}\ \text{m/s}}{1.00\times10^{8}\ \text{Hz}} = 3.00\ \text{m} \]</p>
+<p>\[ f_\text{green} = \frac{c}{\lambda} = \frac{3.00\times10^{8}\ \text{m/s}}{550\times10^{-9}\ \text{m}} = 5.45\times10^{14}\ \text{Hz}, \qquad T = \frac{1}{f} = 1.8\times10^{-15}\ \text{s} \]</p>
+<p class="answer">Answer: Wi-Fi waves are about 12.5 cm long (hand-sized), FM waves about 3 m (room-sized), and green light oscillates \(5.45\times10^{14}\) times per second, completing a cycle every 1.8 femtoseconds.</p></div>
+<p>Those sizes explain hardware you already own. A quarter-wavelength FM antenna is about 75 cm long, the length of a classic car whip antenna. A quarter-wavelength Wi-Fi antenna is about 3 cm, small enough to hide inside a laptop lid.</p>
+
+<h2 id="ch01-6"><span class="sec-num">1.6</span>Energy carried by the wave</h2>
+<p>Fields store energy. The energy per cubic meter in an electric field is proportional to \(E^2\), much as a spring&rsquo;s energy is proportional to its stretch squared. In an EM wave, the energy is split equally between the electric and magnetic fields, and the whole package flows along at \(c\).</p>
+<p>The rate at which a wave delivers energy to a surface is its <strong>intensity</strong> \(I\): power per unit area, in W/m². Averaged over a cycle:</p>
+<div class="equation boxed" data-eq="1.3">\[ I = \tfrac{1}{2}\, c\, \varepsilon_0\, E_0^{2} \qquad\Longrightarrow\qquad I \propto E_0^{2} \]</div>
+<p class="where">where \(E_0\) is the electric field amplitude (V/m) and \(\varepsilon_0 = 8.85\times10^{-12}\ \text{C}^2/(\text{N}\cdot\text{m}^2)\).</p>
+<p>The squared dependence matters: double the amplitude and you get four times the intensity (Figure 1.6). In everyday terms, amplitude is <strong>brightness</strong>, while frequency is <strong>color</strong>. The two are independent.</p>
+<figure id="fig-1-6"><img src="figures/ch01-intensity.svg" alt="Left: three red waves of the same wavelength with amplitudes 1, 2 and 3. Right: horizontal bars showing relative intensities 1, 4 and 9.">
+<figcaption><span class="fig-num">Figure 1.6</span> Same wavelength (same color), different amplitudes. Tripling the field amplitude makes the wave nine times as intense.</figcaption></figure>
+<div class="box example"><div class="box-title">Worked Example 1.2 <span class="sub">&mdash; How strong are the fields in sunlight?</span></div>
+<p class="given"><strong>Given:</strong> Bright noon sunlight at the ground delivers about \(I = 1000\ \text{W/m}^2\).</p>
+<p><strong>Find:</strong> the amplitudes \(E_0\) and \(B_0\), and the intensity if \(E_0\) were doubled.</p>
+<p><strong>Think:</strong> Solve Eq. 1.3 for \(E_0\), then use \(B_0 = E_0/c\). Treating sunlight as a single wave is a simplification (it is a mix of many frequencies), but it gives the right size of field.</p>
+<p>\[ E_0 = \sqrt{\frac{2I}{c\,\varepsilon_0}} = \sqrt{\frac{2(1000)}{(3.00\times10^{8})(8.85\times10^{-12})}}\ \text{V/m} = 868\ \text{V/m} \]</p>
+<p>\[ B_0 = \frac{E_0}{c} = \frac{868}{3.00\times10^{8}}\ \text{T} = 2.9\times10^{-6}\ \text{T} \]</p>
+<p>Doubling \(E_0\) multiplies \(I\) by \(2^2 = 4\), giving 4000 W/m².</p>
+<p class="answer">Answer: \(E_0 \approx 870\) V/m and \(B_0 \approx 2.9\ \mu\text{T}\). A wave with twice the amplitude would deliver 4000 W/m².</p></div>
+<p>Two more facts about energy, both developed later:</p>
+<ul>
+  <li><strong>Spreading.</strong> Light from a small source spreads over a sphere, so intensity falls as \(1/r^2\) (the inverse-square law, Chapter 10).</li>
+  <li><strong>Momentum.</strong> EM waves also push on what they hit. Sunlight&rsquo;s push is tiny, about \(I/c \approx 3\ \mu\text{N}\) per square meter when absorbed, but it is enough to steer solar sails in space (Chapter 2).</li>
+</ul>
+<div class="box myth"><div class="box-title">Myth vs. Reality</div>
+<p class="myth-line"><strong>Myth:</strong> Brighter light travels faster, or carries &ldquo;stronger&rdquo; color.</p>
+<p><strong>Reality:</strong> All EM waves in vacuum travel at \(c\), dim or bright. Brightness is amplitude; color is frequency. Turning up a red laser makes more red, never blue.</p></div>
+
+<h2 id="ch01-7"><span class="sec-num">1.7</span>Polarization: which way E points</h2>
+<p>The <strong>polarization</strong> of a wave is the direction its electric field oscillates. In Figure 1.4 the wave is <strong>linearly polarized</strong> vertically: E only swings up and down.</p>
+<p>Sunlight and light bulbs are <strong>unpolarized</strong>. They are made by countless atoms radiating independently, so the E direction is a random, rapidly changing mix of all directions perpendicular to the beam.</p>
+<p>A <strong>polarizer</strong> passes only one direction of E, called its transmission axis (Figure 1.7a). Common polarizing film is a plastic sheet whose long molecules have been stretched into parallel lines. Electrons can move easily along those chains, so the E component along the chains drives currents and is absorbed. The perpendicular component passes. An ideal polarizer passes half the intensity of unpolarized light. For light that is already polarized at angle \(\theta\) to the axis, <strong>Malus&rsquo;s law</strong> gives:</p>
+<div class="equation" data-eq="1.4">\[ I = I_0 \cos^2\theta \]</div>
+<figure id="fig-1-7"><img src="figures/ch01-polarization.svg" alt="Left: unpolarized light with electric field arrows in many directions passes through a polarizer with a vertical transmission axis and emerges with only vertical arrows. Right: sunlight reflects off water; the reflected glare has mostly horizontal electric field and is blocked by a sunglasses lens with a vertical axis.">
+<figcaption><span class="fig-num">Figure 1.7</span> (a) A polarizer transmits only the E component along its axis. (b) Light reflected from water or a road is mostly polarized parallel to the surface (horizontal). Polarized sunglasses have a vertical axis, so they block much of that glare while passing other light.</figcaption></figure>
+<p>That is exactly how polarized sunglasses work (Figure 1.7b). Light reflecting off a flat surface like water or a wet road comes off mostly polarized parallel to the surface. The reason is the shaken electrons again: electrons driven parallel to the surface radiate strongly into the reflected direction, while electrons driven the other way radiate only weakly in that direction. For water, reflected light is completely horizontally polarized when it arrives about 53° from the vertical (Brewster&rsquo;s angle). Lenses with a vertical transmission axis block that glare. Tilt your head 90° while wearing them and the glare comes back.</p>
+<p><strong>LCD screens</strong> use the same trick. Each pixel sits between two polarizers, and a layer of liquid crystal rotates the light&rsquo;s polarization by an amount set by a voltage. More rotation lets more light through the second polarizer. This is why an LCD monitor can look dark through polarized sunglasses when you tilt your head.</p>
+<div class="box example"><div class="box-title">Worked Example 1.3 <span class="sub">&mdash; Sunglasses and a monitor</span></div>
+<p class="given"><strong>Given:</strong> An LCD monitor emits linearly polarized light. You view it through polarized sunglasses and tilt your head so the lens axis makes angles of 30°, 60° and 90° with the screen&rsquo;s polarization.</p>
+<p><strong>Find:</strong> the fraction of the screen&rsquo;s light that reaches your eyes at each angle.</p>
+<p><strong>Think:</strong> The light is already polarized, so Malus&rsquo;s law applies directly (ignore the lens&rsquo;s tint).</p>
+<p>\[ \cos^2 30^\circ = 0.75, \qquad \cos^2 60^\circ = 0.25, \qquad \cos^2 90^\circ = 0 \]</p>
+<p class="answer">Answer: 75%, 25% and 0%. At 90° the screen goes black.</p></div>
+
+<div class="summary"><h2>Chapter summary</h2><ul>
+  <li>An electric field is the force per unit charge at each point in space (\(\vec E = \vec F/q\)); moving charges also create a magnetic field \(\vec B\).</li>
+  <li>Accelerating charges launch kinks in their fields that travel at \(c\). A steadily oscillating charge launches an EM wave; arriving waves shake charges in turn.</li>
+  <li>Changing E makes B and changing B makes E, so the wave sustains itself and needs no medium. Its speed in vacuum is \(c = 1/\sqrt{\mu_0\varepsilon_0} = 3.00\times10^8\) m/s.</li>
+  <li>What waves is the field itself. E, B and the direction of travel are mutually perpendicular, and \(B = E/c\).</li>
+  <li>\(c = \lambda f\): Wi-Fi at 2.4 GHz is 12.5 cm long; green light at 550 nm oscillates \(5.45\times10^{14}\) times per second.</li>
+  <li>Intensity \(I = \tfrac12 c\varepsilon_0 E_0^2\), so it grows as amplitude squared. Amplitude sets brightness; frequency sets color.</li>
+  <li>Polarization is the direction of E. Polarizers pass one direction (\(I = I_0\cos^2\theta\)); polarized sunglasses block horizontally polarized glare.</li>
+</ul></div>
+<div class="check"><h2>Check yourself</h2><ol>
+  <li><span class="tag">Concept</span>What physically oscillates in a light wave? Does anything material travel along the beam?</li>
+  <li><span class="tag">Concept</span>A charge moving at constant velocity does not radiate, but one moving back and forth does. Explain why, using the idea of field &ldquo;news&rdquo; spreading at speed \(c\).</li>
+  <li><span class="tag">Concept</span>Explain why light from the Sun reaches Earth but sound from the Sun does not.</li>
+  <li><span class="tag">Calc</span>Newer Wi-Fi also uses a 5.0 GHz band. What is its wavelength? How does it compare with 2.4 GHz Wi-Fi?</li>
+  <li><span class="tag">Calc</span>Red light has a wavelength of 650 nm. Find its frequency and its period.</li>
+  <li><span class="tag">Calc</span>The Sun is \(1.50\times10^{11}\) m away. How long does its light take to reach you?</li>
+  <li><span class="tag">Calc</span>(a) If the electric field amplitude of a laser beam is tripled, by what factor does its intensity change? (b) If the intensity drops to one quarter, what happens to the amplitude?</li>
+  <li><span class="tag">Calc</span>Above the atmosphere, sunlight has an intensity of about 1361 W/m². Find \(E_0\) and \(B_0\).</li>
+  <li><span class="tag">Apply</span>A car&rsquo;s FM antenna is designed to be a quarter wavelength long for 100 MHz. How long is it?</li>
+  <li><span class="tag">Calc</span>Unpolarized light of intensity 800 W/m² passes through a polarizer and then through a second polarizer whose axis is at 45° to the first. What intensity emerges?</li>
+  <li><span class="tag">Apply</span>You are fishing on a sunny day and the lake surface is full of glare. Explain why polarized sunglasses help, and predict what happens if you tilt your head sideways by 90°.</li>
+</ol><p class="small muted">Full solutions are in the Answer Key at the back of the book.</p></div>
+</section>

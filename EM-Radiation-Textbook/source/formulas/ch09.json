@@ -1,0 +1,7 @@
+[
+  {"name": "Wien's displacement law", "latex": "\\lambda_\\text{peak} = \\dfrac{2898\\,\\mu\\text{m}\\cdot\\text{K}}{T}", "meaning": "Wavelength (micrometers) at which a blackbody at absolute temperature T (K) is brightest; 310 K gives about 9.3 micrometers, 5800 K about 500 nm."},
+  {"name": "Stefan-Boltzmann law", "latex": "P = \\varepsilon\\,\\sigma A T^{4}", "meaning": "Total thermal power (W) radiated by a surface of area A (m^2), emissivity epsilon (0-1), and temperature T (K); sigma = 5.67e-8 W/(m^2 K^4)."},
+  {"name": "Net radiative exchange", "latex": "P_\\text{net} = \\varepsilon\\,\\sigma A\\left(T^{4} - T_\\text{s}^{4}\\right)", "meaning": "Net power (W) lost by an object at T to surroundings at T_s (both in K); positive means the object is cooling by radiation."},
+  {"name": "Thermal energy scale", "latex": "E_\\text{thermal} \\sim k_B T", "meaning": "Typical energy (J, or eV) of random motion per particle at temperature T; k_B = 1.381e-23 J/K, so about 0.026 eV at 300 K."},
+  {"name": "Photon energy from wavelength", "latex": "E = \\dfrac{hc}{\\lambda} = \\dfrac{1240\\ \\text{eV}\\cdot\\text{nm}}{\\lambda}", "meaning": "Energy (eV) of a photon of wavelength lambda (nm); a 10 micrometer thermal-IR photon carries about 0.12 eV, matching molecular vibrations."}
+]

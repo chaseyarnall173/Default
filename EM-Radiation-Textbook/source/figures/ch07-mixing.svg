@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 330" width="680" height="330" font-family="Inter, sans-serif">
+<defs><clipPath id="Aa"><circle cx="136" cy="120" r="66"/></clipPath><clipPath id="Ab"><circle cx="204" cy="120" r="66"/></clipPath><clipPath id="Ac"><circle cx="170" cy="179" r="66"/></clipPath><clipPath id="Ba"><circle cx="476" cy="120" r="66"/></clipPath><clipPath id="Bb"><circle cx="544" cy="120" r="66"/></clipPath><clipPath id="Bc"><circle cx="510" cy="179" r="66"/></clipPath></defs>
+<rect width="680" height="330" fill="#ffffff"/>
+<text x="170.0" y="22.0" font-size="13.5" fill="#1f2933" text-anchor="middle" font-weight="650">(a) Additive: mixing light</text>
+<rect x="22" y="36" width="296" height="222" rx="8" fill="#14181f"/>
+<circle cx="136" cy="120" r="66" fill="#e8413c"/>
+<circle cx="204" cy="120" r="66" fill="#3cbf5a"/>
+<circle cx="170" cy="179" r="66" fill="#3f63e8"/>
+<g clip-path="url(#Aa)"><circle cx="204" cy="120" r="66" fill="#f2e14a"/></g>
+<g clip-path="url(#Ab)"><circle cx="170" cy="179" r="66" fill="#55d6ea"/></g>
+<g clip-path="url(#Aa)"><circle cx="170" cy="179" r="66" fill="#d653d6"/></g>
+<g clip-path="url(#Aa)"><g clip-path="url(#Ab)"><circle cx="170" cy="179" r="66" fill="#ffffff"/></g></g>
+<text x="113.5" y="111.0" font-size="12" fill="#ffffff" text-anchor="middle" font-weight="600">red</text>
+<text x="226.5" y="111.0" font-size="12" fill="#ffffff" text-anchor="middle" font-weight="600">green</text>
+<text x="170.0" y="209.0" font-size="12" fill="#ffffff" text-anchor="middle" font-weight="600">blue</text>
+<text x="170.0" y="103.0" font-size="11" fill="#1f2933" text-anchor="middle" font-weight="600">yellow</text>
+<text x="134.8" y="164.0" font-size="11" fill="#1f2933" text-anchor="middle" font-weight="600">magenta</text>
+<text x="205.2" y="164.0" font-size="11" fill="#1f2933" text-anchor="middle" font-weight="600">cyan</text>
+<text x="170.0" y="143.7" font-size="11" fill="#1f2933" text-anchor="middle" font-weight="600">white</text>
+<text x="170.0" y="280.0" font-size="12" fill="#52606d" text-anchor="middle" font-weight="400">Start dark and add light. Screens and stage</text>
+<text x="170.0" y="296.0" font-size="12" fill="#52606d" text-anchor="middle" font-weight="400">lights work this way: red + green looks yellow.</text>
+<text x="510.0" y="22.0" font-size="13.5" fill="#1f2933" text-anchor="middle" font-weight="650">(b) Subtractive: mixing inks and filters</text>
+<rect x="362" y="36" width="296" height="222" rx="8" fill="#ffffff" stroke="#c4ccd5"/>
+<circle cx="476" cy="120" r="66" fill="#22b5e3"/>
+<circle cx="544" cy="120" r="66" fill="#e0368f"/>
+<circle cx="510" cy="179" r="66" fill="#f5dc2a"/>
+<g clip-path="url(#Ba)"><circle cx="544" cy="120" r="66" fill="#3446a8"/></g>
+<g clip-path="url(#Bb)"><circle cx="510" cy="179" r="66" fill="#e2402d"/></g>
+<g clip-path="url(#Ba)"><circle cx="510" cy="179" r="66" fill="#2e9e4a"/></g>
+<g clip-path="url(#Ba)"><g clip-path="url(#Bb)"><circle cx="510" cy="179" r="66" fill="#1d1f24"/></g></g>
+<text x="453.5" y="111.0" font-size="12" fill="#1f2933" text-anchor="middle" font-weight="600">cyan</text>
+<text x="566.5" y="111.0" font-size="12" fill="#ffffff" text-anchor="middle" font-weight="600">magenta</text>
+<text x="510.0" y="209.0" font-size="12" fill="#1f2933" text-anchor="middle" font-weight="600">yellow</text>
+<text x="510.0" y="103.0" font-size="11" fill="#ffffff" text-anchor="middle" font-weight="600">blue</text>
+<text x="474.8" y="164.0" font-size="11" fill="#ffffff" text-anchor="middle" font-weight="600">green</text>
+<text x="545.2" y="164.0" font-size="11" fill="#ffffff" text-anchor="middle" font-weight="600">red</text>
+<text x="510.0" y="143.7" font-size="11" fill="#ffffff" text-anchor="middle" font-weight="600">black</text>
+<text x="510.0" y="280.0" font-size="12" fill="#52606d" text-anchor="middle" font-weight="400">Start white; each ink removes a band. Cyan absorbs</text>
+<text x="510.0" y="296.0" font-size="12" fill="#52606d" text-anchor="middle" font-weight="400">red, magenta absorbs green, yellow absorbs blue.</text>
+<text x="510.0" y="318.0" font-size="11" fill="#52606d" text-anchor="middle" font-weight="400">(Real inks are imperfect, so printers add black ink: CMYK.)</text>
+</svg>

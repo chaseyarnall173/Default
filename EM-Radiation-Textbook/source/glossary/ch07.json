@@ -1,0 +1,19 @@
+[
+  {"term": "Color", "definition": "The label your visual system gives to the mix of visible wavelengths (about 400–700 nm, photon energies 1.8–3.1 eV) reaching your eye; an object's color is the part of the incoming light it sends toward you."},
+  {"term": "Spectrum", "definition": "The amount of light at each wavelength in a beam; most real light is a mixture of many wavelengths."},
+  {"term": "Cone cells", "definition": "Color-sensing cells in the retina of three types, S, M, and L, with sensitivity peaks near 420, 534, and 564 nm."},
+  {"term": "Metamers", "definition": "Different spectra that produce the same three cone signals and therefore look the same color, such as 580 nm yellow and a red-plus-green mixture."},
+  {"term": "Additive mixing", "definition": "Combining colored lights (usually red, green, and blue); more light added means brighter, and all three together look white. Screens work this way."},
+  {"term": "Subtractive mixing", "definition": "Combining absorbers such as inks, paints, or filters (usually cyan, magenta, and yellow); each removes part of the spectrum, and all three together look black."},
+  {"term": "Conjugated molecule", "definition": "A molecule with a chain of alternating single and double bonds; longer chains have smaller electron energy gaps and absorb longer wavelengths, which is how many dyes and pigments get their color."},
+  {"term": "Band gap (Eg)", "definition": "The energy gap between a solid's filled valence band and empty conduction band; photons with energy above Eg can be absorbed."},
+  {"term": "Absorption edge", "definition": "The wavelength 1240 eV·nm / Eg below which a semiconductor or insulator absorbs light strongly."},
+  {"term": "Band-gap color rule", "definition": "Eg above 3.1 eV: colorless and transparent; Eg below 1.8 eV: all visible light absorbed (opaque, dark or metallic); Eg between: only the blue end absorbed, so the material looks yellow, orange, or red."},
+  {"term": "Crystal field", "definition": "The electric field of the ions surrounding a transition-metal ion in a crystal, which splits its d-orbital energies into gaps that can absorb visible light (as with Cr³⁺ in ruby)."},
+  {"term": "Charge transfer", "definition": "Absorption of a photon by moving an electron from one ion to a neighboring ion, such as Fe²⁺ to Ti⁴⁺ in blue sapphire; it produces strong colors from trace impurities."},
+  {"term": "Rayleigh scattering", "definition": "Scattering of light by particles much smaller than the wavelength, with intensity proportional to 1/λ⁴; it makes the sky blue and sunsets red."},
+  {"term": "Structural color", "definition": "Color produced by interference from structures about the size of light's wavelength (thin films, layered nanostructures) rather than by pigment absorption."},
+  {"term": "Thin-film interference", "definition": "Reinforcement or cancellation of light reflected from the front and back surfaces of a thin layer; the result depends on thickness, index, and viewing angle."},
+  {"term": "Iridescence", "definition": "Color that changes with viewing angle, typical of structural color in soap bubbles, oil slicks, and butterfly wings."},
+  {"term": "Phosphor", "definition": "A material that absorbs light (often blue or UV) and re-emits it at a longer wavelength; white LEDs use a yellow phosphor on a blue LED."}
+]

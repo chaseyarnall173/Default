@@ -1,0 +1,8 @@
+[
+  {"name": "Photon energy from wavelength", "latex": "E = \\frac{hc}{\\lambda} = \\frac{1240\\ \\text{eV}\\cdot\\text{nm}}{\\lambda}", "meaning": "Energy of one photon in eV for wavelength λ in nm; visible light (400–700 nm) spans 3.1 to 1.8 eV."},
+  {"name": "Absorption edge", "latex": "\\lambda_\\text{edge} = \\frac{1240\\ \\text{eV}\\cdot\\text{nm}}{E_g}", "meaning": "For band gap Eg in eV, wavelengths shorter than λ_edge (nm) are absorbed and longer ones pass; sets a semiconductor's or pigment's color."},
+  {"name": "Band-gap color rule", "latex": "E_g \\gt 3.1\\ \\text{eV: colorless}; \\quad 1.8 \\lt E_g \\lt 3.1\\ \\text{eV: colored}; \\quad E_g \\lt 1.8\\ \\text{eV: opaque}", "meaning": "Compares a pure material's band gap with visible photon energies to predict whether it looks transparent, yellow-to-red, or dark/metallic."},
+  {"name": "Rayleigh scattering", "latex": "I_\\text{scattered} \\propto \\frac{1}{\\lambda^4}", "meaning": "For scatterers much smaller than the wavelength, scattered intensity rises steeply for shorter wavelengths; 450 nm light scatters about 5.9 times more than 700 nm light."},
+  {"name": "Thin-film extra path", "latex": "\\Delta \\approx 2nt", "meaning": "Extra optical path traveled by light reflected from the back of a film of thickness t and index n (normal incidence); with phase flips it sets which colors are reinforced."},
+  {"name": "Absorbed solar power", "latex": "P = a\\, I A", "meaning": "Power absorbed (W) by a surface with absorbed fraction a, in sunlight of intensity I (W/m², about 1000 on a clear day), over area A (m²)."}
+]

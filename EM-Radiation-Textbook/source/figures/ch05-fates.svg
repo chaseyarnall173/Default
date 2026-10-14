@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 336" width="680" height="336" font-family="Inter, sans-serif">
+<rect width="680" height="336" fill="#ffffff"/>
+<defs>
+<marker id="ph" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="4" markerHeight="4" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#e09f1f"/></marker>
+<marker id="gr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#52606d"/></marker>
+<marker id="dbl" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#12a39a"/></marker>
+</defs>
+<rect x="6" y="8" width="226" height="320" rx="8" fill="#f5f7fa"/>
+<text x="18" y="30" font-size="12" font-weight="700" fill="#1f2933">Not absorbed: reflection</text>
+<text x="18" y="45" font-size="10.5" fill="#52606d">(details in Chapter 6)</text>
+<rect x="18" y="186" width="202" height="46" fill="#d9dee5" stroke="#52606d" stroke-width="1"/>
+<line x1="119" y1="116" x2="119" y2="186" stroke="#d9dee5" stroke-width="1" stroke-dasharray="3 3"/>
+<polyline points="36.0,76.0 34.4,78.9 34.7,80.5 37.2,80.4 40.7,79.6 43.2,79.6 43.4,81.2 41.9,84.1 40.3,87.0 40.6,88.6 43.2,88.5 46.7,87.7 49.2,87.7 49.3,89.3 47.7,92.3 46.2,95.2 46.6,96.7 49.2,96.5 52.7,95.8 55.1,95.8 55.2,97.5 53.6,100.4 52.1,103.3 52.5,104.8 55.2,104.6 58.7,103.8 61.0,103.9 61.1,105.6 59.4,108.6 58.0,111.4 58.4,112.8 61.1,112.7 64.6,111.9 66.9,112.0 67.0,113.7 65.3,116.7 63.9,119.5 64.4,120.9 67.1,120.7 70.6,119.9 72.9,120.1 72.8,121.9 71.1,124.9 69.7,127.7 70.3,129.0 73.1,128.8 76.6,128.0 78.8,128.1 78.7,130.0 77.0,133.0 75.6,135.8 76.3,137.1 79.1,136.8 82.5,136.1 84.7,136.2 84.6,138.1 82.9,141.1 81.5,143.9 82.2,145.2 85.0,144.9 88.5,144.1 90.6,144.3 90.5,146.3 88.7,149.3 87.4,152.0 88.1,153.3 91.0,152.9 94.5,152.2 96.6,152.4 96.3,154.4 94.6,157.4 93.3,160.1 94.1,161.3 97.0,161.0 100.4,160.3 102.5,160.5 102.2,162.5 100.4,165.6 99.2,168.3 100.0,169.4 103.0,169.1 106.4,168.3 108.4,168.6 108.1,170.7 106.3,173.7 105.1,176.4" fill="none" stroke="#e09f1f" stroke-width="2.0"/>
+<line x1="106.7" y1="172.7" x2="112.0" y2="180.0" stroke="#e09f1f" stroke-width="2.0" marker-end="url(#ph)"/>
+<polyline points="126.0,180.0 129.2,180.6 130.7,179.9 129.8,177.5 128.0,174.4 127.2,172.0 128.7,171.3 132.0,171.9 135.2,172.5 136.6,171.8 135.7,169.3 133.9,166.2 133.1,163.9 134.7,163.3 138.0,163.9 141.2,164.5 142.5,163.6 141.6,161.2 139.7,158.1 139.0,155.8 140.6,155.2 143.9,155.8 147.1,156.4 148.4,155.5 147.4,153.1 145.6,150.0 145.0,147.7 146.6,147.1 149.9,147.8 153.1,148.3 154.3,147.4 153.3,144.9 151.5,141.8 150.9,139.6 152.5,139.0 155.9,139.7 159.0,140.2 160.2,139.3 159.2,136.8 157.3,133.7 156.8,131.5 158.5,131.0 161.9,131.7 165.0,132.2 166.1,131.2 165.0,128.6 163.2,125.6 162.7,123.4 164.5,122.9 167.9,123.6 170.9,124.1 172.0,123.1 170.9,120.5 169.1,117.4 168.6,115.3 170.4,114.8 173.8,115.6 176.9,116.0 177.9,115.0 176.7,112.4 175.0,109.3 174.5,107.2 176.4,106.8 179.8,107.5 182.8,107.9 183.8,106.9 182.6,104.2 180.8,101.1 180.4,99.1 182.4,98.7 185.8,99.4 188.8,99.8 189.7,98.7 188.5,96.1 186.7,93.0 186.3,91.0 188.3,90.6 191.8,91.4 194.7,91.8 195.6,90.6 194.3,87.9 192.6,84.9 192.3,82.9 194.3,82.6 197.7,83.3 200.7,83.7" fill="none" stroke="#e09f1f" stroke-width="2.0"/>
+<line x1="196.7" y1="83.3" x2="202.0" y2="76.0" stroke="#e09f1f" stroke-width="2.0" marker-end="url(#ph)"/>
+<line x1="53" y1="196" x2="67" y2="196" stroke="#12a39a" stroke-width="1.3" marker-start="url(#dbl)" marker-end="url(#dbl)"/>
+<circle cx="60" cy="196" r="3.2" fill="#12a39a"/>
+<line x1="83" y1="196" x2="97" y2="196" stroke="#12a39a" stroke-width="1.3" marker-start="url(#dbl)" marker-end="url(#dbl)"/>
+<circle cx="90" cy="196" r="3.2" fill="#12a39a"/>
+<line x1="113" y1="196" x2="127" y2="196" stroke="#12a39a" stroke-width="1.3" marker-start="url(#dbl)" marker-end="url(#dbl)"/>
+<circle cx="120" cy="196" r="3.2" fill="#12a39a"/>
+<line x1="143" y1="196" x2="157" y2="196" stroke="#12a39a" stroke-width="1.3" marker-start="url(#dbl)" marker-end="url(#dbl)"/>
+<circle cx="150" cy="196" r="3.2" fill="#12a39a"/>
+<line x1="173" y1="196" x2="187" y2="196" stroke="#12a39a" stroke-width="1.3" marker-start="url(#dbl)" marker-end="url(#dbl)"/>
+<circle cx="180" cy="196" r="3.2" fill="#12a39a"/>
+<text x="18" y="252" font-size="10.3" fill="#1f2933">Surface electrons are shaken in</text>
+<text x="18" y="265" font-size="10.3" fill="#1f2933">step by the wave and re-radiate</text>
+<text x="18" y="278" font-size="10.3" fill="#1f2933">together: one beam, at the mirror</text>
+<text x="18" y="291" font-size="10.3" fill="#1f2933">angle, no delay, same color.</text>
+<text x="18" y="304" font-size="10.3" fill="#52606d"></text>
+<text x="18" y="317" font-size="10.3" fill="#52606d">The energy is passed straight</text>
+<text x="18" y="330" font-size="10.3" fill="#52606d">back out; nothing is kept.</text>
+<text x="250" y="30" font-size="12" font-weight="700" fill="#1f2933">Absorbed: a photon with the right energy</text>
+<text x="250" y="45" font-size="10.5" fill="#52606d">is swallowed whole. Then its energy has three possible fates.</text>
+<polyline points="242.0,186.0 243.2,188.6 244.4,189.8 245.6,189.0 246.8,186.6 248.0,183.9 249.1,182.3 250.3,182.7 251.5,184.9 252.7,187.6 253.9,189.5 255.1,189.5 256.3,187.6 257.5,184.9 258.7,182.7 259.9,182.3 261.0,183.9 262.2,186.6 263.4,189.0 264.6,189.8 265.8,188.6 267.0,186.0" fill="none" stroke="#e09f1f" stroke-width="2.0"/>
+<line x1="265.0" y1="186.0" x2="274.0" y2="186.0" stroke="#e09f1f" stroke-width="2.0" marker-end="url(#ph)"/>
+<circle cx="300" cy="186" r="24" fill="#12a39a" opacity="0.18"/>
+<circle cx="300" cy="186" r="4" fill="#8d5a97"/>
+<circle cx="312" cy="172" r="4.5" fill="#12a39a"/>
+<text x="300" y="226" font-size="10.5" font-weight="700" fill="#1f2933" text-anchor="middle">excited</text>
+<text x="300" y="239" font-size="10.5" font-weight="700" fill="#1f2933" text-anchor="middle">atom or</text>
+<text x="300" y="252" font-size="10.5" font-weight="700" fill="#1f2933" text-anchor="middle">molecule</text>
+<rect x="372" y="62" width="302" height="80" rx="8" fill="#f5f7fa"/>
+<line x1="326" y1="175.9" x2="368" y2="102" stroke="#52606d" stroke-width="1.4" marker-end="url(#gr)"/>
+<text x="424" y="82" font-size="11.5" font-weight="700" fill="#1f2933">1  Re-emitted as light</text>
+<text x="424" y="99" font-size="10.3" fill="#1f2933">A new photon leaves after ~ns, in a</text>
+<text x="424" y="112" font-size="10.3" fill="#1f2933">random direction, out of step with</text>
+<text x="424" y="125" font-size="10.3" fill="#1f2933">the original. Common in thin gases.</text>
+<circle cx="390" cy="110" r="6" fill="#12a39a" opacity="0.3"/>
+<polyline points="394.0,106.0 396.5,106.3 397.2,105.3 396.0,103.1 394.8,100.8 395.5,99.9 398.1,100.3 400.6,100.6 401.1,99.5 399.9,97.3 398.8,95.0 399.6,94.2 402.1,94.5 404.6,94.8 405.1,93.7 403.8,91.4 402.7,89.2 403.6,88.4 406.2,88.8 408.6,89.0 409.1,87.9 407.8,85.6" fill="none" stroke="#e09f1f" stroke-width="1.6"/>
+<line x1="406.9" y1="87.4" x2="412.0" y2="80.0" stroke="#e09f1f" stroke-width="1.6" marker-end="url(#ph)"/>
+<rect x="372" y="152" width="302" height="80" rx="8" fill="#f5f7fa"/>
+<line x1="326" y1="186.7" x2="368" y2="192" stroke="#52606d" stroke-width="1.4" marker-end="url(#gr)"/>
+<text x="424" y="172" font-size="11.5" font-weight="700" fill="#1f2933">2  Turned into heat</text>
+<text x="424" y="189" font-size="10.3" fill="#1f2933">Collisions or atomic vibrations steal</text>
+<text x="424" y="202" font-size="10.3" fill="#1f2933">the energy first: it becomes random</text>
+<text x="424" y="215" font-size="10.3" fill="#1f2933">jiggling, i.e. higher temperature.</text>
+<circle cx="384" cy="180" r="3.6" fill="#52606d"/>
+<circle cx="396" cy="180" r="3.6" fill="#52606d"/>
+<circle cx="408" cy="180" r="3.6" fill="#52606d"/>
+<circle cx="384" cy="192" r="3.6" fill="#52606d"/>
+<circle cx="396" cy="192" r="3.6" fill="#52606d"/>
+<circle cx="408" cy="192" r="3.6" fill="#52606d"/>
+<circle cx="384" cy="204" r="3.6" fill="#52606d"/>
+<circle cx="396" cy="204" r="3.6" fill="#52606d"/>
+<circle cx="408" cy="204" r="3.6" fill="#52606d"/>
+<path d="M376 172 q3 -4 6 0 t6 0" fill="none" stroke="#d1495b" stroke-width="1.3"/>
+<path d="M404 212 q3 -4 6 0 t6 0" fill="none" stroke="#d1495b" stroke-width="1.3"/>
+<rect x="372" y="242" width="302" height="80" rx="8" fill="#f5f7fa"/>
+<line x1="326" y1="197.5" x2="368" y2="282" stroke="#52606d" stroke-width="1.4" marker-end="url(#gr)"/>
+<text x="424" y="262" font-size="11.5" font-weight="700" fill="#1f2933">3  Drives chemistry</text>
+<text x="424" y="279" font-size="10.3" fill="#1f2933">The energy breaks or rearranges a bond:</text>
+<text x="424" y="292" font-size="10.3" fill="#1f2933">photosynthesis, vision, sunburn,</text>
+<text x="424" y="305" font-size="10.3" fill="#1f2933">fading of dyes (Chapters 7 and 10).</text>
+<circle cx="384" cy="282" r="6" fill="#52606d"/><circle cx="408" cy="276" r="6" fill="#52606d"/>
+<line x1="390" y1="281" x2="395" y2="279" stroke="#1f2933" stroke-width="2"/>
+<line x1="398" y1="278" x2="402" y2="277" stroke="#1f2933" stroke-width="2"/>
+</svg>

@@ -1,0 +1,164 @@
+<section class="chapter" id="ch09">
+<div class="chapter-opener">
+  <div class="chapter-num">Chapter 9</div>
+  <h1 class="chapter-title">Infrared, Heat, and Thermal Radiation</h1>
+  <p class="chapter-hook">You are glowing right now, about 700 watts’ worth, just not in a color your eyes can see. Thermal radiation explains why a stove glows red, why a thermal camera can’t see through a window, and how a spacecraft gets rid of heat with nothing around it.</p>
+  <div class="big-picture"><h4>The big picture</h4><ul>
+    <li>Everything above absolute zero emits light because its jiggling charges radiate. Hotter objects emit far more (\(\propto T^4\)) and at shorter wavelengths (\(\propto 1/T\)).</li>
+    <li>At everyday temperatures that glow is infrared, peaking near 10 µm. Objects only glow visibly above about 800 K.</li>
+    <li>Infrared is light, not heat. It earns the nickname “heat radiation” because warm things emit it and molecules absorb it eagerly.</li>
+    <li>Emissivity sets how well a surface emits and absorbs. That one property explains thermal cameras, thermoses, space blankets, and spacecraft radiators.</li>
+  </ul></div>
+  <div class="learning-goals"><h4>After this chapter you can</h4><ul>
+    <li>Distinguish heat, temperature, and thermal radiation.</li>
+    <li>Use Wien’s law and the Stefan–Boltzmann law to find peak wavelengths and radiated power.</li>
+    <li>Explain the red-hot to white-hot color sequence and the color temperature of light bulbs.</li>
+    <li>Explain why infrared is called heat radiation, and why that is only half true.</li>
+    <li>Explain thermal cameras, emissivity, the greenhouse effect, microwave ovens, and radiative cooling in space.</li>
+  </ul></div>
+</div>
+
+<h2 id="ch09-1"><span class="sec-num">9.1</span>Heat, temperature, and radiation</h2>
+<p>These three words get blurred together in everyday speech, but they mean different things:</p>
+<ul>
+  <li><strong>Thermal energy</strong> is the energy of the random jiggling of atoms and molecules.</li>
+  <li><strong>Temperature</strong> measures how vigorous that jiggling is on average. At 300 K, a typical molecule’s share of thermal energy is about \(k_BT \approx 0.026\) eV.</li>
+  <li><strong>Heat</strong> is energy <em>in transit</em> because of a temperature difference. It moves by conduction (contact), convection (moving fluid), or radiation (light).</li>
+</ul>
+<p><strong>Thermal radiation</strong> is the only one of the three that works through empty space. It is how the Sun warms Earth, and the only way a spacecraft can shed heat.</p>
+
+<h2 id="ch09-2"><span class="sec-num">9.2</span>Everything glows</h2>
+<p>Every atom contains charges, and in a warm object those charges are constantly being jostled and accelerated. Accelerating charges radiate (Chapter 1). Because thermal jiggling is random, it contains a whole spread of frequencies, so the emitted light is a smooth, continuous spectrum rather than the sharp lines of Chapter 5.</p>
+<div class="box analogy"><div class="box-title">Analogy</div><p>Thermal radiation is like the roar of a stadium crowd: no single note, just random voices at every pitch. A more excited crowd is louder and its roar shifts higher, and a hotter object likewise glows brighter and bluer.</p></div>
+<p>An ideal <strong>blackbody</strong> absorbs every wavelength that hits it. It turns out that a perfect absorber is also the best possible emitter, and its spectrum depends on nothing but its temperature. Max Planck’s formula for that spectrum (1900), shown in Figure 9.1, was the first step toward quantum physics.</p>
+<figure id="fig-9-1"><img src="figures/ch09-blackbody.svg" alt="Planck blackbody curves for 300, 1000, 3000 and 5800 K; on log axes the hotter curves lie above the cooler ones everywhere, and normalized curves show the peak moving from about 10 micrometers to 0.5 micrometers.">
+<figcaption><span class="fig-num">Figure 9.1</span> Blackbody spectra, computed from Planck’s law, with the visible band shaded. (a) A hotter object is brighter at <em>every</em> wavelength (note the log scale: the Sun’s surface outshines you per square meter by about a million times at the peak). (b) Each curve divided by its own peak. The peak slides from about 10 µm for you to 0.5 µm for the Sun, and only the Sun’s curve really overlaps the visible band.</figcaption></figure>
+<p>Two rules capture Figure 9.1. <strong>Wien’s displacement law</strong> gives where the peak sits:</p>
+<div class="equation boxed" data-eq="9.1">\[ \lambda_\text{peak} = \frac{2898\,\mu\text{m}\cdot\text{K}}{T} \]</div>
+<p>The <strong>Stefan–Boltzmann law</strong> gives the total power radiated:</p>
+<div class="equation boxed" data-eq="9.2">\[ P = \varepsilon\,\sigma A T^{4} \]</div>
+<p class="where">where \(T\) is in kelvins, \(A\) is the surface area, \(\sigma = 5.67\times10^{-8}\) W/(m²K⁴), and \(\varepsilon\) is the <strong>emissivity</strong> (1 for a blackbody, less for real surfaces; Section 9.5).</p>
+<p>Since your surroundings radiate back at you, the <em>net</em> loss for an object at \(T\) in surroundings at \(T_\text{s}\) is</p>
+<div class="equation" data-eq="9.3">\[ P_\text{net} = \varepsilon\,\sigma A\left(T^{4} - T_\text{s}^{4}\right) \]</div>
+<div class="box example"><div class="box-title">Worked Example 9.1 <span class="sub">— Where you, a stove, and the Sun peak</span></div>
+  <p class="given"><strong>Given:</strong> human body \(T = 310\) K; red-hot stove element \(T \approx 1000\) K; Sun’s surface \(T \approx 5800\) K.</p>
+  <p><strong>Find:</strong> the peak wavelength of each.</p>
+  <p><strong>Think:</strong> Wien’s law (Eq. 9.1), with temperatures in kelvins.</p>
+  <p>\[ \lambda_\text{you} = \frac{2898}{310}\,\mu\text{m} = 9.35\,\mu\text{m}, \qquad \lambda_\text{stove} = \frac{2898}{1000}\,\mu\text{m} = 2.9\,\mu\text{m}, \qquad \lambda_\text{Sun} = \frac{2898}{5800}\,\mu\text{m} = 0.500\,\mu\text{m} \]</p>
+  <p class="answer">Answer: about 9.3 µm (deep infrared), 2.9 µm (infrared), and 500 nm (blue-green, the middle of the visible band). Even a glowing stove puts out most of its energy as invisible infrared; the red you see is just the tail of its spectrum.</p></div>
+<div class="box example"><div class="box-title">Worked Example 9.2 <span class="sub">— How much you radiate</span></div>
+  <p class="given"><strong>Given:</strong> skin at 33.0 °C (306 K), area \(A = 1.50\) m², emissivity of skin \(\varepsilon = 0.97\); room walls at 22.0 °C (295 K). (These are OpenStax’s example values.)</p>
+  <p><strong>Find:</strong> the power you emit, the power you absorb from the room, and the net loss.</p>
+  <p><strong>Think:</strong> Eq. 9.2 for each direction; Eq. 9.3 for the difference.</p>
+  <p>\[ P_\text{out} = (0.97)(5.67\times10^{-8})(1.50)(306)^4 \approx 723\ \text{W}, \qquad P_\text{in} = (0.97)(5.67\times10^{-8})(1.50)(295)^4 \approx 625\ \text{W} \]</p>
+  <p>\[ P_\text{net} = 723\ \text{W} - 625\ \text{W} \approx 99\ \text{W} \]</p>
+  <p class="answer">Answer: you emit about 720 W of infrared and absorb about 620 W back from the room, a net loss of about 100 W. That is comparable to your resting metabolic power (roughly 100 W), which is why radiation is one of the main ways your body sheds heat.</p></div>
+<div class="box rabbit"><div class="box-title">Rabbit Hole <span class="sub">(optional) — The blackbody puzzle that started quantum physics</span></div>
+  <p>Safe to skip. Classical physics predicted that a hot object should emit ever more power at ever shorter wavelengths, without limit, which would make every warm object blaze with ultraviolet. (This was later nicknamed the “ultraviolet catastrophe.”) Planck fixed it in 1900 by assuming energy is emitted in chunks of \(hf\). A high-frequency chunk costs far more than the typical thermal energy \(k_BT\), so those modes are rarely excited, and the spectrum turns over and dies away. That is why your 310 K body emits infrared and essentially no visible light or X-rays. The chunks became photons (Chapter 2).</p></div>
+<div class="box key"><div class="box-title">Key Idea</div><p>Every object emits thermal radiation all the time. Double the absolute temperature and it emits 16 times the power, with its peak at half the wavelength. Whether something warms or cools depends on the <em>net</em> exchange with its surroundings.</p></div>
+<div class="box myth"><div class="box-title">Myth vs. Reality</div>
+  <p class="myth-line"><strong>Myth:</strong> Cold objects don’t give off radiation, so a cold window must be “radiating cold” at you.</p>
+  <p><strong>Reality:</strong> Ice at 0 °C still emits about 315 W per square meter. There is no such thing as “cold rays.” You feel chilly near a cold window because you radiate more energy to it than it radiates back to you.</p></div>
+
+<h2 id="ch09-3"><span class="sec-num">9.3</span>Red-hot, white-hot, and the color of light bulbs</h2>
+<p>As something heats up, the short-wavelength tail of its spectrum climbs into the visible range red end first (Figure 9.1b). Around 800 K (about 525 °C, the <strong>Draper point</strong>) the glow first becomes visible in a dark room as a dull red. Hotter still, more of the visible range fills in: the glow turns orange, then yellow, then white once the whole range is well covered (Figure 9.2). The brightness also rockets upward, by a factor of more than a million between 800 K and 1500 K in the visible range.</p>
+<figure id="fig-9-2"><img src="figures/ch09-glow-colors.svg" alt="A color strip from red at 700 K through orange and pale yellow to white at 6000 K, above a log plot showing visible light output rising by about twelve orders of magnitude from 800 K to 7000 K.">
+<figcaption><span class="fig-num">Figure 9.2</span> Top: the color of a blackbody’s glow, computed from Planck’s law and the eye’s color response. Each swatch is shown at full brightness, though the real brightness varies enormously. Bottom: visible light emitted per square meter. A 1000 K stove gives off about a million times less visible light than a 2700 K filament, which is why “red-hot” looks dim.</figcaption></figure>
+<table><caption><span class="tab-num">Table 9.1</span> Approximate heat colors of steel (seen in dim light; charts vary).</caption>
+<tr><th>Color</th><th>Temperature (°C)</th><th>Temperature (K)</th></tr>
+<tr><td>Faint dull red, dark room only</td><td>≈ 500–550</td><td>≈ 800</td></tr>
+<tr><td>Cherry red</td><td>≈ 800–900</td><td>≈ 1100–1150</td></tr>
+<tr><td>Orange</td><td>≈ 1000–1100</td><td>≈ 1250–1350</td></tr>
+<tr><td>Yellow</td><td>≈ 1100–1250</td><td>≈ 1350–1500</td></tr>
+<tr><td>White</td><td>≈ 1300 and up</td><td>≈ 1550 and up</td></tr>
+</table>
+<p>Light bulbs are labeled by <strong>color temperature</strong>: the temperature of a blackbody with the same color. An incandescent filament really is that hot, about 2700–3300 K. Even so, its Wien peak is near 1 µm, in the infrared, and only about 5–8% of its output falls in the visible band. That is why incandescent bulbs waste most of their energy as heat. An LED marked “2700 K warm white” only mimics that color; the LED itself stays near room temperature. Daylight is around 5000–6500 K. Note the naming is backwards from the physics: “warm” light matches a <em>cooler</em> glow than “cool” light.</p>
+
+<h2 id="ch09-4"><span class="sec-num">9.4</span>Why infrared gets called “heat radiation”</h2>
+<p>In 1800 William Herschel spread sunlight into a spectrum and moved thermometers through the colors. The biggest temperature rise came just <em>beyond</em> the red, where he could see nothing. These “heat rays” were infrared light, and the name stuck for two real reasons.</p>
+<ol>
+  <li><strong>Warm things emit infrared.</strong> Anything between about 250 K and 500 K, including you, your house, the ground, and a hot pan, emits almost all its thermal radiation in the infrared (Wien peaks of about 6–12 µm). The radiation you feel from a warm object is infrared.</li>
+  <li><strong>Molecules absorb infrared and turn it straight into heat.</strong> Infrared photons (about 0.01–1 eV) match the energy steps of molecular vibrations (Chapter 5). Water, skin, glass, and CO<sub>2</sub> absorb them strongly, often within micrometers to millimeters, and the vibration is quickly shared by collisions as random motion (Figure 9.3).</li>
+</ol>
+<figure id="fig-9-3"><img src="figures/ch09-ir-absorption.svg" alt="Top: a log scale of photon energy marking microwave, thermal infrared and visible photons against bands for molecular rotation, bond vibration and electronic transitions. Bottom: an infrared photon makes a water molecule vibrate, then collisions spread the energy as random motion.">
+<figcaption><span class="fig-num">Figure 9.3</span> (a) Thermal-infrared photons (about 0.1 eV) land right in the energy range of bond vibrations; visible photons match electron jumps instead. (b) Once a bond is vibrating, collisions spread that energy into the random motion of many molecules, which is exactly what a temperature rise is.</figcaption></figure>
+<p>But “heat radiation” is only half true. <em>Any</em> light that is absorbed ends up as thermal energy. A black car in the sun gets hot mostly from visible and near-infrared sunlight (Chapter 7), and microwaves heat your food (Section 9.7). Sunlight reaching the ground is roughly half infrared and half visible, with a few percent UV.</p>
+<div class="box asked"><div class="box-title">You Asked</div><p class="question">“Is infrared the same thing as heat?”</p>
+  <p>No. Infrared is light, an electromagnetic wave just like visible light but with longer wavelengths (about 0.7 µm to 1 mm). Heat is energy being transferred because of a temperature difference, and thermal energy is the random jiggling of atoms.</p>
+  <p>They get linked for two reasons: objects at everyday temperatures emit mostly infrared (Wien’s law), and infrared photons match molecular vibration energies, so materials like water, skin, glass, and CO<sub>2</sub> absorb them and turn them directly into random thermal motion. The link isn’t exclusive. Visible light heats a black car, and microwaves heat food. Infrared can also carry information with no noticeable heating, like the near-infrared beam from your TV remote.</p></div>
+<div class="box asked"><div class="box-title">You Asked</div><p class="question">“Why are infrared waves often called ‘heat waves’?”</p>
+  <p>Because infrared is the radiation warm things give off and the radiation your skin feels as warmth. The name dates to Herschel’s 1800 thermometer experiment. Physically, it is light that happens to match the energies of molecular vibrations, so it is absorbed strongly and becomes heat almost immediately (see the previous box and Figure 9.3). “Heat radiation” describes what infrared usually <em>does</em>, not what it <em>is</em>.</p></div>
+
+<h2 id="ch09-5"><span class="sec-num">9.5</span>Thermal cameras and emissivity</h2>
+<div class="box asked"><div class="box-title">You Asked</div><p class="question">“Why does infrared show heat?”</p>
+  <p>Because at everyday temperatures the light an object emits by itself is almost entirely infrared, and the amount rises steeply with temperature (\(\propto T^4\)). Measure an object’s infrared glow and you have measured its temperature, from a distance. A normal camera records <em>reflected</em> visible light, which tells you about color, not temperature. A thermal camera records each object’s <em>own</em> emission, so its image is essentially a temperature map.</p></div>
+<p>Most thermal cameras detect the 8–14 µm band. That band sits right on the emission peak of room-temperature objects, and it coincides with a window where air is nearly transparent. Each pixel is a tiny <strong>microbolometer</strong>, a speck of material that warms slightly when infrared lands on it and changes its electrical resistance. The lenses are made of germanium, not glass, for a reason that shows up in Figure 9.4b.</p>
+<figure id="fig-9-4"><img src="figures/ch09-thermal-camera.svg" alt="Left: a thermal camera views an 80 degree pan; black tape on the pan emits strongly and reads 80 degrees, while bare shiny metal mostly reflects the cool room and reads about 24 degrees. Right: visible light from a person passes through window glass to an eye, but 8 to 14 micrometer infrared is absorbed by the glass, so the thermal camera sees only the glass.">
+<figcaption><span class="fig-num">Figure 9.4</span> What a thermal camera really measures. (a) Polished metal (\(\varepsilon \approx 0.05\)) emits little and mostly reflects the cool room, so a camera set for \(\varepsilon = 0.95\) reads it as roughly 24 °C even though the pan is at 80 °C. Matte black tape reads true. (b) Window glass is transparent to visible light but absorbs 8–14 µm infrared, so the camera sees the glass’s own glow and your reflection, not the person behind it.</figcaption></figure>
+<p><strong>Why glass blocks thermal cameras.</strong> Glass is transparent to visible light because visible photons can’t excite its electrons (Chapter 6). But its silicon–oxygen bonds vibrate at frequencies matching light near 9 µm (Chapter 6), so it absorbs strongly in exactly the thermal camera’s band. By Kirchhoff’s law (Section 9.3), a strong absorber is also a strong emitter. The camera sees the glass glowing at its own temperature, with reflections on top.</p>
+<p><strong>Why you can’t see through walls.</strong> Walls are opaque to infrared too, so a thermal camera only ever sees a wall’s surface temperature. It can reveal a hot pipe, a stud, or missing insulation, but only because those change how heat conducts to the surface. It cannot see people in the next room.</p>
+<p><strong>Emissivity</strong> (\(\varepsilon\), from 0 to 1) measures how well a surface emits compared with a blackbody. For an opaque surface, whatever it doesn’t absorb it reflects, so a low-emissivity surface is a good mirror for infrared (Table 9.2). That is why a shiny pan “looks cold” to a thermal camera (Figure 9.4a). Technicians fix this with a strip of matte tape or paint.</p>
+<div class="box key"><div class="box-title">Key Idea</div><p>Good absorbers are good emitters, and good reflectors are poor emitters (Kirchhoff’s law). A thermal camera reads a surface’s own glow only when its emissivity is high; on shiny metal it mostly sees reflections.</p></div>
+<table><caption><span class="tab-num">Table 9.2</span> Typical thermal-infrared emissivities (approximate; they vary with surface finish and temperature).</caption>
+<tr><th>Surface</th><th>Emissivity \(\varepsilon\)</th><th>What a thermal camera sees</th></tr>
+<tr><td>Polished silver, aluminum, aluminum foil</td><td>≈ 0.02–0.05</td><td>Mostly reflections of the surroundings</td></tr>
+<tr><td>Oxidized (rusty) steel</td><td>≈ 0.8</td><td>Mostly its own temperature</td></tr>
+<tr><td>Window glass, brick, concrete</td><td>≈ 0.9</td><td>Its own temperature</td></tr>
+<tr><td>Matte black paint</td><td>≈ 0.95–0.98</td><td>Its true temperature</td></tr>
+<tr><td>Human skin, water</td><td>≈ 0.96–0.98</td><td>Its true temperature (nearly a blackbody in the IR)</td></tr>
+</table>
+
+<h2 id="ch09-6"><span class="sec-num">9.6</span>The greenhouse effect</h2>
+<p>Earth absorbs sunlight, mostly visible and near-infrared, and must radiate the same power back to space as thermal infrared near 10 µm. The two bands barely overlap (Figure 9.5), so the atmosphere can treat them very differently. Nitrogen and oxygen, 99% of dry air, are symmetric two-atom molecules: stretching them shifts no charge, so they are essentially transparent to infrared (Chapter 5). CO<sub>2</sub> and H<sub>2</sub>O have vibrations that absorb thermal infrared strongly, CO<sub>2</sub> especially around 15 µm, close to the peak of Earth’s glow.</p>
+<figure id="fig-9-5"><img src="figures/ch09-greenhouse.svg" alt="Normalized blackbody curves for sunlight at 5800 K peaking near 0.5 micrometers and Earth at 288 K peaking near 10 micrometers, with shaded absorption bands for ozone, water vapor and carbon dioxide and an open window from 8 to 13 micrometers.">
+<figcaption><span class="fig-num">Figure 9.5</span> Sunlight comes in at short wavelengths, and air lets most of it through. Earth’s glow goes out at long wavelengths, where CO<sub>2</sub> and water vapor absorb across wide bands (shaded; edges simplified). Only the 8–13 µm window lets surface radiation escape straight to space.</figcaption></figure>
+<p>The absorbing molecules re-emit in all directions, so part of Earth’s outgoing infrared is sent back down. The surface has to warm up until enough radiation leaks out to balance the incoming sunlight. In the simplest energy-balance model, Earth without greenhouse gases would average about 255 K (−18 °C); the actual average is about 288 K (15 °C). Adding CO<sub>2</sub> widens and deepens the absorbed bands, so the balance point moves warmer.</p>
+<div class="box myth"><div class="box-title">Myth vs. Reality</div>
+  <p class="myth-line"><strong>Myth:</strong> The atmosphere warms Earth the same way a glass greenhouse warms plants.</p>
+  <p><strong>Reality:</strong> A real greenhouse stays warm mainly because its walls stop warm air from rising and blowing away; it blocks convection. The atmospheric greenhouse effect is radiative: gases absorb and re-emit outgoing infrared. Same name, different mechanism.</p></div>
+
+<h2 id="ch09-7"><span class="sec-num">9.7</span>Microwave ovens</h2>
+<p>A microwave oven fills its cavity with 2.45 GHz waves (\(\lambda = 12.2\) cm). Each photon carries only about \(10^{-5}\) eV, far too little to break a chemical bond or ionize anything (Chapter 10). The heating works through the oscillating electric field instead. Water molecules are electric dipoles, and the field tries to twist them back and forth 2.45 billion times per second.</p>
+<p>In liquid water, each molecule is caught in a jostling network of hydrogen bonds, so it can’t rotate freely and lags behind the field. Because of that lag, the field keeps doing work on the molecules, and the energy is lost as random motion, which is heat. This is <strong>dielectric heating</strong>. Its strength varies smoothly with frequency, with a broad maximum near 20 GHz at room temperature (Figure 9.6). Ice heats poorly because its molecules are locked in a crystal and can barely turn, which is why defrost settings cycle on and off to let heat conduct inward.</p>
+<figure id="fig-9-6"><img src="figures/ch09-water-loss.svg" alt="A broad smooth hump of water's dielectric loss versus frequency on a log axis, peaking near 20 gigahertz, with the 2.45 gigahertz oven frequency marked on its rising side.">
+<figcaption><span class="fig-num">Figure 9.6</span> How strongly liquid water absorbs microwaves versus frequency (single-relaxation Debye model at about 25 °C). The curve is a broad hump spanning a factor of 100 in frequency, not a sharp resonance line. The oven’s 2.45 GHz sits on the gentle rising side.</figcaption></figure>
+<div class="box myth"><div class="box-title">Myth vs. Reality</div>
+  <p class="myth-line"><strong>Myth:</strong> Microwave ovens are tuned to the resonant frequency of water molecules.</p>
+  <p><strong>Reality:</strong> Liquid water has no sharp resonance at 2.45 GHz. Its absorption is a broad relaxation hump that peaks near 20 GHz. Ovens use 2.45 GHz because that band is allocated for industrial and home heating, and because water absorbs it only moderately, so the waves penetrate a centimeter or more into food. At 20 GHz the outer skin would absorb nearly everything and the inside would stay cold.</p></div>
+
+<h2 id="ch09-8"><span class="sec-num">9.8</span>Controlling thermal radiation: thermoses, space blankets, and radiators</h2>
+<p><strong>Keeping heat in.</strong> A thermos (vacuum flask) blocks all three heat paths. The vacuum gap stops conduction and convection, and the silvered, low-emissivity walls barely emit infrared and reflect back what reaches them. A space blanket is plastic film coated with a thin layer of aluminum, with \(\varepsilon\) of only a few percent. It reflects your infrared back toward you and emits very little outward. Spacecraft wrap themselves in <strong>multilayer insulation</strong>, many such aluminized layers separated by vacuum.</p>
+<p><strong>Getting heat out.</strong> In space there is no air, so a spacecraft can only lose heat by radiating it. The deep-space background is only about 3 K. Spacecraft pipe waste heat (on the International Space Station, through liquid ammonia loops) to <strong>radiator</strong> panels coated with high-emissivity white paint. White paint seems like a strange choice for a radiator, but it reflects most <em>visible</em> sunlight while emitting strongly in the <em>infrared</em>. That is possible because emissivity can be very different at 0.5 µm and at 10 µm.</p>
+<div class="box example"><div class="box-title">Worked Example 9.3 <span class="sub">— Sizing a spacecraft radiator</span></div>
+  <p class="given"><strong>Given:</strong> electronics produce 1.0 kW of waste heat; a radiator at 300 K with \(\varepsilon = 0.90\) faces deep space (background ≈ 3 K) on one side; ignore sunlight.</p>
+  <p><strong>Find:</strong> the radiator area needed.</p>
+  <p><strong>Think:</strong> in steady state, radiated power equals waste heat. The 3 K background radiates back almost nothing (\(3^4\) is negligible next to \(300^4\)), so Eq. 9.2 alone is enough.</p>
+  <p>\[ \frac{P}{A} = \varepsilon\sigma T^4 = (0.90)(5.67\times10^{-8})(300)^4 = 413\ \text{W/m}^2 \qquad\Rightarrow\qquad A = \frac{1000\ \text{W}}{413\ \text{W/m}^2} = 2.4\ \text{m}^2 \]</p>
+  <p class="answer">Answer: about 2.4 m², the size of a large tabletop for just 1 kW. That is why spacecraft with big power systems carry huge radiator wings.</p></div>
+<div class="box myth"><div class="box-title">Myth vs. Reality</div>
+  <p class="myth-line"><strong>Myth:</strong> Space is so cold that an unprotected person would freeze solid instantly.</p>
+  <p><strong>Reality:</strong> Vacuum is an excellent insulator. With no air for conduction or convection, a body loses heat only by radiation, a few hundred watts, so cooling takes a long time. In direct sunlight, overheating is the bigger problem. Spacecraft thermal design is mostly about dumping heat, not keeping warm.</p></div>
+
+<div class="summary"><h2>Chapter summary</h2><ul>
+  <li>Thermal energy is random atomic motion, temperature measures its average, and heat is energy transferred by a temperature difference. Only radiation works through vacuum.</li>
+  <li>Jiggling charges make every object emit a continuous thermal spectrum. Wien’s law gives \(\lambda_\text{peak} = 2898\ \mu\text{m·K}/T\); Stefan–Boltzmann gives \(P = \varepsilon\sigma AT^4\). You peak near 9–10 µm and radiate about 100 W net.</li>
+  <li>Visible glow starts near 800 K (dull red), then goes orange, yellow, and white. Bulbs are labeled by color temperature, and “warm” light means a lower temperature.</li>
+  <li>Infrared is light, not heat. It is called heat radiation because everyday objects emit it and molecular vibrations absorb it, but any absorbed light, visible or microwave, becomes heat.</li>
+  <li>Thermal cameras read 8–14 µm emission. Glass and walls are opaque there, and low-emissivity shiny surfaces mostly show reflections. Kirchhoff’s law: good absorbers are good emitters.</li>
+  <li>Greenhouse gases (CO<sub>2</sub>, H<sub>2</sub>O) pass sunlight but absorb Earth’s outgoing infrared: about 255 K without them, about 288 K with them.</li>
+  <li>Microwave ovens heat by dielectric relaxation of water (a broad hump near 20 GHz), not a sharp resonance. Low-ε surfaces keep heat in; high-ε radiators dump heat in space.</li>
+</ul></div>
+<div class="check"><h2>Check yourself</h2><ol>
+  <li><span class="tag">Concept</span>A cup of coffee cools on your desk. Use the words <em>thermal energy</em>, <em>temperature</em>, and <em>heat</em> correctly to describe what happens, and name the three ways the heat leaves.</li>
+  <li><span class="tag">Calc</span>A piece of steel in a forge is at 1500 K. Where is its spectrum’s peak? Is most of its radiated energy visible?</li>
+  <li><span class="tag">Calc</span>If a stove element’s absolute temperature doubles from 1000 K to 2000 K, by what factor does its radiated power change, and where does its peak move?</li>
+  <li><span class="tag">Calc</span>A person (area 1.8 m², \(\varepsilon = 0.98\), skin at 33 °C) stands in a room whose walls are at 15 °C. Estimate the net radiative loss. Compare with Worked Example 9.2.</li>
+  <li><span class="tag">Concept</span>Pointing a thermal camera at a window, you see your own reflection and not the street outside. Explain both observations.</li>
+  <li><span class="tag">Apply</span>An engine bracket at 80 °C has a polished aluminum section and a black-anodized section. Which reads hotter on a thermal camera, and why? How would you measure the polished section correctly?</li>
+  <li><span class="tag">Concept</span>Give two counterexamples to the claim “infrared is heat.”</li>
+  <li><span class="tag">Apply</span>Why are N<sub>2</sub> and O<sub>2</sub>, 99% of dry air, not greenhouse gases, while CO<sub>2</sub> and H<sub>2</sub>O are? Why does it matter that CO<sub>2</sub> absorbs near 15 µm in particular?</li>
+  <li><span class="tag">Calc</span>A satellite must reject 3.0 kW of heat using a radiator at 280 K with \(\varepsilon = 0.85\), one side facing deep space. What area does it need (ignore sunlight)?</li>
+  <li><span class="tag">Apply</span>In a blacksmith’s shop you see a bar glowing bright orange in the forge and a finished chisel with a blue sheen near its edge. Which color is emitted light and which is interference? Roughly what temperatures does each indicate?</li>
+  <li><span class="tag">Concept</span>Why does a frozen block of soup heat so unevenly in a microwave, and why do defrost settings pulse on and off?</li>
+</ol><p class="small muted">Full solutions are in the Answer Key at the back of the book.</p></div>
+</section>

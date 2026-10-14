@@ -1,0 +1,37 @@
+[
+  {
+    "name": "Photon–gap matching rule",
+    "latex": "E_\\text{photon} = hf = \\dfrac{hc}{\\lambda} = E_\\text{upper} - E_\\text{lower}",
+    "meaning": "A photon is absorbed or emitted only with energy equal to the gap between two levels (J or eV)."
+  },
+  {
+    "name": "Wavelength from an energy gap",
+    "latex": "\\lambda\\,(\\text{nm}) = \\dfrac{1240\\ \\text{eV}\\cdot\\text{nm}}{\\Delta E\\,(\\text{eV})}",
+    "meaning": "Converts a transition energy in eV to the photon wavelength in nm."
+  },
+  {
+    "name": "Hydrogen transition energy",
+    "latex": "\\Delta E = 13.6\\ \\text{eV}\\left(\\dfrac{1}{n_\\text{lower}^2} - \\dfrac{1}{n_\\text{upper}^2}\\right)",
+    "meaning": "Energy of the photon emitted or absorbed when hydrogen's electron moves between levels; 3 → 2 gives 1.89 eV (656 nm)."
+  },
+  {
+    "name": "Natural (resonant) frequency of a transition",
+    "latex": "f = \\dfrac{\\Delta E}{h}",
+    "meaning": "Frequency (Hz) at which a mixed-state electron cloud oscillates, and the frequency of light the transition absorbs or emits."
+  },
+  {
+    "name": "LED photon energy",
+    "latex": "E_\\text{photon} \\approx E_g, \\quad \\lambda \\approx \\dfrac{1240\\ \\text{eV}\\cdot\\text{nm}}{E_g}",
+    "meaning": "An LED emits photons with energy about equal to its semiconductor's band gap (eV)."
+  },
+  {
+    "name": "Fluorescence energy loss",
+    "latex": "\\dfrac{E_\\text{in} - E_\\text{out}}{E_\\text{in}}",
+    "meaning": "Fraction of each absorbed photon's energy turned into heat by the Stokes shift (dimensionless)."
+  },
+  {
+    "name": "Thermal energy scale",
+    "latex": "k_B T \\approx 0.026\\ \\text{eV at } 300\\ \\text{K}",
+    "meaning": "Typical thermal energy per particle at room temperature; compare with band gaps and vibrational spacings."
+  }
+]

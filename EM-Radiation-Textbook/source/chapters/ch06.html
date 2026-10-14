@@ -1,0 +1,176 @@
+<section class="chapter" id="ch06">
+<div class="chapter-opener">
+  <div class="chapter-num">Chapter 6</div>
+  <h1 class="chapter-title">Reflection, Transmission, Absorption, and Refraction</h1>
+  <p class="chapter-hook">A mirror, a window, a black T-shirt, and a diamond are all built from the same parts: nuclei and electrons. Which one reflects, which lets light through, which soaks it up, and which sparkles comes down to how those electrons move when a light wave shakes them.</p>
+  <div class="big-picture"><h4>The big picture</h4><ul>
+    <li>Light hitting matter is reflected, absorbed, or transmitted (some of it scattered on the way): R + A + T = 1.</li>
+    <li>One mechanism drives all of it: the wave's electric field shakes electrons, and shaken electrons radiate.</li>
+    <li>Reflection and refraction are <em>coherent</em> re-radiation, not "absorb, wait, re-emit."</li>
+    <li>In a material light keeps its frequency but its speed and wavelength drop by a factor n, which bends light at boundaries.</li>
+  </ul></div>
+  <div class="learning-goals"><h4>After this chapter you can</h4><ul>
+    <li>Explain what physically reflects light, and why a mirror can form an image.</li>
+    <li>Explain why metals are shiny and opaque while glass is transparent.</li>
+    <li>Use \(n = c/v\), Snell's law, and the normal-incidence reflectance formula.</li>
+    <li>Find a critical angle and explain how optical fibers trap light.</li>
+    <li>Explain prisms, rainbows, simple lenses, and why some clear materials look white.</li>
+  </ul></div>
+</div>
+
+<h2 id="ch06-1"><span class="sec-num">6.1</span>The four fates of light</h2>
+<p>Light hitting an object can go back (<strong>reflected</strong>), through (<strong>transmitted</strong>), or into the material (<strong>absorbed</strong>). <strong>Scattering</strong> redirects some of it into many new directions; it counts as diffuse reflection or transmission (Figure 6.1).</p>
+<figure id="fig-6-1"><img src="figures/ch06-four-fates.svg" alt="A beam of light hits a gray slab. A thinner beam reflects off the top, a beam continues through and exits the bottom, some energy is absorbed as heat inside, and a few small arrows scatter in random directions. A box states R + A + T = 1.">
+<figcaption><span class="fig-num">Figure 6.1</span> The four fates of light at a slab. Arrow thickness shows energy. Energy is conserved, so the reflected, absorbed, and transmitted fractions must add to 1.</figcaption></figure>
+<div class="equation boxed" data-eq="6.1">\[ R + A + T = 1 \]</div>
+<p class="where">where \(R\), \(A\), and \(T\) are the fractions of the incoming energy reflected, absorbed, and transmitted (scattered light is included in \(R\) or \(T\)).</p>
+<p>Absorbed energy usually becomes heat (Chapter 9). Inside an absorber, intensity falls off exponentially with depth \(x\):</p>
+<div class="equation" data-eq="6.2">\[ I = I_0\, e^{-\alpha x} \]</div>
+<p class="where">where \(I_0\) is the intensity just inside the surface and \(\alpha\) is the absorption coefficient (m\(^{-1}\)). After a depth of \(1/\alpha\), 37% remains.</p>
+<div class="box key"><div class="box-title">Key Idea</div><p>R, A, and T depend on the material <em>and the wavelength</em>. Window glass transmits about 90% of visible light but almost none of the thermal infrared a warm object emits.</p></div>
+
+<h2 id="ch06-2"><span class="sec-num">6.2</span>What really happens: light shakes electrons</h2>
+<p>Light is an oscillating electric field (Chapter 1), so it pushes every charge in its path back and forth at the light's frequency. Nuclei are thousands of times heavier, so the electrons do nearly all the moving.</p>
+<p>A shaken electron is an accelerating charge, and accelerating charges radiate. Each electron becomes a tiny antenna broadcasting at <em>exactly</em> the driving frequency. Every effect in this chapter is the sum of these small waves plus the original one (Figure 6.2a).</p>
+<p>The response depends on how close the light's frequency is to the electron's natural frequencies. Far from them, the electron jiggles gently in step with the wave, and the light passes with only a slowdown. At a natural frequency the response is large and energy is absorbed (the gap-matching rule of Chapter 5).</p>
+<div class="box analogy"><div class="box-title">Analogy</div><p>Push a swing at a random rhythm and it just wiggles along with your hand; push at its natural rhythm and you pour energy in. Off-resonance means transparent; on-resonance means absorption.</p></div>
+<figure id="fig-6-2"><img src="figures/ch06-driven-electrons.svg" alt="Top panel: an incoming red wave reaches a thin layer of atoms whose electrons oscillate up and down and emit circular wavelets forward and backward. A smaller reflected wave travels back to the left; a transmitted wave continues to the right, slightly delayed compared with a dashed wave that shows no material. Bottom panel: a violet photon lifts an electron to an excited state; later, atoms emit green photons in random directions.">
+<figcaption><span class="fig-num">Figure 6.2</span> (a) Driven re-radiation: electrons forced to oscillate by the wave radiate in lockstep with it. Backward wavelets form the reflected wave; forward wavelets combine with the incoming wave to make a transmitted wave whose crests are slightly delayed. (b) Fluorescence, for contrast: a real excited state, a delay, a random direction, and a longer wavelength.</figcaption></figure>
+<div class="box asked"><div class="box-title">You Asked</div><p class="question">“How does light work? What actually reflects the wave when it hits something?”</p>
+<p>The electrons in the material do: the incoming wave shakes them, and the waves they radiate add up to the reflected wave (and, going forward, to the transmitted wave).</p>
+<p>Deep inside a uniform material, the sideways and backward wavelets from neighboring electrons cancel. At a boundary, where the material suddenly begins, the backward wavelets have nothing to cancel against, so they add up to a reflected wave. Stronger electron response means stronger reflection: about 4% for glass, over 90% for metals, whose free electrons respond to every visible frequency (Section 6.4).</p></div>
+<div class="box asked"><div class="box-title">You Asked</div><p class="question">“Is reflection the same thing as the material absorbing and re-emitting the EM wave?”</p>
+<p>No. Reflection is coherent re-radiation by electrons that are <em>driven</em> by the wave; it is not a photon being absorbed into an excited state and re-emitted later. The two processes leave different fingerprints:</p>
+<ul>
+<li><strong>Driven re-radiation</strong> (reflection, transmission, refraction): works at any frequency; comes out at the same frequency; the electrons oscillate locked in phase with the wave; no excited state, so no waiting; direction fixed by geometry.</li>
+<li><strong>Absorption, then re-emission</strong> (fluorescence, Chapter 5): only when the photon energy matches a gap; the electron sits in a real excited state for nanoseconds; it emits at a random moment, in a random direction, usually at a longer wavelength.</li>
+</ul>
+<p>The locked phase is what makes a mirror image possible. Billions of electrons re-radiate in step with the incoming wave, so their wavelets reinforce in one direction (the angle of reflection) and cancel in all others. If atoms re-emitted at random times in random directions, a mirror would merely glow, like a highlighter under a black light, with no image.</p></div>
+
+<h2 id="ch06-3"><span class="sec-num">6.3</span>Reflection: which way, and how much</h2>
+<p>Measured from the <strong>normal</strong> (the line perpendicular to the surface), the angle of reflection equals the angle of incidence: the one direction in which all the driven electrons' wavelets arrive in step.</p>
+<div class="equation" data-eq="6.3">\[ \theta_r = \theta_i \]</div>
+<p>Bumps much smaller than the wavelength give <strong>specular</strong> (mirror-like) reflection. With bumps comparable to the wavelength or larger, every ray still obeys Equation 6.3 about its <em>local</em> normal, but the normals point every which way: <strong>diffuse</strong> reflection (Figure 6.3). White paper reflects most visible light, just diffusely.</p>
+<figure id="fig-6-3"><img src="figures/ch06-specular-diffuse.svg" alt="Left: parallel rays strike a flat surface and leave parallel, with equal angles to the normal marked. Right: parallel rays strike a jagged surface; each reflects about its own local normal, and the rays leave in a fan of directions.">
+<figcaption><span class="fig-num">Figure 6.3</span> Specular vs. diffuse reflection. The law of reflection holds for every ray in both cases; only the surface geometry differs.</figcaption></figure>
+<div class="box myth"><div class="box-title">Myth vs. Reality</div>
+<p class="myth-line"><strong>Myth:</strong> A mirror reflects light because it is very smooth.</p>
+<p><strong>Reality:</strong> Smoothness decides <em>where</em> reflected light goes; the electrons decide <em>how much</em>. Polished black glass is mirror-smooth but reflects about 4%. A mirror needs both a smooth surface and a metal coating.</p></div>
+<p>At normal incidence, the reflected fraction depends only on the jump in refractive index \(n\) (Section 6.6) across the boundary:</p>
+<div class="equation boxed" data-eq="6.4">\[ R = \left(\frac{n_2 - n_1}{n_2 + n_1}\right)^2 \]</div>
+<div class="box example"><div class="box-title">Worked Example 6.1 <span class="sub">— Seeing yourself in a window at night</span></div>
+<p class="given"><strong>Given:</strong> crown glass, \(n = 1.52\), in air; light at normal incidence.</p>
+<p><strong>Find:</strong> the reflectance of one surface, and the fraction transmitted by a single pane (2 surfaces) and a double-pane window (4 surfaces). Ignore absorption and repeated bounces.</p>
+<p><strong>Think:</strong> each air–glass surface is an index jump, so each one reflects according to Equation 6.4 and passes \(1 - R\).</p>
+<p>\[ R = \left(\frac{1.52 - 1.00}{1.52 + 1.00}\right)^2 = (0.206)^2 = 0.043 \]</p>
+<p>Single pane: \(T = (0.957)^2 = 0.92\). Double pane: \(T = (0.957)^4 = 0.84\).</p>
+<p class="answer">Answer: about 4% per surface; a single pane transmits 92% and a double pane 84%. At night the 8% reflected from your bright room outshines the dim scene outside, so you see yourself.</p></div>
+
+<h2 id="ch06-4"><span class="sec-num">6.4</span>Why metals are shiny and opaque</h2>
+<p>In a metal, one to a few electrons per atom are free to roam (the conduction band, Chapter 5). A free electron has no spring holding it in place, so it has no natural frequency to be "far from." It responds strongly to every frequency below a cutoff called the <strong>plasma frequency</strong>, which for most metals lies in the ultraviolet.</p>
+<p>The free electrons' re-radiated wave cancels the incoming wave within a thin surface layer, the <strong>skin depth</strong> (tens of nanometers for visible light), and sends nearly all the energy back out: metals reflect about 90–95% of visible light. The remainder is absorbed in that layer, so nothing gets through.</p>
+<div class="box rabbit"><div class="box-title">Rabbit Hole <span class="sub">(optional) — The plasma frequency</span></div><p>Safe to skip. Free electrons keep up with the field only below \(f_p = \frac{1}{2\pi}\sqrt{n_e e^2/(\varepsilon_0 m_e)}\), where \(n_e\) is the free-electron density. For aluminum (\(n_e \approx 1.8\times10^{29}\,\text{m}^{-3}\)) the matching photon energy is about 15 eV (80 nm, far UV), so aluminum mirrors work into the ultraviolet. Above \(f_p\) a metal turns transparent; X-rays pass through thin foils (Chapter 11). The ionosphere is a dilute electron "metal" with a plasma frequency in the radio range: AM and shortwave radio bounce off it, while FM and GPS pass through.</p></div>
+
+<h2 id="ch06-5"><span class="sec-num">6.5</span>Why glass is transparent (and where it isn't)</h2>
+<p>Glass is an insulator: pure silica has a band gap of roughly 9 eV, far above the 1.8–3.1 eV of visible photons. Visible light can only drive its tightly bound electrons off-resonance, so it is transmitted (and slowed), not absorbed. Glass is also uniform, with no pores or grain boundaries to scatter light. Outside the visible, things change (Table 6.1).</p>
+<table><caption><span class="tab-num">Table 6.1</span> What ordinary window glass does across the spectrum.</caption>
+<tr><th>Band</th><th>What happens</th><th>Why</th></tr>
+<tr><td>UVB (below about 315 nm)</td><td>Mostly absorbed</td><td>Photons energetic enough to excite electrons in the glass and its impurities (such as iron). Little sunburn through a window, though much UVA passes (Chapter 10).</td></tr>
+<tr><td>Visible (400–700 nm)</td><td>About 90% transmitted</td><td>Below the gap and far from resonances; about 4% reflects at each surface.</td></tr>
+<tr><td>Near infrared (0.7–3 µm)</td><td>Mostly transmitted</td><td>Still no matching electron or vibration energies.</td></tr>
+<tr><td>Thermal infrared (about 5–15 µm)</td><td>Absorbed</td><td>Matches the vibration frequencies of Si–O bonds (strong band near 9 µm). This is why a closed car heats up in the sun (Chapter 9).</td></tr>
+</table>
+<div class="box myth"><div class="box-title">Myth vs. Reality</div>
+<p class="myth-line"><strong>Myth:</strong> Transparent materials let light slip through the gaps between their atoms.</p>
+<p><strong>Reality:</strong> Atoms are mostly empty space (Chapter 4), but a 500 nm wave is thousands of times wider than an atom and drives every electron it passes. Transparency means those electrons cannot absorb at that frequency and nothing scatters. Diamond (gap 5.5 eV) and graphite (no gap) are both pure carbon; one is clear, the other black.</p></div>
+
+<h2 id="ch06-6"><span class="sec-num">6.6</span>Refractive index: why light "slows down"</h2>
+<p>Inside a material, the forward wavelets from driven electrons add to the incoming wave. Each wavelet lags slightly in phase, so after every layer of atoms the combined crests sit a little farther back (Figure 6.2a) and advance more slowly than \(c\). The <strong>index of refraction</strong> \(n\) measures how much:</p>
+<div class="equation boxed" data-eq="6.5">\[ n = \frac{c}{v} \]</div>
+<p class="where">where \(v\) is the speed of the wave crests (the phase velocity) in the material.</p>
+<p>The electrons oscillate at the source's frequency, so frequency never changes. The wavelength shrinks instead:</p>
+<div class="equation" data-eq="6.6">\[ \lambda = \frac{\lambda_0}{n} \]</div>
+<p class="where">where \(\lambda_0\) is the vacuum wavelength. Photon energy \(hf\) is unchanged, so red light is still red underwater.</p>
+<table><caption><span class="tab-num">Table 6.2</span> Typical refractive indices for yellow light (about 589 nm).</caption>
+<tr><th>Material</th><th>n</th><th>Material</th><th>n</th></tr>
+<tr><td>Air</td><td>1.0003</td><td>Crown (window) glass</td><td>1.52</td></tr>
+<tr><td>Ice</td><td>1.31</td><td>Quartz, crystalline SiO₂</td><td>1.54–1.55</td></tr>
+<tr><td>Water</td><td>1.333</td><td>Polycarbonate</td><td>1.58</td></tr>
+<tr><td>Fused silica (SiO₂ glass)</td><td>1.458</td><td>Sapphire, Al₂O₃</td><td>1.77</td></tr>
+<tr><td>Acrylic (PMMA)</td><td>1.49</td><td>Diamond</td><td>2.42</td></tr>
+</table>
+<div class="box key"><div class="box-title">Key Idea</div><p>Crossing into a material changes light's speed and wavelength by the factor \(n\), never its frequency. Bending (refraction), dispersion, lenses, and fibers all follow from that one fact.</p></div>
+<div class="box myth"><div class="box-title">Myth vs. Reality</div>
+<p class="myth-line"><strong>Myth:</strong> Light slows down in glass because atoms absorb it, hold it for a moment, and re-emit it.</p>
+<p><strong>Reality:</strong> Glass has no visible-frequency transition to absorb into, and absorb-and-re-emit would scramble direction and phase (Figure 6.2b), leaving glass cloudy. Between atoms, light travels at \(c\); the slower speed belongs to the <em>combined</em> crest pattern of incoming and re-radiated waves. Clincher: for X-rays, \(n\) is slightly <em>less</em> than 1, so crests move slightly faster than \(c\). No delay could do that; superposition does it naturally (energy and signals still never beat \(c\)).</p></div>
+
+<h2 id="ch06-7"><span class="sec-num">6.7</span>Snell's law: bending at a boundary</h2>
+<p>When a wave enters glass at an angle, one end of each wavefront reaches the slow medium first and lags. To keep crests continuous across the surface, the wavefront pivots and the ray bends (Figure 6.4):</p>
+<div class="equation boxed" data-eq="6.7">\[ n_1 \sin\theta_1 = n_2 \sin\theta_2 \]</div>
+<p class="where">with both angles measured from the normal. Entering a higher-\(n\) material, light bends toward the normal; entering a lower-\(n\) material, it bends away.</p>
+<figure id="fig-6-4"><img src="figures/ch06-snell.svg" alt="A beam of light with wave crests drawn across it goes from air into glass. The crests are closer together in the glass, kink at the surface, and the beam bends from 50 degrees to 30.7 degrees from the normal. A faint reflected ray leaves the surface.">
+<figcaption><span class="fig-num">Figure 6.4</span> Refraction drawn with wave crests. Crests bunch up by the factor \(n\) in the glass and must stay connected at the surface, which forces the beam to bend.</figcaption></figure>
+<div class="box analogy"><div class="box-title">Analogy</div><p>A marching band crosses from pavement onto mud at an angle. The marchers who reach the mud first slow down, and the whole line swings around toward the normal.</p></div>
+<div class="box example"><div class="box-title">Worked Example 6.2 <span class="sub">— A red laser enters a glass block</span></div>
+<p class="given"><strong>Given:</strong> \(\lambda_0 = 633\) nm, \(\theta_1 = 45.0^\circ\) in air, glass \(n = 1.52\).</p>
+<p><strong>Find:</strong> the refraction angle, and the speed and wavelength inside the glass.</p>
+<p><strong>Think:</strong> Snell's law gives the angle; Equations 6.5 and 6.6 give speed and wavelength.</p>
+<p>\[ \sin\theta_2 = \frac{1.00 \times \sin 45.0^\circ}{1.52} = 0.465 \quad\Rightarrow\quad \theta_2 = 27.7^\circ \]</p>
+<p>\[ v = \frac{3.00\times10^{8}\,\text{m/s}}{1.52} = 1.97\times10^{8}\,\text{m/s}, \qquad \lambda = \frac{633\,\text{nm}}{1.52} = 416\,\text{nm} \]</p>
+<p class="answer">Answer: 27.7° from the normal; \(1.97\times10^{8}\) m/s; 416 nm. The beam is still red: its frequency, \(4.74\times10^{14}\) Hz, is unchanged.</p></div>
+
+<h2 id="ch06-8"><span class="sec-num">6.8</span>Total internal reflection and optical fibers</h2>
+<p>Going from high \(n\) to low \(n\), light bends away from the normal. At the <strong>critical angle</strong> \(\theta_c\) the refracted ray grazes the surface; beyond it, no light escapes and 100% reflects. This is <strong>total internal reflection</strong> (Figure 6.5a):</p>
+<div class="equation" data-eq="6.8">\[ \sin\theta_c = \frac{n_2}{n_1} \qquad (n_1 \gt n_2) \]</div>
+<p>Nothing is absorbed, so total internal reflection beats any metal mirror. Diamond's small critical angle (24.4°) traps light for many bounces, which is why diamonds sparkle; binocular prisms use the same trick.</p>
+<figure id="fig-6-5"><img src="figures/ch06-tir-fiber.svg" alt="Top: three rays from a point inside glass reach the glass-air surface at 25 degrees, 41.8 degrees, and 60 degrees; the first refracts out, the second grazes the surface, the third reflects completely. Bottom: a ray zigzags along the core of an optical fiber surrounded by cladding and a jacket.">
+<figcaption><span class="fig-num">Figure 6.5</span> (a) Past the critical angle, light cannot leave the denser medium. (b) An optical fiber keeps light in its core by repeated total internal reflection at the core–cladding boundary.</figcaption></figure>
+<p>An <strong>optical fiber</strong> is a glass core inside cladding of slightly lower index; light bounces along the core by total internal reflection. Good fibers lose only about 0.2 dB per kilometer at 1550 nm, so light travels about 15 km before losing half its power.</p>
+<div class="box example"><div class="box-title">Worked Example 6.3 <span class="sub">— How steeply can light travel in a fiber?</span></div>
+<p class="given"><strong>Given:</strong> core \(n_1 = 1.48\), cladding \(n_2 = 1.46\).</p>
+<p><strong>Find:</strong> the critical angle at the core wall, and the largest angle from the axis at which light can enter the fiber end from air.</p>
+<p><strong>Think:</strong> rays must hit the wall beyond \(\theta_c\), so inside the core they travel within \(90^\circ - \theta_c\) of the axis. Snell's law at the flat end converts that to an angle in air.</p>
+<p>\[ \theta_c = \sin^{-1}\!\left(\frac{1.46}{1.48}\right) = 80.6^\circ \quad\Rightarrow\quad 90^\circ - 80.6^\circ = 9.4^\circ \text{ from the axis} \]</p>
+<p>\[ \sin\theta_\text{air} = 1.48 \sin 9.4^\circ = 0.242 \quad\Rightarrow\quad \theta_\text{air} = 14.0^\circ \]</p>
+<p class="answer">Answer: \(\theta_c = 80.6^\circ\); light entering within about 14° of the axis is trapped.</p></div>
+
+<h2 id="ch06-9"><span class="sec-num">6.9</span>Dispersion: prisms and rainbows</h2>
+<p>The index depends slightly on wavelength: <strong>dispersion</strong>. In glass and water, \(n\) is larger for violet than red, because violet's frequency is closer to the electrons' ultraviolet resonances. Crown glass (BK7) has \(n = 1.522\) at 486 nm (blue) and 1.514 at 656 nm (red); water goes from about 1.343 at 400 nm to 1.331 at 700 nm.</p>
+<p>So a prism bends each color by a different angle (Figure 6.6a). In a rainbow, sunlight refracts into each raindrop, reflects once off the back, and refracts out, piling up near 42° from the <strong>antisolar point</strong> (the shadow of your head) for red and about 41° for violet. Red reaches you from slightly higher drops, so it forms the outer edge of the bow.</p>
+<figure id="fig-6-6"><img src="figures/ch06-prism-rainbow.svg" alt="Left: white light enters a glass prism and leaves as a fan of colors, red bent least and violet most. Right: a horizontal sunlight ray enters a round raindrop, reflects off the back, and exits downward; the red ray leaves at 42.4 degrees and the violet at 40.6 degrees from the dashed antisolar direction.">
+<figcaption><span class="fig-num">Figure 6.6</span> Dispersion at work. (a) A prism; the color spread is exaggerated for visibility. (b) A raindrop, ray-traced with water's real indices: one internal reflection sends red out at 42.4° and violet at 40.6°.</figcaption></figure>
+
+<h2 id="ch06-10"><span class="sec-num">6.10</span>Lenses and focusing</h2>
+<p>A lens is shaped so that refraction steers rays to a common point. A <strong>converging</strong> lens (thicker in the middle) bends parallel rays through the <strong>focal point</strong> F, a distance \(f\) (the <strong>focal length</strong>) away. A <strong>diverging</strong> lens (thinner in the middle) spreads them as if from a point behind it (Figure 6.7). For a thin lens:</p>
+<div class="equation" data-eq="6.9">\[ \frac{1}{f} = \frac{1}{d_o} + \frac{1}{d_i} \]</div>
+<p class="where">where \(d_o\) is the object distance and \(d_i\) the image distance (\(f \gt 0\) for converging lenses). Eyeglass strength is quoted as power \(P = 1/f\) in diopters (m\(^{-1}\)).</p>
+<figure id="fig-6-7"><img src="figures/ch06-lenses.svg" alt="Three panels: parallel rays through a convex lens converge at a focal point F; parallel rays through a concave lens spread out as if from a point F in front of the lens; rays enter an eye, bend at the cornea and lens, and meet at the retina.">
+<figcaption><span class="fig-num">Figure 6.7</span> (a) A converging lens. (b) A diverging lens with its virtual focus. (c) The eye: the cornea does most of the bending; the lens fine-tunes the focus.</figcaption></figure>
+<p>Your eye has about 60 diopters of power. About 43 (two-thirds) come from the cornea, because the biggest index jump is from air into the cornea; the lens adds an adjustable 15–20 diopters by changing shape.</p>
+
+<h2 id="ch06-11"><span class="sec-num">6.11</span>Why clear things can look white</h2>
+<p>A transparent material can still look white and opaque. Every internal boundary where \(n\) changes reflects a little light (Equation 6.4) and redirects it; with enough boundaries, most light comes back out diffusely. That is why snow, frosted glass, foam and crushed ice look white even though ice, glass and water are clear. The more boundaries (bubbles, cracks, tiny grains) and the bigger the jump in \(n\) at each, the whiter and more opaque the material looks.</p>
+
+<div class="summary"><h2>Chapter summary</h2><ul>
+<li>Light meeting matter is reflected, absorbed, or transmitted (some scattered): \(R + A + T = 1\), all wavelength-dependent.</li>
+<li>The wave drives electrons, which re-radiate at the same frequency and in fixed phase. Reflection and refraction are this coherent re-radiation, not absorb-and-re-emit (fluorescence), which is delayed, random in direction, and usually red-shifted.</li>
+<li>Roughness compared with the wavelength sets specular vs. diffuse reflection; \(R = [(n_2-n_1)/(n_2+n_1)]^2\) gives about 4% per glass surface.</li>
+<li>Metals' free electrons respond below the plasma frequency: they reflect 90–95% and absorb the rest within about 0.1 µm. Glass passes visible light (gap far above 3.1 eV) but absorbs UVB and thermal IR.</li>
+<li>\(n = c/v\); frequency is unchanged and wavelength becomes \(\lambda_0/n\). Snell's law gives the bending; beyond \(\sin\theta_c = n_2/n_1\), total internal reflection traps light in fibers.</li>
+<li>Dispersion separates colors in prisms and rainbows; lenses focus by refraction. Many internal boundaries (bubbles, cracks, grains) scatter light, so snow and frosted glass look white.</li>
+</ul></div>
+<div class="check"><h2>Check yourself</h2><ol>
+  <li><span class="tag">Calc</span>A sheet of tinted plastic reflects 6% and absorbs 22% of the light falling on it. What fraction is transmitted?</li>
+  <li><span class="tag">Concept</span>A clear glass marble is transparent, yet the same glass ground into powder looks white. Explain using what happens at each surface.</li>
+  <li><span class="tag">Concept</span>A highlighter pen glows under UV light but you cannot see your reflection in that glow. A mirror shows a sharp image. What is different about how the two re-emit light?</li>
+  <li><span class="tag">Calc</span>Find the normal-incidence reflectance of a diamond surface (\(n = 2.42\)) in air and compare it with glass (\(n = 1.52\)).</li>
+  <li><span class="tag">Calc</span>Sodium-yellow light (589 nm in vacuum) enters water (\(n = 1.333\)). Find its speed, wavelength, and frequency in the water. Does a diver see it as a different color?</li>
+  <li><span class="tag">Calc</span>A light ray in air hits a calm lake at 60.0° from the normal. At what angle does it travel in the water?</li>
+  <li><span class="tag">Calc</span>Find the critical angle for light going from water (\(n = 1.333\)) into air. What does a fish looking up see outside that cone?</li>
+  <li><span class="tag">Concept</span>Why are metals opaque to visible light even though a sheet of gold leaf about 0.1 µm thick lets some light through? Why do X-rays pass through thin metal foils?</li>
+  <li><span class="tag">Apply</span>Why is a closed car parked in the sun much hotter inside than the outside air, even though the windows are clear? Use Table 6.1.</li>
+  <li><span class="tag">Apply</span>The cornea has \(n \approx 1.376\). Explain why your vision is blurry when you open your eyes underwater without goggles.</li>
+  <li><span class="tag">Apply</span>Both are Al₂O₃, yet a sapphire watch crystal is transparent while an alumina spark-plug insulator is opaque white. Explain, and explain why an HDPE milk jug is cloudy while a PMMA sheet is clear.</li>
+  <li><span class="tag">Calc</span>A camera lens with \(f = 50.0\) mm photographs a person 4.00 m away. How far behind the lens does the image form, and how tall is the image of a 1.80 m person?</li>
+</ol><p class="small muted">Full solutions are in the Answer Key at the back of the book.</p></div>
+</section>

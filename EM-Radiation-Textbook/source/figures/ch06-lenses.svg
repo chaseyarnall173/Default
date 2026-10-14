@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 296" width="680" height="296" font-family="Inter, sans-serif">
+<rect width="680" height="296" fill="#ffffff"/>
+<text x="14.0" y="22.0" font-size="13" fill="#1f2933" text-anchor="start" font-weight="650">(a) Converging (convex) lens</text>
+<line x1="10.0" y1="150.0" x2="215.0" y2="150.0" stroke="#52606d" stroke-width="0.9" opacity="1" stroke-dasharray="5 4"/>
+<path d="M95,88 A180.2,180.2 0 0 1 95,212 A180.2,180.2 0 0 1 95,88 Z" fill="#cfe0f0" stroke="#52606d" stroke-width="1.3"/>
+<line x1="16.0" y1="104.0" x2="95.0" y2="104.0" stroke="#e09f1f" stroke-width="1.8" opacity="1"/>
+<polygon points="52.0,104.0 44.0,108.4 44.0,99.6" fill="#e09f1f"/>
+<line x1="95.0" y1="104.0" x2="210.0" y2="170.1" stroke="#e09f1f" stroke-width="1.8" opacity="1"/>
+<line x1="16.0" y1="127.0" x2="95.0" y2="127.0" stroke="#e09f1f" stroke-width="1.8" opacity="1"/>
+<polygon points="52.0,127.0 44.0,131.4 44.0,122.6" fill="#e09f1f"/>
+<line x1="95.0" y1="127.0" x2="210.0" y2="160.1" stroke="#e09f1f" stroke-width="1.8" opacity="1"/>
+<line x1="16.0" y1="150.0" x2="95.0" y2="150.0" stroke="#e09f1f" stroke-width="1.8" opacity="1"/>
+<polygon points="52.0,150.0 44.0,154.4 44.0,145.6" fill="#e09f1f"/>
+<line x1="95.0" y1="150.0" x2="210.0" y2="150.0" stroke="#e09f1f" stroke-width="1.8" opacity="1"/>
+<line x1="16.0" y1="173.0" x2="95.0" y2="173.0" stroke="#e09f1f" stroke-width="1.8" opacity="1"/>
+<polygon points="52.0,173.0 44.0,177.4 44.0,168.6" fill="#e09f1f"/>
+<line x1="95.0" y1="173.0" x2="210.0" y2="139.9" stroke="#e09f1f" stroke-width="1.8" opacity="1"/>
+<line x1="16.0" y1="196.0" x2="95.0" y2="196.0" stroke="#e09f1f" stroke-width="1.8" opacity="1"/>
+<polygon points="52.0,196.0 44.0,200.4 44.0,191.6" fill="#e09f1f"/>
+<line x1="95.0" y1="196.0" x2="210.0" y2="129.9" stroke="#e09f1f" stroke-width="1.8" opacity="1"/>
+<circle cx="175" cy="150" r="3.5" fill="#1f2933"/>
+<text x="175.0" y="172.0" font-size="13" fill="#1f2933" text-anchor="middle" font-weight="700">F</text>
+<line x1="95.0" y1="224.0" x2="175.0" y2="224.0" stroke="#1f2933" stroke-width="1" opacity="1"/>
+<polygon points="175.0,224.0 168.0,227.8 168.0,220.2" fill="#1f2933"/>
+<polygon points="95.0,224.0 102.0,220.2 102.0,227.8" fill="#1f2933"/>
+<text x="135.0" y="240.0" font-size="12" fill="#1f2933" text-anchor="middle" font-weight="400">focal length f</text>
+<text x="14.0" y="258.0" font-size="11.5" fill="#52606d" text-anchor="start" font-weight="400">The thick middle delays the center</text>
+<text x="14.0" y="272.0" font-size="11.5" fill="#52606d" text-anchor="start" font-weight="400">of the wave most, so the wavefront</text>
+<text x="14.0" y="286.0" font-size="11.5" fill="#52606d" text-anchor="start" font-weight="400">curves inward toward F</text>
+<line x1="228" y1="36" x2="228" y2="280" stroke="#d9dee5" stroke-width="1.2"/>
+<text x="242.0" y="22.0" font-size="13" fill="#1f2933" text-anchor="start" font-weight="650">(b) Diverging (concave) lens</text>
+<line x1="238.0" y1="150.0" x2="446.0" y2="150.0" stroke="#52606d" stroke-width="0.9" opacity="1" stroke-dasharray="5 4"/>
+<path d="M332.0,88 L358.0,88 A218.1,218.1 0 0 0 358.0,212 L332.0,212 A218.1,218.1 0 0 0 332.0,88 Z" fill="#cfe0f0" stroke="#52606d" stroke-width="1.3"/>
+<line x1="244.0" y1="104.0" x2="345.0" y2="104.0" stroke="#e09f1f" stroke-width="1.8" opacity="1"/>
+<polygon points="280.0,104.0 272.0,108.4 272.0,99.6" fill="#e09f1f"/>
+<line x1="345.0" y1="104.0" x2="440.0" y2="58.5" stroke="#e09f1f" stroke-width="1.8" opacity="1"/>
+<line x1="249.0" y1="150.0" x2="345.0" y2="104.0" stroke="#52606d" stroke-width="1" opacity="1" stroke-dasharray="3 3"/>
+<line x1="244.0" y1="127.0" x2="345.0" y2="127.0" stroke="#e09f1f" stroke-width="1.8" opacity="1"/>
+<polygon points="280.0,127.0 272.0,131.4 272.0,122.6" fill="#e09f1f"/>
+<line x1="345.0" y1="127.0" x2="440.0" y2="104.2" stroke="#e09f1f" stroke-width="1.8" opacity="1"/>
+<line x1="249.0" y1="150.0" x2="345.0" y2="127.0" stroke="#52606d" stroke-width="1" opacity="1" stroke-dasharray="3 3"/>
+<line x1="244.0" y1="150.0" x2="345.0" y2="150.0" stroke="#e09f1f" stroke-width="1.8" opacity="1"/>
+<polygon points="280.0,150.0 272.0,154.4 272.0,145.6" fill="#e09f1f"/>
+<line x1="345.0" y1="150.0" x2="440.0" y2="150.0" stroke="#e09f1f" stroke-width="1.8" opacity="1"/>
+<line x1="244.0" y1="173.0" x2="345.0" y2="173.0" stroke="#e09f1f" stroke-width="1.8" opacity="1"/>
+<polygon points="280.0,173.0 272.0,177.4 272.0,168.6" fill="#e09f1f"/>
+<line x1="345.0" y1="173.0" x2="440.0" y2="195.8" stroke="#e09f1f" stroke-width="1.8" opacity="1"/>
+<line x1="249.0" y1="150.0" x2="345.0" y2="173.0" stroke="#52606d" stroke-width="1" opacity="1" stroke-dasharray="3 3"/>
+<line x1="244.0" y1="196.0" x2="345.0" y2="196.0" stroke="#e09f1f" stroke-width="1.8" opacity="1"/>
+<polygon points="280.0,196.0 272.0,200.4 272.0,191.6" fill="#e09f1f"/>
+<line x1="345.0" y1="196.0" x2="440.0" y2="241.5" stroke="#e09f1f" stroke-width="1.8" opacity="1"/>
+<line x1="249.0" y1="150.0" x2="345.0" y2="196.0" stroke="#52606d" stroke-width="1" opacity="1" stroke-dasharray="3 3"/>
+<circle cx="249" cy="150" r="3.5" fill="#1f2933"/>
+<text x="249.0" y="172.0" font-size="13" fill="#1f2933" text-anchor="middle" font-weight="700">F</text>
+<text x="242.0" y="258.0" font-size="11.5" fill="#52606d" text-anchor="start" font-weight="400">The thin middle lets the center run</text>
+<text x="242.0" y="272.0" font-size="11.5" fill="#52606d" text-anchor="start" font-weight="400">ahead; rays spread as if they came</text>
+<text x="242.0" y="286.0" font-size="11.5" fill="#52606d" text-anchor="start" font-weight="400">from F (dashed): a virtual focus</text>
+<line x1="456" y1="36" x2="456" y2="280" stroke="#d9dee5" stroke-width="1.2"/>
+<text x="470.0" y="22.0" font-size="13" fill="#1f2933" text-anchor="start" font-weight="650">(c) The eye</text>
+<circle cx="585" cy="150" r="66" fill="#f7f9fb" stroke="#52606d" stroke-width="1.3"/>
+<path d="M627.4,99.4 A66,66 0 0 1 627.4,200.6" fill="none" stroke="#d1495b" stroke-width="3.2"/>
+<path d="M528.0,116 Q497.0,150 528.0,184" fill="#cfe0f0" stroke="#52606d" stroke-width="1.3"/>
+<ellipse cx="549" cy="150" rx="10" ry="27" fill="#cfe0f0" stroke="#52606d" stroke-width="1.3"/>
+<line x1="470.0" y1="126.0" x2="511.0" y2="126.0" stroke="#e09f1f" stroke-width="1.8" opacity="1"/>
+<polygon points="492.0,126.0 484.0,130.4 484.0,121.6" fill="#e09f1f"/>
+<line x1="511.0" y1="126.0" x2="549.0" y2="135.1" stroke="#e09f1f" stroke-width="1.8" opacity="1"/>
+<line x1="549.0" y1="135.1" x2="651.0" y2="150.0" stroke="#e09f1f" stroke-width="1.8" opacity="1"/>
+<line x1="470.0" y1="150.0" x2="511.0" y2="150.0" stroke="#e09f1f" stroke-width="1.8" opacity="1"/>
+<polygon points="492.0,150.0 484.0,154.4 484.0,145.6" fill="#e09f1f"/>
+<line x1="511.0" y1="150.0" x2="549.0" y2="150.0" stroke="#e09f1f" stroke-width="1.8" opacity="1"/>
+<line x1="549.0" y1="150.0" x2="651.0" y2="150.0" stroke="#e09f1f" stroke-width="1.8" opacity="1"/>
+<line x1="470.0" y1="174.0" x2="511.0" y2="174.0" stroke="#e09f1f" stroke-width="1.8" opacity="1"/>
+<polygon points="492.0,174.0 484.0,178.4 484.0,169.6" fill="#e09f1f"/>
+<line x1="511.0" y1="174.0" x2="549.0" y2="164.9" stroke="#e09f1f" stroke-width="1.8" opacity="1"/>
+<line x1="549.0" y1="164.9" x2="651.0" y2="150.0" stroke="#e09f1f" stroke-width="1.8" opacity="1"/>
+<circle cx="651" cy="150" r="3" fill="#1f2933"/>
+<text x="505.0" y="104.0" font-size="12" fill="#1f2933" text-anchor="middle" font-weight="600">cornea</text>
+<text x="555.0" y="202.0" font-size="12" fill="#1f2933" text-anchor="start" font-weight="600">lens</text>
+<text x="647.0" y="86.0" font-size="12" fill="#1f2933" text-anchor="start" font-weight="600">retina</text>
+<text x="470.0" y="258.0" font-size="11.5" fill="#52606d" text-anchor="start" font-weight="400">Cornea: about 2/3 of the bending</text>
+<text x="470.0" y="272.0" font-size="11.5" fill="#52606d" text-anchor="start" font-weight="400">(fixed). Lens: changes shape to</text>
+<text x="470.0" y="286.0" font-size="11.5" fill="#52606d" text-anchor="start" font-weight="400">focus near or far.</text>
+</svg>

@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 300" width="680" height="300" font-family="Inter, sans-serif">
+<rect width="680" height="300" fill="#ffffff"/>
+<defs><marker id="ph" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="4" markerHeight="4" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#e09f1f"/></marker><marker id="gr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#52606d"/></marker></defs>
+<rect x="8" y="10" width="216" height="282" rx="8" fill="#f5f7fa"/>
+<text x="20" y="32" font-size="12" font-weight="700" fill="#1f2933">A  Absorption</text>
+<text x="56" y="62" font-size="10" fill="#52606d" text-anchor="middle">before</text>
+<text x="158" y="62" font-size="10" fill="#52606d" text-anchor="middle">after</text>
+<line x1="34" y1="112" x2="86" y2="112" stroke="#1f2933" stroke-width="2"/>
+<line x1="34" y1="188" x2="86" y2="188" stroke="#1f2933" stroke-width="2"/>
+<text x="29" y="116" font-size="10.5" fill="#52606d" text-anchor="end">E₂</text>
+<text x="29" y="192" font-size="10.5" fill="#52606d" text-anchor="end">E₁</text>
+<circle cx="60.0" cy="181" r="6.5" fill="#12a39a" stroke="#fff" stroke-width="1.2"/>
+<line x1="140" y1="112" x2="192" y2="112" stroke="#1f2933" stroke-width="2"/>
+<line x1="140" y1="188" x2="192" y2="188" stroke="#1f2933" stroke-width="2"/>
+<circle cx="166.0" cy="105" r="6.5" fill="#12a39a" stroke="#fff" stroke-width="1.2"/>
+<polyline points="106.0,74.0 102.7,74.1 101.0,75.0 101.8,76.8 104.1,79.3 106.3,81.7 106.7,83.4 104.7,84.1 101.2,84.2 98.1,84.4 96.8,85.4 97.9,87.3 100.3,89.8 102.3,92.2 102.3,93.7 100.0,94.3 96.5,94.3 93.5,94.6 92.6,95.8 94.0,97.9 96.5,100.4 98.2,102.7 97.9,104.0 95.3,104.5 91.7,104.5 89.0,104.9 88.5,106.2 90.2,108.4 92.6,111.0 94.1,113.1 93.4,114.3 90.6,114.7 87.0,114.7 84.6,115.2 84.4,116.7 86.3,119.0 88.8,121.5 90.0,123.5 88.9,124.6 85.8,124.8 82.3,124.9 80.2,125.5 80.4,127.2 82.5,129.5 84.9,132.0 85.8,133.9 84.3,134.8 81.1,135.0 77.7,135.1 75.9,135.9 76.5,137.6 78.7,140.1 81.0,142.5 81.5,144.3 79.7,145.1 76.3,145.2 73.1,145.3 71.6,146.3 72.5,148.2 74.9,150.7 77.0,153.0 77.2,154.6 75.0,155.3 71.5,155.3 68.5,155.6 67.4,156.7 68.6,158.7" fill="none" stroke="#e09f1f" stroke-width="2"/>
+<line x1="71.4" y1="157.7" x2="68.0" y2="166.0" stroke="#e09f1f" stroke-width="2" marker-end="url(#ph)"/>
+<text x="105.0" y="114.0" font-size="11" font-weight="700" fill="#8a5a00" text-anchor="middle">hf</text>
+<line x1="166" y1="184" x2="166" y2="120" stroke="#12a39a" stroke-width="1.4" stroke-dasharray="3 3" marker-end="url(#gr)"/>
+<line x1="108" y1="150" x2="126" y2="150" stroke="#52606d" stroke-width="1.4" marker-end="url(#gr)"/>
+<text x="20" y="238" font-size="10.5" fill="#1f2933">A photon with hf = E₂ − E₁ vanishes;</text>
+<text x="20" y="254" font-size="10.5" fill="#1f2933">its energy lifts the electron up.</text>
+<text x="20" y="270" font-size="10.5" fill="#1f2933">Wrong energy: no absorption.</text>
+<rect x="234" y="10" width="216" height="282" rx="8" fill="#f5f7fa"/>
+<text x="246" y="32" font-size="12" font-weight="700" fill="#1f2933">B  Spontaneous emission</text>
+<text x="282" y="62" font-size="10" fill="#52606d" text-anchor="middle">before</text>
+<text x="384" y="62" font-size="10" fill="#52606d" text-anchor="middle">after</text>
+<line x1="260" y1="112" x2="312" y2="112" stroke="#1f2933" stroke-width="2"/>
+<line x1="260" y1="188" x2="312" y2="188" stroke="#1f2933" stroke-width="2"/>
+<text x="255" y="116" font-size="10.5" fill="#52606d" text-anchor="end">E₂</text>
+<text x="255" y="192" font-size="10.5" fill="#52606d" text-anchor="end">E₁</text>
+<circle cx="286.0" cy="105" r="6.5" fill="#12a39a" stroke="#fff" stroke-width="1.2"/>
+<line x1="360" y1="112" x2="404" y2="112" stroke="#1f2933" stroke-width="2"/>
+<line x1="360" y1="188" x2="404" y2="188" stroke="#1f2933" stroke-width="2"/>
+<circle cx="382.0" cy="181" r="6.5" fill="#12a39a" stroke="#fff" stroke-width="1.2"/>
+<polyline points="394.0,170.0 397.3,170.2 399.0,169.5 398.5,167.6 396.4,165.0 394.5,162.4 394.2,160.6 396.2,160.1 399.6,160.3 402.8,160.5 404.3,159.6 403.5,157.6 401.3,154.9 399.5,152.4 399.6,150.8 401.8,150.4 405.3,150.7 408.3,150.7 409.4,149.7 408.4,147.6 406.2,144.9 404.6,142.4 404.9,141.0 407.4,140.7 410.9,141.0 413.7,140.9 414.6,139.8 413.3,137.6 411.1,134.8 409.7,132.4 410.3,131.2 413.0,131.0 416.5,131.3 419.2,131.2 419.7,129.9 418.3,127.5 416.0,124.8 414.8,122.5 415.7,121.4 418.6,121.4 422.1,121.6 424.5,121.4 424.8,119.9 423.2,117.5 421.0,114.7 420.0,112.6 421.1,111.6 424.2,111.7 427.7,112.0 429.9,111.5 429.9,110.0 428.1,107.4 425.9,104.7 425.2,102.7 426.6,101.9 429.8,102.0 433.2,102.3 435.2,101.7 434.9,100.0 432.9,97.4 430.9,94.7 430.4,92.8 432.1,92.2 435.4,92.4 438.8,92.5 440.4,91.8 439.9,90.0 437.8,87.3 435.9,84.7" fill="none" stroke="#e09f1f" stroke-width="2"/>
+<line x1="437.8" y1="87.9" x2="442.0" y2="80.0" stroke="#e09f1f" stroke-width="2" marker-end="url(#ph)"/>
+<text x="438.0" y="129.0" font-size="11" font-weight="700" fill="#8a5a00" text-anchor="middle">hf</text>
+<line x1="382" y1="114" x2="382" y2="172" stroke="#12a39a" stroke-width="1.4" stroke-dasharray="3 3" marker-end="url(#gr)"/>
+<line x1="334" y1="150" x2="352" y2="150" stroke="#52606d" stroke-width="1.4" marker-end="url(#gr)"/>
+<text x="246" y="238" font-size="10.5" fill="#1f2933">On its own (typically ~ns later) the</text>
+<text x="246" y="254" font-size="10.5" fill="#1f2933">electron drops; a NEW photon is born,</text>
+<text x="246" y="270" font-size="10.5" fill="#1f2933">heading off in a random direction.</text>
+<rect x="460" y="10" width="216" height="282" rx="8" fill="#f5f7fa"/>
+<text x="472" y="32" font-size="12" font-weight="700" fill="#1f2933">C  Stimulated emission</text>
+<text x="508" y="62" font-size="10" fill="#52606d" text-anchor="middle">before</text>
+<text x="610" y="62" font-size="10" fill="#52606d" text-anchor="middle">after</text>
+<line x1="486" y1="112" x2="538" y2="112" stroke="#1f2933" stroke-width="2"/>
+<line x1="486" y1="188" x2="538" y2="188" stroke="#1f2933" stroke-width="2"/>
+<text x="481" y="116" font-size="10.5" fill="#52606d" text-anchor="end">E₂</text>
+<text x="481" y="192" font-size="10.5" fill="#52606d" text-anchor="end">E₁</text>
+<circle cx="512.0" cy="105" r="6.5" fill="#12a39a" stroke="#fff" stroke-width="1.2"/>
+<line x1="584" y1="112" x2="618" y2="112" stroke="#1f2933" stroke-width="2"/>
+<line x1="584" y1="188" x2="618" y2="188" stroke="#1f2933" stroke-width="2"/>
+<circle cx="601.0" cy="181" r="6.5" fill="#12a39a" stroke="#fff" stroke-width="1.2"/>
+<polyline points="464.0,150.0 465.1,152.6 466.3,154.1 467.4,153.9 468.6,152.1 469.8,149.4 470.9,147.0 472.1,145.8 473.2,146.4 474.4,148.5 475.5,151.2 476.6,153.4 477.8,154.2 478.9,153.3 480.1,151.0 481.2,148.3 482.4,146.3 483.6,145.9 484.7,147.2 485.9,149.6 487.0,152.3" fill="none" stroke="#e09f1f" stroke-width="2"/>
+<line x1="485.0" y1="150.0" x2="494.0" y2="150.0" stroke="#e09f1f" stroke-width="2" marker-end="url(#ph)"/>
+<text x="479.0" y="140.0" font-size="11" font-weight="700" fill="#8a5a00" text-anchor="middle">hf</text>
+<polyline points="622.0,138.0 623.3,140.8 624.6,141.5 625.9,139.4 627.2,136.3 628.5,134.4 629.8,135.4 631.1,138.3 632.4,141.0 633.7,141.4 635.0,139.2 636.3,136.0 637.6,134.4 638.9,135.6 640.2,138.6 641.5,141.2 642.8,141.3 644.2,138.9 645.5,135.8 646.8,134.4 648.1,135.8 649.4,138.9 650.7,141.3 652.0,141.2 653.3,138.6 654.6,135.5 655.9,134.4 657.2,136.1 658.5,139.2 659.8,141.4 661.1,141.0 662.4,138.3 663.7,135.3 665.0,134.5" fill="none" stroke="#e09f1f" stroke-width="2"/>
+<line x1="663.0" y1="138.0" x2="672.0" y2="138.0" stroke="#e09f1f" stroke-width="2" marker-end="url(#ph)"/>
+<polyline points="622.0,162.0 623.3,164.8 624.6,165.5 625.9,163.4 627.2,160.3 628.5,158.4 629.8,159.4 631.1,162.3 632.4,165.0 633.7,165.4 635.0,163.2 636.3,160.0 637.6,158.4 638.9,159.6 640.2,162.6 641.5,165.2 642.8,165.3 644.2,162.9 645.5,159.8 646.8,158.4 648.1,159.8 649.4,162.9 650.7,165.3 652.0,165.2 653.3,162.6 654.6,159.5 655.9,158.4 657.2,160.1 658.5,163.2 659.8,165.4 661.1,165.0 662.4,162.3 663.7,159.3 665.0,158.5" fill="none" stroke="#e09f1f" stroke-width="2"/>
+<line x1="663.0" y1="162.0" x2="672.0" y2="162.0" stroke="#e09f1f" stroke-width="2" marker-end="url(#ph)"/>
+<text x="647" y="124" font-size="10.5" font-weight="700" fill="#8a5a00" text-anchor="middle">2 × hf</text>
+<line x1="601" y1="114" x2="601" y2="172" stroke="#12a39a" stroke-width="1.4" stroke-dasharray="3 3" marker-end="url(#gr)"/>
+<line x1="560" y1="150" x2="578" y2="150" stroke="#52606d" stroke-width="1.4" marker-end="url(#gr)"/>
+<text x="472" y="238" font-size="10.5" fill="#1f2933">A passing photon of exactly E₂ − E₁</text>
+<text x="472" y="254" font-size="10.5" fill="#1f2933">triggers the drop: two identical photons</text>
+<text x="472" y="270" font-size="10.5" fill="#1f2933">leave in step (the laser’s trick).</text>
+</svg>

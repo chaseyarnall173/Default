@@ -1,0 +1,22 @@
+[
+  {"term": "Ionizing radiation", "definition": "Radiation whose individual photons or particles carry enough energy (conventionally about 10 eV or more) to knock electrons out of atoms or molecules."},
+  {"term": "Ionizing threshold", "definition": "The conventional boundary between non-ionizing and ionizing photons, about 10 eV (124 nm, far ultraviolet). Different standards place it between 10 and 33 eV."},
+  {"term": "Photochemistry", "definition": "Chemical change caused by absorbing a photon that rearranges bonds without removing an electron. UV-B sunburn is photochemistry, not ionization."},
+  {"term": "Thymine dimer", "definition": "A defect in which two adjacent thymine bases on one DNA strand become chemically bonded after absorbing UV light, kinking the DNA and blocking copying."},
+  {"term": "Alpha particle", "definition": "A helium nucleus (two protons, two neutrons, charge +2) emitted by some radioactive nuclei. It ionizes densely and is stopped by paper or the outer layer of skin."},
+  {"term": "Beta particle", "definition": "A fast electron (or positron) emitted by a nucleus. It travels a few millimeters in tissue and is stopped by a few millimeters of aluminum or plastic."},
+  {"term": "Gamma ray", "definition": "A high-energy photon emitted by an atomic nucleus. It is physically the same as an X-ray of the same energy; only the origin differs."},
+  {"term": "Neutron radiation", "definition": "Free neutrons, which carry no charge, pass easily through heavy materials, are slowed most effectively by collisions with hydrogen nuclei, and can make materials radioactive."},
+  {"term": "Galactic cosmic rays", "definition": "Atomic nuclei from outside the solar system moving near light speed: about 85% protons, 14% helium nuclei, and 1% heavier (HZE) nuclei."},
+  {"term": "Free radical", "definition": "A highly reactive molecular fragment with an unpaired electron, such as the hydroxyl radical (•OH) formed when radiation ionizes water. It causes most X-ray and gamma-ray DNA damage."},
+  {"term": "Gray (Gy)", "definition": "SI unit of absorbed dose: one joule of radiation energy deposited per kilogram of material (1 Gy = 100 rad)."},
+  {"term": "Sievert (Sv)", "definition": "SI unit of equivalent or effective dose: absorbed dose multiplied by weighting factors for radiation type (and, for effective dose, organ sensitivity). 1 Sv = 100 rem."},
+  {"term": "Radiation weighting factor", "definition": "A multiplier w_R that converts gray to sievert: 1 for photons and electrons, 2 for protons, 20 for alpha particles and heavy ions, and 2.5–20 for neutrons depending on energy."},
+  {"term": "Inverse-square law", "definition": "For a point source with no absorption, intensity falls as 1/r² because the same energy spreads over a sphere of area 4πr²."},
+  {"term": "Linear attenuation coefficient", "definition": "The fraction of photons removed per unit thickness of a material (μ, in cm⁻¹), so that intensity falls as I = I₀e^(−μx). It equals the mass attenuation coefficient times density."},
+  {"term": "Half-value layer (HVL)", "definition": "The thickness of a material that cuts a photon beam's intensity in half, equal to ln 2 / μ."},
+  {"term": "Lorentz force", "definition": "The magnetic force F = qv × B on a moving charge. It is perpendicular to the velocity, so it bends the path without changing the speed."},
+  {"term": "Gyroradius", "definition": "The radius r = mv/(qB) of the circle or helix a charged particle traces in a magnetic field, using the velocity component perpendicular to the field."},
+  {"term": "Magnetosphere", "definition": "The region around a planet controlled by its magnetic field, bounded by the magnetopause, which deflects most solar-wind particles around the planet."},
+  {"term": "Van Allen belts", "definition": "Two doughnut-shaped zones of charged particles trapped by Earth's magnetic field: an inner belt dominated by protons and an outer belt dominated by electrons."}
+]

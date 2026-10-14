@@ -1,0 +1,187 @@
+<section class="chapter" id="ch02">
+<div class="chapter-opener">
+  <div class="chapter-num">Chapter 2</div>
+  <h1 class="chapter-title">Photons: Light as Packets of Energy</h1>
+  <p class="chapter-hook">Shine the brightest red laser you can find on a sodium plate and nothing comes out. Shine a weak violet light on it and electrons fly off instantly. That stubborn fact forced physicists to admit that light, for all its wave behavior, delivers its energy in lumps.</p>
+  <div class="big-picture"><h4>The big picture</h4><ul>
+    <li>Light&rsquo;s energy arrives in indivisible packets called photons, each carrying \(E = hf\).</li>
+    <li>Frequency (color) sets the energy of each photon; brightness sets how many arrive per second.</li>
+    <li>The photoelectric effect proves it: below a threshold frequency, no electrons are ejected, however bright the light.</li>
+    <li>A photon is an elementary quantum of the electromagnetic field: no mass, no parts, but real energy and momentum.</li>
+    <li>Light travels like a wave and is absorbed like a particle. Both descriptions are true at once.</li>
+  </ul></div>
+  <div class="learning-goals"><h4>After this chapter you can</h4><ul>
+    <li>Explain why bright red light cannot eject electrons that dim violet light can.</li>
+    <li>Compute photon energies with \(E = 1240\ \text{eV}\cdot\text{nm}/\lambda\).</li>
+    <li>Use \(KE_\text{max} = hf - \phi\) to predict photoelectron energies and thresholds.</li>
+    <li>Count photons per second from a source of known power.</li>
+    <li>Say what a photon is, and what it is not.</li>
+    <li>Choose between the wave picture and the photon picture for a given situation.</li>
+  </ul></div>
+</div>
+
+<h2 id="ch02-1"><span class="sec-num">2.1</span>What the wave picture predicts</h2>
+<p>Chapter 1 built a picture of light as a smooth wave whose intensity grows with amplitude squared. That picture explains a great deal, but take it literally and it makes three predictions about light hitting a metal:</p>
+<ul>
+  <li><strong>Any color should work if it is bright enough.</strong> A stronger field shakes electrons harder, so even red light, turned up enough, should eventually tear electrons loose.</li>
+  <li><strong>Brighter light should eject faster electrons.</strong> More energy per second should mean more energy per electron.</li>
+  <li><strong>Dim light should take time.</strong> Energy spread smoothly over the surface should need a while to accumulate in any one electron.</li>
+</ul>
+<p>All three predictions are wrong. The experiment that shows it is the photoelectric effect. (Two other failures of the pure-wave picture, the color of glowing objects and the sharp lines in atomic spectra, appear in Chapters 9 and 5.)</p>
+
+<h2 id="ch02-2"><span class="sec-num">2.2</span>The photoelectric effect</h2>
+<div class="box asked"><div class="box-title">You Asked</div><p class="question">&ldquo;What is the photoelectric effect?&rdquo;</p>
+<p>The photoelectric effect is the ejection of electrons from a material, usually a metal, when light shines on it. Its importance is not that it happens, but how: whether electrons come out depends on the light&rsquo;s color, not its brightness.</p>
+<p>Below a certain threshold frequency, no electrons emerge at all, no matter how intense the light. Above it, electrons emerge immediately, even in very dim light. The only sensible explanation is that light delivers energy in packets (photons), and each electron is freed by absorbing a single packet. Einstein proposed this in 1905, and it won him the Nobel Prize. The rest of this section shows the experiment and the reasoning.</p></div>
+<p>Heinrich Hertz noticed the effect in 1887. Figure 2.1 shows the modern version of the experiment. Light enters a vacuum tube and strikes a clean metal plate. Ejected electrons, called <strong>photoelectrons</strong>, cross to a collector, and an ammeter counts how many arrive per second as a current.</p>
+<figure id="fig-2-1"><img src="figures/ch02-photoelectric-apparatus.svg" alt="Vacuum tube with a metal plate on the left lit by light through a quartz window; electrons fly to a collector on the right; an external circuit contains an ammeter and an adjustable voltage source.">
+<figcaption><span class="fig-num">Figure 2.1</span> The photoelectric experiment. Light ejects electrons from the plate; the ammeter measures how many reach the collector each second. Reversing the voltage and raising it until the current stops gives the stopping voltage \(V_s\), which measures the kinetic energy of the fastest electrons: \(KE_\text{max} = eV_s\).</figcaption></figure>
+<p>To measure electron energies, make the collector negative so it repels the electrons. Raise the voltage until even the fastest electrons are turned back and the current drops to zero. That <strong>stopping voltage</strong> \(V_s\) gives the maximum kinetic energy directly: an electron crossing a voltage \(V_s\) loses energy \(eV_s\), so \(KE_\text{max} = eV_s\). In electron volts, the numbers are the same: a 0.82 V stopping voltage means 0.82 eV electrons.</p>
+<p>Table 2.1 compares what the wave picture predicts with what is actually observed.</p>
+<table><caption><span class="tab-num">Table 2.1</span> The photoelectric effect: wave prediction vs. observation.</caption>
+<tr><th>Question</th><th>Pure-wave prediction</th><th>What actually happens</th></tr>
+<tr><td>Can any color eject electrons?</td><td>Yes, if bright enough</td><td>No. Below a threshold frequency \(f_0\), none come out at any brightness.</td></tr>
+<tr><td>What sets the electrons&rsquo; maximum energy?</td><td>Brightness</td><td>Frequency only. Brighter light gives the same \(KE_\text{max}\).</td></tr>
+<tr><td>What does brighter light change?</td><td>Electron energy</td><td>The number of electrons per second (the current).</td></tr>
+<tr><td>Is there a delay in dim light?</td><td>Yes, while energy builds up</td><td>No. Emission begins essentially instantly.</td></tr>
+</table>
+
+<h2 id="ch02-3"><span class="sec-num">2.3</span>Einstein&rsquo;s answer: light comes in packets</h2>
+<p>Einstein&rsquo;s idea was simple: the energy in light of frequency \(f\) comes in indivisible packets, now called <strong>photons</strong>, each carrying</p>
+<div class="equation boxed" data-eq="2.1">\[ E_\text{photon} = hf = \frac{hc}{\lambda} \]</div>
+<p class="where">where \(h = 6.626\times10^{-34}\ \text{J}\cdot\text{s}\) (Planck&rsquo;s constant), \(f\) is the frequency and \(\lambda\) the wavelength.</p>
+<p>An electron absorbs one whole photon or nothing. To escape, it must pay an energy toll to leave the metal, called the <strong>work function</strong> \(\phi\). Whatever is left becomes kinetic energy (Figure 2.2). The least tightly held electrons keep the most:</p>
+<div class="equation boxed" data-eq="2.2">\[ KE_\text{max} = hf - \phi \]</div>
+<p class="where">If \(hf \lt \phi\), the electron cannot escape. The <strong>threshold frequency</strong> is \(f_0 = \phi/h\).</p>
+<p>This one idea explains every row of Table 2.1:</p>
+<ul>
+  <li><strong>Threshold.</strong> A red photon has too little energy, and electrons cannot save up energy from several photons, because an excited electron loses its extra energy to the metal almost immediately. More red photons just mean more failed attempts. (Only extremely intense pulsed lasers can make one electron absorb two photons at once, a rare exception.)</li>
+  <li><strong>Energy set by frequency.</strong> Each electron gets one photon&rsquo;s worth, \(hf\), regardless of how many other photons arrive.</li>
+  <li><strong>Brightness sets the count.</strong> Brighter light means more photons, so more electrons, each with the same \(KE_\text{max}\).</li>
+  <li><strong>No delay.</strong> The first photon absorbed can free an electron at once.</li>
+</ul>
+<figure id="fig-2-2"><img src="figures/ch02-energy-diagram.svg" alt="Energy diagram for sodium. Electrons fill a sea inside the metal; the escape level is 2.28 eV above the top of the sea. A red 650 nm photon (1.91 eV) lifts an electron but not out, so it falls back as heat. A green 530 nm photon (2.34 eV) barely frees one. A violet 400 nm photon (3.10 eV) frees one with 0.82 eV of kinetic energy.">
+<figcaption><span class="fig-num">Figure 2.2</span> The photoelectric effect as an energy budget, for sodium (\(\phi = 2.28\) eV). Each arrow is the energy one photon gives to one electron. Red photons fall short of the escape level, so their energy ends up as heat; violet photons clear it with 0.82 eV to spare.</figcaption></figure>
+<div class="box analogy"><div class="box-title">Analogy</div><p>Each electron is a vending machine that accepts only single coins worth at least 25 cents. A million pennies (red photons) buy nothing, because the machine takes one coin at a time. One quarter (a violet photon) works instantly, and the change is the electron&rsquo;s kinetic energy.</p></div>
+<p>Figure 2.3 plots Eq. 2.2 for two metals. Each is a straight line with slope \(h\); only the starting point differs, set by the work function. Robert Millikan measured exactly these lines in 1916, confirming Einstein&rsquo;s equation (even though he doubted the photon idea). Einstein received the 1921 Nobel Prize in Physics for the law of the photoelectric effect, not for relativity.</p>
+<table><caption><span class="tab-num">Table 2.2</span> Work functions of some metals (clean surfaces; values vary with surface condition and crystal face).</caption>
+<tr><th>Metal</th><th>Work function \(\phi\) (eV)</th><th>Threshold wavelength \(\lambda_0 = 1240/\phi\) (nm)</th><th>Visible light ejects electrons?</th></tr>
+<tr><td>Cesium</td><td>2.1</td><td>590</td><td>Yes, except orange and red</td></tr>
+<tr><td>Sodium</td><td>2.28</td><td>544</td><td>Yes, below 544 nm (green to violet)</td></tr>
+<tr><td>Potassium</td><td>2.3</td><td>540</td><td>Yes, below 540 nm (green to violet)</td></tr>
+<tr><td>Silver</td><td>4.26&ndash;4.74</td><td>291&ndash;262</td><td>No (needs UV)</td></tr>
+<tr><td>Copper</td><td>4.7</td><td>264</td><td>No (needs UV)</td></tr>
+<tr><td>Gold</td><td>5.1</td><td>243</td><td>No (needs UV)</td></tr>
+<tr><td>Platinum</td><td>6.35</td><td>195</td><td>No (needs far UV)</td></tr>
+</table>
+<figure id="fig-2-3"><img src="figures/ch02-kemax-vs-f.svg" alt="Graph of maximum electron kinetic energy versus light frequency for sodium and copper. Each is zero below a threshold, then rises in a straight line of the same slope. Sodium's threshold is 5.5 times ten to the fourteen hertz (544 nm, in the visible); copper's is 11.4 times ten to the fourteen hertz (264 nm, ultraviolet).">
+<figcaption><span class="fig-num">Figure 2.3</span> Maximum photoelectron energy vs. light frequency, from \(KE_\text{max} = hf - \phi\). Below the threshold \(f_0\) nothing is ejected; above it the line rises with slope \(h\) for every metal. Sodium responds to green, blue and violet light; copper needs ultraviolet. Work functions from HyperPhysics.</figcaption></figure>
+<div class="box myth"><div class="box-title">Myth vs. Reality</div>
+<p class="myth-line"><strong>Myth:</strong> Brighter light knocks electrons out harder, so they come out faster.</p>
+<p><strong>Reality:</strong> Brighter light of the same color knocks out more electrons, each with the same maximum energy. Only a higher frequency makes faster electrons.</p></div>
+
+<h2 id="ch02-4"><span class="sec-num">2.4</span>Photon energy in practice: the 1240 shortcut</h2>
+<p>Joules are awkward for single photons, so we use the <strong>electron volt</strong> (eV): the energy an electron gains crossing 1 volt, \(1\ \text{eV} = 1.602\times10^{-19}\) J. Combining constants gives \(hc = 1240\ \text{eV}\cdot\text{nm}\), and Eq. 2.1 becomes a shortcut worth memorizing:</p>
+<div class="equation boxed" data-eq="2.3">\[ E\ (\text{eV}) = \frac{1240}{\lambda\ (\text{nm})} \]</div>
+<p>Visible photons run from about 1.8 eV (red, 700 nm) to 3.1 eV (violet, 400 nm). That is the same range as the energies that hold electrons in molecules and solids, which is why visible light can drive chemistry in your retina (Chapter 3) and give materials their colors (Chapter 7).</p>
+<div class="box example"><div class="box-title">Worked Example 2.1 <span class="sub">&mdash; Photon energies across the spectrum</span></div>
+<p class="given"><strong>Given:</strong> a green laser (532 nm), Wi-Fi (2.4 GHz) and an X-ray of wavelength 0.10 nm.</p>
+<p><strong>Find:</strong> the energy of one photon of each, in eV.</p>
+<p><strong>Think:</strong> Use the 1240 shortcut when you know \(\lambda\) in nm. For Wi-Fi you know \(f\), so use \(E = hf\) with \(h = 4.136\times10^{-15}\ \text{eV}\cdot\text{s}\).</p>
+<p>\[ E_\text{green} = \frac{1240\ \text{eV}\cdot\text{nm}}{532\ \text{nm}} = 2.33\ \text{eV} \;(= 3.73\times10^{-19}\ \text{J}) \]</p>
+<p>\[ E_\text{Wi-Fi} = (4.136\times10^{-15}\ \text{eV}\cdot\text{s})(2.4\times10^{9}\ \text{Hz}) = 9.9\times10^{-6}\ \text{eV} \]</p>
+<p>\[ E_\text{X-ray} = \frac{1240\ \text{eV}\cdot\text{nm}}{0.10\ \text{nm}} = 12{,}400\ \text{eV} = 12.4\ \text{keV} \]</p>
+<p class="answer">Answer: 2.33 eV, about \(10^{-5}\) eV and 12.4 keV. One X-ray photon carries over a billion times the energy of one Wi-Fi photon.</p></div>
+<div class="box example"><div class="box-title">Worked Example 2.2 <span class="sub">&mdash; Violet vs. red light on sodium</span></div>
+<p class="given"><strong>Given:</strong> sodium, \(\phi = 2.28\) eV. Violet light at 400 nm; red light at 650 nm.</p>
+<p><strong>Find:</strong> \(KE_\text{max}\) and the stopping voltage for each, and sodium&rsquo;s threshold wavelength.</p>
+<p><strong>Think:</strong> Find each photon energy, then subtract the work function. A negative result means no emission.</p>
+<p>\[ E_\text{violet} = \frac{1240}{400} = 3.10\ \text{eV} \;\Rightarrow\; KE_\text{max} = 3.10 - 2.28 = 0.82\ \text{eV},\quad V_s = 0.82\ \text{V} \]</p>
+<p>\[ E_\text{red} = \frac{1240}{650} = 1.91\ \text{eV} \lt 2.28\ \text{eV} \;\Rightarrow\; \text{no electrons} \]</p>
+<p>\[ \lambda_0 = \frac{1240\ \text{eV}\cdot\text{nm}}{2.28\ \text{eV}} = 544\ \text{nm} \]</p>
+<p class="answer">Answer: violet light ejects electrons with up to 0.82 eV (stopped by 0.82 V); red light ejects none at any brightness. Sodium&rsquo;s threshold is 544 nm, in the green.</p></div>
+
+<h2 id="ch02-5"><span class="sec-num">2.5</span>Brightness is photon count</h2>
+<p>If each photon carries \(hf\), then a beam of power \(P\) must deliver photons at a rate \(\dot N\) (photons per second) such that</p>
+<div class="equation" data-eq="2.4">\[ P = \dot N \, hf \qquad\Longrightarrow\qquad \dot N = \frac{P}{hf} = \frac{P\lambda}{hc} \]</div>
+<p>So two beams of equal power but different color contain different numbers of photons (Figure 2.4). The red beam carries more photons, each with less energy. On sodium, only the violet beam&rsquo;s photons can free electrons.</p>
+<figure id="fig-2-4"><img src="figures/ch02-same-brightness.svg" alt="Two rows. Top: a red 700 nm beam delivering seven wave packets per tick, each 1.77 eV, totaling 12.4 eV; on sodium it ejects no electrons. Bottom: a violet 400 nm beam delivering four packets per tick, each 3.10 eV, also totaling 12.4 eV; it ejects four electrons.">
+<figcaption><span class="fig-num">Figure 2.4</span> Same brightness, different color. Both beams deliver 12.4 eV per tick of time, but red does it with seven low-energy photons and violet with four high-energy ones. Photon energy, not total energy, decides whether an electron can escape.</figcaption></figure>
+<div class="box asked"><div class="box-title">You Asked</div><p class="question">&ldquo;Does a bigger amplitude of a wave mean more photons?&rdquo;</p>
+<p>Yes: for light of a given color, a bigger amplitude means more photons per second, while each photon keeps exactly the same energy, \(hf\).</p>
+<p>The precise link is with amplitude squared. Intensity is proportional to \(E_0^2\) (Chapter 1), and intensity equals photon arrival rate times \(hf\). So at fixed frequency, the photon count is proportional to \(E_0^2\): double the amplitude and you get four times as many photons per second.</p>
+<p>Two cautions. First, comparing different colors at equal amplitude, the lower-frequency beam has more photons. Second, for a single photon, the wave&rsquo;s amplitude squared at a spot tells you the probability of detecting that photon there (Section 2.7). Either way, amplitude never changes the size of a photon. Only frequency does.</p></div>
+<div class="box key"><div class="box-title">Key Idea</div><p>Frequency sets the energy of each photon. Amplitude (brightness) sets how many photons arrive per second. Whether light can do something to a single atom or electron, such as eject it, break a bond or trigger your retina, depends on the energy per photon, not on the brightness.</p></div>
+<div class="box example"><div class="box-title">Worked Example 2.3 <span class="sub">&mdash; Photons from a laser pointer</span></div>
+<p class="given"><strong>Given:</strong> a 5.0 mW green laser pointer (the US limit for laser pointers) at 532 nm.</p>
+<p><strong>Find:</strong> the number of photons it emits per second.</p>
+<p><strong>Think:</strong> Power is photons per second times energy per photon (Eq. 2.4). Work in joules: \(E = 2.33\ \text{eV} \times 1.602\times10^{-19}\ \text{J/eV}\).</p>
+<p>\[ E_\text{photon} = 3.73\times10^{-19}\ \text{J}, \qquad \dot N = \frac{5.0\times10^{-3}\ \text{J/s}}{3.73\times10^{-19}\ \text{J}} = 1.3\times10^{16}\ \text{photons/s} \]</p>
+<p class="answer">Answer: about \(1.3\times10^{16}\) photons per second. A red 650 nm pointer of the same power would emit about 20% more, since each red photon carries less energy.</p></div>
+<p>Table 2.3 shows why you never notice the graininess of light: everyday sources emit staggering numbers of photons. In a very dark room your eye comes close to the limit, since a dark-adapted rod cell in your retina can respond to a single photon.</p>
+<table><caption><span class="tab-num">Table 2.3</span> Photon rates from everyday sources (\(\dot N = P/hf\); powers are typical round numbers, and sunlight assumes an average photon energy of about 1.5 eV).</caption>
+<tr><th>Source</th><th>Power</th><th>Photon energy</th><th>Photons per second</th></tr>
+<tr><td>FM radio station (100 MHz)</td><td>50 kW</td><td>\(4\times10^{-7}\) eV</td><td>\(\sim 8\times10^{29}\)</td></tr>
+<tr><td>Wi-Fi router (2.4 GHz)</td><td>0.1 W</td><td>\(1\times10^{-5}\) eV</td><td>\(\sim 6\times10^{22}\)</td></tr>
+<tr><td>Sunlight on 1 cm² (ground, noon)</td><td>0.1 W</td><td>\(\sim 1.5\) eV (average)</td><td>\(\sim 4\times10^{17}\)</td></tr>
+<tr><td>Green laser pointer (532 nm)</td><td>5 mW</td><td>2.33 eV</td><td>\(1.3\times10^{16}\)</td></tr>
+</table>
+
+<h2 id="ch02-6"><span class="sec-num">2.6</span>What is a photon, really?</h2>
+<div class="box asked"><div class="box-title">You Asked</div><p class="question">&ldquo;What is a photon made up of?&rdquo;</p>
+<p>Nothing smaller: as far as every experiment can tell, a photon is an elementary particle with no internal parts. It is the smallest possible unit, or <strong>quantum</strong>, of energy in the electromagnetic field at a given frequency.</p>
+<p>The best way to think of it: a photon is &ldquo;made of&rdquo; the electromagnetic field in the way a ripple is made of the pond. The field can only gain or lose energy at frequency \(f\) in steps of exactly \(hf\), and one such step is one photon. That is why photons can be created and destroyed. An atom does not store photons inside it; it creates one when an electron drops to a lower energy (Chapter 5), and a photon that is absorbed simply ceases to exist, its energy handed to the absorber.</p></div>
+<p>A photon&rsquo;s properties are few and exact:</p>
+<ul>
+  <li><strong>No mass and no charge.</strong> It can never be at rest; in vacuum it always moves at \(c\).</li>
+  <li><strong>Energy</strong> \(E = hf\), set entirely by its frequency.</li>
+  <li><strong>Momentum</strong> \(p = h/\lambda = E/c\). Light pushes on what it hits; solar sails use this push for propulsion in space.</li>
+  <li><strong>Spin</strong>, a built-in angular momentum, connected to the light&rsquo;s polarization (Chapter 1).</li>
+</ul>
+<div class="equation" data-eq="2.5">\[ p = \frac{h}{\lambda} = \frac{E}{c} \]</div>
+<div class="box myth"><div class="box-title">Myth vs. Reality</div>
+<p class="myth-line"><strong>Myth:</strong> A photon is a tiny ball of light that flies along a definite path, like a microscopic marble.</p>
+<p><strong>Reality:</strong> A photon has no size or surface, and between emission and detection it does not follow a single trajectory. It spreads out like a wave, can pass through two slits at once (Section 2.7), and then deposits all of its energy at one point when absorbed. &ldquo;Particle&rdquo; here means &ldquo;indivisible lump of energy and momentum,&rdquo; not &ldquo;little marble.&rdquo;</p></div>
+
+<h2 id="ch02-7"><span class="sec-num">2.7</span>Wave and particle: both true</h2>
+<p>So is light a wave or a stream of particles? It is one thing, a quantum object, that shows wave behavior in how it travels and particle behavior in how it delivers energy. Physicists call this <strong>wave&ndash;particle duality</strong>. Electrons and atoms behave the same way (Chapters 4 and 8).</p>
+<div class="box key"><div class="box-title">Key Idea</div><p>Light travels like a wave and arrives like a particle. Use the wave picture for where light goes; use the photon picture for what light does when it is absorbed or emitted.</p></div>
+<table><caption><span class="tab-num">Table 2.4</span> Which picture to use.</caption>
+<tr><th>Use the wave picture for&hellip;</th><th>Use the photon picture for&hellip;</th></tr>
+<tr><td>Interference and diffraction (Chapter 8)</td><td>The photoelectric effect and solar cells</td></tr>
+<tr><td>Reflection, refraction and lenses (Chapter 6)</td><td>Absorption and emission by atoms (Chapter 5)</td></tr>
+<tr><td>Polarization (Chapter 1)</td><td>Whether light can ionize atoms or break bonds (Chapter 10)</td></tr>
+<tr><td>Antennas, radio and intensity patterns</td><td>Counting detections: cameras, eyes, Geiger counters</td></tr>
+</table>
+<div class="box rabbit"><div class="box-title">Rabbit Hole <span class="sub">(optional) &mdash; Sending photons through two slits one at a time</span></div>
+<p>Safe to skip. Light passing through two narrow slits makes a pattern of bright and dark stripes on a screen, a classic sign of waves interfering (Chapter 8). Now dim the source until photons arrive one at a time, and replace the screen with a sensitive camera.</p>
+<p>Each photon lands at a single point, a particle-like event. Yet the points are not random. As thousands accumulate, the stripes appear (Figure 2.5), even though no two photons were ever in the apparatus together. Each photon&rsquo;s wave passes through both slits and interferes with itself; the wave&rsquo;s intensity at each spot is the probability that the photon is detected there. If you set up detectors to find out which slit each photon used, the stripes disappear.</p>
+<p>G. I. Taylor did an early version in 1909 with light so dim that one exposure took months. Modern experiments with true single-photon sources show exactly the buildup in Figure 2.5.</p></div>
+<figure id="fig-2-5"><img src="figures/ch02-double-slit-buildup.svg" alt="Four dark panels showing dots where single photons landed behind a double slit: 20 photons look random, 200 hint at stripes, 2,000 show clear vertical stripes, and 20,000 show a crisp striped interference pattern matching an amber wave-prediction curve.">
+<figcaption><span class="fig-num">Figure 2.5</span> Simulated arrivals of single photons behind two slits. Each dot is one photon detected at one point (particle behavior). The striped pattern emerges only from many photons and matches the wave prediction (amber curve). The simulation draws each landing spot at random with probability given by the wave intensity, which reproduces what real single-photon experiments record.</figcaption></figure>
+<div class="box myth"><div class="box-title">Myth vs. Reality</div>
+<p class="myth-line"><strong>Myth:</strong> Light switches between being a wave and being a particle, depending on whether someone is watching.</p>
+<p><strong>Reality:</strong> Light is always the same quantum object. &ldquo;Wave&rdquo; and &ldquo;particle&rdquo; are two simplified models, each matching part of its behavior. What a measurement does is force the photon to deposit its energy somewhere definite.</p></div>
+
+<div class="summary"><h2>Chapter summary</h2><ul>
+  <li>Light delivers energy in photons of \(E = hf = hc/\lambda\). In practical units, \(E\,(\text{eV}) = 1240/\lambda\,(\text{nm})\); visible photons carry 1.8&ndash;3.1 eV.</li>
+  <li>Photoelectric effect: one photon frees one electron if \(hf \geq \phi\), giving \(KE_\text{max} = hf - \phi\). Below the threshold \(f_0 = \phi/h\), nothing happens at any brightness.</li>
+  <li>The stopping voltage measures \(KE_\text{max} = eV_s\). Plots of \(KE_\text{max}\) vs. \(f\) are straight lines with slope \(h\) for every metal.</li>
+  <li>Brightness is photon rate: \(P = \dot N hf\). At fixed color, photon count \(\propto\) amplitude²; a 5 mW green laser emits \(1.3\times10^{16}\) photons/s.</li>
+  <li>A photon is an elementary quantum of the EM field: no mass, no charge, no parts; it has energy \(hf\), momentum \(h/\lambda\) and spin.</li>
+  <li>Light travels like a wave and is absorbed like a particle. Single photons build up interference patterns one dot at a time.</li>
+</ul></div>
+<div class="check"><h2>Check yourself</h2><ol>
+  <li><span class="tag">Concept</span>Explain why a very bright red light cannot eject electrons from sodium, while a dim violet light can.</li>
+  <li><span class="tag">Calc</span>Find the energy of one photon of red light (650 nm) and of blue light (450 nm), in eV and in joules.</li>
+  <li><span class="tag">Calc</span>Cesium has \(\phi = 2.1\) eV. (a) What is its threshold wavelength? (b) Will 650 nm red light eject electrons? (c) Will 532 nm green light? If so, with what \(KE_\text{max}\)?</li>
+  <li><span class="tag">Calc</span>A germicidal UV lamp emits at 254 nm. It shines on copper (\(\phi = 4.7\) eV). Find \(KE_\text{max}\) and the stopping voltage.</li>
+  <li><span class="tag">Concept</span>You double the intensity of light shining on a metal without changing its frequency (which is above threshold). What happens to (a) the number of electrons ejected per second and (b) their maximum kinetic energy?</li>
+  <li><span class="tag">Calc</span>A 60 W-equivalent LED bulb gives off, say, about 2.5 W of visible light. Treating it all as 550 nm light, roughly how many visible photons does it emit per second?</li>
+  <li><span class="tag">Calc</span>How many 2.4 GHz Wi-Fi photons have the same total energy as one 532 nm green photon? Why can&rsquo;t that many Wi-Fi photons do what one green photon does to a molecule?</li>
+  <li><span class="tag">Concept</span>Does a photon have mass? Can it be at rest? What is it made of?</li>
+  <li><span class="tag">Calc</span>(a) Find the momentum of one 532 nm photon. (b) What force does a 5.0 mW laser beam exert on a surface that absorbs it completely? (Hint: force = momentum delivered per second = \(P/c\).)</li>
+  <li><span class="tag">Apply</span>Silicon solar cells need a photon energy of at least about 1.1 eV (silicon&rsquo;s band gap) to free an electron. What is the longest wavelength they can use? Which part of sunlight is wasted?</li>
+  <li><span class="tag">Concept</span>In the one-photon-at-a-time double-slit experiment, what tells you where a photon is likely to land? Why can&rsquo;t you see the stripes after only 20 photons?</li>
+</ol><p class="small muted">Full solutions are in the Answer Key at the back of the book.</p></div>
+</section>

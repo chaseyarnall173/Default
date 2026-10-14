@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 352" width="680" height="352" font-family="Inter, sans-serif">
+<rect width="680" height="352" fill="#ffffff"/>
+<defs>
+<linearGradient id="rainbow" x1="0" x2="1"><stop offset="0.000" stop-color="#79008d"/><stop offset="0.032" stop-color="#8300b5"/><stop offset="0.065" stop-color="#7e00db"/><stop offset="0.097" stop-color="#6a00ff"/><stop offset="0.129" stop-color="#3d00ff"/><stop offset="0.161" stop-color="#0000ff"/><stop offset="0.194" stop-color="#0046ff"/><stop offset="0.226" stop-color="#007bff"/><stop offset="0.258" stop-color="#00a9ff"/><stop offset="0.290" stop-color="#00d5ff"/><stop offset="0.323" stop-color="#00ffff"/><stop offset="0.355" stop-color="#00ff92"/><stop offset="0.387" stop-color="#00ff00"/><stop offset="0.419" stop-color="#36ff00"/><stop offset="0.452" stop-color="#5eff00"/><stop offset="0.484" stop-color="#81ff00"/><stop offset="0.516" stop-color="#a3ff00"/><stop offset="0.548" stop-color="#c3ff00"/><stop offset="0.581" stop-color="#e1ff00"/><stop offset="0.613" stop-color="#ffff00"/><stop offset="0.645" stop-color="#ffdf00"/><stop offset="0.677" stop-color="#ffbe00"/><stop offset="0.710" stop-color="#ff9b00"/><stop offset="0.742" stop-color="#ff7700"/><stop offset="0.774" stop-color="#ff4f00"/><stop offset="0.806" stop-color="#ff2100"/><stop offset="0.839" stop-color="#ff0000"/><stop offset="0.871" stop-color="#ff0000"/><stop offset="0.903" stop-color="#ff0000"/><stop offset="0.935" stop-color="#ff0000"/><stop offset="0.968" stop-color="#ff0000"/><stop offset="1.000" stop-color="#ff0000"/></linearGradient>
+<radialGradient id="glow" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#fff4c2"/><stop offset="0.55" stop-color="#e09f1f"/><stop offset="1" stop-color="#e09f1f" stop-opacity="0"/></radialGradient>
+<marker id="am" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#e09f1f"/></marker>
+</defs>
+<circle cx="64" cy="176" r="34" fill="url(#glow)"/>
+<circle cx="64" cy="176" r="16" fill="#fff4c2" stroke="#e09f1f" stroke-width="2"/>
+<text x="64" y="226" font-size="10.5" font-weight="700" fill="#1f2933" text-anchor="middle">hot, dense</text>
+<text x="64" y="239" font-size="10.5" font-weight="700" fill="#1f2933" text-anchor="middle">source</text>
+<text x="64" y="253" font-size="10" fill="#52606d" text-anchor="middle">(filament, the</text>
+<text x="64" y="266" font-size="10" fill="#52606d" text-anchor="middle">Sun’s surface)</text>
+<ellipse cx="240" cy="176" rx="54" ry="40" fill="#d9dee5" stroke="#52606d" stroke-width="1.2"/>
+<circle cx="216" cy="164" r="3" fill="#12a39a"/>
+<circle cx="248" cy="156" r="3" fill="#12a39a"/>
+<circle cx="266" cy="184" r="3" fill="#12a39a"/>
+<circle cx="230" cy="190" r="3" fill="#12a39a"/>
+<circle cx="210" cy="186" r="3" fill="#12a39a"/>
+<circle cx="254" cy="174" r="3" fill="#12a39a"/>
+<text x="240" y="232" font-size="10.5" font-weight="700" fill="#1f2933" text-anchor="middle">cooler, thin gas</text>
+<text x="240" y="245" font-size="10" fill="#52606d" text-anchor="middle">(here: hydrogen)</text>
+<line x1="94" y1="158" x2="412" y2="58" stroke="#e09f1f" stroke-width="2.4" marker-end="url(#am)"/>
+<line x1="100" y1="176" x2="184" y2="176" stroke="#e09f1f" stroke-width="2.4" marker-end="url(#am)"/>
+<line x1="296" y1="176" x2="412" y2="176" stroke="#e09f1f" stroke-width="2.4" marker-end="url(#am)"/>
+<line x1="225" y1="133" x2="218" y2="108" stroke="#e09f1f" stroke-width="1.6" marker-end="url(#am)" stroke-dasharray="3 2"/>
+<line x1="190" y1="154" x2="166" y2="141" stroke="#e09f1f" stroke-width="1.6" marker-end="url(#am)" stroke-dasharray="3 2"/>
+<line x1="187" y1="195" x2="162" y2="206" stroke="#e09f1f" stroke-width="1.6" marker-end="url(#am)" stroke-dasharray="3 2"/>
+<line x1="280" y1="206" x2="412" y2="286" stroke="#e09f1f" stroke-width="1.8" marker-end="url(#am)" stroke-dasharray="3 2"/>
+<text x="200" y="80" font-size="10" fill="#52606d" text-anchor="middle">absorbed light is re-emitted</text>
+<text x="200" y="92" font-size="10" fill="#52606d" text-anchor="middle">in random directions</text>
+<rect x="430" y="44" width="238" height="34" fill="url(#rainbow)"/>
+<rect x="430" y="44" width="238" height="34" fill="none" stroke="#d9dee5"/>
+<text x="430" y="24" font-size="11.5" font-weight="700" fill="#1f2933">A  Continuous spectrum</text>
+<text x="430" y="38" font-size="10" fill="#52606d">a hot, dense object glows at all wavelengths</text>
+<rect x="430" y="160" width="238" height="34" fill="url(#rainbow)"/>
+<rect x="632.7" y="160" width="3.4" height="34" fill="#0d1117"/>
+<rect x="502.1" y="160" width="3.4" height="34" fill="#0d1117"/>
+<rect x="462.1" y="160" width="3.4" height="34" fill="#0d1117"/>
+<rect x="443.8" y="160" width="3.4" height="34" fill="#0d1117"/>
+<rect x="430" y="160" width="238" height="34" fill="none" stroke="#d9dee5"/>
+<text x="430" y="140" font-size="11.5" font-weight="700" fill="#1f2933">B  Absorption lines</text>
+<text x="430" y="154" font-size="10" fill="#52606d">the gas removes exactly its own wavelengths</text>
+<rect x="430" y="272" width="238" height="34" fill="#0d1117"/>
+<rect x="632.7" y="272" width="3.4" height="34" fill="#ff0000"/>
+<rect x="502.1" y="272" width="3.4" height="34" fill="#00efff"/>
+<rect x="462.1" y="272" width="3.4" height="34" fill="#2800ff"/>
+<rect x="443.8" y="272" width="3.4" height="34" fill="#7d00db"/>
+<rect x="430" y="272" width="238" height="34" fill="none" stroke="#d9dee5"/>
+<text x="430" y="252" font-size="11.5" font-weight="700" fill="#1f2933">C  Emission lines</text>
+<text x="430" y="266" font-size="10" fill="#52606d">the same gas, seen from the side</text>
+<text x="437.7" y="320" font-size="10" fill="#52606d" text-anchor="middle">400</text>
+<text x="514.5" y="320" font-size="10" fill="#52606d" text-anchor="middle">500</text>
+<text x="591.2" y="320" font-size="10" fill="#52606d" text-anchor="middle">600</text>
+<text x="668.0" y="320" font-size="10" fill="#52606d" text-anchor="end">700 nm</text>
+<text x="430" y="336" font-size="10" fill="#1f2933">Dark lines in B sit exactly where bright lines are in C.</text>
+</svg>

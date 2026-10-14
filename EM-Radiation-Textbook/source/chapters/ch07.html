@@ -1,0 +1,178 @@
+<section class="chapter" id="ch07">
+<div class="chapter-opener">
+  <div class="chapter-num">Chapter 7</div>
+  <h1 class="chapter-title">Color</h1>
+  <p class="chapter-hook">A ripe tomato, a gold ring, the blue sky, and a soap bubble are colored for four completely different physical reasons. Once you can name the mechanism, you can predict the color.</p>
+  <div class="big-picture"><h4>The big picture</h4><ul>
+    <li>Color is your visual system's summary of which visible wavelengths (400–700 nm, photon energies 1.8–3.1 eV) reach your eye.</li>
+    <li>Three types of cone cells turn any spectrum into just three signals, so very different spectra can look identical.</li>
+    <li>Most objects are colored by subtraction: they absorb some wavelengths and send back the rest.</li>
+    <li>Absorption happens where an electron energy gap matches a visible photon: band gaps, dye molecules, impurity ions, and metals' bands.</li>
+    <li>Scattering, interference, and emission make color with no pigment at all.</li>
+  </ul></div>
+  <div class="learning-goals"><h4>After this chapter you can</h4><ul>
+    <li>Explain color in terms of wavelengths, photon energies, and cone responses.</li>
+    <li>Distinguish additive (light) from subtractive (pigment) color mixing.</li>
+    <li>Predict a material's appearance from its band gap using the 1.8 eV / 3.1 eV rule.</li>
+    <li>Explain the colors of ruby, sapphire, gold, copper, and silver.</li>
+    <li>Compute relative Rayleigh scattering and explain blue skies, red sunsets, and white clouds.</li>
+  </ul></div>
+</div>
+
+<h2 id="ch07-1"><span class="sec-num">7.1</span>Color is light plus a brain</h2>
+<p>Visible light spans wavelengths of about 400 nm (violet) to 700 nm (red). Using the shortcut from Chapter 2, those are photon energies from 3.1 eV down to 1.8 eV:</p>
+<div class="equation" data-eq="7.1">\[ E = \frac{hc}{\lambda} = \frac{1240\ \text{eV}\cdot\text{nm}}{\lambda} \]</div>
+<p>Light from almost any object is a mixture of many wavelengths, its <strong>spectrum</strong>. "Color" is the label your eye and brain attach to that mixture.</p>
+<div class="box asked"><div class="box-title">You Asked</div><p class="question">“How does color work in terms of EM radiation?”</p>
+<p>Color is how your visual system labels the mix of visible wavelengths (photon energies of about 1.8 to 3.1 eV) entering your eye; an object's color is whatever part of the light falling on it the object sends toward you.</p>
+<p>Three steps set what you see:</p>
+<ul>
+<li><strong>The source</strong> provides a spectrum: sunlight contains every visible wavelength; a sodium streetlight is almost pure 589 nm yellow.</li>
+<li><strong>The object</strong> reflects, absorbs, transmits, or scatters each wavelength differently (Chapter 6). What survives travels to you.</li>
+<li><strong>Your eye</strong> measures the arriving light with three kinds of cones, and your brain compares the three signals (Section 7.2).</li>
+</ul>
+<p>Change any step and the color changes. That is why a red car looks muddy brown under a sodium lamp: no red light is there for it to send back.</p></div>
+
+<h2 id="ch07-2"><span class="sec-num">7.2</span>Three cones, three numbers</h2>
+<p>Your retina has three types of <strong>cone cells</strong>, each with a pigment tuned to a different range (Figure 7.1): <strong>S</strong> (short-wavelength) cones peak near 420 nm, <strong>M</strong> near 534 nm, and <strong>L</strong> near 564 nm. Rods, which peak near 498 nm, handle dim light and do not distinguish color.</p>
+<figure id="fig-7-1"><img src="figures/ch07-cones.svg" alt="Three overlapping bell-shaped curves over a visible spectrum strip: the S cone curve peaks near 420 nanometers, the M cone curve near 534 nanometers, and the L cone curve near 564 nanometers. A vertical line at 580 nanometers marks where L responds strongly, M moderately, and S hardly at all.">
+<figcaption><span class="fig-num">Figure 7.1</span> Approximate relative sensitivity of the three cone types, each normalized to 1 at its peak (curves from a standard pigment template). Yellow light at 580 nm excites L strongly and M about half as much. Red light plus green light in the right ratio produces the same two signals, and looks the same yellow.</figcaption></figure>
+<p>Your brain never sees the full spectrum, only three numbers: how strongly S, M, and L respond. Any two spectra that produce the same three numbers look identical. Such spectra are called <strong>metamers</strong>, and they are why a screen can show yellow using only red and green light.</p>
+<div class="box analogy"><div class="box-title">Analogy</div><p>Describing a spectrum with three cone signals is like describing a song only by the loudness of its bass, midrange, and treble. Very different songs can give the same three numbers.</p></div>
+<div class="box myth"><div class="box-title">Myth vs. Reality</div>
+<p class="myth-line"><strong>Myth:</strong> Every color you can see corresponds to some wavelength of light.</p>
+<p><strong>Reality:</strong> Magenta, pink, brown, and white appear nowhere in the rainbow. Magenta is what your brain reports when L and S cones fire but M cones do not, a combination no single wavelength can produce.</p></div>
+
+<h2 id="ch07-3"><span class="sec-num">7.3</span>Mixing color: adding light vs. subtracting it</h2>
+<p>There are two opposite ways to mix color (Figure 7.2):</p>
+<ul>
+<li><strong>Additive mixing</strong> combines lights. Start dark and add red, green, and blue (RGB) light in different amounts. Phone and TV screens work this way.</li>
+<li><strong>Subtractive mixing</strong> combines absorbers: inks, paints, filters. Start with white light; each layer removes part of the spectrum. Cyan ink absorbs red, magenta absorbs green, and yellow absorbs blue (CMY).</li>
+</ul>
+<figure id="fig-7-2"><img src="figures/ch07-mixing.svg" alt="Left: red, green, and blue circles of light overlap on black, making yellow, cyan, and magenta where two overlap and white in the center. Right: cyan, magenta, and yellow ink circles overlap on white, making blue, green, and red where two overlap and black in the center.">
+<figcaption><span class="fig-num">Figure 7.2</span> (a) Additive mixing of light. (b) Subtractive mixing of inks or filters. Each mode's "primaries" are the other mode's two-color mixtures.</figcaption></figure>
+<div class="box key"><div class="box-title">Key Idea</div><p>Pigments don't add color; they take it away. Yellow plus cyan paint looks green because yellow removes blue and cyan removes red, so only green survives both.</p></div>
+
+<h2 id="ch07-4"><span class="sec-num">7.4</span>Objects are colored by what they remove</h2>
+<p>Under white light, an object absorbs some wavelengths and reflects or transmits the rest. The leftovers set its color (Figure 7.3). A red apple absorbs violet through yellow. A leaf's chlorophyll absorbs strongly in the blue (near 430 nm) and red (near 662 nm), leaving mostly green to come back.</p>
+<figure id="fig-7-3"><img src="figures/ch07-leftover.svg" alt="Two reflectance plots from 400 to 700 nanometers. For a red apple the reflected fraction is low up to about 580 nanometers and rises to about 60 percent in the red. For a green leaf it is low except for a small bump near 550 nanometers and a rise beyond 690 nanometers. The area under each curve is filled with spectral colors; the area above is gray, labeled absorbed.">
+<figcaption><span class="fig-num">Figure 7.3</span> White light in, leftovers out (schematic reflectance curves). The colored area is the light that reaches your eye; the gray area is absorbed and becomes heat.</figcaption></figure>
+<p>Because color is leftover light, illumination matters. Under pure blue light, a red apple has nothing to reflect and looks nearly black.</p>
+<div class="box key"><div class="box-title">Key Idea</div><p>An object doesn't "have" a color the way it has a mass. It has an absorption spectrum. The color you see is the illumination minus what the object absorbs, as read by your three cones.</p></div>
+<p>Dyes and pigments absorb because their molecules have electron energy gaps in the 1.8–3.1 eV range. The usual culprit is a <strong>conjugated</strong> chain of alternating single and double bonds, along which some electrons are spread out. Like a longer guitar string, a longer chain gives lower energy levels and smaller gaps, so it absorbs longer wavelengths. Beta-carotene (carrots) has 11 conjugated double bonds and absorbs blue light near 450 nm, so carrots look orange. Molecules with short conjugated chains absorb only UV, which is why most plastics and sugars are colorless.</p>
+<p>Absorbed energy mostly turns into heat within picoseconds as the molecule shakes its neighbors. Occasionally it is re-emitted as fluorescence (Chapter 5).</p>
+
+<h2 id="ch07-5"><span class="sec-num">7.5</span>Band gaps and the 1.8–3.1 eV rule</h2>
+<div class="box asked"><div class="box-title">You Asked</div><p class="question">“What are the electron energy gaps that give things their color?”</p>
+<p>They are the energy differences between states an electron can occupy, and a material is colored when one of its gaps falls between about 1.8 and 3.1 eV, the energies of visible photons. Photons that can bridge the gap are absorbed; the rest come back to you.</p>
+<p>Four kinds of gaps do most of the coloring in the world:</p>
+<ul>
+<li><strong>Band gaps in solids</strong> (semiconductors, minerals, pigments): the gap between the filled valence band and the empty conduction band (Chapter 5). Rule below.</li>
+<li><strong>Gaps between molecular orbitals</strong> in dyes, chlorophyll, and carotene; longer conjugated chains give smaller gaps (Section 7.4).</li>
+<li><strong>Gaps between d-orbital levels of transition-metal ions</strong> in a crystal, such as Cr³⁺ in Al₂O₃ (ruby), split by the surrounding ions (Section 7.6).</li>
+<li><strong>Metals</strong> have no gap for their free electrons, so they reflect strongly; their color comes from where deeper electrons begin absorbing, near 2.4 eV in gold (Section 7.7).</li>
+</ul></div>
+<p>For a pure solid with band gap \(E_g\), photons with \(E \gt E_g\) are absorbed and lower-energy photons are not. The <strong>absorption edge</strong> is at</p>
+<div class="equation boxed" data-eq="7.2">\[ \lambda_\text{edge} = \frac{1240\ \text{eV}\cdot\text{nm}}{E_g} \]</div>
+<p class="where">Wavelengths shorter than \(\lambda_\text{edge}\) are absorbed; longer ones pass or reflect.</p>
+<p>Comparing \(E_g\) with the visible window gives the band-gap color rule (Figure 7.4):</p>
+<ul>
+<li><strong>\(E_g \gt 3.1\) eV</strong>: no visible light is absorbed. Pure crystals are colorless and transparent (diamond, 5.5 eV; sapphire, about 9 eV; ZnS, 3.6 eV). Their powders look white.</li>
+<li><strong>\(E_g \lt 1.8\) eV</strong>: every visible photon is absorbed, so the material is opaque. Silicon (1.1 eV) and GaAs (1.4 eV) look gray and metallic, because with \(n \approx 4\) their surfaces still reflect about 35% of the light (Equation 6.4).</li>
+<li><strong>\(1.8 \lt E_g \lt 3.1\) eV</strong>: only the high-energy (blue) end is absorbed. The material looks yellow, orange, or red, shifting toward red as \(E_g\) shrinks.</li>
+</ul>
+<figure id="fig-7-4"><img src="figures/ch07-bandgap-chart.svg" alt="A photon-energy axis from 0 to 4 electron volts with three regions: below 1.8 eV shaded dark (absorbs every visible color), 1.8 to 3.1 eV shown as a spectrum from red to violet, and above 3.1 eV pale (absorbs no visible light). Markers show band gaps of PbS 0.4, Si 1.1, GaAs 1.42, CdSe 1.73, HgS 2.0, CdS-Se 2.3, CdS 2.42, ZnSe 2.7, GaN 3.4, and ZnS 3.6 eV, each with a color swatch: black, gray, gray, near-black, red, orange, yellow, pale yellow, colorless, colorless.">
+<figcaption><span class="fig-num">Figure 7.4</span> The band-gap color rule. Ticks mark each material's gap. Swatches for the colored materials are computed from the absorption edge \(1240/E_g\) under daylight. Band gaps from HyperPhysics and WebExhibits.</figcaption></figure>
+<div class="box example"><div class="box-title">Worked Example 7.1 <span class="sub">— The color of cadmium sulfide</span></div>
+<p class="given"><strong>Given:</strong> CdS has a band gap \(E_g = 2.42\) eV.</p>
+<p><strong>Find:</strong> its absorption edge and its color in white light.</p>
+<p><strong>Think:</strong> photons above \(E_g\) (wavelengths below the edge) are absorbed; the leftovers set the color.</p>
+<p>\[ \lambda_\text{edge} = \frac{1240\ \text{eV}\cdot\text{nm}}{2.42\ \text{eV}} = 512\ \text{nm} \]</p>
+<p>CdS absorbs violet, blue, and blue-green (below 512 nm) and returns green, yellow, orange, and red. With blue missing, the mixture looks yellow to yellow-orange.</p>
+<p class="answer">Answer: edge at 512 nm; CdS looks yellow-orange. It is the classic artist's pigment "cadmium yellow."</p></div>
+
+<h2 id="ch07-6"><span class="sec-num">7.6</span>Impurity ions: ruby, sapphire, and colored glass</h2>
+<p>Pure Al₂O₃ has a gap near 9 eV, so it is colorless. Replace up to about 1% of the Al³⁺ ions with Cr³⁺ and you have ruby. Chromium's partly filled 3d orbitals are split into levels about 2–3 eV apart by the surrounding O²⁻ ions (the <strong>crystal field</strong>). Ruby absorbs violet (near 410 nm) and yellow-green (near 550 nm), transmitting red plus a little blue. Chromium in ruby also fluoresces deep red at 694 nm, the line used in the first laser.</p>
+<p>Blue sapphire works differently. Neighboring Fe²⁺ and Ti⁴⁺ ions can swap an electron when a photon supplies about 2 eV (<strong>charge transfer</strong>). That absorbs a broad band of yellow and orange light, leaving blue. Glassmakers use the same physics: cobalt (Co²⁺) gives deep blue glass, and the iron (Fe²⁺) in ordinary window glass gives its edges a green tint.</p>
+
+<h2 id="ch07-7"><span class="sec-num">7.7</span>Metals: why gold is yellow and silver isn't</h2>
+<p>All metals reflect strongly because their free electrons respond to every visible frequency (Chapter 6). A metal's color comes from where that reflection <em>drops</em>, which happens where more tightly bound electrons in the filled d band can start absorbing (Figure 7.5):</p>
+<ul>
+<li><strong>Silver</strong>: d-band absorption starts near 4 eV (about 320 nm, in the UV), so all visible colors reflect equally. Silver looks colorless and bright.</li>
+<li><strong>Gold</strong>: absorption starts near 2.4 eV (about 520 nm), removing much of the blue and violet. The remaining red, orange, yellow, and green look yellow.</li>
+<li><strong>Copper</strong>: absorption starts lower still (near 2 eV, about 590 nm), taking out more green and leaving copper's reddish orange.</li>
+</ul>
+<figure id="fig-7-5"><img src="figures/ch07-metals.svg" alt="Reflectance versus wavelength from 300 to 800 nanometers. Silver dips to about 10 percent near 320 nanometers and is near 97 percent across the visible. Aluminum stays near 90 percent throughout. Gold is near 37 percent in the blue and rises steeply near 520 nanometers to about 97 percent. Copper is near 40 percent until a steep rise near 580 nanometers.">
+<figcaption><span class="fig-num">Figure 7.5</span> Approximate reflectance of polished metals (smooth curves that follow the familiar shapes; not measured data). Where a curve is low, that metal absorbs those wavelengths.</figcaption></figure>
+<div class="box myth"><div class="box-title">Myth vs. Reality</div>
+<p class="myth-line"><strong>Myth:</strong> Gold is yellow because it reflects only yellow light.</p>
+<p><strong>Reality:</strong> Gold reflects red, orange, yellow, and most green almost perfectly. It looks yellow because blue and violet are <em>missing</em>, and white light minus blue looks yellow.</p></div>
+<div class="box rabbit"><div class="box-title">Rabbit Hole <span class="sub">(optional) — Gold is yellow because of relativity</span></div><p>Safe to skip. Gold sits directly below silver in the periodic table, so why is its d-band edge at 2.4 eV instead of about 4 eV? Gold's nucleus (Z = 79) is so highly charged that its inner electrons move at a sizable fraction of \(c\). Einstein's relativity then lowers the energy of gold's 6s orbitals and raises its 5d orbitals, shrinking the gap between them from the UV into the blue. Without relativity, gold would look like silver.</p></div>
+
+<h2 id="ch07-8"><span class="sec-num">7.8</span>Scattering: blue sky, red sunsets, white clouds</h2>
+<p>Air molecules (N₂ and O₂) are about a thousand times smaller than visible wavelengths. Light drives their electrons, which re-radiate (Chapter 6). Because the molecules are randomly placed in a gas, the sideways wavelets do not fully cancel, and some light is scattered in all directions. For scatterers much smaller than the wavelength, this <strong>Rayleigh scattering</strong> depends steeply on wavelength (Chapter 8 explains why):</p>
+<div class="equation boxed" data-eq="7.3">\[ I_\text{scattered} \propto \frac{1}{\lambda^4} \]</div>
+<div class="box example"><div class="box-title">Worked Example 7.2 <span class="sub">— How much more is blue scattered than red?</span></div>
+<p class="given"><strong>Given:</strong> blue light at 450 nm and red light at 700 nm, equally bright, passing through the same air.</p>
+<p><strong>Find:</strong> the ratio of the scattered intensities.</p>
+<p><strong>Think:</strong> air molecules are far smaller than both wavelengths, so Equation 7.3 applies and the constant cancels in a ratio.</p>
+<p>\[ \frac{I_{450}}{I_{700}} = \left(\frac{700\ \text{nm}}{450\ \text{nm}}\right)^4 = (1.556)^4 = 5.86 \]</p>
+<p class="answer">Answer: blue is scattered about 6 times more strongly than red (and 400 nm violet about 9.4 times).</p></div>
+<figure id="fig-7-6"><img src="figures/ch07-sky.svg" alt="Left: a falling curve of scattering strength from 9.4 at 400 nanometers to 1 at 700 nanometers, filled with spectral colors, with 450 nanometers marked at 5.9. Right: sunlight from an overhead sun travels a short path down through the atmosphere to an observer, while light from a setting sun near the horizon crosses a long path, with blue arrows scattering out along the way.">
+<figcaption><span class="fig-num">Figure 7.6</span> (a) Rayleigh scattering strength, relative to 700 nm. (b) At noon the sunlight's path through air is short, and the scattered blue fills the sky. At sunset the path is many times longer, and so much blue is scattered out that the sun looks orange-red.</figcaption></figure>
+<p>When you look at any patch of sky away from the sun, you see sunlight scattered toward you, which is rich in blue. At sunset, sunlight crosses far more air to reach you; most of the blue is scattered out of the beam on the way, and what arrives directly is orange and red (Figure 7.6b). Dust and smoke add extra scattering and can make sunsets more vivid.</p>
+<p>Clouds are white because their water droplets (around 10–20 µm across) are much <em>larger</em> than visible wavelengths. Large droplets scatter all colors about equally, and light bounces among many droplets, so clouds return white light. Very thick clouds look gray because little light makes it through to their bottoms.</p>
+<div class="box myth"><div class="box-title">Myth vs. Reality</div>
+<p class="myth-line"><strong>Myth:</strong> The sky is blue because it reflects the ocean.</p>
+<p><strong>Reality:</strong> The sky is just as blue over deserts. Its blue is sunlight scattered by air molecules, following Equation 7.3.</p></div>
+<div class="box rabbit"><div class="box-title">Rabbit Hole <span class="sub">(optional) — Why isn't the sky violet?</span></div><p>Safe to skip. Violet scatters even more than blue, so why isn't the sky violet? Three reasons add up: sunlight contains less violet than blue, some violet is absorbed high in the atmosphere, and your eyes are much less sensitive to violet (Figure 7.1). Your cones' response to the scattered skylight adds up to sky blue.</p></div>
+
+<h2 id="ch07-9"><span class="sec-num">7.9</span>Structural color: soap bubbles and butterflies</h2>
+<p>Some colors come from no pigment at all, only from structure. A soap film reflects light from both its front and back surfaces (Figure 7.7a). The back-surface wave travels an extra distance of about \(2nt\), where \(t\) is the film thickness. Wavelengths whose crests line up are reinforced and others cancel, a wave effect called <strong>interference</strong> (Chapter 8). As \(t\) varies across the film, so does the color (Figure 7.7b). Where the film thins to a few tens of nanometers, the two reflections cancel for every color and the film looks black, a sign it is about to pop.</p>
+<figure id="fig-7-7"><img src="figures/ch07-thin-film.svg" alt="Left: a ray strikes a thin soap film; ray 1 reflects from the front surface and ray 2 from the back surface after crossing the film twice. Right: a computed strip of reflected colors versus film thickness from 0 to 1000 nanometers, starting black, then gray-white, yellow, orange, magenta, blue, green, and repeating fainter bands.">
+<figcaption><span class="fig-num">Figure 7.7</span> Thin-film interference. (a) Two reflections from one film. (b) Reflected color versus thickness, computed for a soap film in white light (brightness boosted; real films reflect only a few percent).</figcaption></figure>
+<p>Oil slicks on wet pavement work the same way. The brilliant blue of <em>Morpho</em> butterflies comes from ridged nanostructures in their wing scales, with spacing comparable to a quarter of a blue wavelength, rather than from blue pigment. Structural colors usually shift as you tilt your head, an effect called <strong>iridescence</strong>, because the extra path length changes with angle.</p>
+
+<h2 id="ch07-10"><span class="sec-num">7.10</span>Color from emission: neon, fireworks, LEDs, screens</h2>
+<p>Things that make their own light have the color of their emission spectrum (Chapter 5):</p>
+<ul>
+<li><strong>Neon signs</strong>: pure neon glows red-orange. Other "neon" colors use argon with a little mercury, whose UV light makes phosphor coatings on the tube glow.</li>
+<li><strong>Fireworks</strong>: metal atoms emit their characteristic lines: strontium red, barium green, copper blue, sodium yellow (589 nm).</li>
+<li><strong>LEDs</strong> emit photons with energy close to the band gap. Most white LEDs are blue LEDs coated with a yellow-emitting phosphor, which absorbs some blue and re-emits yellow (the incoherent absorb-and-re-emit process of Chapter 6). Blue plus yellow looks white.</li>
+<li><strong>Screens</strong> build every pixel from red, green, and blue subpixels and rely on additive mixing and your three cones (Figure 7.2a).</li>
+</ul>
+
+<h2 id="ch07-11"><span class="sec-num">7.11</span>Why black things get hot in the sun</h2>
+<p>A black surface absorbs most of the sunlight hitting it; a white surface reflects most of it. Absorbed light becomes heat (Section 7.4), so a black car seat can burn your legs while a white one stays tolerable. More than half of sunlight's energy is actually near-infrared, so a surface's heating also depends on wavelengths you can't see. "Cool roof" coatings in dark colors use pigments that reflect near-infrared.</p>
+<div class="box example"><div class="box-title">Worked Example 7.3 <span class="sub">— Black roof vs. white roof on a car</span></div>
+<p class="given"><strong>Given:</strong> sunlight of about 1000 W/m² hits a 3.0 m² car roof. A black roof absorbs about 95% of it; a white roof reflects about 70%, so it absorbs 30%.</p>
+<p><strong>Find:</strong> the absorbed power for each roof.</p>
+<p><strong>Think:</strong> absorbed power = absorbed fraction × intensity × area.</p>
+<p>\[ P_\text{black} = 0.95 \times 1000\ \text{W/m}^2 \times 3.0\ \text{m}^2 = 2850\ \text{W} \]</p>
+<p>\[ P_\text{white} = 0.30 \times 1000\ \text{W/m}^2 \times 3.0\ \text{m}^2 = 900\ \text{W} \]</p>
+<p class="answer">Answer: about 2.9 kW vs. 0.9 kW. The 2 kW difference is more than a typical space heater. How hot each roof gets depends on how fast it loses heat, which is Chapter 9's topic.</p></div>
+
+<div class="summary"><h2>Chapter summary</h2><ul>
+<li>Visible light is 400–700 nm, photon energies 3.1–1.8 eV. Color is the brain's reading of three cone signals (S, M, L peaks near 420, 534, 564 nm), so different spectra (metamers) can look identical.</li>
+<li>Light mixes additively (RGB screens); pigments mix subtractively (CMY inks), because each pigment removes part of the spectrum.</li>
+<li>Most objects are colored by what they absorb. The absorbed light becomes heat; the leftovers reach your eye.</li>
+<li>Band-gap rule: \(E_g \gt 3.1\) eV is colorless, \(E_g \lt 1.8\) eV is opaque and dark or metallic, and gaps in between are yellow to red. The edge is at \(\lambda = 1240/E_g\) nm.</li>
+<li>Impurity ions (Cr³⁺ in ruby, Fe²⁺–Ti⁴⁺ in sapphire) and conjugated molecules (dyes, carotene, chlorophyll) create visible-energy gaps. Gold and copper are colored by d-band absorption starting near 2.4 and 2 eV; silver's starts in the UV.</li>
+<li>Rayleigh scattering (\(\propto 1/\lambda^4\)) makes the sky blue and sunsets red; large cloud droplets scatter all colors and look white.</li>
+<li>Thin films and nanostructures make structural color by interference; emitters (neon, fireworks, LEDs, screens) show their emission spectra.</li>
+</ul></div>
+<div class="check"><h2>Check yourself</h2><ol>
+  <li><span class="tag">Concept</span>A red apple is lit only by blue light in a dark room. What color does it look, and why?</li>
+  <li><span class="tag">Concept</span>Your phone shows a patch of pure yellow. Which wavelengths are actually leaving the screen, and why do you see yellow?</li>
+  <li><span class="tag">Calc</span>ZnSe has a band gap of 2.7 eV. Find its absorption edge wavelength and predict its color.</li>
+  <li><span class="tag">Calc</span>Use the band-gap rule to predict whether diamond (\(E_g = 5.5\) eV) and silicon (\(E_g = 1.1\) eV) are transparent, colored, or opaque. Why does silicon look shiny gray rather than black?</li>
+  <li><span class="tag">Calc</span>How many times more strongly is 400 nm violet light Rayleigh-scattered than 650 nm red light?</li>
+  <li><span class="tag">Concept</span>Why are clouds white, while the clear sky around them is blue? Why are storm clouds gray?</li>
+  <li><span class="tag">Apply</span>Ruby and sapphire are both Al₂O₃. Why is pure sapphire colorless, and what makes ruby red and blue sapphire blue?</li>
+  <li><span class="tag">Concept</span>Explain, in terms of which colors each ink absorbs, why overlapping cyan and yellow ink looks green.</li>
+  <li><span class="tag">Concept</span>Gold looks yellow and silver looks white, though both reflect over 90% of red light. Which colors does gold absorb, and why doesn't silver absorb them?</li>
+  <li><span class="tag">Calc</span>A red LED emits at 630 nm. What band gap does its semiconductor need? What color would a GaN LED (\(E_g = 3.4\) eV) emit?</li>
+  <li><span class="tag">Apply</span>In 1000 W/m² sunlight, about 0.30 m² of your shirt faces the sun. Compare the absorbed power for a black shirt (absorbs 90%) and a white shirt (absorbs 30%).</li>
+  <li><span class="tag">Concept</span>Why does a soap bubble show swirling colors, and why does a spot on it turn black just before it pops?</li>
+</ol><p class="small muted">Full solutions are in the Answer Key at the back of the book.</p></div>
+</section>

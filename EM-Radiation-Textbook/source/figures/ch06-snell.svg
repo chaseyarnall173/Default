@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 360" width="680" height="360" font-family="Inter, sans-serif">
+<rect width="680" height="360" fill="#ffffff"/>
+<rect x="0" y="175" width="420" height="185" fill="#e6ebf1"/>
+<line x1="0" y1="175" x2="420" y2="175" stroke="#52606d" stroke-width="1.5"/>
+<text x="14.0" y="26.0" font-size="13" fill="#1f2933" text-anchor="start" font-weight="600">air: n₁ = 1.00</text>
+<text x="14.0" y="346.0" font-size="13" fill="#1f2933" text-anchor="start" font-weight="600">glass: n₂ = 1.50</text>
+<polygon points="59.1,78.6 171.1,78.6 286.0,175 174.0,175" fill="#e09f1f" opacity="0.13"/>
+<polygon points="174.0,175 286.0,175 375.4,325.5 263.4,325.5" fill="#e09f1f" opacity="0.13"/>
+<line x1="114.9" y1="125.4" x2="161.2" y2="70.3" stroke="#a86a12" stroke-width="1.6"/>
+<line x1="137.9" y1="144.7" x2="184.2" y2="89.6" stroke="#a86a12" stroke-width="1.6"/>
+<line x1="160.9" y1="164.0" x2="207.2" y2="108.9" stroke="#a86a12" stroke-width="1.6"/>
+<line x1="190.8" y1="175.0" x2="230.2" y2="128.1" stroke="#a86a12" stroke-width="1.6"/>
+<line x1="178.4" y1="182.4" x2="190.8" y2="175.0" stroke="#a86a12" stroke-width="1.6"/>
+<line x1="230.0" y1="175.0" x2="253.1" y2="147.4" stroke="#a86a12" stroke-width="1.6"/>
+<line x1="188.6" y1="199.6" x2="230.0" y2="175.0" stroke="#a86a12" stroke-width="1.6"/>
+<line x1="269.2" y1="175.0" x2="276.1" y2="166.7" stroke="#a86a12" stroke-width="1.6"/>
+<line x1="198.8" y1="216.8" x2="269.2" y2="175.0" stroke="#a86a12" stroke-width="1.6"/>
+<line x1="209.0" y1="234.0" x2="291.8" y2="184.8" stroke="#a86a12" stroke-width="1.6"/>
+<line x1="219.2" y1="251.2" x2="302.0" y2="202.0" stroke="#a86a12" stroke-width="1.6"/>
+<line x1="229.5" y1="268.4" x2="312.3" y2="219.2" stroke="#a86a12" stroke-width="1.6"/>
+<line x1="239.7" y1="285.6" x2="322.5" y2="236.4" stroke="#a86a12" stroke-width="1.6"/>
+<line x1="249.9" y1="302.8" x2="332.7" y2="253.6" stroke="#a86a12" stroke-width="1.6"/>
+<line x1="260.1" y1="320.0" x2="342.9" y2="270.8" stroke="#a86a12" stroke-width="1.6"/>
+<line x1="115.1" y1="78.6" x2="230" y2="175" stroke="#e09f1f" stroke-width="2.4"/>
+<polygon points="182.9,135.5 170.6,133.0 178.4,123.8" fill="#e09f1f"/>
+<line x1="230" y1="175" x2="319.4" y2="325.5" stroke="#e09f1f" stroke-width="2.4"/>
+<polygon points="285.4,268.3 274.6,261.9 285.0,255.7" fill="#e09f1f"/>
+<line x1="230" y1="175" x2="321.9" y2="97.9" stroke="#e09f1f" stroke-width="1.2" opacity="0.8"/>
+<polygon points="321.9,97.9 318.6,106.4 313.0,99.6" fill="#e09f1f"/>
+<text x="272.0" y="150.0" font-size="11.5" fill="#52606d" text-anchor="start" font-weight="400">weak reflection</text>
+<text x="272.0" y="164.0" font-size="11.5" fill="#52606d" text-anchor="start" font-weight="400">(about 4%)</text>
+<line x1="230" y1="45" x2="230" y2="325" stroke="#52606d" stroke-width="1" stroke-dasharray="4 4"/>
+<path d="M230,131 A44,44 0 0 0 196.3,146.7" fill="none" stroke="#1f2933" stroke-width="1.2"/>
+<text x="216.0" y="123.0" font-size="13" fill="#1f2933" text-anchor="middle" font-weight="600">θ₁</text>
+<path d="M230,227 A52,52 0 0 0 256.6,219.7" fill="none" stroke="#1f2933" stroke-width="1.2"/>
+<text x="245.0" y="241.0" font-size="13" fill="#1f2933" text-anchor="middle" font-weight="600">θ₂</text>
+<text x="235.0" y="57.0" font-size="11" fill="#52606d" text-anchor="start" font-weight="400">normal</text>
+<text x="440.0" y="60.0" font-size="18" fill="#1f2933" text-anchor="start" font-weight="700">n₁ sin θ₁ = n₂ sin θ₂</text>
+<text x="440.0" y="84.0" font-size="12" fill="#52606d" text-anchor="start" font-weight="400">here: 1.00 × sin 50° = 1.50 × sin 30.7°</text>
+<text x="440.0" y="128.0" font-size="12.5" fill="#1f2933" text-anchor="start" font-weight="600">Lines across the beam are wave crests.</text>
+<text x="440.0" y="147.0" font-size="12.5" fill="#1f2933" text-anchor="start" font-weight="400">Inside the glass:</text>
+<text x="440.0" y="166.0" font-size="12.5" fill="#1f2933" text-anchor="start" font-weight="400">• frequency is unchanged,</text>
+<text x="440.0" y="185.0" font-size="12.5" fill="#1f2933" text-anchor="start" font-weight="400">• speed drops to c/n,</text>
+<text x="440.0" y="204.0" font-size="12.5" fill="#1f2933" text-anchor="start" font-weight="400">• so crests bunch up: λ₂ = λ₁ / n.</text>
+<text x="440.0" y="231.0" font-size="12.5" fill="#52606d" text-anchor="start" font-weight="400">Crests must stay connected at the</text>
+<text x="440.0" y="250.0" font-size="12.5" fill="#52606d" text-anchor="start" font-weight="400">surface, so the wavefront pivots and</text>
+<text x="440.0" y="269.0" font-size="12.5" fill="#52606d" text-anchor="start" font-weight="400">the ray bends toward the normal.</text>
+</svg>

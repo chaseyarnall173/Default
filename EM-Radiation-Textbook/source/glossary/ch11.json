@@ -1,0 +1,58 @@
+[
+ {
+  "term": "X-ray tube",
+  "definition": "A vacuum tube in which electrons from a heated cathode are accelerated by a high voltage into a metal anode (target), producing X-rays (about 1% of the energy) and heat (about 99%)."
+ },
+ {
+  "term": "Bremsstrahlung",
+  "definition": "\"Braking radiation\": the continuous X-ray spectrum emitted when fast electrons are deflected and slowed by nuclei in the target."
+ },
+ {
+  "term": "Duane–Hunt limit",
+  "definition": "The shortest wavelength in a tube's spectrum, λ_min = hc/(eV), reached when one electron gives all its kinetic energy to one photon."
+ },
+ {
+  "term": "Characteristic X-rays (Kα, Kβ)",
+  "definition": "Sharp X-ray lines emitted when an electron from the L shell (Kα) or M shell (Kβ) fills a K-shell vacancy; their energies identify the element (Cu Kα = 0.1542 nm)."
+ },
+ {
+  "term": "K-edge",
+  "definition": "The photon energy at which absorption jumps because photons become able to eject an atom's K-shell electrons (88 keV for lead, 33 keV for iodine)."
+ },
+ {
+  "term": "Photoelectric absorption",
+  "definition": "Absorption of an X-ray photon by an inner-shell electron, which is ejected. Its probability rises steeply with atomic number (about Z³–Z⁴) and falls steeply with energy (about 1/E³), making bone and metal visible on X-rays."
+ },
+ {
+  "term": "Radiograph",
+  "definition": "An X-ray shadow image; bright regions are where few X-rays reached the detector (bone, metal), dark regions where many did."
+ },
+ {
+  "term": "Computed tomography (CT)",
+  "definition": "Imaging that records X-ray projections from many angles and computes a cross-sectional map of attenuation coefficient, reported in Hounsfield units (air −1000, water 0)."
+ },
+ {
+  "term": "Bragg's law",
+  "definition": "nλ = 2d sin θ: X-rays scattered by parallel crystal planes spaced d apart add in step only when the extra path 2d sin θ is a whole number of wavelengths; θ is measured from the planes."
+ },
+ {
+  "term": "Diffraction angle (2θ)",
+  "definition": "The angle between the incident and diffracted X-ray beams, which is what a diffractometer measures and plots."
+ },
+ {
+  "term": "Higher-order reflection",
+  "definition": "A Bragg reflection with n > 1. The nth-order reflection from (hkl) planes is equivalent to the first-order reflection from (nh nk nl) planes, so (220) = second order of (110)."
+ },
+ {
+  "term": "Structure factor",
+  "definition": "The sum of waves scattered by all atoms in the unit cell, F_hkl = Σ f_j exp[2πi(hx_j + ky_j + lz_j)]; reflection intensity is proportional to |F|², and F = 0 gives an absent reflection."
+ },
+ {
+  "term": "Electron wavelength",
+  "definition": "The de Broglie wavelength λ = h/p of an electron; about 0.0037 nm at 100 kV, short enough for transmission electron microscopy and electron diffraction."
+ },
+ {
+  "term": "Energy-dispersive X-ray spectroscopy (EDS)",
+  "definition": "Chemical analysis in an electron microscope that measures the characteristic X-rays emitted when the beam creates inner-shell vacancies in the sample."
+ }
+]

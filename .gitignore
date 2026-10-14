@@ -1,2 +1,4 @@
+node_modules/
+EM-Radiation-Textbook/source/build/
 __pycache__/
 *.pyc

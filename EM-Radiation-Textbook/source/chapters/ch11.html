@@ -1,0 +1,124 @@
+<section class="chapter" id="ch11">
+<div class="chapter-opener">
+  <div class="chapter-num">Chapter 11</div>
+  <h1 class="chapter-title">X-Rays: Shadows and Diffraction</h1>
+  <p class="chapter-hook">The same invisible light that shows your dentist a cavity also reveals how the atoms in a solid are arranged. Both tricks work because an X-ray's wavelength is about the size of an atom.</p>
+  <div class="big-picture"><h4>The big picture</h4><ul>
+    <li>X-ray tubes make a continuous "braking" spectrum plus sharp characteristic lines that fingerprint the target metal.</li>
+    <li>An X-ray image is a shadow: absorption rises steeply with atomic number, so bone and metal block far more than flesh.</li>
+    <li>Crystal planes scatter X-rays in step only at angles satisfying Bragg's law, \(n\lambda = 2d\sin\theta\).</li>
+    <li>Electrons have far shorter wavelengths than light, which lets electron microscopes see details light never can.</li>
+  </ul></div>
+  <div class="learning-goals"><h4>After this chapter you can</h4><ul>
+    <li>Explain how an X-ray tube makes bremsstrahlung and Kα/Kβ lines, and find \(\lambda_\text{min}\) from the voltage.</li>
+    <li>Explain why bones and metal show up on X-rays, using the Z-dependence of absorption.</li>
+    <li>Derive and use Bragg's law.</li>
+    <li>Explain why electron microscopes can resolve much finer detail than light microscopes.</li>
+  </ul></div>
+</div>
+
+<h2 id="ch11-1"><span class="sec-num">11.1</span>Making X-rays: the X-ray tube</h2>
+<p>An <strong>X-ray tube</strong> is a vacuum tube with two electrodes (Figure 11.1). A hot filament, the <strong>cathode</strong>, boils off electrons. A high voltage \(V\) (about 20–150 kV) accelerates them toward a metal <strong>anode</strong>, or target. Each electron arrives with kinetic energy \(eV\), so 30 kV gives 30 keV electrons. When they slam into the target, about 99% of their energy becomes heat (which is why anodes rotate or are water-cooled) and about 1% comes out as X-rays.</p>
+
+
+
+<h2 id="ch11-2"><span class="sec-num">11.2</span>The X-ray spectrum: braking radiation and fingerprint lines</h2>
+<p>Two processes make the photons (Figure 11.2):</p>
+<ul>
+  <li><strong>Bremsstrahlung</strong> ("braking radiation"). An electron swinging past a nucleus is sharply deflected. Accelerating charges radiate (Chapter 1), so it emits a photon. It can lose any fraction of its energy, so the spectrum is continuous, up to a hard limit where one electron gives <em>all</em> of its energy \(eV\) to one photon:</li>
+</ul>
+<div class="equation" data-eq="11.1">\[ \lambda_\text{min} = \frac{hc}{eV} = \frac{1240\ \text{eV}\cdot\text{nm}}{eV} \qquad\text{e.g. } 35\ \text{kV} \Rightarrow 0.0354\ \text{nm} \]</div>
+<ul>
+  <li><strong>Characteristic lines</strong>. An incoming electron knocks a K-shell (n = 1) electron out of a target atom. An electron from the L shell drops into the hole and emits a <strong>Kα</strong> photon; one from the M shell emits <strong>Kβ</strong>. These energies are set by the target atom's energy levels (Chapter 5), so they are a fingerprint of the element. They appear only when \(eV\) exceeds the K-shell binding energy (8.98 keV for copper).</li>
+</ul>
+
+<figure id="fig-11-1"><img src="figures/ch11-xray-tube.svg" alt="Schematic X-ray tube: a heated filament cathode on the left, a high-voltage supply across the tube, an electron beam crossing the vacuum to an angled metal anode target on the right, and X-rays leaving downward through a thin window.">
+<figcaption><span class="fig-num">Figure 11.1</span> An X-ray tube. Electrons gain energy \(eV\) crossing the vacuum and stop in the target. Most of the energy becomes heat; a small fraction becomes X-ray photons.</figcaption></figure>
+
+<p>Useful target lines: Cu Kα 0.1542 nm (8.04 keV), Co Kα 0.1790 nm, Mo Kα 0.0709 nm, W Kα 0.0209 nm (59 keV). Diffraction labs want one wavelength, so they filter out Kβ. For copper a thin nickel foil does it: nickel's K-edge (8.33 keV) lies between Cu Kα (8.05 keV) and Kβ (8.90 keV), so Kβ is absorbed and Kα passes.</p>
+
+<div class="box rabbit"><div class="box-title">Rabbit Hole <span class="sub">(optional) — Moseley's law</span></div><p>Safe to skip. Treat the K-shell like hydrogen (Chapter 4) with nuclear charge \(Z-1\), since the one remaining K electron screens one proton. An L→K drop then gives \(E_{K\alpha} \approx 13.6\ \text{eV}\,(Z-1)^2(1 - \tfrac14) = 10.2\ \text{eV}\,(Z-1)^2\). For copper (Z = 29) that is 8.0 keV, against a measured 8.05 keV. In 1913 Henry Moseley used this pattern to show that the periodic table is ordered by atomic number, not atomic mass.</p></div>
+
+<figure id="fig-11-2"><img src="figures/ch11-xray-spectrum.svg" alt="Left: energy-level diagram with K, L, M levels; electrons dropping from L and M into a K vacancy emit K-alpha and K-beta photons. Right: schematic copper-tube spectra at 25 kV and 35 kV, each a smooth continuum starting at a minimum wavelength, with sharp peaks at 0.1392 and 0.1542 nm.">
+<figcaption><span class="fig-num">Figure 11.2</span> Schematic X-ray spectrum of a copper-target tube (peak heights illustrative). Raising the voltage moves \(\lambda_\text{min}\) shorter and raises everything, but the Kα and Kβ lines stay at the same wavelengths: they belong to copper, not to the voltage.</figcaption></figure>
+
+
+
+<h2 id="ch11-3"><span class="sec-num">11.3</span>X-ray imaging: shadows, not reflections</h2>
+
+<div class="box asked long"><div class="box-title">You Asked</div><p class="question">“What does ‘X-ray vision’ mean — how do X-rays see through things?”</p>
+  <p>X-rays don't "see" anything: an X-ray image is a <strong>shadow</strong>. Photons pass straight through low-density, low-atomic-number material such as skin and muscle, bone and metal absorb them, and a detector records where they got through.</p>
+  <p>At medical energies (about 20–150 keV), the dominant absorption is photoelectric. Its probability rises very steeply with atomic number (roughly \(Z^3\) to \(Z^4\)) and falls steeply with energy (roughly \(1/E^3\)). Soft tissue is mostly H, C, N, and O (Z ≤ 8). Bone contains calcium (Z = 20) and phosphorus (Z = 15) and is nearly twice as dense. So at 30 keV, a centimeter of bone stops about 8 times more photons than a centimeter of muscle (Worked Example 11.1), and metal stops almost all of them. On a radiograph, bright means "few photons arrived," so bones look white. Comic-book X-ray vision, seeing X-rays bounced back off hidden objects, is not how it works (see the Myth box below).</p>
+</div>
+
+<div class="box myth"><div class="box-title">Myth vs. Reality</div>
+  <p class="myth-line"><strong>Myth:</strong> "X-ray vision" means seeing X-rays that bounce off hidden objects.</p>
+  <p><strong>Reality:</strong> Ordinary objects reflect almost no X-rays (for X-rays, a material's refractive index differs from 1 by only about \(10^{-5}\) or less), and nothing around you is lit by X-rays anyway. Real X-ray imaging always needs a source on one side and a detector on the other.</p></div>
+
+<figure id="fig-11-3"><img src="figures/ch11-xray-shadow.svg" alt="A fan of X-rays from a point source crosses a cross-section of an arm. Rays through soft tissue reach the detector; rays hitting bone mostly stop; the ray hitting a metal pin stops. A computed image strip shows dark where many X-rays arrived and white behind the bone and pin.">
+<figcaption><span class="fig-num">Figure 11.3</span> An X-ray image is a shadow. The image strip is computed from the drawing: transmission through each path sets the gray level (radiograph convention: white = few X-rays arrived).</figcaption></figure>
+
+<figure id="fig-11-4"><img src="figures/ch11-attenuation-z.svg" alt="Log-log plot of mass attenuation coefficient versus photon energy from 10 to 150 keV for soft tissue, cortical bone, and lead. Bone is several times above tissue at low energy and converges with it near 150 keV; lead is far above both and shows a K-edge jump at 88 keV.">
+<figcaption><span class="fig-num">Figure 11.4</span> Absorption per gram versus photon energy (NIST-based data). At low energies the higher-Z elements in bone make a big difference. At higher energies Compton scattering, which barely depends on Z, takes over and the contrast fades. Lead's absorption jumps at its K-edge, where photons become able to eject its K electrons.</figcaption></figure>
+
+<div class="box example"><div class="box-title">Worked Example 11.1 <span class="sub">— Bone vs. muscle contrast</span></div>
+  <p class="given"><strong>Given:</strong> At 30 keV, \(\mu/\rho\) = 0.379 cm²/g for soft tissue (\(\rho = 1.06\) g/cm³) and 1.331 cm²/g for cortical bone (\(\rho = 1.92\) g/cm³). At 100 keV: 0.169 and 0.186 cm²/g.</p>
+  <p><strong>Find:</strong> The fraction transmitted through 1.0 cm of each, at both energies.</p>
+  <p><strong>Think:</strong> \(T = e^{-\mu x}\) with \(\mu = (\mu/\rho)\rho\) (Eq. 10.4).</p>
+  <p>30 keV: tissue \(\mu = 0.402\ \text{cm}^{-1}\), \(T = e^{-0.402} = 0.67\). Bone \(\mu = 2.56\ \text{cm}^{-1}\), \(T = e^{-2.56} = 0.078\).</p>
+  <p>100 keV: tissue \(\mu = 0.179\ \text{cm}^{-1}\), \(T = 0.84\). Bone \(\mu = 0.356\ \text{cm}^{-1}\), \(T = 0.70\).</p>
+  <p class="answer">Answer: At 30 keV, 67% vs. 8% get through, so the contrast is 8.6:1. At 100 keV it is 84% vs. 70%, only 1.2:1. Lower energy gives more contrast but more absorbed dose, so radiologists pick tube voltage to balance the two.</p></div>
+
+<div class="box myth"><div class="box-title">Myth vs. Reality</div>
+  <p class="myth-line"><strong>Myth:</strong> An X-ray machine makes you or the room radioactive.</p>
+  <p><strong>Reality:</strong> X-ray photons are absorbed or pass through, and they are gone the moment the tube switches off. Medical X-ray energies are far too low to change nuclei, so nothing is left behind.</p></div>
+
+<h3>Contrast agents and CT</h3>
+<p>Soft organs look alike on an X-ray, so doctors add high-Z <strong>contrast agents</strong>, such as iodine (Z = 53) in blood vessels or barium (Z = 56) in the gut. Their K-edges (33 and 37 keV) sit right in the diagnostic range.</p>
+<p>A single radiograph squashes 3D anatomy into one shadow. <strong>Computed tomography (CT)</strong> rotates the tube and detectors around the body, records hundreds of projections, and lets a computer reconstruct a map of \(\mu\) slice by slice. The values are reported in Hounsfield units (air −1000, water 0, dense bone around +1000 or higher). The price is dose: about 7.7 mSv for an abdominal CT versus 0.1 mSv for a chest X-ray (Table 10.1). Engineers use the same method, industrial CT, to find porosity in castings, voids in welds, and defects in 3D-printed parts without cutting them open.</p>
+
+<h2 id="ch11-4"><span class="sec-num">11.4</span>Why X-rays can "see" atoms</h2>
+<p>Atoms in a solid sit about 0.1–0.4 nm apart. Visible light (400–700 nm) is thousands of times too long to resolve that (Chapter 8). X-ray wavelengths of 0.05–0.25 nm match it. When an X-ray passes through a crystal, its electric field shakes every atom's electrons, and each shaken electron re-radiates a weak spherical wavelet (Chapter 6). A crystal is a 3D array of these sources, a natural <strong>diffraction grating</strong>. The wavelets cancel almost everywhere and add up only in a few special directions.</p>
+<div class="box key"><div class="box-title">Key Idea</div><p>Diffraction needs a wavelength comparable to the spacing being probed (Chapter 8). Atoms are about 0.1–0.4 nm apart, so the probe must be X-rays (or electrons or neutrons) with wavelengths of a fraction of a nanometer.</p></div>
+
+<h2 id="ch11-5"><span class="sec-num">11.5</span>Bragg's law</h2>
+<p>W. L. Bragg found the simplest way to predict those directions (1913). Treat the crystal as stacks of parallel atomic planes a distance \(d\) apart. A ray scattered by the second plane travels farther than one scattered by the first, by \(d\sin\theta\) on the way in plus \(d\sin\theta\) on the way out (Figure 11.5). The scattered waves add in step when that extra path is a whole number of wavelengths:</p>
+<div class="equation boxed" data-eq="11.2">\[ n\lambda = 2d\sin\theta \]</div>
+<p class="where">where \(\theta\) is measured from the planes (not from the normal), \(n = 1, 2, 3, \ldots\) is the order, and \(\lambda\) is the X-ray wavelength.</p>
+
+<div class="box key"><div class="box-title">Key Idea</div><p>A Bragg "reflection" is not a mirror bouncing light. It is interference: the planes scatter X-rays at every angle, but the scattered waves add up only at angles where \(2d\sin\theta = n\lambda\). A diffractometer swings its detector through the angle \(2\theta\) between the incoming and outgoing beams, so patterns are plotted against \(2\theta\).</p></div>
+
+<div class="box analogy"><div class="box-title">Analogy</div><p>Clap in front of a tall stone staircase and the echo comes back as a chirp: each step returns a little echo, spaced in time by the step depth. Crystal planes do the same with X-rays, except the "pitch" shows up as an angle.</p></div>
+
+<figure id="fig-11-5"><img src="figures/ch11-bragg.svg" alt="Two parallel rows of atoms a distance d apart. Two in-phase X-ray waves arrive at angle theta; one scatters off atom A on the top plane, the other off atom B directly below. Dashed wavefronts and right angles mark two red segments, each d sin theta, on the lower ray. The outgoing waves leave at angle theta, in step again; the angle between incoming and outgoing beams is 2 theta.">
+<figcaption><span class="fig-num">Figure 11.5</span> Bragg's law, drawn to scale for \(n = 1\). Before scattering, the dashed wavefront through A meets ray 2 at the foot of a perpendicular; after scattering, a second perpendicular from A marks where ray 2 has caught up. The two red segments, each \(d\sin\theta\), are ray 2's extra path. Here \(2d\sin\theta\) equals exactly one wavelength, so the outgoing waves are crest-to-crest.</figcaption></figure>
+
+
+
+<h2 id="ch11-6"><span class="sec-num">11.6</span>Electron microscopes and electron diffraction</h2>
+<p>Electrons are waves too, with \(\lambda = h/p\) (Chapter 8). Accelerate one through 100 kV and, including a small relativistic correction,</p>
+<div class="equation" data-eq="11.3">\[ \lambda_e = \frac{h}{\sqrt{2m_e eV\left(1+\dfrac{eV}{2m_ec^2}\right)}} = 0.0037\ \text{nm} \quad (100\ \text{kV}) \]</div>
+<p>That is about 40 times shorter than Cu Kα, so electron Bragg angles are tiny. For atomic planes 0.21 nm apart, \(\sin\theta = 0.0037/(2 \times 0.21)\), so \(\theta \approx 0.5^\circ\). Electrons interact with matter far more strongly than X-rays, so samples must be very thin (under about 100 nm) and held in vacuum.</p>
+<ul>
+  <li><strong>TEM</strong> (transmission electron microscope): shines electrons through a thin foil. It can image defects and even columns of atoms, and it records electron diffraction patterns from regions a few nanometers across.</li>
+  <li><strong>SEM</strong> (scanning electron microscope): scans a focused beam over a surface and collects knocked-out electrons to image surfaces in fine detail.</li>
+  <li><strong>EDS</strong>: the beam knocks out inner-shell electrons, just as in an X-ray tube, so the sample emits its own characteristic X-rays. Their energies (Section 11.2) identify the elements present.</li>
+</ul>
+
+<div class="summary"><h2>Chapter summary</h2><ul>
+  <li>X-ray tubes: bremsstrahlung gives a continuum down to \(\lambda_\text{min} = hc/eV\); K-shell vacancies give element-specific Kα/Kβ lines (Cu Kα = 0.1542 nm).</li>
+  <li>X-ray images are shadows: photoelectric absorption scales roughly as \(Z^3\text{–}Z^4/E^3\), so bone and metal absorb far more than soft tissue. CT maps μ in 3D.</li>
+  <li>Bragg's law \(n\lambda = 2d\sin\theta\), with θ from the planes; patterns are plotted against 2θ.</li>
+  <li>100 kV electrons have λ ≈ 0.0037 nm, enabling electron microscopes (TEM, SEM), electron diffraction, and EDS.</li>
+</ul></div>
+
+<div class="check"><h2>Check yourself</h2><ol>
+  <li><span class="tag">Calc</span>A dental X-ray tube runs at 70 kV. What is the shortest wavelength it produces, and what is the highest photon energy?</li>
+  <li><span class="tag">Concept</span>Why does raising a copper tube from 25 kV to 35 kV change the continuum but not the Kα position?</li>
+  <li><span class="tag">Calc</span>At 30 keV, lead has \(\mu/\rho = 30.3\) cm²/g (\(\rho = 11.35\) g/cm³). What fraction of 30 keV photons gets through a 0.25 mm lead apron?</li>
+  <li><span class="tag">Concept</span>Why do mammograms use low tube voltages (about 25–30 kV)?</li>
+  <li><span class="tag">Concept</span>A friend says diffraction peaks are mirror "reflections" from atomic planes. What is right and wrong about that?</li>
+  <li><span class="tag">Calc</span>X-rays with \(\lambda = 0.154\) nm reflect in first order from atomic planes 0.200 nm apart. Find θ, and the angle 2θ a diffractometer would record.</li>
+  <li><span class="tag">Calc</span>Find the wavelength of 200 kV TEM electrons with Eq. 11.3, and compare with the nonrelativistic \(h/\sqrt{2m_e eV}\).</li>
+</ol><p class="small muted">Full solutions are in the Answer Key at the back of the book.</p></div>
+</section>

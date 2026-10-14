@@ -1,0 +1,82 @@
+[
+  {
+    "term": "Absorption",
+    "definition": "A photon disappears and its energy lifts an electron to a higher level; it happens only if the photon energy matches an energy gap (or exceeds the ionization energy)."
+  },
+  {
+    "term": "Resonance",
+    "definition": "Strong response of a system driven at one of its natural frequencies; atoms absorb light when its frequency equals ΔE/h."
+  },
+  {
+    "term": "Spontaneous emission",
+    "definition": "An excited atom drops to a lower level on its own, typically within nanoseconds, creating a photon of energy equal to the gap."
+  },
+  {
+    "term": "Stimulated emission",
+    "definition": "A passing photon of exactly the right energy triggers an excited atom to emit an identical photon (same energy, direction and phase); the basis of lasers."
+  },
+  {
+    "term": "Re-emission",
+    "definition": "Release of absorbed energy as a new photon, delayed by nanoseconds and sent in a random direction with random phase; unlike reflection, it follows a true absorption."
+  },
+  {
+    "term": "Spectral line",
+    "definition": "A sharp, specific wavelength emitted or absorbed by an atom, set by one energy gap; each element has its own set."
+  },
+  {
+    "term": "Balmer series",
+    "definition": "Hydrogen's emission lines from drops to n = 2; four are visible: 656.3, 486.1, 434.0 and 410.2 nm."
+  },
+  {
+    "term": "Emission spectrum",
+    "definition": "Bright lines on a dark background, emitted by a hot thin gas of separate atoms."
+  },
+  {
+    "term": "Absorption spectrum",
+    "definition": "Dark lines in a continuous spectrum where a cooler gas in front of the source removed its own wavelengths."
+  },
+  {
+    "term": "Fluorescence",
+    "definition": "Absorption of shorter-wavelength light followed within nanoseconds by emission at a longer wavelength, after some energy is lost to vibrations."
+  },
+  {
+    "term": "Stokes shift",
+    "definition": "The difference between absorbed and emitted wavelengths (or energies) in fluorescence; the missing energy becomes heat."
+  },
+  {
+    "term": "Phosphorescence",
+    "definition": "Slow light emission (seconds to hours) from an electron parked in a long-lived 'stuck' state, as in glow-in-the-dark materials."
+  },
+  {
+    "term": "Vibrational level",
+    "definition": "A quantized energy of a molecule's stretching or bending bonds, spaced about 0.05–0.5 eV apart (infrared photons)."
+  },
+  {
+    "term": "Rotational level",
+    "definition": "A quantized energy of a whole molecule's spin, spaced about 0.0001–0.01 eV apart (microwave and far-infrared photons)."
+  },
+  {
+    "term": "Energy band",
+    "definition": "A nearly continuous range of allowed electron energies in a solid, formed when many atoms' levels overlap and split."
+  },
+  {
+    "term": "Valence band / conduction band",
+    "definition": "The highest filled band and the next, normally empty, band above it in a semiconductor or insulator."
+  },
+  {
+    "term": "Band gap (E_g)",
+    "definition": "The forbidden energy range between valence and conduction bands; photons below E_g pass through, photons above are absorbed (Si 1.12 eV, diamond ≈ 5.5 eV)."
+  },
+  {
+    "term": "Light-emitting diode (LED)",
+    "definition": "A semiconductor device in which electrons falling across the band gap emit photons of energy approximately E_g."
+  },
+  {
+    "term": "Laser",
+    "definition": "Light amplification by stimulated emission of radiation: a pumped material with a population inversion inside a mirror cavity, giving identical, in-step photons."
+  },
+  {
+    "term": "Population inversion",
+    "definition": "More atoms in an upper level than in the lower level of a transition, required for a laser; created by pumping energy in."
+  }
+]
