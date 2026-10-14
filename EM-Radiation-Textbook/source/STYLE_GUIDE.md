@@ -12,6 +12,9 @@
   physically happening"), not just a definition. Build intuition first, then numbers.
 
 ## Voice
+- **Concise (reader request: "not too wordy").** ~2,000–3,000 words of main text per chapter. One idea per
+  paragraph, 2–4 sentences. No throat-clearing or repeated restatements. Let figures, tables and short bullet
+  lists carry comparisons and steps. Analogies 1–3 sentences; Rabbit Holes short.
 - Warm, direct, second person ("you"). Clear like a great TA explaining at a whiteboard.
 - Short paragraphs. Concrete numbers and everyday examples (microwave oven, sunglasses, a black car in sun,
   a stovetop glowing red, Wi-Fi, a rainbow, sunburn, X-ray at the dentist, gold vs. silver color).
