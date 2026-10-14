@@ -206,7 +206,7 @@ def draw(ax, prepared, servo1_deg, servo2_deg, labels=False, axes=True):
     coll = Poly3DCollection(polys, facecolors=cols, edgecolors=cols,
                             linewidths=0.25, zsort="average")
     coll.set_zorder(1)
-    ax.add_collection3d(coll)
+    ax.add_collection3d(coll, autolim=False)   # limits are set below
     # pivot lines: axis 2 never moves, axis 1 rides on the frame
     ax2 = np.array([[C, -3.0, PIN_Z], [C, B + 2.6, PIN_Z]])
     ax1 = rot2(np.array([[-2.6, C, PIN_Z], [B + 1.6, C, PIN_Z]]), b)
