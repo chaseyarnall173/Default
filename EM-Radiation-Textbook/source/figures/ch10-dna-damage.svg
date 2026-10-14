@@ -1,0 +1,121 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 300" width="680" height="300" font-family="Inter, sans-serif">
+<rect width="680" height="300" fill="#ffffff"/>
+<defs>
+<marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#1f2933"/></marker>
+<marker id="ahb" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2e6fdb"/></marker>
+<marker id="ahr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#d1495b"/></marker>
+<marker id="ahl" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#e09f1f"/></marker>
+<marker id="ahm" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#52606d"/></marker>
+</defs>
+<text x="113.0" y="22.0" font-size="13" fill="#1f2933" text-anchor="middle" font-weight="700" font-style="normal">(a) Direct hit</text>
+<text x="340.0" y="22.0" font-size="13" fill="#1f2933" text-anchor="middle" font-weight="700" font-style="normal">(b) Indirect: free radicals</text>
+<text x="567.0" y="22.0" font-size="13" fill="#1f2933" text-anchor="middle" font-weight="700" font-style="normal">(c) UV-B: thymine dimer</text>
+<line x1="226" y1="10" x2="226" y2="290" stroke="#d9dee5" stroke-width="1"/>
+<line x1="453" y1="10" x2="453" y2="290" stroke="#d9dee5" stroke-width="1"/>
+<line x1="114.0" y1="52.0" x2="146.0" y2="52.0" stroke="#aeb8c2" stroke-width="4" stroke-linecap="round"/>
+<line x1="121.2" y1="76.5" x2="153.2" y2="76.5" stroke="#aeb8c2" stroke-width="4" stroke-linecap="round"/>
+<line x1="124.0" y1="101.0" x2="156.0" y2="101.0" stroke="#aeb8c2" stroke-width="4" stroke-linecap="round"/>
+<line x1="120.8" y1="125.5" x2="152.8" y2="125.5" stroke="#aeb8c2" stroke-width="4" stroke-linecap="round"/>
+<line x1="113.4" y1="150.0" x2="145.4" y2="150.0" stroke="#aeb8c2" stroke-width="4" stroke-linecap="round"/>
+<line x1="106.4" y1="174.5" x2="138.4" y2="174.5" stroke="#aeb8c2" stroke-width="4" stroke-linecap="round"/>
+<line x1="104.0" y1="199.0" x2="136.0" y2="199.0" stroke="#aeb8c2" stroke-width="4" stroke-linecap="round"/>
+<line x1="107.7" y1="223.5" x2="139.7" y2="223.5" stroke="#aeb8c2" stroke-width="4" stroke-linecap="round"/>
+<line x1="115.2" y1="248.0" x2="147.2" y2="248.0" stroke="#aeb8c2" stroke-width="4" stroke-linecap="round"/>
+<line x1="114.0" y1="52.0" x2="121.2" y2="76.5" stroke="#52606d" stroke-width="3" stroke-linecap="round"/>
+<line x1="121.2" y1="76.5" x2="124.0" y2="101.0" stroke="#52606d" stroke-width="3" stroke-linecap="round"/>
+<line x1="124.0" y1="101.0" x2="120.8" y2="125.5" stroke="#52606d" stroke-width="3" stroke-linecap="round"/>
+<line x1="120.8" y1="125.5" x2="113.4" y2="150.0" stroke="#52606d" stroke-width="3" stroke-linecap="round"/>
+<line x1="113.4" y1="150.0" x2="106.4" y2="174.5" stroke="#52606d" stroke-width="3" stroke-linecap="round"/>
+<line x1="106.4" y1="174.5" x2="104.0" y2="199.0" stroke="#52606d" stroke-width="3" stroke-linecap="round"/>
+<line x1="104.0" y1="199.0" x2="107.7" y2="223.5" stroke="#52606d" stroke-width="3" stroke-linecap="round"/>
+<line x1="107.7" y1="223.5" x2="115.2" y2="248.0" stroke="#52606d" stroke-width="3" stroke-linecap="round"/>
+<line x1="146.0" y1="52.0" x2="153.2" y2="76.5" stroke="#52606d" stroke-width="3" stroke-linecap="round"/>
+<line x1="153.2" y1="76.5" x2="156.0" y2="101.0" stroke="#52606d" stroke-width="3" stroke-linecap="round"/>
+<line x1="156.0" y1="101.0" x2="152.8" y2="125.5" stroke="#52606d" stroke-width="3" stroke-linecap="round"/>
+<line x1="152.8" y1="125.5" x2="145.4" y2="150.0" stroke="#52606d" stroke-width="3" stroke-linecap="round"/>
+<line x1="138.4" y1="174.5" x2="136.0" y2="199.0" stroke="#52606d" stroke-width="3" stroke-linecap="round"/>
+<line x1="136.0" y1="199.0" x2="139.7" y2="223.5" stroke="#52606d" stroke-width="3" stroke-linecap="round"/>
+<line x1="139.7" y1="223.5" x2="147.2" y2="248.0" stroke="#52606d" stroke-width="3" stroke-linecap="round"/>
+<line x1="18" y1="118" x2="212" y2="196" stroke="#8d5a97" stroke-width="2.4" marker-end="url(#ahm)"/>
+<text x="18.0" y="108.0" font-size="11" fill="#8d5a97" text-anchor="start" font-weight="600" font-style="normal">ionizing track</text>
+<path d="M132.9,153.2 l6,5 l-4,3 l7,6" fill="none" stroke="#d1495b" stroke-width="2"/>
+<text x="155.9" y="166.2" font-size="11" fill="#d1495b" text-anchor="start" font-weight="600" font-style="normal">strand</text>
+<text x="155.9" y="180.2" font-size="11" fill="#d1495b" text-anchor="start" font-weight="600" font-style="normal">break</text>
+<text x="113.0" y="272.0" font-size="11" fill="#52606d" text-anchor="middle" font-weight="normal" font-style="normal">energy deposited in DNA</text>
+<text x="113.0" y="286.0" font-size="11" fill="#52606d" text-anchor="middle" font-weight="normal" font-style="normal">itself breaks a bond</text>
+<line x1="376.0" y1="52.0" x2="408.0" y2="52.0" stroke="#aeb8c2" stroke-width="4" stroke-linecap="round"/>
+<line x1="383.2" y1="76.5" x2="415.2" y2="76.5" stroke="#aeb8c2" stroke-width="4" stroke-linecap="round"/>
+<line x1="386.0" y1="101.0" x2="418.0" y2="101.0" stroke="#aeb8c2" stroke-width="4" stroke-linecap="round"/>
+<line x1="382.8" y1="125.5" x2="414.8" y2="125.5" stroke="#aeb8c2" stroke-width="4" stroke-linecap="round"/>
+<line x1="375.4" y1="150.0" x2="407.4" y2="150.0" stroke="#aeb8c2" stroke-width="4" stroke-linecap="round"/>
+<line x1="368.4" y1="174.5" x2="400.4" y2="174.5" stroke="#aeb8c2" stroke-width="4" stroke-linecap="round"/>
+<line x1="366.0" y1="199.0" x2="398.0" y2="199.0" stroke="#aeb8c2" stroke-width="4" stroke-linecap="round"/>
+<line x1="369.7" y1="223.5" x2="401.7" y2="223.5" stroke="#aeb8c2" stroke-width="4" stroke-linecap="round"/>
+<line x1="377.2" y1="248.0" x2="409.2" y2="248.0" stroke="#aeb8c2" stroke-width="4" stroke-linecap="round"/>
+<line x1="376.0" y1="52.0" x2="383.2" y2="76.5" stroke="#52606d" stroke-width="3" stroke-linecap="round"/>
+<line x1="383.2" y1="76.5" x2="386.0" y2="101.0" stroke="#52606d" stroke-width="3" stroke-linecap="round"/>
+<line x1="386.0" y1="101.0" x2="382.8" y2="125.5" stroke="#52606d" stroke-width="3" stroke-linecap="round"/>
+<line x1="375.4" y1="150.0" x2="368.4" y2="174.5" stroke="#52606d" stroke-width="3" stroke-linecap="round"/>
+<line x1="368.4" y1="174.5" x2="366.0" y2="199.0" stroke="#52606d" stroke-width="3" stroke-linecap="round"/>
+<line x1="366.0" y1="199.0" x2="369.7" y2="223.5" stroke="#52606d" stroke-width="3" stroke-linecap="round"/>
+<line x1="369.7" y1="223.5" x2="377.2" y2="248.0" stroke="#52606d" stroke-width="3" stroke-linecap="round"/>
+<line x1="408.0" y1="52.0" x2="415.2" y2="76.5" stroke="#52606d" stroke-width="3" stroke-linecap="round"/>
+<line x1="415.2" y1="76.5" x2="418.0" y2="101.0" stroke="#52606d" stroke-width="3" stroke-linecap="round"/>
+<line x1="418.0" y1="101.0" x2="414.8" y2="125.5" stroke="#52606d" stroke-width="3" stroke-linecap="round"/>
+<line x1="414.8" y1="125.5" x2="407.4" y2="150.0" stroke="#52606d" stroke-width="3" stroke-linecap="round"/>
+<line x1="407.4" y1="150.0" x2="400.4" y2="174.5" stroke="#52606d" stroke-width="3" stroke-linecap="round"/>
+<line x1="400.4" y1="174.5" x2="398.0" y2="199.0" stroke="#52606d" stroke-width="3" stroke-linecap="round"/>
+<line x1="398.0" y1="199.0" x2="401.7" y2="223.5" stroke="#52606d" stroke-width="3" stroke-linecap="round"/>
+<line x1="401.7" y1="223.5" x2="409.2" y2="248.0" stroke="#52606d" stroke-width="3" stroke-linecap="round"/>
+<line x1="240" y1="70" x2="300" y2="190" stroke="#8d5a97" stroke-width="2.4" marker-end="url(#ahm)"/>
+<circle cx="262" cy="112" r="7" fill="#fff" stroke="#2e6fdb" stroke-width="1.5"/>
+<text x="250.0" y="116.0" font-size="10" fill="#1f2933" text-anchor="start" font-weight="normal" font-style="normal"></text>
+<circle cx="286" cy="160" r="7" fill="#fff" stroke="#2e6fdb" stroke-width="1.5"/>
+<text x="274.0" y="164.0" font-size="10" fill="#1f2933" text-anchor="start" font-weight="normal" font-style="normal"></text>
+<text x="240.0" y="100.0" font-size="11" fill="#2e6fdb" text-anchor="end" font-weight="600" font-style="normal">H₂O</text>
+<text x="270.0" y="215.0" font-size="11" fill="#2e6fdb" text-anchor="start" font-weight="normal" font-style="normal">H₂O → H₂O⁺ + e⁻</text>
+<text x="270.0" y="230.0" font-size="11" fill="#2e6fdb" text-anchor="start" font-weight="600" font-style="normal">→ •OH radicals</text>
+<line x1="270" y1="112" x2="360" y2="120" stroke="#2e6fdb" stroke-width="1.4" stroke-dasharray="4 3" marker-end="url(#ahb)"/>
+<line x1="294" y1="160" x2="362" y2="137" stroke="#2e6fdb" stroke-width="1.4" stroke-dasharray="4 3" marker-end="url(#ahb)"/>
+<circle cx="318" cy="116" r="4" fill="#2e6fdb"/>
+<circle cx="330" cy="148" r="4" fill="#2e6fdb"/>
+<path d="M371.1,128.8 l6,5 l-4,3 l7,6" fill="none" stroke="#d1495b" stroke-width="2"/>
+<text x="340.0" y="272.0" font-size="11" fill="#52606d" text-anchor="middle" font-weight="normal" font-style="normal">track ionizes water; the radicals</text>
+<text x="340.0" y="286.0" font-size="11" fill="#52606d" text-anchor="middle" font-weight="normal" font-style="normal">drift a few nm and attack DNA</text>
+<line x1="570.0" y1="52.0" x2="602.0" y2="52.0" stroke="#aeb8c2" stroke-width="4" stroke-linecap="round"/>
+<line x1="574.3" y1="76.5" x2="606.3" y2="76.5" stroke="#aeb8c2" stroke-width="4" stroke-linecap="round"/>
+<line x1="576.0" y1="101.0" x2="608.0" y2="101.0" stroke="#aeb8c2" stroke-width="4" stroke-linecap="round"/>
+<line x1="574.1" y1="125.5" x2="606.1" y2="125.5" stroke="#aeb8c2" stroke-width="4" stroke-linecap="round"/>
+<line x1="569.6" y1="150.0" x2="601.6" y2="150.0" stroke="#aeb8c2" stroke-width="4" stroke-linecap="round"/>
+<line x1="565.5" y1="174.5" x2="597.5" y2="174.5" stroke="#aeb8c2" stroke-width="4" stroke-linecap="round"/>
+<line x1="564.0" y1="199.0" x2="596.0" y2="199.0" stroke="#aeb8c2" stroke-width="4" stroke-linecap="round"/>
+<line x1="566.2" y1="223.5" x2="598.2" y2="223.5" stroke="#aeb8c2" stroke-width="4" stroke-linecap="round"/>
+<line x1="570.7" y1="248.0" x2="602.7" y2="248.0" stroke="#aeb8c2" stroke-width="4" stroke-linecap="round"/>
+<line x1="570.0" y1="52.0" x2="574.3" y2="76.5" stroke="#52606d" stroke-width="3" stroke-linecap="round"/>
+<line x1="574.3" y1="76.5" x2="576.0" y2="101.0" stroke="#52606d" stroke-width="3" stroke-linecap="round"/>
+<line x1="576.0" y1="101.0" x2="574.1" y2="125.5" stroke="#52606d" stroke-width="3" stroke-linecap="round"/>
+<line x1="574.1" y1="125.5" x2="569.6" y2="150.0" stroke="#52606d" stroke-width="3" stroke-linecap="round"/>
+<line x1="569.6" y1="150.0" x2="565.5" y2="174.5" stroke="#52606d" stroke-width="3" stroke-linecap="round"/>
+<line x1="565.5" y1="174.5" x2="564.0" y2="199.0" stroke="#52606d" stroke-width="3" stroke-linecap="round"/>
+<line x1="564.0" y1="199.0" x2="566.2" y2="223.5" stroke="#52606d" stroke-width="3" stroke-linecap="round"/>
+<line x1="566.2" y1="223.5" x2="570.7" y2="248.0" stroke="#52606d" stroke-width="3" stroke-linecap="round"/>
+<line x1="602.0" y1="52.0" x2="606.3" y2="76.5" stroke="#52606d" stroke-width="3" stroke-linecap="round"/>
+<line x1="606.3" y1="76.5" x2="608.0" y2="101.0" stroke="#52606d" stroke-width="3" stroke-linecap="round"/>
+<line x1="608.0" y1="101.0" x2="606.1" y2="125.5" stroke="#52606d" stroke-width="3" stroke-linecap="round"/>
+<line x1="606.1" y1="125.5" x2="601.6" y2="150.0" stroke="#52606d" stroke-width="3" stroke-linecap="round"/>
+<line x1="601.6" y1="150.0" x2="597.5" y2="174.5" stroke="#52606d" stroke-width="3" stroke-linecap="round"/>
+<line x1="597.5" y1="174.5" x2="596.0" y2="199.0" stroke="#52606d" stroke-width="3" stroke-linecap="round"/>
+<line x1="596.0" y1="199.0" x2="598.2" y2="223.5" stroke="#52606d" stroke-width="3" stroke-linecap="round"/>
+<line x1="598.2" y1="223.5" x2="602.7" y2="248.0" stroke="#52606d" stroke-width="3" stroke-linecap="round"/>
+<line x1="569.6" y1="150.0" x2="585.6" y2="150.0" stroke="#c2410c" stroke-width="5" stroke-linecap="round"/>
+<text x="559.6" y="154.0" font-size="12" fill="#c2410c" text-anchor="end" font-weight="700" font-style="normal">T</text>
+<line x1="565.5" y1="174.5" x2="581.5" y2="174.5" stroke="#c2410c" stroke-width="5" stroke-linecap="round"/>
+<text x="555.5" y="178.5" font-size="12" fill="#c2410c" text-anchor="end" font-weight="700" font-style="normal">T</text>
+<line x1="577.6" y1="150.0" x2="577.6" y2="174.5" stroke="#c2410c" stroke-width="3"/>
+<polyline points="470.0,82.0 469.1,85.3 469.7,87.0 472.1,86.5 475.5,85.0 478.2,84.2 479.2,85.4 478.5,88.4 477.5,91.9 477.7,94.0 479.7,94.0 483.0,92.6 486.0,91.5 487.4,92.1 487.1,94.8 486.0,98.4 485.8,100.9 487.4,101.4 490.5,100.2 493.7,98.8 495.6,99.0 495.6,101.3 494.5,104.8 494.0,107.7 495.2,108.7 498.0,107.8 501.3,106.3 503.6,106.0 504.0,107.8 503.1,111.2 502.3,114.4 503.0,115.9 505.5,115.3 508.9,113.8 511.5,113.1 512.3,114.5 511.6,117.6 510.7,121.0 511.0,123.0 513.1,122.8 516.4,121.4 519.3,120.3 520.6,121.2 520.2,124.0 519.1,127.6 519.0,130.0 520.8,130.3 523.9,129.0 527.1,127.7 528.8,128.0 528.7,130.5 527.6,134.0 527.2,136.8 528.5,137.6 531.5,136.6 534.7,135.1 536.9,135.0 537.1,137.0 536.1,140.4 535.4,143.6 536.3,144.9 539.0,144.1 542.3,142.6 544.8,142.1 545.5,143.6 544.7,146.9 543.8,150.2 544.2,152.0 546.6,151.7" fill="none" stroke="#7c3aed" stroke-width="2" marker-end="url(#ahm)"/>
+<text x="470.0" y="72.0" font-size="11" fill="#7c3aed" text-anchor="start" font-weight="600" font-style="normal">UV-B photon (~4 eV)</text>
+<text x="640.0" y="172.0" font-size="11" fill="#c2410c" text-anchor="middle" font-weight="600" font-style="normal">new bond</text>
+<text x="640.0" y="186.0" font-size="11" fill="#c2410c" text-anchor="middle" font-weight="600" font-style="normal">kinks DNA</text>
+<text x="567.0" y="272.0" font-size="11" fill="#52606d" text-anchor="middle" font-weight="normal" font-style="normal">no ionization: a chemical bond</text>
+<text x="567.0" y="286.0" font-size="11" fill="#52606d" text-anchor="middle" font-weight="normal" font-style="normal">rearranges between two bases</text>
+</svg>

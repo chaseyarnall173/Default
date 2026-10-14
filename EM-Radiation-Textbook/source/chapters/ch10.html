@@ -1,0 +1,233 @@
+<section class="chapter" id="ch10">
+<div class="chapter-opener">
+  <div class="chapter-num">Chapter 10</div>
+  <h1 class="chapter-title">Ionizing Radiation, Shielding, and Space</h1>
+  <p class="chapter-hook">Your Wi-Fi router and a dental X-ray machine both emit "radiation." Only one of them can break a DNA strand, and the reason comes down to one number per photon.</p>
+  <div class="big-picture"><h4>The big picture</h4><ul>
+    <li>"Ionizing" means one photon or particle carries enough energy (about 10 eV) to knock an electron out of an atom.</li>
+    <li>Damage means broken bonds in DNA, made directly or through free radicals.</li>
+    <li>Dose is measured in gray (energy per kilogram) and sievert (gray weighted for biological effect).</li>
+    <li>Distance and mass are the shields. Magnetic fields steer charged particles but do nothing to photons or neutrons.</li>
+  </ul></div>
+  <div class="learning-goals"><h4>After this chapter you can</h4><ul>
+    <li>Decide whether a photon is ionizing from its wavelength or frequency.</li>
+    <li>Compare how far alpha, beta, gamma, and neutron radiation go, and what stops each.</li>
+    <li>Read doses in mSv and put everyday exposures on one scale.</li>
+    <li>Use the inverse-square law, exponential attenuation, and half-value layers.</li>
+    <li>Compute the spiral radius of a charged particle in a magnetic field, and explain what a magnetosphere does and does not block.</li>
+  </ul></div>
+</div>
+
+<h2 id="ch10-1"><span class="sec-num">10.1</span>Two meanings of "radiation"</h2>
+<p><strong>Radiation</strong> means energy traveling outward from a source. It comes in two kinds:</p>
+<ul>
+  <li><strong>Electromagnetic radiation</strong>: photons, from radio waves to gamma rays (Chapter 3).</li>
+  <li><strong>Particle radiation</strong>: fast particles with mass, such as alpha particles, electrons, neutrons, and the protons and nuclei of cosmic rays.</li>
+</ul>
+<p>Either kind is <strong>ionizing radiation</strong> only if a <em>single</em> photon or particle carries enough energy to rip electrons off atoms.</p>
+
+<div class="box key"><div class="box-title">Key Idea</div><p>What matters is the energy per packet, not the total energy. A beam of a trillion weak photons can warm you, but it cannot ionize. One energetic photon can.</p></div>
+
+<h2 id="ch10-2"><span class="sec-num">10.2</span>The ionizing threshold</h2>
+<p>To <strong>ionize</strong> an atom, you have to supply at least its ionization energy (Chapter 4). For atoms this ranges from 3.9 eV (cesium) to 24.6 eV (helium); water, most of your body, needs 12.6 eV. So the conventional dividing line is about <strong>10 eV</strong>, which corresponds to a wavelength of</p>
+<div class="equation" data-eq="10.1">\[ \lambda = \frac{hc}{E} = \frac{1240\ \text{eV}\cdot\text{nm}}{10\ \text{eV}} = 124\ \text{nm}, \]</div>
+<p>deep in the ultraviolet. Different agencies put the line anywhere from 10 to 33 eV, so treat it as a fuzzy boundary (Figure 10.1).</p>
+
+<figure id="fig-10-1"><img src="figures/ch10-ionizing-threshold.svg" alt="Log-scale photon energy axis from radio to gamma rays, with the ionizing threshold near 10 eV, the 10 to 33 eV band of conventions, and markers for FM radio, Wi-Fi, UV-B, medical X-rays and cobalt-60 gamma rays.">
+<figcaption><span class="fig-num">Figure 10.1</span> The ionizing threshold sits in the far ultraviolet. Everything to its left (radio, microwaves, infrared, visible, near-UV) cannot ionize, however intense. Medical X-rays and gamma rays are thousands to millions of times above the line.</figcaption></figure>
+
+<p>Why can't a brighter lamp make up the difference? An electron absorbs one photon at a time (Chapter 2), and it sheds a 2 eV kick as heat long before a second photon arrives. Brightness changes how <em>many</em> electrons get kicked, not how hard each kick is.</p>
+
+<div class="box myth"><div class="box-title">Myth vs. Reality</div>
+  <p class="myth-line"><strong>Myth:</strong> A powerful enough Wi-Fi router or cell tower could ionize your cells.</p>
+  <p><strong>Reality:</strong> A 2.4 GHz photon carries about \(10^{-5}\) eV, a million times too little. Strong microwaves can <em>heat</em> tissue (a microwave oven), which is a different mechanism with a different safety question.</p></div>
+
+<div class="box example"><div class="box-title">Worked Example 10.1 <span class="sub">— Which photons can ionize?</span></div>
+  <p class="given"><strong>Given:</strong> Wi-Fi at \(f = 2.4\) GHz, UV-B at \(\lambda = 300\) nm, a 60 keV dental X-ray photon.</p>
+  <p><strong>Find:</strong> Each photon's energy, and whether it can ionize.</p>
+  <p><strong>Think:</strong> Compare \(E = hf = hc/\lambda\) with the ~10 eV line.</p>
+  <p>\[ E_\text{Wi-Fi} = \frac{(6.626\times10^{-34})(2.4\times10^{9})}{1.602\times10^{-19}}\ \text{eV} = 9.9\times10^{-6}\ \text{eV} \]</p>
+  <p>\[ E_\text{UV-B} = \frac{1240\ \text{eV}\cdot\text{nm}}{300\ \text{nm}} = 4.1\ \text{eV} \]</p>
+  <p>The X-ray photon is 60,000 eV. As it slows, it frees an electron that knocks loose many more; one ion pair costs about 34 eV on average, so one photon creates roughly \(60{,}000/34 \approx 1800\) ions.</p>
+  <p class="answer">Answer: Wi-Fi \(\approx 10^{-5}\) eV (no); UV-B 4.1 eV (no, but see Section 10.3); X-ray 60 keV (yes, about 1800 ionizations).</p></div>
+
+<h2 id="ch10-3"><span class="sec-num">10.3</span>UV-B and sunburn: damage below the line</h2>
+<p>UV-B (280–315 nm, 3.9–4.4 eV) is <em>not</em> ionizing, yet it gives you sunburn and skin cancer. The reason is <strong>photochemistry</strong>: a photon does not need to remove an electron to cause trouble; it only needs to be absorbed by a molecule and rearrange its bonds.</p>
+<p>DNA bases absorb UV strongly. A UV-B photon absorbed where two thymine bases sit side by side can fuse them into a <strong>thymine dimer</strong> (Figure 10.3c), a kink that stalls DNA copying. Cells sense it and trigger inflammation (the redness); badly damaged cells self-destruct (the peeling). Dimers repaired wrongly become mutations.</p>
+<div class="box key"><div class="box-title">Key Idea</div><p>"Non-ionizing" does not mean "harmless." Visible and IR photons are too weak to break most bonds, but UV photons (3–10 eV) are in the bond-breaking range even though they cannot ionize.</p></div>
+
+<h2 id="ch10-4"><span class="sec-num">10.4</span>The particle zoo: alpha, beta, gamma, neutrons, cosmic rays</h2>
+<p>Unstable nuclei, reactors, and space produce five kinds of ionizing radiation:</p>
+<ul>
+  <li><strong>Alpha (α)</strong>: a helium nucleus (charge +2), typically about 5 MeV. It ionizes densely and stops in a few cm of air or in the dead outer layer of skin, so it is dangerous mainly when inhaled or swallowed (radon gas).</li>
+  <li><strong>Beta (β)</strong>: an electron (or positron) shot out of a nucleus. It travels a few millimeters in tissue and is stopped by a few millimeters of aluminum or plastic.</li>
+  <li><strong>Gamma (γ) and X-rays</strong>: high-energy photons; the name records the source (nucleus vs. electrons). Very penetrating; lead or thick concrete cuts them down.</li>
+  <li><strong>Neutrons (n)</strong>: uncharged, so they ignore electrons and hit only nuclei. They pass through lead, are slowed by hydrogen-rich materials, and can make materials radioactive.</li>
+  <li><strong>Cosmic rays</strong>: nuclei from deep space near light speed, about 85% protons, 14% helium, and 1% heavier "HZE" nuclei such as iron. The Sun adds bursts of protons during storms.</li>
+</ul>
+
+<figure id="fig-10-2"><img src="figures/ch10-penetration.svg" alt="Four rows showing alpha stopped by paper, beta stopped by aluminum, gamma weakened by lead but not stopped, and neutrons passing lead but stopped by water or polyethylene.">
+<figcaption><span class="fig-num">Figure 10.2</span> What stops what. Charged particles (α, β) have a definite range. Photons are only ever <em>reduced</em>, never stopped completely. Neutrons need hydrogen.</figcaption></figure>
+
+<div class="box key"><div class="box-title">Key Idea</div><p>A charged particle tugs on every electron it passes, so it loses energy steadily and stops at a definite <strong>range</strong>. A photon or neutron travels untouched until one chance collision, so photons fall off exponentially (Section 10.8) instead of stopping at a wall.</p></div>
+
+<div class="box analogy"><div class="box-title">Analogy</div><p>An alpha particle is a bowling ball rolled down a crowded hallway: it hits everyone and stops fast. A gamma ray is a single pellet fired down the same hallway: it usually flies through, but now and then it hits someone hard.</p></div>
+
+<h2 id="ch10-5"><span class="sec-num">10.5</span>How radiation damages cells</h2>
+<p>Radiation harms a cell by breaking chemical bonds, and the bonds that matter most are in DNA. Damage happens in two ways (Figure 10.3):</p>
+<ul>
+  <li><strong>Direct</strong>: the track ionizes the DNA molecule itself and breaks a strand.</li>
+  <li><strong>Indirect</strong>: the track ionizes water, most of a cell, making <strong>free radicals</strong> such as hydroxyl (•OH) that drift a few nanometers and attack DNA. For X-rays and gamma rays, most damage is indirect.</li>
+</ul>
+
+<figure id="fig-10-3"><img src="figures/ch10-dna-damage.svg" alt="Three panels: an ionizing track breaking a DNA strand directly; a track ionizing water to make hydroxyl radicals that attack DNA; a UV-B photon fusing two adjacent thymine bases.">
+<figcaption><span class="fig-num">Figure 10.3</span> Three routes to DNA damage. (a) and (b) need ionizing radiation. (c), the thymine dimer behind sunburn, needs only a UV-B photon's chemistry.</figcaption></figure>
+
+<p>Cells fix single-strand breaks easily, copying from the other strand. <strong>Double-strand breaks</strong> are harder, and tight clusters of breaks hardest; dense alpha and heavy-nucleus tracks make exactly those clusters, so they do more harm per joule. The outcome is repair, cell death, or a mutation that may raise cancer risk years later. Rapidly dividing cells (bone marrow, gut lining, tumors) are the most sensitive.</p>
+
+<h2 id="ch10-6"><span class="sec-num">10.6</span>Measuring dose: gray and sievert</h2>
+<p><strong>Absorbed dose</strong> \(D\) is energy deposited per kilogram of tissue, measured in <strong>gray</strong>: 1 Gy = 1 J/kg. Because a joule from alpha particles does more harm than a joule from X-rays, we also use the <strong>equivalent dose</strong> \(H\), in <strong>sieverts</strong> (Sv):</p>
+<div class="equation" data-eq="10.2">\[ H = w_R\, D \]</div>
+<p class="where">where the radiation weighting factor \(w_R\) is 1 for photons and electrons, 2 for protons, 20 for alpha particles and heavy nuclei, and 2.5–20 for neutrons depending on energy. Whole-body risk uses the <strong>effective dose</strong>, also in Sv, which further weights each organ's sensitivity. Older US units: 1 Gy = 100 rad, 1 Sv = 100 rem.</p>
+
+<div class="box key"><div class="box-title">Key Idea</div><p>A gray is a tiny amount of heat: 1 J/kg warms water by 0.00024 °C. A sudden whole-body 4–5 Sv kills half of those exposed, yet warms the body by about a thousandth of a degree. What matters is <em>where</em> the energy goes (DNA bonds), not how much.</p></div>
+
+<table><caption><span class="tab-num">Table 10.1</span> Typical effective doses (mSv). Medical values vary with the patient and machine.</caption>
+<tr><th>Exposure</th><th>Dose (mSv)</th><th>Source of value</th></tr>
+<tr><td>Dental X-ray (intraoral)</td><td>0.005</td><td>ACR/RSNA RadiologyInfo</td></tr>
+<tr><td>Cross-country flight, one way</td><td>0.02–0.05</td><td>EPA</td></tr>
+<tr><td>Chest X-ray</td><td>0.1</td><td>RadiologyInfo</td></tr>
+<tr><td>US natural background, per year (about three-quarters from radon)</td><td>≈3.1</td><td>NCRP 160 via NRC</td></tr>
+<tr><td>US average from all sources, per year (natural + medical + other)</td><td>≈6.2</td><td>NCRP 160 via NRC</td></tr>
+<tr><td>CT scan, abdomen and pelvis</td><td>7.7</td><td>RadiologyInfo</td></tr>
+<tr><td>One day on the ISS</td><td>≈0.2–0.9</td><td>NASA</td></tr>
+<tr><td>Six months on the ISS</td><td>≈40–160</td><td>NASA</td></tr>
+<tr><td>Mars round trip, cruise only (measured by Curiosity's RAD)</td><td>≈660</td><td>NASA/JPL</td></tr>
+<tr><td>Full Mars mission (180 d out, 500 d on surface, 180 d back)</td><td>≈1000</td><td>NASA/JPL</td></tr>
+<tr><td>Limits: public 1/yr (above background, NRC); radiation workers 50/yr (NRC); NASA astronaut career 600</td><td>1 / 50 / 600</td><td>NRC; NASA-STD-3001</td></tr>
+<tr><td>Acute radiation sickness possible (whole body, at once)</td><td>above ≈700 (0.7 Gy)</td><td>CDC</td></tr>
+</table>
+
+<figure id="fig-10-4"><img src="figures/ch10-dose-ladder.svg" alt="Log-scale dot plot of doses from a dental X-ray at 0.005 mSv to the lethal dose near 4000 to 5000 mSv, colored by everyday and medical, spaceflight, and limits.">
+<figcaption><span class="fig-num">Figure 10.4</span> The dose ladder on a log scale (each gridline is ×10). A chest X-ray is about ten days of natural background. A six-month ISS stay equals one to three years at a radiation worker's annual limit, and a full Mars mission would exceed NASA's whole-career limit.</figcaption></figure>
+
+<h2 id="ch10-7"><span class="sec-num">10.7</span>Distance: the inverse-square law</h2>
+<p>A small source sends radiation out evenly in all directions. At distance \(r\) the same energy is spread over a sphere of area \(4\pi r^2\), so the intensity is</p>
+<div class="equation boxed" data-eq="10.3">\[ I = \frac{P}{4\pi r^{2}} \quad\Longrightarrow\quad \frac{I_2}{I_1} = \left(\frac{r_1}{r_2}\right)^{2} \]</div>
+<p class="where">Valid for a point-like source with nothing absorbing in between. Close to a large source (a big tank, the ground), dose falls off more slowly.</p>
+
+<figure id="fig-10-5"><img src="figures/ch10-inverse-square.svg" alt="Rays from a point source pass through one square at distance r, four squares at 2r and nine squares at 3r.">
+<figcaption><span class="fig-num">Figure 10.5</span> The same photons spread over 4× the area at twice the distance and 9× at three times the distance.</figcaption></figure>
+
+<div class="box example"><div class="box-title">Worked Example 10.2 <span class="sub">— Stepping back from a source</span></div>
+  <p class="given"><strong>Given:</strong> A small lab source gives a dose rate of 20 µSv/h at 0.50 m.</p>
+  <p><strong>Find:</strong> (a) The rate at 2.0 m. (b) The distance where it drops to 0.50 µSv/h.</p>
+  <p><strong>Think:</strong> Point source, air barely absorbs gamma rays over meters, so use Eq. 10.3.</p>
+  <p>(a) \( \dot{H}_2 = 20\ \mu\text{Sv/h} \times (0.50/2.0)^{2} = 1.25\ \mu\text{Sv/h} \)</p>
+  <p>(b) \( r_2 = r_1\sqrt{\dot{H}_1/\dot{H}_2} = 0.50\ \text{m}\times\sqrt{20/0.50} = 0.50 \times 6.32 = 3.2\ \text{m} \)</p>
+  <p class="answer">Answer: (a) 1.25 µSv/h, a factor of 16 lower for 4× the distance. (b) about 3.2 m.</p></div>
+
+<h2 id="ch10-8"><span class="sec-num">10.8</span>Shielding: why mass, and why hydrogen</h2>
+<h3>Photons: exponential attenuation</h3>
+<p>Each photon has a fixed chance per centimeter of interacting, so every layer removes the same <em>fraction</em> of whatever arrives:</p>
+<div class="equation boxed" data-eq="10.4">\[ I = I_0\, e^{-\mu x}, \qquad \mu = \left(\frac{\mu}{\rho}\right)\rho \]</div>
+<p class="where">where \(\mu\) is the linear attenuation coefficient (cm⁻¹), \(\mu/\rho\) the mass attenuation coefficient (cm²/g, tabulated by NIST), \(\rho\) the density, and \(x\) the thickness. This "narrow-beam" law slightly underestimates real transmission, since scattered photons can still reach you.</p>
+<p>The thickness that halves the beam is the <strong>half-value layer</strong>:</p>
+<div class="equation" data-eq="10.5">\[ \text{HVL} = \frac{\ln 2}{\mu} \approx \frac{0.693}{\mu} \]</div>
+
+<figure id="fig-10-6"><img src="figures/ch10-attenuation.svg" alt="Two panels of transmitted fraction for 1 MeV gamma rays. Versus thickness, lead falls fastest (half-value layer 0.86 cm) and water slowest (9.8 cm). Versus mass per area, all four curves nearly coincide.">
+<figcaption><span class="fig-num">Figure 10.6</span> 1 MeV gamma rays in four shields (NIST data). (a) Per centimeter, lead is about 11× better than water. (b) Per gram, they are almost identical. At these energies, photons mostly scatter off electrons (Compton scattering), and every material has about the same number of electrons per gram.</figcaption></figure>
+
+<div class="box example"><div class="box-title">Worked Example 10.3 <span class="sub">— Lead vs. water against 1 MeV gamma rays</span></div>
+  <p class="given"><strong>Given:</strong> NIST mass attenuation coefficients at 1.0 MeV: lead 0.0710 cm²/g (\(\rho = 11.35\) g/cm³), water 0.0707 cm²/g (\(\rho = 1.00\) g/cm³).</p>
+  <p><strong>Find:</strong> The HVL of each, and the thickness that cuts the beam to 1%.</p>
+  <p><strong>Think:</strong> Eq. 10.4 with \(I/I_0 = 0.01\) gives \(x = \ln(100)/\mu\).</p>
+  <p>Lead: \(\mu = 0.0710 \times 11.35 = 0.806\ \text{cm}^{-1}\), so HVL \(= 0.693/0.806 = 0.86\) cm, and \(x_{1\%} = 4.61/0.806 = 5.7\) cm.</p>
+  <p>Water: \(\mu = 0.0707\ \text{cm}^{-1}\), so HVL \(= 9.8\) cm, and \(x_{1\%} = 65\) cm.</p>
+  <p>Mass per area: lead \(5.7 \times 11.35 \approx 65\ \text{g/cm}^2\); water \(65 \times 1.00 = 65\ \text{g/cm}^2\).</p>
+  <p class="answer">Answer: HVL 0.86 cm (lead) vs. 9.8 cm (water); 1% needs 5.7 cm of lead or 65 cm of water, which is the same mass per area. Lead wins on space, not on weight.</p></div>
+
+<p>At lower energies (medical X-rays, tens of keV) the story changes: photoelectric absorption grows steeply with atomic number, so lead becomes far better per gram. That is why the dentist's apron is lead (see Chapter 11).</p>
+
+<h3>Neutrons and cosmic rays: hydrogen wins</h3>
+<p>A neutron loses energy by bouncing off nuclei like a billiard ball. A head-on hit on a hydrogen nucleus (one proton, the same mass) can stop it dead; off lead, 207 times heavier, it keeps at least 98% of its energy, like a ping-pong ball off a bowling ball. So neutron shields are water, polyethylene (CH₂), or concrete, often with boron to absorb the slowed neutrons.</p>
+<p>Cosmic rays add a second reason. A fast heavy nucleus hitting a heavy shield nucleus can shatter both into a spray of secondary neutrons, protons, and fragments, so a thin metal shield can make things worse. Hydrogen cannot shatter, light nuclei make fewer secondaries, and hydrogen has the most electrons per gram, so it slows charged particles best per kilogram launched. That is why NASA favors water and polyethylene.</p>
+
+<div class="box myth"><div class="box-title">Myth vs. Reality</div>
+  <p class="myth-line"><strong>Myth:</strong> Lead is the best radiation shield, period.</p>
+  <p><strong>Reality:</strong> Lead is excellent against X-rays and compact against gamma rays, but poor against neutrons and it worsens cosmic-ray showers. The right shield depends on the radiation.</p></div>
+
+<div class="box matsci"><div class="box-title">Materials Science Connection</div><p>Shield design is a materials-selection problem, like those in ME2340. The deciding properties are density (thickness), atomic number Z (low-energy photons), electrons per gram via Z/A (1 for hydrogen, 0.4 for lead), hydrogen content (neutrons), and fragmentation. Mass-limited designs (spacecraft) push you toward polymers and water; space-limited ones (an X-ray room) toward lead or dense concrete.</p></div>
+
+<h2 id="ch10-9"><span class="sec-num">10.9</span>Magnetic fields: steering charged particles</h2>
+<p>A magnetic field exerts a force only on a <em>moving charge</em>:</p>
+<div class="equation boxed" data-eq="10.6">\[ \vec{F} = q\,\vec{v}\times\vec{B} \]</div>
+<p class="where">The force is perpendicular to both \(\vec v\) and \(\vec B\), so it changes the particle's direction but never its speed.</p>
+<p>A force that always pushes sideways bends the path into a circle (Figure 10.7a). Setting \(qvB = mv^2/r\) gives the <strong>gyroradius</strong>:</p>
+<div class="equation" data-eq="10.7">\[ r = \frac{mv}{qB} \]</div>
+<p>Any motion along the field stretches the circle into a <strong>helix</strong> around the field line (Figure 10.7b), so charged particles are guided along field lines, not across them. Photons and neutrons have \(q = 0\) and go straight.</p>
+
+<figure id="fig-10-7"><img src="figures/ch10-lorentz.svg" alt="Left: a positive particle circles in a field pointing into the page, with velocity and inward force arrows. Right: a proton spirals along horizontal field lines, an electron makes a tighter spiral, and a photon and a neutron pass straight through.">
+<figcaption><span class="fig-num">Figure 10.7</span> The Lorentz force. (a) Perpendicular motion gives a circle of radius \(mv/qB\). (b) Motion with a component along \(\vec B\) gives a helix. Uncharged radiation is not bent at all.</figcaption></figure>
+
+<div class="box example"><div class="box-title">Worked Example 10.4 <span class="sub">— A 1 MeV proton in Earth's field</span></div>
+  <p class="given"><strong>Given:</strong> A 1.0 MeV proton (\(m = 1.673\times10^{-27}\) kg) moving perpendicular to \(B = 30\ \mu\text{T}\), about Earth's field at the equator.</p>
+  <p><strong>Find:</strong> Its speed and gyroradius.</p>
+  <p><strong>Think:</strong> 1 MeV is far below the proton's 938 MeV rest energy, so \(KE = \tfrac12 mv^2\) is fine. Then use Eq. 10.7.</p>
+  <p>\[ v = \sqrt{\frac{2(1.0\times10^{6})(1.602\times10^{-19}\ \text{J})}{1.673\times10^{-27}\ \text{kg}}} = 1.38\times10^{7}\ \text{m/s} \]</p>
+  <p>\[ r = \frac{(1.673\times10^{-27})(1.38\times10^{7})}{(1.602\times10^{-19})(3.0\times10^{-5})} = 4.8\times10^{3}\ \text{m} \]</p>
+  <p class="answer">Answer: \(v \approx 1.4\times10^7\) m/s (about 5% of c), \(r \approx 4.8\) km, tiny compared with Earth's 6371 km radius. The proton is captured into spiraling along a field line instead of flying straight in.</p></div>
+
+<div class="box asked long"><div class="box-title">You Asked</div><p class="question">“How does a magnetic field help protect against radiation?”</p>
+  <p>A magnetic field deflects <em>charged</em> particles (protons, electrons, alpha particles, cosmic-ray nuclei) so they spiral along field lines instead of reaching the surface, but it does nothing at all to photons (UV, X-rays, gamma rays) or neutrons.</p>
+  <p>The Lorentz force \(\vec F = q\vec v\times\vec B\) is always sideways, so a charged particle curls into a helix around a field line (Figure 10.7). Earth's field turns most of the solar wind aside at the magnetopause and traps other particles in the Van Allen belts (Figure 10.8). With \(q = 0\), photons and neutrons feel no force. Earth stops those, and the most energetic cosmic rays, with its <strong>atmosphere</strong>: about 1 kg of air over every square centimeter, the mass of a 10 m column of water. Gases high up absorb the UV-C and X-rays.</p>
+  <p>Why not give spacecraft a magnetic shield? A 1 GeV cosmic-ray proton curls with a radius of about 6 m even in a 1 tesla field (30,000 times Earth's). Deflecting it means a strong field over meters around the crew: big superconducting magnets, cryogenics, heavy structure, and huge stored energy, and the highest-energy particles still get through. For now, shielding is mass.</p></div>
+
+<h3>Earth's magnetosphere, Van Allen belts, and aurora</h3>
+<p>Earth's field, about 25–65 µT at the surface, is roughly a dipole. The solar wind compresses it on the day side and stretches it into a long tail on the night side (Figure 10.8). Its outer boundary, the <strong>magnetopause</strong>, deflects most of the solar wind around Earth.</p>
+<p>Field lines crowd together near the poles, and a spiraling particle heading into the stronger field is pushed back (a <strong>magnetic mirror</strong>). Trapped particles bounce pole to pole, forming two doughnut-shaped zones of intense radiation, the <strong>Van Allen belts</strong>: an inner belt (roughly 1,000–6,000 km up, mostly protons) and an outer belt (roughly 13,000–60,000 km, mostly electrons). The ISS, about 400 km up, stays below both except over the South Atlantic, where the inner belt dips low.</p>
+<p>Near the magnetic poles, field lines dip into the atmosphere. Particles (mainly electrons) sliding down them excite oxygen and nitrogen 100–300 km up, which then emit light (Chapter 5): green 557.7 nm and red 630.0 nm from oxygen, blue-violet from nitrogen. That is the <strong>aurora</strong>.</p>
+
+<figure id="fig-10-8"><img src="figures/ch10-magnetosphere.svg" alt="Schematic of Earth's magnetosphere with the solar wind from the left, bow shock, compressed dayside field lines, a stretched magnetotail, inner and outer Van Allen belts, a trapped particle bouncing along a field line, aurora rings at the poles, a cosmic ray reaching near the pole, and an X-ray photon passing straight through the field.">
+<figcaption><span class="fig-num">Figure 10.8</span> Earth's magnetosphere (not to scale). Charged particles are deflected or trapped; photons pass straight through and are absorbed by the atmosphere; the most energetic cosmic rays get through near the poles and are stopped by the air.</figcaption></figure>
+
+<h2 id="ch10-10"><span class="sec-num">10.10</span>Space radiation and spacecraft shielding</h2>
+<p>Astronauts face <strong>galactic cosmic rays</strong> (steady, extremely energetic, hard to stop), <strong>solar particle events</strong> (sudden storms of lower-energy protons, easier to shield), and the trapped belts. The ISS crew gets about 0.2–0.9 mSv per day; Curiosity measured about 1.8 mSv per day on its way to Mars. Defenses:</p>
+<ul>
+  <li>hydrogen-rich mass around crew quarters (water, polyethylene, even food and supplies);</li>
+  <li>a heavily shielded "storm shelter" for solar events;</li>
+  <li>shorter trips, and timing missions around the solar cycle (an active Sun pushes some galactic cosmic rays away).</li>
+</ul>
+
+<div class="box hailmary long"><div class="box-title">Project Hail Mary Connection</div>
+  <p><em>You asked: “What are the radiation concerns about the tunnel connecting the two ships?”</em></p>
+  <p><strong>In the book.</strong> When Rocky describes his crewmates dying of unexplained cell damage, Grace realizes it was radiation, something Eridians had never heard of. By Grace's estimate Erid's magnetic field is at least 25 times Earth's and its atmosphere is far thicker than ours, so essentially no space radiation reaches the surface and Eridians never had reason to discover it. Rocky survived because, as engineer, he worked near the Astrophage fuel, and Astrophage blocks radiation. The Hail Mary has a layer of Astrophage built into its hull as a shield. The tunnel, and Rocky's side of it, lie outside that protection, so the fix in the book is the obvious one: put Astrophage between Rocky and space.</p>
+  <p><strong>The real physics.</strong> Grace's "near-light-speed hydrogen ions" are galactic cosmic-ray protons. A thin tunnel wall, however strong, is almost no <em>mass</em>, and mass per area is what stops them (Section 10.8). Erid's strong field would deflect many charged particles (Section 10.9), but its thick atmosphere would do the heavy lifting against the energetic ones and all photons, as on Earth. No real material absorbs perfectly like fictional Astrophage; the best real choice is thick, hydrogen-rich mass such as water or polyethylene.</p></div>
+
+<div class="box rabbit"><div class="box-title">Rabbit Hole <span class="sub">(optional) — Why a 1 GeV proton is so hard to steer</span></div>
+  <p>Safe to skip. Near light speed, use relativistic momentum: for 1 GeV of kinetic energy, \(pc = \sqrt{KE^2 + 2\,KE\,mc^2} = \sqrt{1 + 2(0.938)}\ \text{GeV} = 1.70\) GeV, so \(p = 9.1\times10^{-19}\) kg·m/s. Then \(r = p/(qB)\) is 5.7 m in 1 T and about 190 km in Earth's 30 µT. Earth's field works because it extends over thousands of kilometers; a spacecraft magnet must do the job within a few meters.</p></div>
+
+<div class="summary"><h2>Chapter summary</h2><ul>
+  <li>Ionizing means about 10 eV or more per photon or particle (\(\lambda \lesssim 124\) nm). Brightness cannot substitute for photon energy.</li>
+  <li>UV-B is below the threshold but damages DNA by photochemistry (thymine dimers): sunburn.</li>
+  <li>Alpha: stopped by paper or skin. Beta: by millimeters of aluminum or plastic. Gamma/X-rays: reduced exponentially, best by dense mass. Neutrons: slowed by hydrogen.</li>
+  <li>DNA is damaged directly or by •OH radicals; double-strand and clustered breaks are the worst.</li>
+  <li>Gray = J/kg. Sievert = gray × biological weighting. The US average is about 6.2 mSv per year, half of it natural.</li>
+  <li>Inverse-square law: \(I \propto 1/r^2\). Attenuation: \(I = I_0 e^{-\mu x}\), HVL \(= 0.693/\mu\). For MeV gamma rays, mass per area is what counts.</li>
+  <li>Magnetic fields bend charged particles into helices (\(r = mv/qB\)) and do nothing to photons or neutrons. Earth relies on both its magnetosphere and its atmosphere (about 10 m of water equivalent).</li>
+</ul></div>
+
+<div class="check"><h2>Check yourself</h2><ol>
+  <li><span class="tag">Concept</span>A 1000 W infrared heat lamp (photons near 1 µm) delivers far more power than a dental X-ray tube. Which one can ionize atoms, and why does the power rating not decide it?</li>
+  <li><span class="tag">Calc</span>What is the photon energy of 254 nm UV-C light? Is it above the 10 eV threshold? Can it still damage DNA? Explain.</li>
+  <li><span class="tag">Concept</span>Why is an alpha emitter nearly harmless outside the body but very dangerous if inhaled?</li>
+  <li><span class="tag">Concept</span>Explain why a neutron loses much more energy in a collision with a hydrogen nucleus than with a lead nucleus.</li>
+  <li><span class="tag">Calc</span>A worker receives an absorbed dose of 2.0 mGy from gamma rays and, separately, 0.10 mGy from alpha particles in the lungs. Find the equivalent dose from each in mSv.</li>
+  <li><span class="tag">Calc</span>A survey meter reads 12 µSv/h at 1.5 m from a small source. What will it read at 0.5 m? At 6.0 m?</li>
+  <li><span class="tag">Calc</span>For 1 MeV gamma rays, concrete (\(\rho = 2.3\) g/cm³) has \(\mu/\rho \approx 0.064\) cm²/g. Find its HVL and the thickness needed to reduce the beam to 1/1000.</li>
+  <li><span class="tag">Calc</span>An electron with speed \(2.0\times10^7\) m/s moves perpendicular to a 30 µT field. Find its gyroradius and compare it with the 1 MeV proton in Worked Example 10.4.</li>
+  <li><span class="tag">Concept</span>Earth's magnetic field weakens and the magnetic poles wander. Would this change the amount of solar UV reaching the ground? Would it change the cosmic-ray particle flux at high altitude? Explain.</li>
+  <li><span class="tag">Apply</span>You are designing a crew cabin for a Mars transit with a fixed mass budget. Rank aluminum, lead, and polyethylene for shielding against galactic cosmic rays and justify the ranking.</li>
+  <li><span class="tag">Apply</span>Using Table 10.1, how many chest X-rays equal (a) one year of US natural background and (b) a six-month ISS stay at 160 mSv?</li>
+</ol><p class="small muted">Full solutions are in the Answer Key at the back of the book.</p></div>
+</section>

@@ -1,0 +1,9 @@
+[
+  {"name": "Ionizing threshold wavelength", "latex": "\\lambda = \\frac{hc}{E} = \\frac{1240\\ \\text{eV}\\cdot\\text{nm}}{10\\ \\text{eV}} \\approx 124\\ \\text{nm}", "meaning": "A photon must have at least about 10 eV (wavelength about 124 nm or shorter) to ionize; λ in nm, E in eV."},
+  {"name": "Equivalent dose", "latex": "H = w_R\\, D", "meaning": "Biologically weighted dose H (Sv) equals the radiation weighting factor w_R (dimensionless) times the absorbed dose D (Gy = J/kg)."},
+  {"name": "Inverse-square law", "latex": "I = \\frac{P}{4\\pi r^{2}},\\qquad \\frac{I_2}{I_1} = \\left(\\frac{r_1}{r_2}\\right)^{2}", "meaning": "Intensity (W/m² or dose rate) from a point source falls as 1/distance²; P is source power (W), r distance (m)."},
+  {"name": "Exponential attenuation", "latex": "I = I_0\\, e^{-\\mu x},\\qquad \\mu = \\left(\\frac{\\mu}{\\rho}\\right)\\rho", "meaning": "Photon intensity after thickness x (cm) of shield; μ is the linear attenuation coefficient (cm⁻¹), μ/ρ the mass attenuation coefficient (cm²/g), ρ the density (g/cm³)."},
+  {"name": "Half-value layer", "latex": "\\text{HVL} = \\frac{\\ln 2}{\\mu} \\approx \\frac{0.693}{\\mu}", "meaning": "Thickness (cm) that halves a photon beam; n half-value layers transmit (1/2)^n."},
+  {"name": "Lorentz (magnetic) force", "latex": "\\vec{F} = q\\,\\vec{v}\\times\\vec{B}", "meaning": "Force (N) on charge q (C) moving with velocity v (m/s) in magnetic field B (T). It is perpendicular to v, so it changes direction but not speed; zero for uncharged photons and neutrons."},
+  {"name": "Gyroradius", "latex": "r = \\frac{mv}{qB}", "meaning": "Radius (m) of a charged particle's circular or helical path; m mass (kg), v speed perpendicular to B (m/s). Near light speed, replace mv with the relativistic momentum p."}
+]

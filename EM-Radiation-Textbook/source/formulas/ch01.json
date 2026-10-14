@@ -1,0 +1,42 @@
+[
+ {
+  "name": "Electric field definition",
+  "latex": "\\vec E = \\dfrac{\\vec F}{q}",
+  "meaning": "Electric field is the force per unit charge on a small test charge q. Units N/C = V/m."
+ },
+ {
+  "name": "Speed of light from electromagnetism",
+  "latex": "c = \\dfrac{1}{\\sqrt{\\mu_0 \\varepsilon_0}} = 3.00\\times10^{8}\\,\\text{m/s}",
+  "meaning": "The speed of EM waves in vacuum follows from the electric constant ε0 = 8.85×10⁻¹² C²/(N·m²) and the magnetic constant μ0 = 1.257×10⁻⁶ T·m/A."
+ },
+ {
+  "name": "Wave speed relation",
+  "latex": "c = \\lambda f",
+  "meaning": "Speed of light (m/s) equals wavelength (m) times frequency (Hz). Long wavelength means low frequency."
+ },
+ {
+  "name": "Period and frequency",
+  "latex": "T = \\dfrac{1}{f}",
+  "meaning": "The period (s) is the time for one cycle; frequency (Hz) is cycles per second."
+ },
+ {
+  "name": "Field ratio in an EM wave",
+  "latex": "B_0 = \\dfrac{E_0}{c}",
+  "meaning": "In an EM wave in vacuum, the magnetic field amplitude (T) equals the electric field amplitude (V/m) divided by c."
+ },
+ {
+  "name": "Intensity of an EM wave",
+  "latex": "I = \\tfrac{1}{2}\\, c\\, \\varepsilon_0\\, E_0^{2}",
+  "meaning": "Average power per area (W/m²) carried by a wave of electric field amplitude E0 (V/m). Intensity grows as amplitude squared."
+ },
+ {
+  "name": "Unpolarized light through a polarizer",
+  "latex": "I = \\tfrac{1}{2} I_0",
+  "meaning": "An ideal polarizer transmits half the intensity of unpolarized light."
+ },
+ {
+  "name": "Malus's law",
+  "latex": "I = I_0 \\cos^2\\theta",
+  "meaning": "Polarized light of intensity I0 hitting a polarizer at angle θ between its polarization and the axis emerges with intensity I."
+ }
+]

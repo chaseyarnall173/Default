@@ -1,0 +1,58 @@
+[
+ {
+  "term": "Photon",
+  "definition": "The smallest possible unit (quantum) of energy in the electromagnetic field at a given frequency; an elementary particle with no mass, no charge and no internal parts, carrying energy hf and momentum h/λ."
+ },
+ {
+  "term": "Quantum",
+  "definition": "The smallest indivisible amount of some quantity; for light of frequency f, one quantum of energy is hf."
+ },
+ {
+  "term": "Planck's constant (h)",
+  "definition": "The constant linking a photon's energy to its frequency, E = hf; h = 6.626 × 10⁻³⁴ J·s = 4.136 × 10⁻¹⁵ eV·s."
+ },
+ {
+  "term": "Electron volt (eV)",
+  "definition": "The energy an electron gains crossing a potential difference of 1 volt; 1 eV = 1.602 × 10⁻¹⁹ J. Convenient for photon and atomic energies."
+ },
+ {
+  "term": "Photoelectric effect",
+  "definition": "The ejection of electrons from a material when light shines on it. Electrons are emitted only if each photon's energy exceeds the work function, regardless of brightness."
+ },
+ {
+  "term": "Photoelectron",
+  "definition": "An electron ejected from a material by absorbing a photon."
+ },
+ {
+  "term": "Work function (φ)",
+  "definition": "The minimum energy needed to remove an electron from the surface of a material; about 2–6 eV for metals. It depends on the material, its surface condition and the exposed crystal face."
+ },
+ {
+  "term": "Threshold frequency (f₀)",
+  "definition": "The lowest light frequency that can eject electrons from a given material, f₀ = φ/h. The corresponding threshold wavelength is λ₀ = hc/φ."
+ },
+ {
+  "term": "Stopping voltage (Vₛ)",
+  "definition": "The reverse voltage that just stops the fastest photoelectrons from reaching the collector; it measures their kinetic energy, KE_max = eVₛ."
+ },
+ {
+  "term": "Photon flux / photon rate",
+  "definition": "The number of photons arriving (or emitted) per second; for a beam of power P, Ṅ = P/(hf)."
+ },
+ {
+  "term": "Photon momentum",
+  "definition": "The momentum carried by a photon, p = h/λ = E/c, which is why light exerts a (tiny) pressure on surfaces it hits."
+ },
+ {
+  "term": "Wave–particle duality",
+  "definition": "The fact that light (and matter) shows wave behavior in how it travels and particle behavior in how it is absorbed or emitted."
+ },
+ {
+  "term": "Interference pattern",
+  "definition": "The stripes of bright and dark produced when waves from two or more paths overlap; built up dot by dot even when photons arrive one at a time."
+ },
+ {
+  "term": "Photomultiplier tube",
+  "definition": "A light detector that uses the photoelectric effect at a low-work-function surface, then multiplies each freed electron into a measurable pulse, sensitive enough to count single photons."
+ }
+]

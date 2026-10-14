@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 420" width="680" height="420" font-family="Inter, sans-serif">
+<rect width="680" height="420" fill="#ffffff"/>
+<text x="16.0" y="22.0" font-size="13.5" fill="#1f2933" text-anchor="start" font-weight="650">(a) Leaving glass for air: past the critical angle, nothing gets out</text>
+<rect x="20" y="92" width="400" height="128" fill="#d9dee5"/>
+<line x1="20" y1="92" x2="420" y2="92" stroke="#52606d" stroke-width="1.5"/>
+<text x="26.0" y="84.0" font-size="12" fill="#52606d" text-anchor="start" font-weight="400">air (n = 1.00)</text>
+<text x="26.0" y="210.0" font-size="12" fill="#52606d" text-anchor="start" font-weight="400">glass (n = 1.50)</text>
+<circle cx="138" cy="212" r="4.5" fill="#e09f1f"/>
+<line x1="138.0" y1="212.0" x2="194.0" y2="92.0" stroke="#e09f1f" stroke-width="2.2" opacity="1.0" stroke-linecap="round"/>
+<polygon points="170.5,142.4 171.1,152.6 162.2,148.4" fill="#e09f1f"/>
+<line x1="194.0" y1="86" x2="194.0" y2="126" stroke="#52606d" stroke-width="0.9" stroke-dasharray="3 3"/>
+<line x1="194.0" y1="92.0" x2="234.5" y2="42.5" stroke="#e09f1f" stroke-width="2.2" opacity="1.0" stroke-linecap="round"/>
+<polygon points="237.1,39.4 235.2,49.5 227.5,43.2" fill="#e09f1f"/>
+<line x1="194.0" y1="92.0" x2="212.6" y2="131.9" stroke="#e09f1f" stroke-width="1.1" opacity="0.75" stroke-linecap="round"/>
+<polygon points="214.2,135.5 206.0,129.4 214.9,125.3" fill="#e09f1f"/>
+<text x="246.0" y="48.0" font-size="11.5" fill="#1f2933" text-anchor="start" font-weight="600">θ = 25°: refracts out</text>
+<text x="246.0" y="62.0" font-size="11.5" fill="#52606d" text-anchor="start" font-weight="400">(plus a weak reflection)</text>
+<line x1="138.0" y1="212.0" x2="245.3" y2="92.0" stroke="#e09f1f" stroke-width="2.2" opacity="1.0" stroke-linecap="round"/>
+<polygon points="199.7,143.0 197.4,153.0 190.0,146.4" fill="#e09f1f"/>
+<line x1="245.3" y1="86" x2="245.3" y2="126" stroke="#52606d" stroke-width="0.9" stroke-dasharray="3 3"/>
+<line x1="245.3" y1="90" x2="325.3" y2="90" stroke="#e09f1f" stroke-width="1.2" opacity="0.8"/>
+<polygon points="329.3,90.0 321.3,94.4 321.3,85.6" fill="#e09f1f"/>
+<line x1="245.3" y1="92.0" x2="274.7" y2="124.8" stroke="#e09f1f" stroke-width="2.0" opacity="1.0" stroke-linecap="round"/>
+<polygon points="277.3,127.8 267.6,124.4 275.0,117.8" fill="#e09f1f"/>
+<text x="253.3" y="83.0" font-size="11.5" fill="#1f2933" text-anchor="start" font-weight="600">θc = 41.8°: grazes the surface</text>
+<line x1="138.0" y1="212.0" x2="345.8" y2="92.0" stroke="#e09f1f" stroke-width="2.2" opacity="1.0" stroke-linecap="round"/>
+<polygon points="255.8,144.0 250.5,152.8 245.5,144.2" fill="#e09f1f"/>
+<line x1="345.8" y1="86" x2="345.8" y2="126" stroke="#52606d" stroke-width="0.9" stroke-dasharray="3 3"/>
+<line x1="345.8" y1="92.0" x2="406.5" y2="127.0" stroke="#e09f1f" stroke-width="2.2" opacity="1.0" stroke-linecap="round"/>
+<polygon points="409.9,129.0 399.7,128.8 404.6,120.2" fill="#e09f1f"/>
+<text x="414.0" y="190.0" font-size="11.5" fill="#1f2933" text-anchor="end" font-weight="600">θ = 60°: 100% reflected</text>
+<text x="414.0" y="204.0" font-size="11.5" fill="#52606d" text-anchor="end" font-weight="400">(total internal reflection)</text>
+<text x="445.0" y="70.0" font-size="18" fill="#1f2933" text-anchor="start" font-weight="700">sin θc = n₂ / n₁</text>
+<text x="445.0" y="98.0" font-size="12.5" fill="#1f2933" text-anchor="start" font-weight="400">Only possible going from higher n</text>
+<text x="445.0" y="116.0" font-size="12.5" fill="#1f2933" text-anchor="start" font-weight="400">to lower n. For glass into air:</text>
+<text x="445.0" y="134.0" font-size="12.5" fill="#1f2933" text-anchor="start" font-weight="600">θc = sin⁻¹(1/1.50) = 41.8°.</text>
+<text x="445.0" y="152.0" font-size="12.5" fill="#52606d" text-anchor="start" font-weight="400">Water: 48.6°.  Diamond: 24.4°.</text>
+<line x1="10" y1="246" x2="670" y2="246" stroke="#d9dee5" stroke-width="1.2"/>
+<text x="16.0" y="272.0" font-size="13.5" fill="#1f2933" text-anchor="start" font-weight="650">(b) Optical fiber: light trapped in the core by repeated total internal reflection</text>
+<rect x="30" y="292" width="510" height="108" rx="6" fill="#9aa5b1"/>
+<rect x="30" y="304" width="510" height="84" fill="#e6ebf1"/>
+<rect x="30" y="330" width="510" height="32" fill="#c9d3de"/>
+<path d="M36.0,346.0 L68.0,331.5 L132.0,360.5 L196.0,331.5 L260.0,360.5 L324.0,331.5 L388.0,360.5 L452.0,331.5 L516.0,360.5 L536.0,351.4" fill="none" stroke="#e09f1f" stroke-width="2.2" stroke-linejoin="round"/>
+<polygon points="104.6,348.1 95.5,348.8 99.1,340.8" fill="#e09f1f"/>
+<polygon points="296.6,343.9 291.1,351.2 287.5,343.2" fill="#e09f1f"/>
+<polygon points="488.6,348.1 479.5,348.8 483.1,340.8" fill="#e09f1f"/>
+<text x="552.0" y="321.0" font-size="11.5" fill="#1f2933" text-anchor="start" font-weight="400">cladding, n ≈ 1.46</text>
+<text x="552.0" y="350.0" font-size="11.5" fill="#1f2933" text-anchor="start" font-weight="600">core, n ≈ 1.48</text>
+<text x="552.0" y="379.0" font-size="11.5" fill="#1f2933" text-anchor="start" font-weight="400">cladding, n ≈ 1.46</text>
+<text x="552.0" y="399.0" font-size="11.5" fill="#52606d" text-anchor="start" font-weight="400">jacket</text>
+<text x="30.0" y="416.0" font-size="11" fill="#52606d" text-anchor="start" font-weight="400">Angles exaggerated: in a real fiber the guided rays travel within about 9° of the axis.</text>
+</svg>

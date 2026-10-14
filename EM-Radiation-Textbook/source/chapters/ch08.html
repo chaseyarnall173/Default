@@ -1,0 +1,193 @@
+<section class="chapter" id="ch08">
+<div class="chapter-opener">
+  <div class="chapter-num">Chapter 8</div>
+  <h1 class="chapter-title">Interference and Diffraction (and Why Size vs. Wavelength Matters)</h1>
+  <p class="chapter-hook">Why does a CD throw rainbows, why can’t a light microscope show you an atom, and how can an atom 5000 times smaller than a light wave still absorb it? It comes down to waves adding up, and to comparing size with wavelength.</p>
+  <div class="big-picture"><h4>The big picture</h4><ul>
+    <li>Overlapping waves add: in step they reinforce, out of step they cancel. That is interference.</li>
+    <li>Waves spread out after passing through an opening, by an angle of about \(\lambda/a\). That is diffraction.</li>
+    <li>Electrons and other matter diffract too: quantum objects travel as waves.</li>
+    <li>Diffraction blurs every image: no lens resolves details much below half a wavelength.</li>
+    <li>Size vs. wavelength controls <em>scattering</em> and <em>imaging</em>; <em>absorption and emission</em> are controlled by resonance instead.</li>
+  </ul></div>
+  <div class="learning-goals"><h4>After this chapter you can</h4><ul>
+    <li>Predict bright and dark fringes from path differences, using \(d\sin\theta = m\lambda\).</li>
+    <li>Explain diffraction with Huygens’ principle and estimate how much a beam spreads.</li>
+    <li>Compute a de Broglie wavelength and explain what electron diffraction shows.</li>
+    <li>Estimate the resolution limit of an eye, telescope, or microscope.</li>
+    <li>Sort an object into the Rayleigh, Mie, or geometric regime, and explain why tiny atoms still absorb and emit long waves.</li>
+  </ul></div>
+</div>
+
+<h2 id="ch08-1"><span class="sec-num">8.1</span>Superposition: waves add</h2>
+<p>When two waves overlap, the total field at each point is the sum of the two fields. This is <strong>superposition</strong>, and for light it is very nearly exact: two beams cross without disturbing each other.</p>
+<p>What matters is the <strong>phase</strong>, meaning where each wave is in its cycle. If crest meets crest, the waves are in phase and the amplitude doubles: <strong>constructive interference</strong>. If crest meets trough, they are half a wavelength out of phase and cancel: <strong>destructive interference</strong> (Figure 8.1). Intensity goes as amplitude squared (Chapter 1), so the bright spots get four times brighter; the energy missing from dark spots shows up in bright ones.</p>
+<figure id="fig-8-1"><img src="figures/ch08-superposition.svg" alt="Two equal waves added in phase give a wave of double amplitude; added half a wavelength out of phase they cancel to a flat line.">
+<figcaption><span class="fig-num">Figure 8.1</span> Superposition. Left: crests line up, so the sum has twice the amplitude. Right: the second wave is shifted by half a wavelength, so every crest meets a trough and the sum is zero.</figcaption></figure>
+<p>The usual source of a phase shift is a <strong>path difference</strong>: one wave travels farther than the other to reach the same point. (Noise-canceling headphones add a half-cycle shift on purpose, playing an inverted copy of the noise.)</p>
+<div class="box key"><div class="box-title">Key Idea</div><p>Path difference decides everything. A whole number of wavelengths extra, \((0,\ \lambda,\ 2\lambda,\ \dots)\), gives a bright spot; an extra half wavelength, \((\lambda/2,\ 3\lambda/2,\ \dots)\), gives a dark one. The pattern only holds still if the waves keep a fixed phase relationship (they are <strong>coherent</strong>), which is why lasers make such clean patterns.</p></div>
+
+<h2 id="ch08-2"><span class="sec-num">8.2</span>Diffraction: waves spread through openings</h2>
+<p><strong>Diffraction</strong> is what a wave does when part of it is blocked: it spreads into the region behind the obstacle instead of casting a perfectly sharp shadow. <strong>Huygens’ principle</strong> (1678) explains why: every point on a wavefront acts as a source of small wavelets, and the next wavefront is their sum.</p>
+<p>At an opening, only the wavelets from inside the gap survive. A narrow gap holds just a few, so the wave leaving it spreads like ripples from a single point. A wide gap holds many, and they rebuild a straight beam that spreads only at its edges (Figure 8.2).</p>
+<figure id="fig-8-2"><img src="figures/ch08-single-slit.png" alt="Computed wave patterns behind a narrow slit, which produces circular spreading waves, and a wide slit, which produces a nearly straight beam with slight spreading.">
+<figcaption><span class="fig-num">Figure 8.2</span> Huygens’ principle at work, computed by adding up wavelets from every point in the opening (dots). A gap about one wavelength wide (left) sends out nearly circular waves. A gap six wavelengths wide (right) passes a beam whose edges spread by roughly \(\lambda/a\) (dashed lines).</figcaption></figure>
+<p>For a single slit of width \(a\), the wavelets from the two halves of the slit cancel at the angle where</p>
+<div class="equation" data-eq="8.1">\[ \sin\theta_\text{first dark} = \frac{\lambda}{a} \]</div>
+<p class="where">where \(a\) is the slit width and \(\lambda\) the wavelength. Most of the light lands inside this angle.</p>
+<div class="box key"><div class="box-title">Key Idea</div><p>A wave squeezed through an opening of width \(a\) spreads by an angle of about \(\lambda/a\). Diffraction is dramatic when the opening is about the size of the wavelength and negligible when the opening is thousands of wavelengths across.</p></div>
+<p>That is why you can hear someone around a corner but not see them. A voice has wavelengths around 1 m, about the width of a doorway, so it spreads widely. For visible light (\(\lambda \approx 0.5\ \mu\text{m}\)) the same doorway gives \(\lambda/a \approx 6\times10^{-7}\): essentially no spreading.</p>
+<div class="box analogy"><div class="box-title">Analogy</div><p>Ocean swells at a harbor entrance do the same thing. A narrow gap sends half-circle ripples across the whole harbor; a wide gap lets a straight band through and leaves calm water behind the breakwater.</p></div>
+<div class="box myth"><div class="box-title">Myth vs. Reality</div>
+  <p class="myth-line"><strong>Myth:</strong> Light travels in perfectly straight lines; only sound and water waves bend around corners.</p>
+  <p><strong>Reality:</strong> Light diffracts around every edge; its wavelength is just tiny compared with everyday objects. Look at a distant streetlight through a fine mesh curtain and you will see a diffraction pattern.</p></div>
+
+<h2 id="ch08-3"><span class="sec-num">8.3</span>Double slits, gratings, and thin films</h2>
+<h3>Young’s double slit</h3>
+<p>In the early 1800s Thomas Young sent light through two closely spaced slits and saw bright and dark bands, strong evidence that light is a wave. The two waves reach a point P on the screen by paths that differ by \(d\sin\theta\) (Figure 8.3), so bright fringes appear where</p>
+<div class="equation boxed" data-eq="8.2">\[ d\sin\theta = m\lambda \qquad (m = 0, \pm1, \pm2, \dots) \]</div>
+<p class="where">where \(d\) is the slit spacing, \(\theta\) the angle from the center line, and \(m\) the <strong>order</strong> of the fringe.</p>
+<figure id="fig-8-3"><img src="figures/ch08-double-slit.svg" alt="Geometry of a double slit: two rays from slits separated by d reach point P on a distant screen; the lower ray travels an extra distance d sin theta. On the right, the computed fringe pattern and brightness curve with orders m = -3 to 3.">
+<figcaption><span class="fig-num">Figure 8.3</span> Double-slit interference. The ray from the lower slit travels an extra distance \(\Delta = d\sin\theta\) (green). Where \(\Delta = m\lambda\), the waves arrive in step and the screen is bright. Here P sits on the \(m = 2\) fringe. The slow fade of the fringes comes from diffraction by each individual slit.</figcaption></figure>
+<p>For small angles, \(\sin\theta \approx \tan\theta = y/L\), so neighboring bright fringes on a screen a distance \(L\) away are spaced by</p>
+<div class="equation" data-eq="8.3">\[ \Delta y = \frac{\lambda L}{d} \]</div>
+<div class="box example"><div class="box-title">Worked Example 8.1 <span class="sub">— A laser pointer through two slits</span></div>
+  <p class="given"><strong>Given:</strong> red laser, \(\lambda = 650\) nm; slit spacing \(d = 0.100\) mm; screen \(L = 2.00\) m away.</p>
+  <p><strong>Find:</strong> the angle of the first bright fringe and the fringe spacing on the screen.</p>
+  <p><strong>Think:</strong> first bright fringe means \(m = 1\) in Eq. 8.2. The angle will be tiny, so Eq. 8.3 applies.</p>
+  <p>\[ \sin\theta_1 = \frac{\lambda}{d} = \frac{650\times10^{-9}\,\text{m}}{1.00\times10^{-4}\,\text{m}} = 6.50\times10^{-3} \;\Rightarrow\; \theta_1 = 0.372^\circ \]</p>
+  <p>\[ \Delta y = \frac{\lambda L}{d} = \frac{(650\times10^{-9}\,\text{m})(2.00\,\text{m})}{1.00\times10^{-4}\,\text{m}} = 1.30\times10^{-2}\,\text{m} \]</p>
+  <p class="answer">Answer: \(\theta_1 \approx 0.37^\circ\); fringes about 1.3 cm apart. Slits a tenth of a millimeter apart bend light by only a third of a degree, which is how well light hides its wave nature.</p></div>
+
+<h3>Diffraction gratings and the CD rainbow</h3>
+<p>A <strong>diffraction grating</strong> has thousands of evenly spaced slits or grooves. Eq. 8.2 still gives the angles, but with so many sources the bright lines become very sharp. Because \(\theta\) depends on \(\lambda\), a grating fans white light into a spectrum, which makes it the heart of most <strong>spectrometers</strong> (the instruments that read Chapter 5’s spectral fingerprints). A CD is a reflection grating whose track repeats every 1.6 µm (Figure 8.4a).</p>
+<div class="box example"><div class="box-title">Worked Example 8.2 <span class="sub">— Where the CD rainbow appears</span></div>
+  <p class="given"><strong>Given:</strong> track spacing \(d = 1.6\ \mu\text{m} = 1600\) nm; white light (400–700 nm) arriving straight on.</p>
+  <p><strong>Find:</strong> the angles spanned by the first-order (\(m = 1\)) and second-order (\(m = 2\)) rainbows.</p>
+  <p><strong>Think:</strong> apply \(\sin\theta = m\lambda/d\) to each end of the visible range.</p>
+  <p>\[ m = 1:\ \ \sin\theta = \tfrac{400}{1600} = 0.250 \Rightarrow 14.5^\circ; \qquad \sin\theta = \tfrac{700}{1600} = 0.438 \Rightarrow 25.9^\circ \]</p>
+  <p>\[ m = 2:\ \ \sin\theta = \tfrac{800}{1600} = 0.500 \Rightarrow 30.0^\circ; \qquad \sin\theta = \tfrac{1400}{1600} = 0.875 \Rightarrow 61.0^\circ \]</p>
+  <p class="answer">Answer: first-order rainbow from 14.5° (violet) to 25.9° (red); second-order from 30° to 61°. Tilt a CD under a lamp to find both.</p></div>
+
+<h3>Thin films: soap bubbles and oil slicks</h3>
+<p>A soap film a few hundred nanometers thick reflects light from both surfaces (Figure 8.4b). The back-surface ray travels about \(2t\) farther (effectively \(2nt\), since light is slower in the film; Chapter 6). Some colors return in step and look bright while others cancel, so white light comes back tinted, and the tint shifts as the film thins. The front reflection is also flipped over, so a film much thinner than a wavelength cancels every color and looks black just before it pops.</p>
+<figure id="fig-8-4"><img src="figures/ch08-grating-film.svg" alt="Left: a CD reflects white light into rainbow fans at orders m = plus and minus 1 and 2. Right: rays reflecting from the top and bottom of a soap film, and a computed strip of reflected colors versus film thickness from 0 to 1000 nm.">
+<figcaption><span class="fig-num">Figure 8.4</span> Two everyday rainbows from interference. (a) Ray angles computed from \(d\sin\theta = m\lambda\) for a 1.6 µm track spacing. (b) Thin-film interference, with the reflected color computed for a soap film versus its thickness. Below about 30 nm the film looks black.</figcaption></figure>
+<p>The same physics colors oil on a wet road, anti-reflection coatings on lenses, butterfly wings (structural color, Chapter 7), and heat-tinted steel (Chapter 9).</p>
+
+<h2 id="ch08-4"><span class="sec-num">8.4</span>Diffraction in quantum physics</h2>
+<p>In 1924 Louis de Broglie proposed that matter has a wavelength too, linked to its momentum the same way a photon’s is (Chapter 2):</p>
+<div class="equation" data-eq="8.4">\[ \lambda = \frac{h}{p} \]</div>
+<p class="where">where \(h = 6.626\times10^{-34}\) J·s and \(p\) is momentum (\(p = \sqrt{2mK}\) for a slow particle of mass \(m\) and kinetic energy \(K\)).</p>
+<p>Everyday objects have absurdly tiny wavelengths and never visibly diffract. But electrons from a modest voltage have wavelengths about the spacing between atoms, so a crystal acts as a natural grating, as Davisson and Germer showed in 1927.</p>
+<div class="box example"><div class="box-title">Worked Example 8.3 <span class="sub">— An electron behaves like a wave</span></div>
+  <p class="given"><strong>Given:</strong> electrons with \(K = 54\) eV (as in Davisson and Germer’s experiment); \(m_e = 9.109\times10^{-31}\) kg; rows of atoms on the nickel surface 0.215 nm apart.</p>
+  <p><strong>Find:</strong> the electron wavelength and the angle of the first diffracted beam.</p>
+  <p><strong>Think:</strong> 54 eV is far below the electron’s rest energy, so \(p = \sqrt{2mK}\). Then treat the rows of atoms as a grating (Eq. 8.2 with \(m = 1\)).</p>
+  <p>\[ p = \sqrt{2(9.109\times10^{-31}\,\text{kg})(54\times1.602\times10^{-19}\,\text{J})} = 3.97\times10^{-24}\ \text{kg·m/s} \]</p>
+  <p>\[ \lambda = \frac{h}{p} = \frac{6.626\times10^{-34}}{3.97\times10^{-24}}\,\text{m} = 1.67\times10^{-10}\,\text{m} = 0.167\ \text{nm}, \qquad \sin\theta = \frac{0.167}{0.215} = 0.777 \Rightarrow \theta = 51^\circ \]</p>
+  <p class="answer">Answer: \(\lambda \approx 0.167\) nm and a diffracted beam near 51°. Davisson and Germer found a strong beam at 50°, matching de Broglie’s prediction.</p></div>
+<p>The strangest version is the one-at-a-time double slit. Send electrons (or photons) so weakly that only one is in the apparatus at a time. Each lands at a single spot, like a particle, yet thousands of them build the interference pattern dot by dot (Figure 2.5 in Chapter 2 shows the buildup with photons; electrons look the same). This was done with electrons in Bologna in the 1970s and at Hitachi in 1989; even whole C<sub>60</sub> molecules have been diffracted.</p>
+<p>Quantum mechanics describes this with a <strong>probability amplitude</strong>: a wave that passes through both slits and interferes with itself, whose intensity at each spot gives the chance of detecting the particle there (wave–particle duality, Chapter 2).</p>
+<div class="box myth"><div class="box-title">Myth vs. Reality</div>
+  <p class="myth-line"><strong>Myth:</strong> Each photon or electron secretly goes through one slit or the other; we just don’t know which.</p>
+  <p><strong>Reality:</strong> If each particle used only one slit, there would be nothing to interfere with and no fringes. Add a detector that records which slit each particle takes, and the fringes do vanish, leaving two plain blobs.</p></div>
+<div class="box asked"><div class="box-title">You Asked</div><p class="question">“What is diffraction — and what does it mean in quantum physics?”</p>
+  <p>Diffraction is the spreading of a wave as it passes through an opening or around an edge, by an angle of roughly \(\lambda/a\); it is strongest when the opening is about a wavelength wide (Section 8.2). Every point of the wave launches wavelets, and an opening keeps only some of them.</p>
+  <p>In quantum physics, diffraction is the proof that particles travel as waves. Electrons, neutrons, and even molecules diffract with \(\lambda = h/p\), and particles sent one at a time still build an interference pattern. Each is <em>detected</em> at one spot but <em>travels</em> as a wave whose intensity sets the odds of where that spot will be.</p></div>
+
+<h2 id="ch08-5"><span class="sec-num">8.5</span>The diffraction limit</h2>
+<p>A lens is also an opening, so it diffracts. Even a perfect lens images a point as a small blurred disk with faint rings, the <strong>Airy disk</strong>, and points closer than about one disk radius merge (Figure 8.5). For an aperture of diameter \(D\), the <strong>Rayleigh criterion</strong> says two points are just resolved at an angular separation of</p>
+<div class="equation boxed" data-eq="8.5">\[ \theta_\text{min} \approx 1.22\,\frac{\lambda}{D} \quad \text{(radians)} \]</div>
+<figure id="fig-8-5"><img src="figures/ch08-resolution.png" alt="Images and brightness profiles of two point sources at twice, exactly at, and half the Rayleigh separation; at half they merge into one blob.">
+<figcaption><span class="fig-num">Figure 8.5</span> Computed Airy patterns of two point sources. At the Rayleigh separation (center), the peak of one sits on the first dark ring of the other and the combined brightness dips by about 26% between them, just enough to tell them apart. Any closer and they blur into one.</figcaption></figure>
+<div class="box example"><div class="box-title">Worked Example 8.4 <span class="sub">— Your eye vs. the Hubble Space Telescope</span></div>
+  <p class="given"><strong>Given:</strong> \(\lambda = 550\) nm. Daytime pupil \(D = 3.0\) mm; car headlights 1.5 m apart. Hubble’s mirror \(D = 2.4\) m; the Moon is \(3.84\times10^{8}\) m away.</p>
+  <p><strong>Find:</strong> (a) how far away the headlights must be before a diffraction-limited eye sees them as one light; (b) the smallest detail Hubble can resolve on the Moon.</p>
+  <p><strong>Think:</strong> find \(\theta_\text{min}\) from Eq. 8.5, then use (separation) = (distance) × \(\theta\).</p>
+  <p>\[ \text{(a)}\ \theta_\text{min} = \frac{1.22(550\times10^{-9})}{3.0\times10^{-3}} = 2.24\times10^{-4}\ \text{rad}, \qquad \text{distance} = \frac{1.5\ \text{m}}{2.24\times10^{-4}} = 6.7\ \text{km} \]</p>
+  <p>\[ \text{(b)}\ \theta_\text{min} = \frac{1.22(550\times10^{-9})}{2.4} = 2.8\times10^{-7}\ \text{rad}, \qquad s = (3.84\times10^{8})(2.8\times10^{-7}) \approx 110\ \text{m} \]</p>
+  <p class="answer">Answer: (a) about 7 km; (b) about 110 m, so Hubble cannot see the few-meter Apollo landers. At a given wavelength, only a bigger aperture does better.</p></div>
+<p>A microscope faces the same limit. The smallest separation it can resolve is about</p>
+<div class="equation boxed" data-eq="8.6">\[ d_\text{min} \approx \frac{\lambda}{2\,\text{NA}} \]</div>
+<p class="where">where NA, the <strong>numerical aperture</strong>, measures how wide a cone of light the objective collects. The best oil-immersion objectives reach NA ≈ 1.4–1.5.</p>
+<p>With green light, \(d_\text{min} \approx 550/(2 \times 1.4) \approx 200\) nm. Bacteria (about 1000 nm) are easy to see; most viruses (20–300 nm) are fuzzy dots at best; atoms (0.1–0.3 nm, Chapter 4) are a thousand times too small. The fix is a shorter wavelength. Electrons accelerated through 100 kV have \(\lambda \approx 0.0037\) nm, so electron microscopes can resolve rows of atoms. Their advantage is wavelength, not that electrons are “smaller”; in practice imperfect magnetic lenses limit them to about 0.1 nm. X-rays with \(\lambda \sim 0.1\) nm reveal crystal structure through diffraction (Chapter 11).</p>
+<div class="box key"><div class="box-title">Key Idea</div><p>You can’t resolve details much smaller than about half the wavelength you look with. To see smaller things, use a shorter wavelength or a bigger aperture.</p></div>
+<div class="box asked"><div class="box-title">You Asked</div><p class="question">“What is the diffraction limit?”</p>
+  <p>The diffraction limit is the smallest detail any lens-based instrument can resolve, set by the wavelength: about \(\lambda/(2\,\text{NA})\), or roughly half a wavelength for the best microscopes. For a telescope or eye, the limit is an angle, \(1.22\lambda/D\).</p>
+  <p>The cause is diffraction at the lens itself: every point is imaged as a small Airy disk, and details closer than the disk size blur together. That is why visible-light microscopes bottom out near 200 nm (no atoms; most viruses only as blurs), why telescopes keep getting bigger, and why we use electrons or X-rays, with wavelengths thousands of times shorter, to see atomic structure.</p></div>
+<div class="box rabbit"><div class="box-title">Rabbit Hole <span class="sub">(optional) — Beating the limit with blinking molecules</span></div>
+  <p>Safe to skip. “Super-resolution” fluorescence microscopy (Nobel Prize in Chemistry, 2014) never lets neighboring molecules glow at the same time. Each still makes a blurry Airy spot, but an isolated spot’s center can be located to tens of nanometers. Light up a sparse handful, locate them, repeat thousands of times, and assemble the map. Diffraction is unchanged; the trick is what you light up.</p></div>
+
+<h2 id="ch08-6"><span class="sec-num">8.6</span>Size versus wavelength: the master rule</h2>
+<p>Whenever a wave meets an object or a hole, compare the size \(d\) with \(\lambda\). The ratio sorts almost every situation into three regimes (Table 8.1, Figure 8.6).</p>
+<table><caption><span class="tab-num">Table 8.1</span> What happens when a wave meets an object of size \(d\).</caption>
+<tr><th>Regime</th><th>What the wave does</th><th>Examples</th></tr>
+<tr><td><strong>\(d \ll \lambda\)</strong> (Rayleigh)</td><td>Scatters only weakly, much more for short wavelengths; can’t image the object; holes this small block the wave</td><td>Air molecules in sunlight (blue sky, Chapter 7); microwave-oven door holes; AM radio meeting a building</td></tr>
+<tr><td><strong>\(d \sim \lambda\)</strong> (Mie)</td><td>Strong, complicated scattering and diffraction; colors from interference</td><td>Haze and smoke; milk’s fat droplets; CD tracks; Astrophage in its own infrared light</td></tr>
+<tr><td><strong>\(d \gg \lambda\)</strong> (geometric)</td><td>Travels in straight rays: sharp shadows, reflection, refraction (Chapter 6)</td><td>Sunlight on buildings; cloud droplets (white clouds); FM radio and hills</td></tr>
+</table>
+<p>A particle much smaller than \(\lambda\) has its charges shaken together as one tiny dipole, which re-radiates feebly. This is <strong>Rayleigh scattering</strong>:</p>
+<div class="equation" data-eq="8.7">\[ \sigma_\text{scatter} \propto \frac{d^{\,6}}{\lambda^{4}} \qquad (d \ll \lambda) \]</div>
+<p class="where">where \(\sigma\) is the scattering cross-section, the effective area that removes light from the beam. Per unit of the particle’s own area (\(\propto d^2\)) this goes as \((d/\lambda)^4\): halve \(d/\lambda\) and the scattering per area drops 16-fold.</p>
+<figure id="fig-8-6"><img src="figures/ch08-size-regimes.svg" alt="Log-log plot of scattering efficiency versus size over wavelength for a water sphere: a straight line of slope 4 at small sizes, a peak with wiggles near one, and a flat value of 2 at large sizes.">
+<figcaption><span class="fig-num">Figure 8.6</span> How strongly a water droplet scatters light, per unit of its cross-sectional area, versus size ÷ wavelength (computed with Mie theory). Tiny objects fall on the steep \((d/\lambda)^4\) line: an air molecule in sunlight scatters roughly a trillion times less effectively, per area, than a cloud droplet. Near \(d \sim \lambda\) scattering is strong; for large objects it levels off.</figcaption></figure>
+<h3>The microwave-oven door</h3>
+<p>A microwave oven runs at 2.45 GHz, so \(\lambda = c/f = 12.2\) cm. The door’s metal mesh has holes about 1–2 mm across, nearly a hundred times smaller. To a 12 cm wave the mesh acts like solid metal: the field drives currents that flow around the tiny holes, and the wave is reflected back inside. Visible light sees each hole as thousands of wavelengths wide and passes straight through, so you can watch your food.</p>
+<h3>Radio waves around buildings</h3>
+<p>AM radio wavelengths (about 180–560 m) are longer than buildings and comparable to hills, so AM diffracts around them and fills in the “shadows.” FM (about 3 m) and cell signals (tens of centimeters) are far smaller than a hill, so they act more like light: they cast shadows and need line of sight or reflections. That is part of why FM fades behind a ridge while AM carries on.</p>
+<div class="box asked"><div class="box-title">You Asked</div><p class="question">“Why can big wavelengths interact with small objects?”</p>
+  <p>They can because a wave is an oscillating electric field, and anything containing charges feels it, whatever its size. Size controls <em>which kind</em> of interaction is strong:</p>
+  <ul>
+    <li><strong>Scattering, reflecting, shadowing, imaging:</strong> these really do fade for objects much smaller than \(\lambda\), as \((d/\lambda)^4\) per unit area. Here “too small to notice” is basically right (the microwave door).</li>
+    <li><strong>Absorbing and emitting:</strong> these depend on <em>resonance</em>, a photon energy matching an energy gap, not on size. A 0.1 nm atom absorbs 500 nm light easily.</li>
+    <li><strong>Antennas:</strong> a small antenna still works, but radiates weakly unless it is resonant.</li>
+  </ul>
+  <p>Section 8.7 unpacks the last two.</p></div>
+
+<h2 id="ch08-7"><span class="sec-num">8.7</span>How tiny atoms handle huge waves</h2>
+<p>An atom is about 0.1 nm across; green light has \(\lambda = 500\) nm, 5000 times bigger. Across the atom the light’s field is almost perfectly uniform (Figure 8.7a): it points up everywhere, then down everywhere, \(6\times10^{14}\) times per second. That push rocks the electron cloud against the nucleus, making an oscillating <strong>electric dipole</strong> (the picture introduced in Chapter 5). This is the standard starting point for calculating atomic absorption and emission, and it works <em>because</em> the atom is tiny.</p>
+<figure id="fig-8-7"><img src="figures/ch08-atom-antenna.svg" alt="Left: a 500 nm light wave with an atom drawn as a dot far smaller than the wave, plus a zoomed view showing a uniform field pushing the electron cloud. Right: a half-wave dipole antenna radiating strongly compared with a much shorter antenna radiating weakly.">
+<figcaption><span class="fig-num">Figure 8.7</span> (a) Even drawn 100 times too large, an atom is a dot inside one wavelength of visible light, so the field is uniform across it and simply rocks the electron cloud. (b) For antennas, length relative to \(\lambda\) sets efficiency: a resonant half-wave dipole radiates well, while a \(\lambda/20\) stub (radiation resistance about 0.5 Ω) wastes most of its drive power as heat.</figcaption></figure>
+<p>Whether the rocking turns into absorption depends on <strong>resonance</strong>. If the light’s frequency matches a natural frequency of the atom, so that \(hf\) equals the gap between two energy levels (Chapter 5), the atom absorbs a photon. Off resonance, the cloud just jiggles slightly and re-radiates the energy, which gives refraction (Chapter 6) and the weak Rayleigh scattering above.</p>
+<div class="box analogy"><div class="box-title">Analogy</div><p>Pushing a swing works if your pushes match its rhythm, no matter how small your hands are. An atom’s energy levels set its rhythm; its size doesn’t enter.</p></div>
+<div class="box asked"><div class="box-title">You Asked</div><p class="question">“Something so small (an atom) shouldn’t be able to interact with such a long wavelength — the wave should be unnoticeable to the tiny atom. What’s the idea here?”</p>
+  <p>Your intuition is right for <em>scattering and imaging</em>, but absorption and emission don’t depend on size at all; they depend on resonance. Separate three cases:</p>
+  <p><strong>(a) Scattering, reflecting, resolving: size matters.</strong> An object much smaller than \(\lambda\) scatters weakly (efficiency \(\propto (d/\lambda)^4\)), can’t reflect the wave or cast a shadow, and can’t be imaged with it (Section 8.5). Here the wave really does “not notice” the atom, which is why the sky is only faintly blue and why light can’t show you atoms.</p>
+  <p><strong>(b) Absorption and emission: resonance matters, not size.</strong> A photon is absorbed when its energy matches an energy gap (Chapter 5). Atoms about 0.1 nm across absorb and emit 500 nm light all the time: neon signs and sodium streetlights are atoms emitting light thousands of times their size. Being tiny keeps it simple, because the field is uniform across the atom and just rocks it as a dipole (Figure 8.7a).</p>
+  <p><strong>(c) Antennas: why size <em>feels</em> like it should matter.</strong> An antenna much shorter than \(\lambda\) is a weak, inefficient radiator: a half-wave dipole has a radiation resistance near 73 Ω, a \(\lambda/20\) stub only about 0.5 Ω, so most of its power becomes heat (Figure 8.7b). A length near \(\lambda/2\) makes it resonant. An atom is a tiny antenna already tuned by its energy levels, so it doesn’t need to be wavelength-sized.</p></div>
+<div class="box rabbit"><div class="box-title">Rabbit Hole <span class="sub">(optional) — On resonance, an atom “looks” as big as the wavelength</span></div>
+  <p>Safe to skip. An isolated atom driven exactly at resonance absorbs as if it were a disk of area about \(3\lambda^2/2\pi\), set by the wavelength, not the atom. For sodium’s 589 nm line that is a disk about 0.2 µm in radius, millions of times the atom’s geometric cross-section. (Atomic motion and collisions in real gases broaden the line and lower this peak.)</p></div>
+<div class="box hailmary"><div class="box-title">Project Hail Mary Connection</div>
+  <p><em>“In</em> Project Hail Mary<em>, what does Grace say about Astrophage interacting with a wavelength that’s too big for it?”</em></p>
+  <p>Grace finds that an Astrophage cell is about 10 µm across, yet it emits and responds to infrared light at the Petrova wavelength, 25.984 µm, about 2.6 times larger than the cell. His narration uses the rule of thumb from Section 8.6, that light basically ignores things much smaller than its wavelength (with the microwave-oven door as the example), so by that rule the cell shouldn’t interact with 26 µm light at all. His tests also show the cells are black to every wavelength he tries.</p>
+  <p>What real physics says:</p>
+  <ul>
+    <li><strong>Emission and absorption aren’t gated by size; resonance is.</strong> A CO<sub>2</sub> molecule about 0.2 nm long absorbs 15 µm infrared, tens of thousands of times its length (that is the greenhouse effect, Chapter 9).</li>
+    <li><strong>2.6× isn’t “much smaller.”</strong> At \(d/\lambda \approx 0.4\), Astrophage sits at the edge of the Mie regime (Figure 8.6), where interaction is strong.</li>
+    <li><strong>Where Grace’s instinct holds:</strong> ordinary matter much smaller than a wavelength scatters and blocks it only weakly. A cell that stayed perfectly black at wavelengths far larger than itself would be genuinely strange physics, which is part of what makes Astrophage such a puzzle.</li>
+  </ul></div>
+
+<div class="summary"><h2>Chapter summary</h2><ul>
+  <li>Superposition: overlapping waves add. A path difference of \(m\lambda\) gives a bright spot; \((m+\tfrac12)\lambda\) gives a dark one.</li>
+  <li>Huygens’ principle explains diffraction. An opening of width \(a\) spreads a wave by about \(\lambda/a\), which is dramatic when \(a \sim \lambda\).</li>
+  <li>Double slits and gratings: bright fringes where \(d\sin\theta = m\lambda\). Gratings (and CDs) split white light into spectra; thin films color soap bubbles.</li>
+  <li>Matter diffracts with \(\lambda = h/p\). Particles sent one at a time still build an interference pattern, so they travel as waves and are detected as particles.</li>
+  <li>The diffraction limit: angular resolution \(1.22\lambda/D\); microscope resolution \(\approx\lambda/(2\,\text{NA}) \approx 200\) nm for visible light. Electrons and X-rays reach atomic scales.</li>
+  <li>Size vs. wavelength: Rayleigh (\(d \ll \lambda\), scattering \(\propto d^6/\lambda^4\)), Mie (\(d \sim \lambda\)), geometric (\(d \gg \lambda\)). This explains the microwave door and AM vs. FM.</li>
+  <li>Atoms absorb and emit waves thousands of times larger than themselves because absorption is set by resonance, not size; small antennas are inefficient unless resonant.</li>
+</ul></div>
+<div class="check"><h2>Check yourself</h2><ol>
+  <li><span class="tag">Concept</span>Two speakers play the same steady tone. At one spot in the room the sound almost vanishes. What can you say about the difference in distance from that spot to the two speakers?</li>
+  <li><span class="tag">Calc</span>A green laser (532 nm) shines on two slits 0.25 mm apart. How far apart are the bright fringes on a wall 3.0 m away?</li>
+  <li><span class="tag">Calc</span>A DVD’s tracks are 0.74 µm apart. At what angles does first-order light of 400 nm and 650 nm leave the disc (light arriving straight on)? Why is there no second-order rainbow?</li>
+  <li><span class="tag">Concept</span>Why can you hear a friend talking in the next room through an open door, but not see them unless you are in line with the door?</li>
+  <li><span class="tag">Calc</span>Find the de Broglie wavelength of an electron with kinetic energy 100 eV. Would a crystal with atoms 0.25 nm apart diffract it noticeably?</li>
+  <li><span class="tag">Calc</span>A backyard telescope has a 0.20 m mirror. Using 550 nm light, what is its diffraction-limited angular resolution, and what is the smallest crater it could resolve on the Moon (\(3.84\times10^8\) m away)?</li>
+  <li><span class="tag">Apply</span>A biologist wants to see the shape of a 100 nm virus with an oil-immersion objective (NA = 1.4) and 450 nm blue light. Can she? If not, what instrument should she use, and why does it work?</li>
+  <li><span class="tag">Calc</span>By what factor are air molecules better at scattering 450 nm blue light than 700 nm red light?</li>
+  <li><span class="tag">Concept</span>The holes in a microwave-oven door are about 1–2 mm wide. What would happen if a manufacturer used 3 cm holes to save metal? Explain using size vs. wavelength.</li>
+  <li><span class="tag">Apply</span>In materials science, X-rays with \(\lambda = 0.154\) nm are used to measure crystal structures (Chapter 11), but visible light is useless for this. Use \(d\sin\theta = m\lambda\) to explain why, for atomic planes about 0.2 nm apart.</li>
+  <li><span class="tag">Apply</span>Astrophage is about 10 µm across and emits at 25.984 µm. Compute \(d/\lambda\), place it on Figure 8.6, and explain in two sentences why its emitting this wavelength does not by itself break physics.</li>
+</ol><p class="small muted">Full solutions are in the Answer Key at the back of the book.</p></div>
+</section>

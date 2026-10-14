@@ -1,0 +1,22 @@
+[
+  {"term": "Superposition", "definition": "The rule that when waves overlap, the total field at each point is the sum of the individual fields."},
+  {"term": "Phase", "definition": "Where a wave is in its cycle (crest, trough, or in between) at a given place and time; a half-wavelength shift puts crest against trough."},
+  {"term": "Constructive interference", "definition": "Overlapping waves arriving in step (crest on crest), so their amplitudes add and the spot is bright."},
+  {"term": "Destructive interference", "definition": "Overlapping waves arriving half a cycle out of step (crest on trough), so they cancel and the spot is dark."},
+  {"term": "Path difference", "definition": "The extra distance one wave travels compared with another to reach the same point; whole wavelengths give bright spots, odd half-wavelengths give dark ones."},
+  {"term": "Coherent", "definition": "Describes waves that keep a fixed phase relationship with each other, which is needed for a stable interference pattern (lasers are highly coherent)."},
+  {"term": "Huygens' principle", "definition": "Every point on a wavefront acts as a source of small wavelets; the next wavefront is the sum of those wavelets. It explains diffraction."},
+  {"term": "Diffraction", "definition": "The spreading of a wave as it passes through an opening or around an edge, by an angle of roughly wavelength divided by opening width."},
+  {"term": "Diffraction grating", "definition": "A surface with many evenly spaced slits or grooves that sends each wavelength off at its own angle, d sin(theta) = m lambda, splitting light into a spectrum."},
+  {"term": "Order (of a fringe)", "definition": "The whole number m in d sin(theta) = m lambda that counts how many wavelengths of path difference produce a given bright fringe."},
+  {"term": "Thin-film interference", "definition": "Interference between light reflected from the front and back surfaces of a very thin layer, which produces the colors of soap bubbles and oil slicks."},
+  {"term": "de Broglie wavelength", "definition": "The wavelength of a moving particle, lambda = h/p; it makes electrons, neutrons, and even molecules diffract."},
+  {"term": "Probability amplitude", "definition": "The quantum wave that travels through an apparatus (for example, both slits); its intensity at a spot gives the chance of detecting the particle there."},
+  {"term": "Airy disk", "definition": "The small blurred disk with faint rings that a perfect circular lens makes from a single point of light, because of diffraction at the lens."},
+  {"term": "Rayleigh criterion", "definition": "Two points are just resolved when their angular separation is about 1.22 lambda/D, so one's Airy peak falls on the other's first dark ring."},
+  {"term": "Diffraction limit", "definition": "The smallest detail a lens-based instrument can resolve, set by wavelength: about lambda/(2 NA) for a microscope, or roughly half a wavelength at best."},
+  {"term": "Numerical aperture (NA)", "definition": "A measure of how wide a cone of light a microscope objective collects; the best oil-immersion objectives reach about 1.4 to 1.5."},
+  {"term": "Rayleigh scattering", "definition": "Weak scattering by objects much smaller than the wavelength, with cross-section proportional to d^6/lambda^4; it makes the sky blue."},
+  {"term": "Mie scattering", "definition": "Strong, complicated scattering by objects about the same size as the wavelength, such as haze, smoke, and milk droplets in visible light."},
+  {"term": "Half-wave dipole", "definition": "An antenna about half a wavelength long that is resonant and radiates efficiently (radiation resistance near 73 ohms)."}
+]

@@ -17,7 +17,7 @@ CHROME = "/opt/pw-browsers/chromium-1194/chrome-linux/chrome"
 ORDER = json.loads((SRC / "order.json").read_text()) if (SRC / "order.json").exists() else []
 
 FOOTER = """<div style="width:100%;font-family:Inter,sans-serif;font-size:7.5pt;color:#7b8794;
-  padding:0 0.9in;display:flex;justify-content:space-between;">
+  padding:0 0.72in;display:flex;justify-content:space-between;">
   <span>Light, Waves &amp; Radiation</span><span class="pageNumber"></span></div>"""
 
 

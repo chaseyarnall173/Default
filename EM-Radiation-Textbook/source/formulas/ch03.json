@@ -1,0 +1,4 @@
+[
+ {"name": "Wave speed relation", "latex": "c = \\lambda f", "meaning": "Every EM wave in vacuum: wavelength times frequency equals the speed of light."},
+ {"name": "Photon energy from wavelength", "latex": "E\\,(\\text{eV}) = \\dfrac{1240}{\\lambda\\,(\\text{nm})}", "meaning": "Converts any band's wavelength to its photon energy; the key to what that band can do to matter."}
+]

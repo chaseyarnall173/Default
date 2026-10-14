@@ -1,5 +1,5 @@
 /* ===== Light, Waves & Radiation — book stylesheet (print) ===== */
-@page { size: Letter; margin: 0.85in 0.9in 0.85in 0.9in; }
+@page { size: Letter; margin: 0.62in 0.72in 0.68in 0.72in; }
 @page cover { margin: 0; }
 section.cover { page: cover; }
 
@@ -21,11 +21,11 @@ html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
 body {
   background: var(--paper); color: var(--ink);
   font-family: "Bitstream Charter", "Charter", "Liberation Serif", serif;
-  font-size: 10.6pt; line-height: 1.48; margin: 0;
+  font-size: 10pt; line-height: 1.38; margin: 0;
   hyphens: auto; -webkit-hyphens: auto;
   font-kerning: normal;
 }
-p { margin: 0 0 0.62em 0; text-align: justify; orphans: 3; widows: 3; }
+p { margin: 0 0 0.5em 0; text-align: justify; orphans: 3; widows: 3; }
 a { color: var(--key); text-decoration: none; }
 strong { font-weight: bold; }
 em { font-style: italic; }
@@ -35,23 +35,23 @@ li { margin: 0.15em 0; }
 h1, h2, h3, h4, .box-title, figcaption, table, .chapter-num, .part-label, .eq-label, .toc {
   font-family: "Inter", "Liberation Sans", sans-serif;
 }
-h2 { font-size: 15pt; font-weight: 700; color: var(--ink); margin: 1.35em 0 0.45em; line-height: 1.2;
+h2 { font-size: 14pt; font-weight: 700; color: var(--ink); margin: 1.05em 0 0.35em; line-height: 1.2;
      break-after: avoid; page-break-after: avoid; letter-spacing: -0.01em; }
-h3 { font-size: 11.6pt; font-weight: 650; color: var(--ink); margin: 1.1em 0 0.35em; line-height: 1.25;
+h3 { font-size: 11pt; font-weight: 650; color: var(--ink); margin: 0.85em 0 0.25em; line-height: 1.25;
      break-after: avoid; page-break-after: avoid; }
 h4 { font-size: 10pt; font-weight: 700; margin: 0.9em 0 0.3em; break-after: avoid; }
 h2 .sec-num, h3 .sec-num { color: var(--key); margin-right: 0.35em; }
 
 /* ---------- Chapter openers ---------- */
 section.chapter, section.frontback { break-before: page; page-break-before: always; }
-.chapter-opener { margin-bottom: 1.6em; }
+.chapter-opener { margin-bottom: 1em; }
 .chapter-num { font-size: 10pt; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--key); }
-h1.chapter-title { font-family: "Inter Display", "Inter", sans-serif; font-size: 27pt; font-weight: 750; line-height: 1.08;
+h1.chapter-title { font-family: "Inter Display", "Inter", sans-serif; font-size: 24pt; font-weight: 750; line-height: 1.08;
   margin: 0.15em 0 0.4em; letter-spacing: -0.02em; color: var(--ink); }
 .chapter-opener::after { content: ""; display: block; height: 3px; width: 64px; background: var(--key); margin-top: 0.9em; }
 .chapter-hook { font-size: 11.4pt; font-style: italic; color: var(--muted); text-align: left; margin-bottom: 1em; }
 .big-picture, .learning-goals {
-  border: 1px solid var(--rule); border-radius: 6px; padding: 0.6em 0.9em 0.4em; margin: 0.7em 0;
+  border: 1px solid var(--rule); border-radius: 6px; padding: 0.45em 0.8em 0.3em; margin: 0.5em 0;
   break-inside: avoid; background: #fafbfc;
 }
 .big-picture h4, .learning-goals h4 { margin-top: 0.1em; font-size: 8.8pt; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
@@ -66,7 +66,7 @@ section.part li { padding: 0.25em 0; border-bottom: 1px solid var(--rule); max-w
 
 /* ---------- Boxes ---------- */
 .box { border-left: 4px solid var(--c); background: var(--bg); border-radius: 0 6px 6px 0;
-  padding: 0.55em 0.95em 0.35em; margin: 0.95em 0 1.05em; break-inside: avoid; page-break-inside: avoid; }
+  padding: 0.45em 0.85em 0.25em; margin: 0.7em 0 0.8em; break-inside: avoid; page-break-inside: avoid; }
 .box.long, .box.example { break-inside: auto; page-break-inside: auto; }
 .box p { text-align: left; }
 .box p:last-child, .box ul:last-child, .box ol:last-child { margin-bottom: 0.3em; }
@@ -86,7 +86,7 @@ section.part li { padding: 0.25em 0; border-bottom: 1px solid var(--rule); max-w
 .box.example .answer { font-weight: bold; border-top: 1px dashed #c4ccd5; padding-top: 0.35em; }
 
 /* ---------- Equations ---------- */
-.equation { position: relative; margin: 0.6em 0 0.8em; padding: 0.15em 3.2em; break-inside: avoid; }
+.equation { position: relative; margin: 0.4em 0 0.55em; padding: 0.15em 3.2em; break-inside: avoid; }
 .equation[data-eq]::after { content: "(" attr(data-eq) ")"; position: absolute; right: 0; top: 50%; transform: translateY(-50%);
   font-family: "Inter", sans-serif; font-size: 9pt; color: var(--muted); }
 .equation.boxed .katex-display { border: 1.5px solid var(--key); border-radius: 6px; padding: 0.45em 0.8em; display: table; margin: 0.4em auto; background: var(--key-bg); }
@@ -95,10 +95,10 @@ section.part li { padding: 0.25em 0; border-bottom: 1px solid var(--rule); max-w
 .where { font-size: 9.6pt; color: var(--muted); margin-top: -0.3em; text-align: left; }
 
 /* ---------- Figures ---------- */
-figure { margin: 1em 0 1.15em; text-align: center; break-inside: avoid; page-break-inside: avoid; }
-figure img, figure svg { max-width: 100%; height: auto; }
-figure.narrow img, figure.narrow svg { max-width: 72%; }
-figure.small img, figure.small svg { max-width: 52%; }
+figure { margin: 0.7em 0 0.8em; text-align: center; break-inside: avoid; page-break-inside: avoid; }
+figure img, figure svg { max-width: 92%; max-height: 3.3in; width: auto; height: auto; }
+figure.narrow img, figure.narrow svg { max-width: 66%; }
+figure.small img, figure.small svg { max-width: 48%; }
 figcaption { font-size: 8.6pt; line-height: 1.4; color: var(--muted); text-align: left; margin-top: 0.45em; padding: 0 0.3em; }
 figcaption .fig-num { font-weight: 700; color: var(--ink); margin-right: 0.35em; }
 
@@ -111,7 +111,7 @@ td { padding: 0.32em 0.5em; border-bottom: 1px solid var(--rule); vertical-align
 tr:nth-child(even) td { background: #fafbfc; }
 
 /* ---------- End-of-chapter ---------- */
-.summary { border-top: 2px solid var(--ink); margin-top: 1.8em; padding-top: 0.3em; }
+.summary { border-top: 2px solid var(--ink); margin-top: 1.2em; padding-top: 0.3em; }
 .summary h2, .check h2 { margin-top: 0.5em; font-size: 13pt; }
 .check ol > li { margin-bottom: 0.45em; }
 .check .tag { font-family: "Inter", sans-serif; font-size: 7.6pt; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
@@ -189,3 +189,29 @@ ul.src a { word-break: break-all; color: var(--muted); }
 .prologue-step .stepbody p { margin-bottom: 0.3em; }
 .prologue-step .stepbody h3 { margin: 0.1em 0 0.25em; }
 .prologue-step .chref { font-family: "Inter", sans-serif; font-size: 8.2pt; font-weight: 700; color: var(--key); letter-spacing: 0.04em; }
+
+/* part banner (replaces full-page part dividers) */
+.part-banner { font-family: "Inter", sans-serif; font-size: 8.6pt; font-weight: 800; letter-spacing: 0.2em; text-transform: uppercase;
+  color: #7b8794; border-bottom: 1px solid var(--rule); padding-bottom: 0.3em; margin-bottom: 0.9em; }
+.part-banner span { color: var(--ink); }
+/* denser back matter */
+.ans-ch { font-size: 9pt; line-height: 1.32; }
+.ans-ch ol > li { margin-bottom: 0.3em; }
+.ans-ch p { margin-bottom: 0.3em; }
+p.gl { font-size: 8.6pt; line-height: 1.32; margin: 0 0 0.35em; }
+.gl-cols { column-count: 2; column-gap: 1.6em; }
+.fs-grid { column-count: 2; column-gap: 1.4em; }
+.fs-item { break-inside: avoid; margin: 0 0 0.45em; font-size: 8.6pt; line-height: 1.3; }
+.fs-item .fs-f { margin: 0.05em 0; }
+.fs-item .fs-n { font-family: "Inter", sans-serif; font-weight: 700; font-size: 8pt; }
+.fs-item .fs-ch { color: #7b8794; font-family: "Inter", sans-serif; font-size: 7.4pt; }
+.fs-grid h3 { column-span: all; }
+/* quick version */
+section.qv-ch { margin: 0 0 1.1em; }
+h2.qv-title { display: flex; align-items: baseline; gap: 0.2em; border-bottom: 2px solid var(--ink); padding-bottom: 0.2em; margin-top: 0.9em; }
+h2.qv-title .qi-pg { margin-left: auto; font-weight: 600; }
+.qv-part { margin-top: 1.4em; }
+.qv-summary { border: 1px solid var(--rule); border-radius: 6px; padding: 0.45em 0.85em 0.2em; margin: 0.6em 0; background: #fafbfc; }
+.qv-summary .box-title { --c: var(--muted); color: var(--muted); }
+.qv-summary ul { margin-bottom: 0.3em; font-size: 9.6pt; }
+.qv-prologue { margin-top: 1.2em; }

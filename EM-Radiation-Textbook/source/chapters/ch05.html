@@ -1,0 +1,249 @@
+<section class="chapter" id="ch05">
+<div class="chapter-opener">
+  <div class="chapter-num">Chapter 5</div>
+  <h1 class="chapter-title">Absorption and Emission: Electrons Jumping Up and Down</h1>
+  <p class="chapter-hook">The red of a neon sign, the glow of a highlighter under a black light, the heat of sunlight on your arm, the beam of a laser pointer: each is the same tiny event repeated trillions of times a second. An electron jumps between two allowed energies, and a photon carries the difference.</p>
+  <div class="big-picture"><h4>The big picture</h4><ul>
+    <li>An atom absorbs a photon only if the photon’s energy matches a gap between two of its levels: \(hf = E_\text{upper} - E_\text{lower}\).</li>
+    <li>When an electron drops, the atom creates a new photon carrying exactly the energy difference.</li>
+    <li>Every element has its own ladder of levels, so every element has its own spectral fingerprint.</li>
+    <li>Absorbed energy is re-emitted, turned into heat, or used for chemistry. Reflection is a different process.</li>
+    <li>Molecules add infrared (vibration) and microwave (rotation) ladders; in solids, the band gap decides metal vs. insulator and an LED’s color.</li>
+  </ul></div>
+  <div class="learning-goals"><h4>After this chapter you can</h4><ul>
+    <li>Decide from an energy-level diagram which photons an atom can absorb.</li>
+    <li>Compute emitted wavelengths, such as hydrogen’s 656 nm red line.</li>
+    <li>Explain continuous, emission-line and absorption-line spectra.</li>
+    <li>Describe the fates of absorbed energy and distinguish re-emission from reflection.</li>
+    <li>Explain fluorescence, phosphorescence and the Stokes shift.</li>
+    <li>Use band gaps to classify solids and predict LED colors; explain how a laser works.</li>
+  </ul></div>
+</div>
+
+<h2 id="ch05-1"><span class="sec-num">5.1</span>The one rule: the photon must match a gap</h2>
+<p>An atom’s electron can sit only on certain rungs of an energy ladder (Chapter 4). Light deals with that ladder through one rule:</p>
+<div class="equation boxed" data-eq="5.1">\[ E_\text{photon} = hf = \frac{hc}{\lambda} = E_\text{upper} - E_\text{lower} \]</div>
+<p class="where">where \(h\) is Planck’s constant, \(f\) the light’s frequency and \(\lambda\) its wavelength (Chapter 2).</p>
+<p>A photon whose energy matches a gap can be <strong>absorbed</strong>: it vanishes completely and the electron jumps up (Figure 5.1A). A photon with the wrong energy, too little <em>or</em> too much, cannot drive that jump; it passes by or is weakly scattered (Chapter 6). With \(hc = 1240\ \text{eV}\cdot\text{nm}\):</p>
+<div class="equation" data-eq="5.2">\[ \lambda\,(\text{nm}) = \frac{1240\ \text{eV}\cdot\text{nm}}{\Delta E\,(\text{eV})} \]</div>
+
+<p><strong>Why so picky? Resonance.</strong> The wave’s electric field pushes the electron cloud back and forth at the light’s frequency. The atom has natural frequencies \(f = \Delta E/h\), one per pair of levels (Section 5.2 shows what oscillates). At a match, every push lands in step and drives the atom up; off resonance, the pushes cancel out over many cycles.</p>
+
+<div class="box key"><div class="box-title">Key Idea</div><p>Light is absorbed by <strong>resonance</strong>: the photon’s energy (its frequency) must match an energy gap. Brighter light delivers more photons, but never changes which gaps a photon can bridge.</p></div>
+
+<div class="box analogy"><div class="box-title">Analogy</div><p>A swing builds up only if you push at its own rhythm; push at the wrong rhythm, however hard, and it barely moves. An atom is a swing with several fixed rhythms, one per energy gap.</p></div>
+
+<p>Two refinements. Above the ionization energy the electron is free, so <em>any</em> photon above that energy can be absorbed, the excess becoming kinetic energy. And real lines have a small width, which broadens into wide bands in liquids and solids (Sections 5.7–5.8).</p>
+
+<figure id="fig-5-1"><img src="figures/ch05-three-processes.svg" alt="Three two-level diagrams. A: absorption, a photon arrives and the electron moves from E1 to E2. B: spontaneous emission, the electron drops from E2 to E1 and a photon leaves in a random direction. C: stimulated emission, an incoming photon triggers the drop and two identical photons leave together.">
+<figcaption><span class="fig-num">Figure 5.1</span> The three basic ways light and atoms trade energy. In every case the photon energy equals the gap \(E_2 - E_1\). Stimulated emission (C) is the principle of the laser (Section 5.9).</figcaption></figure>
+
+<div class="box asked"><div class="box-title">You Asked</div><p class="question">“How can an atom that’s thousands of times smaller than a light wave absorb it?”</p>
+<p>Because absorption depends on matching the wave’s <em>frequency</em>, not its size. The atom doesn’t need to “catch” the whole wave; it needs the wave to shake it at one of its natural rhythms, \(f = \Delta E/h\).</p>
+<p>A 500 nm wave is about 5,000 times longer than an atom, so the whole atom sits in an almost uniform electric field that reverses direction about \(6\times10^{14}\) times per second, shaking the entire cloud in unison, like a cork riding an ocean swell far longer than itself. At resonance the energy builds up and the atom absorbs a photon. In fact, an isolated atom at exact resonance intercepts light from an area roughly the wavelength squared, about a million times its own cross-section. Chapter 8 goes deeper into size versus wavelength.</p></div>
+
+<div class="box example"><div class="box-title">Worked Example 5.1 <span class="sub">— Which photons can ground-state hydrogen absorb?</span></div>
+<p class="given"><strong>Given:</strong> hydrogen in its ground state (\(E_1 = -13.6\) eV). Photons arrive with energies 10.2, 11.0, 12.1 and 15.0 eV.</p>
+<p><strong>Find:</strong> which are absorbed, and what happens.</p>
+<p><strong>Think:</strong> gaps from \(n = 1\) (from \(E_n = -13.6\ \text{eV}/n^2\)): 10.20 eV to \(n = 2\), 12.09 eV to \(n = 3\), 12.75 eV to \(n = 4\), and 13.6 eV or more to free the electron.</p>
+<ul>
+  <li><strong>10.2 eV:</strong> matches \(1 \to 2\). Absorbed.</li>
+  <li><strong>11.0 eV:</strong> between 10.20 and 12.09 eV; no level fits. Passes through.</li>
+  <li><strong>12.1 eV:</strong> matches \(1 \to 3\). Absorbed.</li>
+  <li><strong>15.0 eV:</strong> above 13.6 eV. Absorbed, ionizing the atom; the electron leaves with 1.4 eV of kinetic energy.</li>
+</ul>
+<p class="answer">Answer: 10.2, 12.1 and 15.0 eV are absorbed; 11.0 eV is not. Every gap from the ground state is at least 10.2 eV (122 nm, ultraviolet), so ground-state hydrogen ignores all visible light. That is why hydrogen gas is colorless.</p></div>
+
+<h2 id="ch05-2"><span class="sec-num">5.2</span>Emission: how a jump makes a photon</h2>
+<p>An excited atom doesn’t stay excited. Typically within nanoseconds (1.6 ns for hydrogen’s 2p state), the electron drops on its own and a photon carries away the difference: <strong>spontaneous emission</strong> (Figure 5.1B), again obeying Equation 5.1. An electron high on the ladder may drop in one step or several (say \(4 \to 2 \to 1\)), one photon per step.</p>
+
+<div class="box asked"><div class="box-title">You Asked</div><p class="question">“When an electron jumps down an energy level, how does that make a photon, and what is ‘re-emission’?”</p>
+<p>The photon is created during the jump itself; it is not stored inside the atom beforehand. While changing levels, the electron is briefly in a mixture of the upper and lower orbitals, and that mixture’s charge cloud sloshes back and forth at exactly \(f = (E_\text{upper} - E_\text{lower})/h\) (Figure 5.2). A sloshing charge is a tiny antenna, and oscillating charges radiate electromagnetic waves (Chapter 1). Over a few nanoseconds the mixture shifts entirely into the lower orbital, and the radiated wave carries away exactly \(\Delta E\): one photon.</p>
+<p><strong>Re-emission</strong> means an atom that has just absorbed a photon gives the energy back as a new photon, usually of the same energy, nanoseconds later. The new photon has no memory of the old one: it leaves in a random direction with a random phase, which is what separates re-emission from reflection (Section 5.5). (This is the “semiclassical” picture. Full quantum electrodynamics describes the photon as a quantum of the electromagnetic field, but it keeps the key result: the photon’s frequency is the sloshing frequency \(\Delta E/h\).)</p></div>
+
+<figure id="fig-5-2"><img src="figures/ch05-sloshing.svg" alt="Four snapshots of a hydrogen electron cloud in a mixture of 1s and 2p states: shifted up, centered, shifted down, centered. Below, a plot of the center of charge oscillating sinusoidally in time.">
+<figcaption><span class="fig-num">Figure 5.2</span> How an atom makes a photon, computed for hydrogen. During a 2p → 1s jump the electron is in a mixture of the two orbitals, and its cloud sloshes up and down at \(f = \Delta E/h = 2.47\times10^{15}\) Hz. That oscillating charge radiates a 122 nm ultraviolet photon. (The arrows exaggerate the shift for visibility.)</figcaption></figure>
+
+<p>A single, pure orbital is a steady cloud with nothing oscillating, so it does not radiate; emission happens only <em>during</em> a jump.</p>
+
+<div class="box rabbit"><div class="box-title">Rabbit Hole <span class="sub">(optional) — What makes the electron decide to drop?</span></div>
+<p>Safe to skip. Even empty space has an electromagnetic field with unavoidable quantum jitter, and that jitter nudges an excited atom into the sloshing mixture. Some pairs of orbitals have shapes that barely slosh at all: “forbidden” transitions, whose upper state lingers. Hydrogen’s 2s state lasts about 0.12 s, some 75 million times longer than 2p. Such long-lived <strong>metastable</strong> states make phosphorescence and lasers possible.</p></div>
+
+<h2 id="ch05-3"><span class="sec-num">5.3</span>Spectral lines: every element’s fingerprint</h2>
+<p>Each element has its own ladder, so each emits and absorbs its own <strong>spectral lines</strong>. For hydrogen, Equation 5.1 with \(E_n = -13.6\ \text{eV}/n^2\) gives every line:</p>
+<div class="equation boxed" data-eq="5.3">\[ \Delta E = 13.6\ \text{eV}\left(\frac{1}{n_\text{lower}^2} - \frac{1}{n_\text{upper}^2}\right) \]</div>
+<p>Drops ending on \(n = 1\) (the <strong>Lyman series</strong>) are ultraviolet, on \(n = 2\) (<strong>Balmer</strong>) visible, and on \(n = 3\) (<strong>Paschen</strong>) infrared (Figure 5.3).</p>
+
+<figure id="fig-5-3"><img src="figures/ch05-hydrogen-spectrum.svg" alt="Hydrogen level diagram with downward arrows: Lyman series to n = 1 in ultraviolet, Balmer series to n = 2 in red, cyan, blue and violet, Paschen series to n = 3 in infrared. A table lists H-alpha 656.3 nm, H-beta 486.1 nm, H-gamma 434.0 nm, H-delta 410.2 nm. Below, four bright lines on a black spectrum strip.">
+<figcaption><span class="fig-num">Figure 5.3</span> Hydrogen’s emission lines. Only the Balmer series falls in the visible; its four brightest lines (bottom) are hydrogen’s visible fingerprint. Bigger drops give bluer light.</figcaption></figure>
+
+<div class="box example"><div class="box-title">Worked Example 5.2 <span class="sub">— Hydrogen’s red line</span></div>
+<p class="given"><strong>Given:</strong> an electron in hydrogen drops from \(n = 3\) to \(n = 2\).</p>
+<p><strong>Find:</strong> the photon’s energy, wavelength and color.</p>
+<p><strong>Think:</strong> the photon carries exactly the gap (Equation 5.3); Equation 5.2 converts it to wavelength.</p>
+<p>\[ \Delta E = 13.6\ \text{eV}\left(\frac{1}{2^2} - \frac{1}{3^2}\right) = 13.6\ \text{eV}\left(\frac{5}{36}\right) = 1.89\ \text{eV} \]</p>
+<p>\[ \lambda = \frac{1240\ \text{eV}\cdot\text{nm}}{1.89\ \text{eV}} = 656\ \text{nm} \]</p>
+<p class="answer">Answer: 1.89 eV, 656 nm, deep red: the H-alpha line (measured 656.3 nm) that colors glowing hydrogen clouds in astronomy photos.</p></div>
+
+<p>The same fingerprints identify elements everywhere:</p>
+<ul>
+  <li><strong>Neon signs:</strong> lines such as 640.2 nm (red) and 585.2 nm (yellow) mix to neon’s red-orange; other colors use other gases or phosphor coatings.</li>
+  <li><strong>Sodium:</strong> the yellow pair at 589.0 and 589.6 nm colors old streetlights and salt sprinkled in a flame.</li>
+  <li><strong>Fireworks:</strong> strontium salts burn red, barium green, copper blue.</li>
+  <li><strong>Stars:</strong> helium was discovered in the Sun’s spectrum in 1868, 27 years before it was found on Earth.</li>
+</ul>
+
+<h2 id="ch05-4"><span class="sec-num">5.4</span>Continuous, emission and absorption spectra</h2>
+<p>Spread light into its colors and you will see one of three patterns (Figure 5.4):</p>
+<figure id="fig-5-4"><img src="figures/ch05-three-spectra.svg" alt="A glowing source viewed directly gives a continuous rainbow (A). Viewed through a cloud of cool hydrogen it gives a rainbow with dark lines (B). The cloud viewed from the side shows bright lines on black at the same wavelengths (C).">
+<figcaption><span class="fig-num">Figure 5.4</span> One source and one gas cloud make all three kinds of spectrum. The cloud absorbs its own wavelengths from the beam (B) and re-emits them in all directions, so from the side it glows at exactly those wavelengths (C).</figcaption></figure>
+
+<ul>
+  <li><strong>Continuous:</strong> a hot, <em>dense</em> object (a filament, a red-hot stovetop, the Sun’s surface) glows at all wavelengths, because its crowded, jostling atoms offer energy gaps of every size. This is thermal radiation (Chapter 9).</li>
+  <li><strong>Emission lines:</strong> a hot, <em>thin</em> gas of separate atoms emits only its own jumps: bright lines on black.</li>
+  <li><strong>Absorption lines:</strong> a cooler gas in front of a continuous source removes exactly its own wavelengths. Thousands of these dark Fraunhofer lines cross the Sun’s spectrum, revealing its composition.</li>
+</ul>
+
+
+<p>If the gas re-emits what it absorbs, why are the lines dark? Re-emission goes in random directions, so almost none of it continues along the beam toward you; the beam stays depleted at those wavelengths, while the cloud glows at them from the side.</p>
+
+<h2 id="ch05-5"><span class="sec-num">5.5</span>What happens to absorbed energy?</h2>
+<p>An absorbed photon no longer exists; its energy now belongs to the atom or molecule, and has three possible fates (Figure 5.5):</p>
+<ul>
+  <li><strong>Re-emission:</strong> a new photon leaves after nanoseconds, in a random direction. This dominates in thin gases, where nothing disturbs the atom first.</li>
+  <li><strong>Heat:</strong> in liquids and solids, neighbors jostle an excited atom far more often than once per nanosecond, so the energy usually drains into vibrations (temperature) before a photon can leave. That is why a black car gets hot in sunlight (Chapter 9).</li>
+  <li><strong>Chemistry:</strong> the energy breaks or rearranges a bond: photosynthesis, vision, fading dyes, sunburn (Chapter 10).</li>
+</ul>
+
+<figure id="fig-5-5"><img src="figures/ch05-fates.svg" alt="Left: reflection, a wave shakes surface electrons in step and reflects at the mirror angle. Right: an absorbed photon excites an atom, which then either re-emits light in a random direction, converts the energy to heat through collisions and vibrations, or breaks a chemical bond.">
+<figcaption><span class="fig-num">Figure 5.5</span> Reflection (left) passes energy straight back without absorbing it. Absorption (right) hands the energy to the atom, which re-emits it, turns it into heat, or uses it for chemistry.</figcaption></figure>
+
+<div class="box key"><div class="box-title">Key Idea</div><p><strong>Re-emission is not reflection.</strong> In reflection the wave shakes electrons that do <em>not</em> absorb it; they re-radiate in step with the wave and instantly, sending back one orderly beam at the mirror angle, same color. Re-emission follows a true absorption: delayed, random in direction and phase, sometimes a different color. Chapter 6 covers reflection.</p></div>
+
+<div class="box myth"><div class="box-title">Myth vs. Reality</div>
+<p class="myth-line"><strong>Myth:</strong> A mirror (or a window) works by absorbing each photon and then re-emitting it.</p>
+<p><strong>Reality:</strong> Absorb-and-re-emit would scatter light in random directions, so a mirror would look like frosted glass instead of showing your face. Reflection and transmission are coherent; the light is never absorbed. Light “slows down” in glass by in-step re-radiation too, not absorb-and-wait (Chapter 6).</p></div>
+
+<h2 id="ch05-6"><span class="sec-num">5.6</span>Fluorescence and phosphorescence</h2>
+<p>Molecules and crystals have <strong>vibrational sub-levels</strong> stacked on each electronic level. A molecule that absorbs an ultraviolet photon lands high on the excited state’s stack, slides to the bottom within picoseconds (shedding a little heat), then emits a visible photon on the way down. This is <strong>fluorescence</strong>: absorb short wavelengths, emit longer ones, within nanoseconds (Figure 5.6). The energy lost in between is the <strong>Stokes shift</strong>.</p>
+<ul>
+  <li><strong>Highlighters</strong> glow under a black light (365 nm UV): the dye (often pyranine) turns invisible UV into yellow-green.</li>
+  <li><strong>Fluorescent lamps:</strong> mercury vapor emits mostly 254 nm UV; a phosphor coating turns it into visible light.</li>
+  <li><strong>White LEDs:</strong> a blue chip excites a yellow phosphor; blue plus yellow looks white (Section 5.9).</li>
+</ul>
+<p>Sometimes the electron side-steps into a “stuck” state (a molecular triplet state, or a defect trap in a crystal) from which the drop is forbidden (Section 5.2). It leaks out slowly, so the material glows long after the light goes off: <strong>phosphorescence</strong>, as in glow-in-the-dark stars and exit signs.</p>
+
+<figure id="fig-5-6"><img src="figures/ch05-fluorescence.svg" alt="Energy diagram: UV absorption of 3.40 eV lifts the molecule to a high vibrational sub-level of the excited state; it relaxes, losing heat, then emits a 2.43 eV visible photon. A dashed path shows a side-step into a stuck triplet or trap state followed by a slow forbidden drop. Right: absorption band near 365 nm and emission band near 510 nm separated by the Stokes shift.">
+<figcaption><span class="fig-num">Figure 5.6</span> Fluorescence (solid arrows) and phosphorescence (dashed). Part of each absorbed photon’s energy becomes heat, so the emitted light is always redder than the absorbed light (the Stokes shift).</figcaption></figure>
+
+<div class="box example"><div class="box-title">Worked Example 5.3 <span class="sub">— A highlighter’s energy budget</span></div>
+<p class="given"><strong>Given:</strong> a highlighter dye absorbs 365 nm black-light UV and fluoresces near 510 nm.</p>
+<p><strong>Find:</strong> the energy of each photon, and the fraction of each absorbed photon’s energy lost as heat.</p>
+<p><strong>Think:</strong> convert both wavelengths with Equation 5.2; the difference became vibration (heat).</p>
+<p>\[ E_\text{in} = \frac{1240}{365} = 3.40\ \text{eV}, \qquad E_\text{out} = \frac{1240}{510} = 2.43\ \text{eV} \]</p>
+<p>\[ \frac{E_\text{in} - E_\text{out}}{E_\text{in}} = \frac{0.97}{3.40} = 0.29 \]</p>
+<p class="answer">Answer: 3.40 eV in, 2.43 eV out; about 29% becomes heat. In daylight the dye adds UV-converted light to what it reflects, which is why highlighter ink looks unnaturally bright.</p></div>
+
+<div class="box myth"><div class="box-title">Myth vs. Reality</div>
+<p class="myth-line"><strong>Myth:</strong> Glow-in-the-dark materials must be radioactive.</p>
+<p><strong>Reality:</strong> Modern glow-in-the-dark products store energy from ordinary light in trapped electrons and release it slowly; that is why they fade and need recharging under a lamp. The myth has a real origin: early-1900s watch dials used radium paint, which glowed from radioactivity and badly harmed the workers who applied it.</p></div>
+
+<div class="box matsci"><div class="box-title">Materials Science Connection</div>
+<p>Most phosphors are ceramics: a wide-gap oxide host, transparent by itself, doped with an ion that adds its own levels inside the gap. Glow-in-the-dark pigment is strontium aluminate (SrAl₂O₄) doped with Eu²⁺ (the emitter) and Dy³⁺ (which creates traps); it can glow for hours. White LEDs use yttrium aluminum garnet (Y₃Al₅O₁₂) doped with Ce³⁺. Ruby, the first laser material, is sapphire (Al₂O₃) with a trace of Cr³⁺. Same lesson as doping silicon: tiny impurity levels, big property changes.</p></div>
+
+<h2 id="ch05-7"><span class="sec-num">5.7</span>Molecules: vibrations (infrared) and rotations (microwaves)</h2>
+<p>Molecules can store energy in two more quantized ways (Figure 5.7):</p>
+<ul>
+  <li><strong>Vibration:</strong> bonds stretch and bend like springs. Vibrational levels are spaced about 0.05–0.5 eV apart, matching <strong>infrared</strong> photons (about 2.5–25 µm).</li>
+  <li><strong>Rotation:</strong> the whole molecule spins. Rotational levels are only about 0.0001–0.01 eV apart, matching <strong>microwave</strong> and far-infrared photons.</li>
+</ul>
+
+<figure id="fig-5-7"><img src="figures/ch05-molecule-levels.svg" alt="Three nested ladders: electronic levels separated by about 1 to 10 eV (visible and UV), vibrational levels separated by 0.05 to 0.5 eV (infrared), and rotational levels separated by 0.0001 to 0.01 eV (microwave).">
+<figcaption><span class="fig-num">Figure 5.7</span> A molecule’s three nested ladders. Each electronic level carries a stack of vibrational levels, and each of those a stack of rotational levels, each roughly 10–100 times finer than the last.</figcaption></figure>
+
+<p>Absorption still needs an oscillating charge: a vibration absorbs infrared only if it makes the molecule’s charge swing back and forth (a changing dipole). Carbon dioxide’s bending vibration does, absorbing near 15 µm (0.083 eV), as does its asymmetric stretch near 4.3 µm. Nitrogen and oxygen, about 99% of air, are symmetric: stretching them shifts no charge, so they ignore infrared. That difference is the heart of the greenhouse effect (Chapter 9).</p>
+<p>Rotations give sharp lines in gases; radio astronomers identify molecules in space by them. In liquid water, jammed molecules can’t rotate freely, so microwave absorption is broad; a microwave oven is not tuned to a special water resonance (Chapter 9). And because electronic jumps in molecules drag vibrations along, dyes and chlorophyll absorb broad bands of color (Chapter 7).</p>
+
+<h2 id="ch05-8"><span class="sec-num">5.8</span>Solids: energy bands and band gaps</h2>
+<p>Bring \(N\) atoms together into a crystal and their outer orbitals overlap. The Pauli exclusion principle forbids identical states, so each atomic level splits into \(N\) closely spaced levels, and with about \(10^{23}\) atoms these blur into continuous <strong>energy bands</strong> separated by <strong>band gaps</strong> (Figure 5.8). The highest filled band is the <strong>valence band</strong>; the next one up, empty at low temperature, is the <strong>conduction band</strong>. The gap between them, \(E_g\), controls almost everything.</p>
+
+<figure id="fig-5-8"><img src="figures/ch05-bands.svg" alt="Left: two atomic levels broaden into bands as atoms are brought closer, leaving a band gap at the solid's spacing. Right: a metal with a partly filled band, a semiconductor with a 1.12 eV gap between a filled valence band and an empty conduction band, and an insulator with a 5.5 eV gap, drawn to the same scale.">
+<figcaption><span class="fig-num">Figure 5.8</span> Energy bands. In a metal the top band is only partly filled, so electrons can absorb any small amount of energy. Semiconductors and insulators have a full valence band and an empty conduction band; the band gap sets which photons they absorb.</figcaption></figure>
+
+<ul>
+  <li><strong>Metals:</strong> the top band is only partly filled, so electrons can absorb any small energy. They move freely (conduction) and respond to all visible light, which makes metals shiny (Chapter 6).</li>
+  <li><strong>Semiconductors:</strong> a modest gap (silicon 1.12 eV, GaAs 1.42 eV). Room-temperature thermal energy (\(k_BT \approx 0.026\) eV) lifts only a few electrons across, so they conduct a little.</li>
+  <li><strong>Insulators:</strong> a wide gap (diamond about 5.5 eV, sapphire about 8.8 eV). Essentially no electrons cross, and visible photons can’t bridge it.</li>
+</ul>
+
+<div class="box analogy"><div class="box-title">Analogy</div><p>A filled band is a completely full parking level: no car can move. Lift one car to the empty level above (the conduction band) and it can drive around, while the space it left (a “hole”) lets cars below shuffle too.</p></div>
+
+<p>For light the rule is simple: a photon with energy at or above \(E_g\) can be absorbed (any energy above works, because the bands are continuous); a photon below \(E_g\) has nothing to excite and passes through (Table 5.1).</p>
+
+<table id="tab-5-1"><caption><span class="tab-num">Table 5.1</span> Band gaps near room temperature and what they mean. The wavelength \(1240/E_g\) is the longest wavelength the material absorbs strongly.</caption>
+<tr><th>Material</th><th>\(E_g\) (eV)</th><th>\(1240/E_g\) (nm)</th><th>Consequence</th></tr>
+<tr><td>Germanium (Ge)</td><td>0.66</td><td>1880 (IR)</td><td>absorbs all visible; infrared detectors</td></tr>
+<tr><td>Silicon (Si)</td><td>1.12</td><td>1110 (IR)</td><td>absorbs all visible, so it looks gray and opaque; solar cells, camera sensors</td></tr>
+<tr><td>Gallium arsenide (GaAs)</td><td>1.42</td><td>873 (IR)</td><td>infrared LEDs and lasers, high-efficiency solar cells</td></tr>
+<tr><td>Gallium phosphide (GaP)</td><td>2.26</td><td>549 (green)</td><td>absorbs blue and violet, so it looks orange</td></tr>
+<tr><td>Gallium nitride (GaN)</td><td>3.4</td><td>365 (UV)</td><td>transparent to visible; base of blue and UV LEDs</td></tr>
+<tr><td>Diamond (C)</td><td>≈ 5.5</td><td>225 (UV)</td><td>transparent and colorless when pure; insulator</td></tr>
+<tr><td>Sapphire (Al₂O₃)</td><td>≈ 8.8</td><td>141 (UV)</td><td>transparent; excellent insulator (spark-plug ceramics)</td></tr>
+<tr><td>Fused silica (SiO₂)</td><td>≈ 9</td><td>138 (UV)</td><td>transparent glass; insulator (Chapter 6)</td></tr>
+</table>
+
+<div class="box matsci"><div class="box-title">Materials Science Connection</div>
+<p>Callister’s electrical-properties chapter (Chapter 18) uses these same band pictures: metals have partly filled or overlapping bands; semiconductors and insulators have a full valence band and an empty conduction band, with a gap “relatively narrow (&lt; 2 eV)” for semiconductors and “relatively wide (&gt; 2 eV)” for insulators (a convention, not a law). The gap reflects bonding: in ionic ceramics such as Al₂O₃, MgO and NaCl, electrons sit in the filled shells of O²⁻ or Cl⁻ ions, held tightly, so gaps reach about 8–9 eV. Hence excellent insulators, transparent as pore-free crystals. Callister’s optical-properties chapter (Chapter 21) uses the same gaps to predict color (Chapter 7).</p></div>
+
+<h2 id="ch05-9"><span class="sec-num">5.9</span>LEDs and lasers</h2>
+<h3>LEDs: light from a band gap</h3>
+<p>In a <strong>light-emitting diode</strong> (a junction between two differently doped regions of a semiconductor), an applied voltage drives conduction-band electrons to meet valence-band holes. Each drops across the gap and emits a photon:</p>
+<div class="equation" data-eq="5.4">\[ E_\text{photon} \approx E_g \qquad\Rightarrow\qquad \lambda \approx \frac{1240\ \text{eV}\cdot\text{nm}}{E_g} \]</div>
+<p>Engineers set the color by tuning the alloy: AlGaInP for red and amber, InGaN for green and blue. Silicon makes a poor LED: its “indirect” gap means a falling electron must also create a lattice vibration, so the energy usually becomes heat. White LEDs pair a blue InGaN chip (2014 Nobel Prize in Physics) with a yellow phosphor. And since each electron must be given at least \(E_g\), a red LED needs about 2 volts and a blue one about 3.</p>
+
+<div class="box example"><div class="box-title">Worked Example 5.4 <span class="sub">— Designing an LED</span></div>
+<p class="given"><strong>Given:</strong> GaAs has \(E_g = 1.42\) eV.</p>
+<p><strong>Find:</strong> (a) the wavelength a GaAs LED emits; (b) the band gap needed for a 450 nm blue LED.</p>
+<p><strong>Think:</strong> the photon energy is about the band gap (Equation 5.4).</p>
+<p>(a) \(\lambda = 1240/1.42 = 873\ \text{nm}\): near-infrared, invisible to you.</p>
+<p>(b) \(E_g = 1240/450 = 2.76\ \text{eV}\), well above silicon’s or GaAs’s gap: an InGaN alloy.</p>
+<p class="answer">Answer: (a) 873 nm infrared, the kind of light GaAs-family LEDs send from a TV remote; (b) about 2.8 eV.</p></div>
+
+<h3>Lasers: copying photons</h3>
+<p>Einstein predicted in 1916–17 that a photon of exactly the right energy passing an <em>excited</em> atom can trigger it to emit: <strong>stimulated emission</strong> (Figure 5.1C). The new photon copies the trigger exactly (energy, direction, phase, polarization), so one photon becomes two, then four: a <strong>laser</strong> (light amplification by stimulated emission of radiation). It needs three ingredients:</p>
+<ul>
+  <li><strong>Population inversion:</strong> more atoms in the upper level than the lower, or absorption wins. This never happens on its own, so the atoms are <em>pumped</em> (flash lamp, current, another laser), usually into a long-lived metastable level.</li>
+  <li><strong>A cavity:</strong> mirrors bounce photons back and forth, copying them on every pass.</li>
+  <li><strong>An exit:</strong> one mirror lets a small fraction leak out as the beam.</li>
+</ul>
+<p>The first laser (Theodore Maiman, 1960) was a flash-lamp-pumped ruby crystal emitting at 694.3 nm. Diode lasers in barcode scanners and fiber-optic links are essentially LEDs with mirrors, and high-power infrared lasers cut, weld and 3D-print metal parts.</p>
+
+<div class="box myth"><div class="box-title">Myth vs. Reality</div>
+<p class="myth-line"><strong>Myth:</strong> Laser light is made of especially powerful photons.</p>
+<p><strong>Reality:</strong> A laser’s photon energy is set by its transition like any other light; a red laser pointer’s photons each carry less energy than a blue LED’s. What is special is that the photons are identical and in step, so the beam stays narrow and focuses to a tiny, intense spot.</p></div>
+
+<div class="summary"><h2>Chapter summary</h2><ul>
+  <li>One rule: \(hf = E_\text{upper} - E_\text{lower}\). Absorption is resonance: the frequency must match, whatever the atom’s size.</li>
+  <li>A photon is created during a downward jump, as the mixed-state cloud sloshes at \(f = \Delta E/h\). Re-emitted photons leave in random directions.</li>
+  <li>Hydrogen: \(\Delta E = 13.6\ \text{eV}(1/n_\text{lower}^2 - 1/n_\text{upper}^2)\); \(3 \to 2\) gives the 656 nm red line.</li>
+  <li>Hot dense objects: continuous spectra. Hot thin gases: emission lines. Cool gas before a hot source: dark lines at the same wavelengths.</li>
+  <li>Absorbed energy is re-emitted, turned into heat, or used for chemistry. Reflection is coherent and involves no absorption.</li>
+  <li>Fluorescence: absorb short, emit longer, within ns (Stokes shift). Phosphorescence: a stuck state releases light slowly.</li>
+  <li>Vibrations absorb infrared (≈ 0.05–0.5 eV), rotations microwaves (≈ 0.001 eV), if they move charge.</li>
+  <li>The band gap separates metals, semiconductors and insulators and sets an LED’s photon energy. Lasers amplify by stimulated emission from a population inversion.</li>
+</ul></div>
+
+<div class="check"><h2>Check yourself</h2><ol>
+  <li><span class="tag">Concept</span>An 11.0 eV photon passes through ground-state hydrogen without being absorbed, even though it carries more energy than the 10.2 eV needed for \(1 \to 2\). Why? Would a 14.0 eV photon be absorbed?</li>
+  <li><span class="tag">Calc</span>Find the energy and wavelength of the H-beta line (\(n = 4 \to 2\)) and name its color.</li>
+  <li><span class="tag">Calc</span>Find the wavelength of the Lyman-alpha line (\(n = 2 \to 1\)). Why can’t you see it, and why doesn’t it reach the ground from space?</li>
+  <li><span class="tag">Concept</span>A cloud of gas absorbs light from a star and then re-emits all of it. Explain why the star’s spectrum still shows dark lines.</li>
+  <li><span class="tag">Concept</span>Give three differences between re-emission after absorption and reflection from a mirror.</li>
+  <li><span class="tag">Calc</span>In a fluorescent lamp, mercury emits 254 nm UV, and a phosphor converts it to 545 nm green light. Find both photon energies and the fraction of each UV photon’s energy lost as heat in the phosphor.</li>
+  <li><span class="tag">Calc</span>CO₂’s bending vibration absorbs at 15 µm. Find the photon energy in eV and compare it with \(k_BT\) at room temperature (0.026 eV).</li>
+  <li><span class="tag">Concept</span>Why do CO₂ and H₂O absorb infrared strongly while N₂ and O₂ do not?</li>
+  <li><span class="tag">Apply</span>An LED is made from GaP (\(E_g = 2.26\) eV). Predict its wavelength and color, and the minimum forward voltage you would expect.</li>
+  <li><span class="tag">Apply</span>Using band gaps, explain why a sapphire (Al₂O₃) watch crystal is transparent while a silicon wafer is opaque. Which one conducts electricity better at room temperature?</li>
+  <li><span class="tag">Concept</span>Why can’t you build a laser from atoms in ordinary thermal equilibrium? What is a population inversion and how is it created?</li>
+</ol><p class="small muted">Full solutions are in the Answer Key at the back of the book.</p></div>
+</section>

@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 320" width="680" height="320" font-family="Inter, sans-serif">
+<rect width="680" height="320" fill="#ffffff"/>
+<defs>
+<marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#1f2933"/></marker>
+<marker id="ahb" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2e6fdb"/></marker>
+<marker id="ahr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#d1495b"/></marker>
+<marker id="ahl" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#e09f1f"/></marker>
+<marker id="ahm" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#52606d"/></marker>
+<marker id="ahe" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#12a39a"/></marker>
+</defs>
+<rect x="70" y="70" width="470" height="170" rx="85" fill="#f5f7fa" stroke="#9aa5b1" stroke-width="2"/>
+<text x="305.0" y="92.0" font-size="11" fill="#52606d" text-anchor="middle" font-weight="normal" font-style="normal">vacuum inside the tube</text>
+<path d="M118,118 L150,118 L150,132 L136,132 L136,178 L150,178 L150,192 L118,192 Z" fill="#cbd2d9" stroke="#52606d" stroke-width="1.4"/>
+<polyline points="140,140 146,144 140,148 146,152 140,156 146,160 140,164 146,168 140,172" fill="none" stroke="#d1495b" stroke-width="2"/>
+<text x="98.0" y="266.0" font-size="12" fill="#1f2933" text-anchor="start" font-weight="600" font-style="normal">hot filament (cathode, −)</text>
+<text x="98.0" y="281.0" font-size="11" fill="#52606d" text-anchor="start" font-weight="normal" font-style="normal">boils off electrons</text>
+<line x1="128" y1="192" x2="128" y2="252" stroke="#52606d" stroke-width="1.4"/>
+<path d="M438,112 L560,112 L560,198 L438,198 L462,155 Z" fill="#d08b5b" stroke="#8a4b25" stroke-width="1.4"/>
+<path d="M438,112 L462,155 L438,198 L448,198 L470,155 L448,112 Z" fill="#6b7280" stroke="#374151" stroke-width="1"/>
+<rect x="560" y="146" width="90" height="18" fill="#d08b5b" stroke="#8a4b25" stroke-width="1.4"/>
+<text x="600.0" y="100.0" font-size="12" fill="#1f2933" text-anchor="middle" font-weight="600" font-style="normal">anode (+)</text>
+<text x="600.0" y="115.0" font-size="11" fill="#52606d" text-anchor="middle" font-weight="normal" font-style="normal">metal target</text>
+<text x="600.0" y="130.0" font-size="11" fill="#52606d" text-anchor="middle" font-weight="normal" font-style="normal">(W, Cu, Mo…)</text>
+<text x="608.0" y="188.0" font-size="11" fill="#d1495b" text-anchor="middle" font-weight="600" font-style="normal">≈99% of the</text>
+<text x="608.0" y="202.0" font-size="11" fill="#d1495b" text-anchor="middle" font-weight="600" font-style="normal">energy → heat</text>
+<text x="608.0" y="216.0" font-size="11" fill="#52606d" text-anchor="middle" font-weight="normal" font-style="normal">(cooling needed)</text>
+<line x1="156" y1="147" x2="448" y2="152.2" stroke="#12a39a" stroke-width="1.6" marker-end="url(#ahe)"/>
+<line x1="156" y1="155" x2="452" y2="155.0" stroke="#12a39a" stroke-width="1.6" marker-end="url(#ahe)"/>
+<line x1="156" y1="163" x2="448" y2="157.8" stroke="#12a39a" stroke-width="1.6" marker-end="url(#ahe)"/>
+<circle cx="190" cy="155" r="3.2" fill="#12a39a"/>
+<circle cx="224" cy="155" r="3.2" fill="#12a39a"/>
+<circle cx="258" cy="155" r="3.2" fill="#12a39a"/>
+<circle cx="292" cy="155" r="3.2" fill="#12a39a"/>
+<circle cx="326" cy="155" r="3.2" fill="#12a39a"/>
+<circle cx="360" cy="155" r="3.2" fill="#12a39a"/>
+<circle cx="394" cy="155" r="3.2" fill="#12a39a"/>
+<circle cx="428" cy="155" r="3.2" fill="#12a39a"/>
+<text x="300.0" y="140.0" font-size="11" fill="#12a39a" text-anchor="middle" font-weight="600" font-style="normal">electrons accelerated across</text>
+<text x="300.0" y="182.0" font-size="11" fill="#12a39a" text-anchor="middle" font-weight="600" font-style="normal">kinetic energy = eV (e.g. 30 keV at 30 kV)</text>
+<polyline points="128,118 128,40 268,40" fill="none" stroke="#52606d" stroke-width="1.4"/>
+<polyline points="342,40 500,40 500,112" fill="none" stroke="#52606d" stroke-width="1.4"/>
+<line x1="280" y1="29.0" x2="280" y2="51.0" stroke="#1f2933" stroke-width="2"/>
+<line x1="296" y1="34.0" x2="296" y2="46.0" stroke="#1f2933" stroke-width="2"/>
+<line x1="312" y1="29.0" x2="312" y2="51.0" stroke="#1f2933" stroke-width="2"/>
+<line x1="328" y1="34.0" x2="328" y2="46.0" stroke="#1f2933" stroke-width="2"/>
+<text x="305.0" y="24.0" font-size="12" fill="#1f2933" text-anchor="middle" font-weight="600" font-style="normal">high voltage V (≈20–150 kV)</text>
+<text x="262.0" y="58.0" font-size="13" fill="#1f2933" text-anchor="middle" font-weight="700" font-style="normal">−</text>
+<text x="350.0" y="58.0" font-size="13" fill="#1f2933" text-anchor="middle" font-weight="700" font-style="normal">+</text>
+<rect x="416" y="234" width="56" height="10" fill="#fdf3dd" stroke="#e09f1f" stroke-width="1.2"/>
+<polyline points="466.3,187.4 464.5,190.1 464.8,191.6 467.6,191.9 471.1,191.8 473.0,192.5 472.3,194.5 470.2,197.4 469.0,199.7 470.3,200.7 473.7,200.7 476.8,200.7 477.7,201.9 476.2,204.4 474.2,207.2 473.9,209.1 476.2,209.6 479.7,209.4 482.1,209.8 482.0,211.6 480.1,214.4 478.5,216.9 479.2,218.2 482.2,218.4 485.6,218.3 487.1,219.2 486.1,221.4 484.0,224.3 483.1,226.4 484.8,227.2 488.3,227.1 491.2,227.3 491.7,228.7 490.0,231.3 488.1,234.1 488.2,235.7 490.8,236.1 494.3,235.9 496.4,236.5 495.9,238.5 493.8,241.3 492.5,243.7 493.6,244.8 496.8,244.8 500.1,244.8 501.2,245.9 499.9,248.3 497.8,251.2 497.3,253.1 499.4,253.7 502.9,253.6 505.5,253.9 505.6,255.6 503.7,258.3 502.0,260.9 502.5,262.3 505.4,262.5 508.8,262.4 510.6,263.2 509.7,265.4 507.6,268.2 506.6,270.5 508.1,271.4 511.5,271.3 514.5,271.4 515.2,272.7 513.6,275.3 511.7,278.0 511.5,279.8 514.0,280.2 517.5,280.0 519.8,280.6 519.5,282.4 517.5,285.2 516.0,287.7 516.9,288.9 520.0,289.0 523.3,288.9 524.7,289.9 523.5,292.3 521.4,295.1 520.7,297.2 522.6,297.9 526.1,297.7 528.9,298.0 529.2,299.5 527.4,302.2" fill="none" stroke="#e09f1f" stroke-width="2"/>
+<polyline points="459.1,189.8 456.5,191.7 456.2,193.2 458.7,194.4 462.0,195.5 463.6,196.8 462.2,198.5 459.3,200.4 457.4,202.2 458.3,203.6 461.4,204.7 464.3,205.8 464.8,207.3 462.6,209.1 459.7,211.1 458.8,212.7 460.7,214.0 464.1,215.0 466.3,216.3 465.6,217.9 462.8,219.8 460.4,221.7 460.6,223.2 463.4,224.3 466.6,225.4 467.7,226.7 466.0,228.5 463.0,230.4 461.5,232.2 462.8,233.5 466.1,234.6 468.8,235.7 468.8,237.3 466.3,239.1 463.6,241.1 463.1,242.6 465.4,243.8 468.8,244.9 470.5,246.2 469.4,247.9 466.5,249.8 464.4,251.6 465.1,253.1 468.1,254.2 471.1,255.3 471.8,256.7 469.7,258.5 466.8,260.4 465.7,262.1 467.5,263.4 470.8,264.5 473.1,265.7 472.7,267.3 470.0,269.2 467.5,271.0 467.4,272.6 470.1,273.7 473.4,274.8 474.7,276.1 473.2,277.9 470.2,279.8 468.5,281.6 469.6,282.9 472.8,284.0 475.6,285.2 475.8,286.7 473.5,288.5 470.7,290.4 470.0,292.1 472.1,293.3 475.5,294.3 477.4,295.6 476.5,297.2 473.7,299.2 471.4,301.0 471.9,302.5 474.8,303.6 477.9,304.7 478.8,306.1 476.9,307.9 474.0,309.8 472.6,311.5 474.2,312.8 477.5,313.9 480.0,315.1 479.8,316.6 477.2,318.5" fill="none" stroke="#e09f1f" stroke-width="2"/>
+<polyline points="451.4,189.5 448.3,190.4 447.6,191.8 449.5,193.7 452.3,195.9 453.3,197.6 451.4,198.8 448.0,199.6 445.6,200.6 446.0,202.3 448.5,204.4 450.9,206.4 450.8,207.9 448.1,208.9 444.7,209.7 443.3,211.0 444.7,212.8 447.5,215.0 449.1,216.8 447.9,218.1 444.6,219.0 441.8,219.9 441.5,221.4 443.7,223.4 446.3,225.5 446.9,227.2 444.7,228.3 441.3,229.1 439.2,230.2 440.0,231.9 442.7,234.0 444.8,236.0 444.3,237.5 441.3,238.4 438.1,239.2 437.1,240.6 438.9,242.5 441.7,244.6 442.9,246.4 441.3,247.6 437.9,248.5 435.3,249.5 435.4,251.0 437.9,253.1 440.4,255.2 440.5,256.7 438.0,257.7 434.6,258.6 432.9,259.8 434.1,261.6 436.9,263.7 438.7,265.6 437.7,267.0 434.5,267.8 431.5,268.7 431.0,270.2 433.1,272.2 435.8,274.3 436.6,276.0 434.6,277.1 431.1,277.9 428.9,279.0 429.5,280.7 432.1,282.8 434.4,284.8 434.0,286.3 431.2,287.2 427.9,288.1 426.7,289.3 428.3,291.2 431.1,293.4 432.5,295.2 431.1,296.5 427.7,297.3 425.0,298.3 424.9,299.8 427.3,301.8 429.9,303.9 430.2,305.6 427.8,306.6 424.4,307.4 422.5,308.6 423.6,310.3 426.3,312.5 428.3,314.4 427.5,315.8 424.4,316.7" fill="none" stroke="#e09f1f" stroke-width="2"/>
+<text x="548.0" y="276.0" font-size="12" fill="#a86a12" text-anchor="start" font-weight="600" font-style="normal">X-rays (≈1%) leave</text>
+<text x="548.0" y="291.0" font-size="11" fill="#52606d" text-anchor="start" font-weight="normal" font-style="normal">through a thin window</text>
+</svg>

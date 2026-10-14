@@ -15,10 +15,10 @@ OUT = Path(__file__).resolve().parents[1] / "ch08-superposition.svg"
 
 x = np.linspace(0, 3, 600)          # in wavelengths
 w1 = np.sin(2 * np.pi * x)
-fig, axes = plt.subplots(3, 2, figsize=(6.8, 3.9), sharex=True, sharey=True,
+fig, axes = plt.subplots(3, 2, figsize=(6.8, 3.4), sharex=True, sharey=True,
                          gridspec_kw=dict(hspace=0.25, wspace=0.12))
-cases = [(0.0, "In phase (crests line up)", "constructive: amplitude doubles, intensity × 4"),
-         (0.5, "Half a wavelength out of phase", "destructive: crest meets trough, they cancel")]
+cases = [(0.0, "In phase (crests line up)", "constructive: amplitude × 2, intensity × 4"),
+         (0.5, "Half a wavelength out of phase", "destructive: crest meets trough, sum = 0")]
 for col, (shift, title, result) in enumerate(cases):
     w2 = np.sin(2 * np.pi * (x - shift))
     rows = [(w1, AMBER, "wave 1"), (w2, AMBER, "wave 2"), (w1 + w2, INK, "sum")]

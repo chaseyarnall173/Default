@@ -1,0 +1,42 @@
+[
+ {
+  "name": "Photon energy",
+  "latex": "E = hf = \\dfrac{hc}{\\lambda}",
+  "meaning": "Energy of one photon (J or eV) from its frequency f (Hz) or wavelength λ (m); h = 6.626×10⁻³⁴ J·s."
+ },
+ {
+  "name": "Photon energy shortcut",
+  "latex": "E\\ (\\text{eV}) = \\dfrac{1240}{\\lambda\\ (\\text{nm})}",
+  "meaning": "Quick photon energy in electron volts from wavelength in nanometers, since hc = 1240 eV·nm."
+ },
+ {
+  "name": "Einstein's photoelectric equation",
+  "latex": "KE_\\text{max} = hf - \\phi",
+  "meaning": "Maximum kinetic energy (eV) of electrons ejected by photons of energy hf from a surface with work function φ. No emission if hf is less than φ."
+ },
+ {
+  "name": "Threshold frequency and wavelength",
+  "latex": "f_0 = \\dfrac{\\phi}{h}, \\qquad \\lambda_0 = \\dfrac{hc}{\\phi}",
+  "meaning": "Lowest frequency (longest wavelength) of light that can eject electrons from a material with work function φ."
+ },
+ {
+  "name": "Stopping voltage",
+  "latex": "KE_\\text{max} = e V_s",
+  "meaning": "The reverse voltage Vₛ (V) that stops the fastest photoelectrons measures their kinetic energy; in eV the number equals Vₛ in volts."
+ },
+ {
+  "name": "Photon rate from power",
+  "latex": "\\dot N = \\dfrac{P}{hf} = \\dfrac{P\\lambda}{hc}",
+  "meaning": "Number of photons per second in a beam of power P (W) at frequency f or wavelength λ."
+ },
+ {
+  "name": "Photon momentum",
+  "latex": "p = \\dfrac{h}{\\lambda} = \\dfrac{E}{c}",
+  "meaning": "Momentum (kg·m/s) carried by one photon of wavelength λ or energy E."
+ },
+ {
+  "name": "Radiation force on an absorber",
+  "latex": "F = \\dfrac{P}{c}",
+  "meaning": "Force (N) exerted by a light beam of power P (W) that is completely absorbed."
+ }
+]

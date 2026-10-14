@@ -1,0 +1,82 @@
+[
+ {
+  "term": "Electric charge",
+  "definition": "A property of particles such as electrons (negative) and protons (positive) that makes them push or pull on each other through electric and magnetic fields."
+ },
+ {
+  "term": "Field",
+  "definition": "A physical quantity with a value (and usually a direction) at every point in space, such as the electric or magnetic field."
+ },
+ {
+  "term": "Electric field (E)",
+  "definition": "The force a small test charge would feel at a point, divided by its charge (E = F/q). Measured in N/C, equivalent to V/m."
+ },
+ {
+  "term": "Magnetic field (B)",
+  "definition": "The field created by moving charges (currents) that pushes on other moving charges. Measured in teslas (T)."
+ },
+ {
+  "term": "Electromagnetic (EM) wave",
+  "definition": "A self-sustaining oscillation of electric and magnetic fields that travels through space at the speed of light. It is launched by accelerating charges."
+ },
+ {
+  "term": "Accelerating charge",
+  "definition": "A charge that is speeding up, slowing down or changing direction. Only accelerating charges radiate EM waves."
+ },
+ {
+  "term": "Transverse wave",
+  "definition": "A wave whose oscillation is perpendicular to its direction of travel. In an EM wave, both E and B are perpendicular to the direction of travel."
+ },
+ {
+  "term": "Plane wave",
+  "definition": "An idealized wave whose crests are flat planes, a good model for light far from its source."
+ },
+ {
+  "term": "Speed of light (c)",
+  "definition": "The speed of all EM waves in vacuum: exactly 299,792,458 m/s, rounded to 3.00 × 10^8 m/s in this book."
+ },
+ {
+  "term": "Wavelength (λ)",
+  "definition": "The distance between neighboring crests of a wave, in meters."
+ },
+ {
+  "term": "Frequency (f)",
+  "definition": "The number of wave cycles passing a point each second, in hertz (Hz = 1/s). Related to wavelength by c = λf."
+ },
+ {
+  "term": "Period (T)",
+  "definition": "The time for one full oscillation at a fixed point; T = 1/f."
+ },
+ {
+  "term": "Amplitude (E0)",
+  "definition": "The peak strength of a wave's electric field, in V/m. It sets the wave's brightness, not its color."
+ },
+ {
+  "term": "Intensity (I)",
+  "definition": "The power a wave delivers per unit area, in W/m². For an EM wave, I = ½cε0E0², so intensity grows as amplitude squared."
+ },
+ {
+  "term": "Polarization",
+  "definition": "The direction in which a wave's electric field oscillates."
+ },
+ {
+  "term": "Unpolarized light",
+  "definition": "Light whose electric field direction is a random, rapidly changing mix of all directions perpendicular to the beam, such as sunlight or bulb light."
+ },
+ {
+  "term": "Polarizer",
+  "definition": "A material that transmits only the component of the electric field along its transmission axis and absorbs the perpendicular component."
+ },
+ {
+  "term": "Malus's law",
+  "definition": "For polarized light hitting a polarizer whose axis is at angle θ to the light's polarization, the transmitted intensity is I = I0 cos²θ."
+ },
+ {
+  "term": "Brewster's angle",
+  "definition": "The angle of incidence at which reflected light is completely polarized parallel to the surface; about 53° from the vertical for water."
+ },
+ {
+  "term": "Antenna",
+  "definition": "A conductor in which electrons are driven back and forth to launch EM waves, or are driven by arriving waves to detect them."
+ }
+]

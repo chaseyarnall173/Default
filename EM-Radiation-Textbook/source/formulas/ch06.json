@@ -1,0 +1,12 @@
+[
+  {"name": "Conservation of light energy at a material", "latex": "R + A + T = 1", "meaning": "The fractions of incoming light energy reflected, absorbed, and transmitted add to 1 (scattered light is counted in R or T). Dimensionless."},
+  {"name": "Exponential absorption", "latex": "I = I_0\\, e^{-\\alpha x}", "meaning": "Intensity remaining after depth x (m) in an absorber with absorption coefficient α (m⁻¹); I₀ is the intensity just inside the surface."},
+  {"name": "Law of reflection", "latex": "\\theta_r = \\theta_i", "meaning": "The angle of reflection equals the angle of incidence, both measured from the surface normal."},
+  {"name": "Normal-incidence reflectance", "latex": "R = \\left(\\frac{n_2 - n_1}{n_2 + n_1}\\right)^2", "meaning": "Fraction of light reflected at a boundary between indices n₁ and n₂ when light hits straight on; about 0.04 for glass in air."},
+  {"name": "Index of refraction", "latex": "n = \\frac{c}{v}", "meaning": "Speed of light in vacuum c divided by the speed v of wave crests in the material. Dimensionless, always about 1 or more for visible light."},
+  {"name": "Wavelength in a material", "latex": "\\lambda = \\frac{\\lambda_0}{n}", "meaning": "The wavelength shrinks by the factor n inside a material; the frequency (and photon energy) is unchanged."},
+  {"name": "Snell's law", "latex": "n_1 \\sin\\theta_1 = n_2 \\sin\\theta_2", "meaning": "Relates the angles (from the normal) on each side of a boundary between indices n₁ and n₂."},
+  {"name": "Critical angle", "latex": "\\sin\\theta_c = \\frac{n_2}{n_1} \\quad (n_1 \\gt n_2)", "meaning": "Beyond this angle of incidence, light in the higher-index material is totally internally reflected."},
+  {"name": "Thin-lens equation", "latex": "\\frac{1}{f} = \\frac{1}{d_o} + \\frac{1}{d_i}", "meaning": "Relates focal length f, object distance d_o, and image distance d_i (all in m); f is positive for a converging lens."},
+  {"name": "Lens power", "latex": "P = \\frac{1}{f}", "meaning": "Optical power in diopters (m⁻¹) for focal length f in meters."}
+]

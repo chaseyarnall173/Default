@@ -124,9 +124,9 @@ def toc_html(chapters, pages):
             rows.append(f'<div class="toc-ch"><a href="#{cid}"><span class="toc-n">{c["num"]}</span>{c["title"]}</a>{pg(pages, cid)}</div>')
             for sid, sn, t in c["sections"]:
                 rows.append(f'<div class="toc-sec"><a href="#{sid}"><span class="toc-n">{sn}</span>{t}</a>{pg(pages, sid)}</div>')
-    rows.append('<div class="toc-part"><a href="#backmatter">Reference</a>' + pg(pages, "backmatter") + '</div>')
+    rows.append('<div class="toc-part"><a href="#formulas">Reference</a>' + pg(pages, "formulas") + '</div>')
     for bid, bt in [("formulas", "Formula Sheet & Constants"), ("myths", "Myth-Busting Roundup"),
-                    ("glossary", "Glossary"), ("answers", "Answer Key"), ("sources", "Sources & Further Reading")]:
+                    ("glossary", "Glossary"), ("answers", "Answer Key"), ("sources", "Where to Go Deeper")]:
         rows.append(f'<div class="toc-ch"><a href="#{bid}">{bt}</a>{pg(pages, bid)}</div>')
     rows.append("</div></section>")
     return "\n".join(rows)
@@ -188,24 +188,26 @@ CONSTANTS = [
 
 def formulas_html(chapters):
     out = ['<section class="frontback formulas" id="formulas"><h1 class="fm-title">Formula Sheet &amp; Constants</h1>',
-           '<h3>Constants and handy numbers</h3><table class="fs"><tr><th>Quantity</th><th>Value</th></tr>']
+           '<table class="fs"><tr><th>Constant / handy number</th><th>Value</th></tr>']
     for n, v in CONSTANTS:
         out.append(f"<tr><td>{n}</td><td>\\({v}\\)</td></tr>")
-    out.append("</table>")
+    out.append('</table><div class="fs-grid">')
+    seen = set()
     for roman, ptitle, _, cids in PARTS:
         for cid in cids:
             f = SRC / "formulas" / f"{cid}.json"
             c = chapters.get(cid)
             if not f.exists() or not c:
                 continue
-            items = json.loads(f.read_text())
-            out.append(f'<h3>Chapter {c["num"]} · {c["title"]}</h3><table class="fs"><tr><th style="width:24%">Name</th>'
-                       f'<th style="width:36%">Formula</th><th>What it means</th></tr>')
-            for it in items:
-                out.append(f'<tr><td>{htmlmod.escape(it.get("name",""))}</td><td>\\({it.get("latex","")}\\)</td>'
-                           f'<td>{it.get("meaning","")}</td></tr>')
-            out.append("</table>")
-    out.append("</section>")
+            for it in json.loads(f.read_text()):
+                key = re.sub(r"\s+", "", it.get("latex", ""))
+                if key in seen:
+                    continue
+                seen.add(key)
+                out.append(f'<div class="fs-item"><div class="fs-n">{htmlmod.escape(it.get("name",""))} '
+                           f'<span class="fs-ch">Ch.&nbsp;{c["num"]}</span></div>'
+                           f'<div class="fs-f">\\({it.get("latex","")}\\)</div><div>{it.get("meaning","")}</div></div>')
+    out.append("</div></section>")
     return "\n".join(out)
 
 
@@ -243,27 +245,18 @@ def answers_html(chapters):
 
 
 def sources_html(chapters):
-    out = ['<section class="frontback sources" id="sources"><h1 class="fm-title">Sources &amp; Further Reading</h1>',
-           '<p class="fm-lead">The references each chapter was checked against. Great places to keep exploring: '
-           'HyperPhysics, OpenStax University Physics (free), NASA Science, and the optical-properties and '
-           'X-ray-diffraction sections of Callister’s <em>Materials Science and Engineering</em>.</p>']
-    for roman, ptitle, _, cids in PARTS:
-        for cid in cids:
-            f = SRC / "sources" / f"{cid}.md"
-            if not f.exists() or cid not in chapters:
-                continue
-            out.append(f'<h3>Chapter {chapters[cid]["num"]} · {chapters[cid]["title"]}</h3><ul class="src">')
-            for line in f.read_text().splitlines():
-                line = line.strip()
-                if not line.startswith(("-", "*")):
-                    continue
-                line = htmlmod.escape(line.lstrip("-* ").strip(), quote=False)
-                line = re.sub(r"\[([^\]]+)\]\((https?://[^)\s]+)\)", r'\1 — <a href="\2">\2</a>', line)
-                line = re.sub(r"(?<![\"'>])(https?://[^\s<)]+)", r'<a href="\1">\1</a>', line)
-                out.append(f"<li>{line}</li>")
-            out.append("</ul>")
-    out.append("</section>")
-    return "\n".join(out)
+    return """<section class="frontback sources" id="sources"><h1 class="fm-title">Where to Go Deeper</h1>
+<p class="fm-lead">Every chapter was checked against standard references. The best free places to keep exploring:</p>
+<ul>
+<li><strong>HyperPhysics</strong> (Georgia State University): short, linked concept pages on waves, optics, quantum physics and radiation.</li>
+<li><strong>OpenStax <em>University Physics</em></strong>, Volumes 2 and 3 (free online): electromagnetic waves, geometric and wave optics, photons and atoms.</li>
+<li><strong>NASA Science, “Tour of the Electromagnetic Spectrum”</strong>: one illustrated page per band.</li>
+<li><strong>Callister &amp; Rethwisch, <em>Materials Science and Engineering</em></strong>: Ch. 3 (crystal planes and X-ray diffraction) and the Optical Properties chapter (band gaps, color, opacity).</li>
+<li><strong>U.S. NRC, EPA and CDC radiation pages</strong>: doses, shielding and health effects.</li>
+<li><strong>NIST</strong>: physical constants, atomic spectra and X-ray attenuation data.</li>
+</ul>
+<p class="small muted">The full per-chapter source lists (titles and URLs) are kept with the book’s source files in <code>EM-Radiation-Textbook/source/sources/</code>.</p>
+</section>"""
 
 
 def part_html(roman, title, blurb, cids, chapters):
@@ -283,12 +276,15 @@ def assemble(chapters, pages):
     if (SRC / PROLOGUE).exists():
         body.append(read(PROLOGUE))
     for roman, title, blurb, cids in PARTS:
-        body.append(part_html(roman, title, blurb, cids, chapters))
+        first = True
         for cid in cids:
             if cid in chapters:
-                body.append(chapters[cid]["html"])
-    body.append('<section class="part" id="backmatter"><div class="part-label">Reference</div><h1>Tools for Review</h1>'
-                '<p>Formula sheet, myth-busting roundup, glossary, full answer key, and sources.</p></section>')
+                h = chapters[cid]["html"]
+                if first:
+                    banner = f'<div class="part-banner" id="part-{roman}">Part {roman} · <span>{title}</span></div>'
+                    h = re.sub(r'(<section[^>]*class="chapter"[^>]*>)', lambda m: m.group(1) + banner, h, count=1)
+                    first = False
+                body.append(h)
     body.append(formulas_html(chapters))
     body.append(myths_html(chapters, pages))
     body.append(glossary_html(chapters))
@@ -360,9 +356,9 @@ def main():
             for sid, sn, t in c["sections"]:
                 if sid in pages:
                     w.add_outline_item(f"{sn} {t}", P(sid), parent=ch)
-    ref = w.add_outline_item("Reference", P("backmatter")) if "backmatter" in pages else None
+    ref = w.add_outline_item("Reference", P("formulas")) if "formulas" in pages else None
     for key, t in [("formulas", "Formula Sheet & Constants"), ("myths", "Myth-Busting Roundup"),
-                   ("glossary", "Glossary"), ("answers", "Answer Key"), ("sources", "Sources & Further Reading")]:
+                   ("glossary", "Glossary"), ("answers", "Answer Key"), ("sources", "Where to Go Deeper")]:
         if key in pages:
             w.add_outline_item(t, P(key), parent=ref)
     w.add_metadata({"/Title": f"{TITLE}: {SUBTITLE}", "/Author": "Written for Chase Yarnall",

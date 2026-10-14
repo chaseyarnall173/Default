@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 392" width="680" height="392" font-family="Inter, sans-serif">
+<rect width="680" height="392" fill="#ffffff"/>
+<defs>
+<marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#12a39a"/></marker>
+<marker id="ph" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="4" markerHeight="4" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#e09f1f"/></marker>
+<marker id="gr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#52606d"/></marker>
+</defs>
+<text x="12" y="22" font-size="12" font-weight="700" fill="#1f2933">Bring atoms together…</text>
+<text x="12" y="37" font-size="10" fill="#52606d">each level spreads into a band</text>
+<line x1="40" y1="330" x2="236" y2="330" stroke="#52606d" stroke-width="1.2" marker-end="url(#gr)"/>
+<text x="236" y="346" font-size="10" fill="#52606d" text-anchor="end">distance between atoms →</text>
+<line x1="40" y1="330" x2="40" y2="56" stroke="#52606d" stroke-width="1.2" marker-end="url(#gr)"/>
+<text x="26" y="200" font-size="10" fill="#52606d" text-anchor="middle" transform="rotate(-90 26 200)">electron energy</text>
+<path d="M40.0 216.0 L43.3 217.1 L46.5 218.2 L49.8 219.3 L53.1 220.3 L56.3 221.4 L59.6 222.4 L62.9 223.4 L66.1 224.4 L69.4 225.4 L72.7 226.4 L75.9 227.4 L79.2 228.3 L82.5 229.2 L85.7 230.2 L89.0 231.1 L92.3 231.9 L95.5 232.8 L98.8 233.7 L102.1 234.5 L105.3 235.3 L108.6 236.1 L111.9 236.9 L115.1 237.7 L118.4 238.4 L121.7 239.2 L124.9 239.9 L128.2 240.6 L131.5 241.2 L134.7 241.9 L138.0 242.5 L141.3 243.2 L144.5 243.8 L147.8 244.3 L151.1 244.9 L154.3 245.4 L157.6 245.9 L160.9 246.4 L164.1 246.9 L167.4 247.3 L170.7 247.7 L173.9 248.1 L177.2 248.5 L180.5 248.8 L183.7 249.1 L187.0 249.4 L190.3 249.6 L193.5 249.8 L196.8 249.9 L200.1 250.0 L203.3 250.0 L206.6 250.0 L209.9 250.0 L213.1 250.0 L216.4 250.0 L219.7 250.0 L222.9 250.0 L226.2 250.0 L229.5 250.0 L232.7 250.0 L236.0 250.0 L236.0 250.0 L232.7 250.0 L229.5 250.0 L226.2 250.0 L222.9 250.0 L219.7 250.0 L216.4 250.0 L213.1 250.0 L209.9 250.0 L206.6 250.0 L203.3 250.0 L200.1 250.0 L196.8 250.1 L193.5 250.2 L190.3 250.4 L187.0 250.6 L183.7 250.9 L180.5 251.2 L177.2 251.5 L173.9 251.9 L170.7 252.3 L167.4 252.7 L164.1 253.1 L160.9 253.6 L157.6 254.1 L154.3 254.6 L151.1 255.1 L147.8 255.7 L144.5 256.2 L141.3 256.8 L138.0 257.5 L134.7 258.1 L131.5 258.8 L128.2 259.4 L124.9 260.1 L121.7 260.8 L118.4 261.6 L115.1 262.3 L111.9 263.1 L108.6 263.9 L105.3 264.7 L102.1 265.5 L98.8 266.3 L95.5 267.2 L92.3 268.1 L89.0 268.9 L85.7 269.8 L82.5 270.8 L79.2 271.7 L75.9 272.6 L72.7 273.6 L69.4 274.6 L66.1 275.6 L62.9 276.6 L59.6 277.6 L56.3 278.6 L53.1 279.7 L49.8 280.7 L46.5 281.8 L43.3 282.9 L40.0 284.0 Z" fill="#9fdcd6" stroke="#1f2933" stroke-width="1"/>
+<path d="M40.0 84.0 L43.3 85.5 L46.5 87.0 L49.8 88.4 L53.1 89.9 L56.3 91.3 L59.6 92.7 L62.9 94.1 L66.1 95.4 L69.4 96.8 L72.7 98.1 L75.9 99.4 L79.2 100.7 L82.5 101.9 L85.7 103.2 L89.0 104.4 L92.3 105.6 L95.5 106.7 L98.8 107.9 L102.1 109.0 L105.3 110.1 L108.6 111.2 L111.9 112.3 L115.1 113.3 L118.4 114.3 L121.7 115.3 L124.9 116.3 L128.2 117.2 L131.5 118.2 L134.7 119.0 L138.0 119.9 L141.3 120.7 L144.5 121.6 L147.8 122.3 L151.1 123.1 L154.3 123.8 L157.6 124.5 L160.9 125.2 L164.1 125.8 L167.4 126.4 L170.7 127.0 L173.9 127.5 L177.2 128.0 L180.5 128.4 L183.7 128.8 L187.0 129.2 L190.3 129.5 L193.5 129.7 L196.8 129.9 L200.1 130.0 L203.3 130.0 L206.6 130.0 L209.9 130.0 L213.1 130.0 L216.4 130.0 L219.7 130.0 L222.9 130.0 L226.2 130.0 L229.5 130.0 L232.7 130.0 L236.0 130.0 L236.0 130.0 L232.7 130.0 L229.5 130.0 L226.2 130.0 L222.9 130.0 L219.7 130.0 L216.4 130.0 L213.1 130.0 L209.9 130.0 L206.6 130.0 L203.3 130.0 L200.1 130.0 L196.8 130.1 L193.5 130.3 L190.3 130.5 L187.0 130.8 L183.7 131.2 L180.5 131.6 L177.2 132.0 L173.9 132.5 L170.7 133.0 L167.4 133.6 L164.1 134.2 L160.9 134.8 L157.6 135.5 L154.3 136.2 L151.1 136.9 L147.8 137.7 L144.5 138.4 L141.3 139.3 L138.0 140.1 L134.7 141.0 L131.5 141.8 L128.2 142.8 L124.9 143.7 L121.7 144.7 L118.4 145.7 L115.1 146.7 L111.9 147.7 L108.6 148.8 L105.3 149.9 L102.1 151.0 L98.8 152.1 L95.5 153.3 L92.3 154.4 L89.0 155.6 L85.7 156.8 L82.5 158.1 L79.2 159.3 L75.9 160.6 L72.7 161.9 L69.4 163.2 L66.1 164.6 L62.9 165.9 L59.6 167.3 L56.3 168.7 L53.1 170.1 L49.8 171.6 L46.5 173.0 L43.3 174.5 L40.0 176.0 Z" fill="#eef1f5" stroke="#1f2933" stroke-width="1"/>
+<line x1="104" y1="70" x2="104" y2="330" stroke="#1f2933" stroke-width="1" stroke-dasharray="4 3"/>
+<text x="104" y="64" font-size="10" fill="#1f2933" text-anchor="middle">solid’s spacing</text>
+<text x="234" y="124" font-size="10" fill="#52606d" text-anchor="end">empty level</text>
+<text x="234" y="244" font-size="10" fill="#52606d" text-anchor="end">filled level</text>
+<line x1="112" y1="151.3" x2="112" y2="234.0" stroke="#52606d" stroke-width="1.2" marker-start="url(#gr)" marker-end="url(#gr)"/>
+<text x="117" y="196.6" font-size="10.5" font-weight="700" fill="#1f2933">band gap</text>
+<line x1="250" y1="16" x2="250" y2="376" stroke="#d9dee5"/>
+<text x="322.0" y="22" font-size="12" font-weight="700" fill="#1f2933" text-anchor="middle">Metal</text>
+<text x="460.0" y="22" font-size="12" font-weight="700" fill="#1f2933" text-anchor="middle">Semiconductor</text>
+<text x="598.0" y="22" font-size="12" font-weight="700" fill="#1f2933" text-anchor="middle">Insulator</text>
+<rect x="266" y="120" width="112" height="180" fill="#ffffff" stroke="#1f2933" stroke-width="1.2"/>
+<rect x="266" y="200" width="112" height="100" fill="#9fdcd6" stroke="none"/>
+<rect x="266" y="120" width="112" height="180" fill="none" stroke="#1f2933" stroke-width="1.2"/>
+<line x1="266" y1="200" x2="378" y2="200" stroke="#1f2933" stroke-width="1" stroke-dasharray="4 3"/>
+<text x="322.0" y="194" font-size="10" fill="#52606d" text-anchor="middle">filled up to here</text>
+<text x="322.0" y="250" font-size="10" fill="#1f2933" text-anchor="middle">filled</text>
+<text x="322.0" y="160" font-size="10" fill="#1f2933" text-anchor="middle">empty states</text>
+<text x="322.0" y="173" font-size="10" fill="#1f2933" text-anchor="middle">right above</text>
+<line x1="364" y1="206" x2="364" y2="146" stroke="#12a39a" stroke-width="1.6" marker-end="url(#ah)"/>
+<rect x="404" y="230" width="112" height="70" fill="#9fdcd6" stroke="#1f2933" stroke-width="1.2"/>
+<rect x="404" y="156.5" width="112" height="50" fill="#ffffff" stroke="#1f2933" stroke-width="1.2"/>
+<text x="460.0" y="270" font-size="10" fill="#1f2933" text-anchor="middle">valence band</text>
+<text x="460.0" y="283" font-size="10" fill="#1f2933" text-anchor="middle">(filled)</text>
+<text x="460.0" y="178.5" font-size="10" fill="#1f2933" text-anchor="middle">conduction band</text>
+<text x="460.0" y="191.5" font-size="10" fill="#1f2933" text-anchor="middle">(empty)</text>
+<line x1="506" y1="207.5" x2="506" y2="229" stroke="#52606d" stroke-width="1.1" marker-start="url(#gr)" marker-end="url(#gr)"/>
+<text x="501" y="222.2" font-size="10.5" font-weight="700" fill="#1f2933" text-anchor="end">1.12 eV</text>
+<line x1="424" y1="236" x2="424" y2="200.5" stroke="#12a39a" stroke-width="1.6" marker-end="url(#ah)"/>
+<circle cx="424" cy="198.5" r="3.6" fill="#12a39a"/>
+<rect x="542" y="230" width="112" height="70" fill="#9fdcd6" stroke="#1f2933" stroke-width="1.2"/>
+<rect x="542" y="64.5" width="112" height="50" fill="#ffffff" stroke="#1f2933" stroke-width="1.2"/>
+<text x="598.0" y="270" font-size="10" fill="#1f2933" text-anchor="middle">valence band</text>
+<text x="598.0" y="283" font-size="10" fill="#1f2933" text-anchor="middle">(filled)</text>
+<text x="598.0" y="86.5" font-size="10" fill="#1f2933" text-anchor="middle">conduction band</text>
+<text x="598.0" y="99.5" font-size="10" fill="#1f2933" text-anchor="middle">(empty)</text>
+<line x1="644" y1="115.5" x2="644" y2="229" stroke="#52606d" stroke-width="1.1" marker-start="url(#gr)" marker-end="url(#gr)"/>
+<text x="639" y="176.2" font-size="10.5" font-weight="700" fill="#1f2933" text-anchor="end">≈ 5.5 eV</text>
+<text x="266" y="322" font-size="10" fill="#1f2933">Partly filled band: tiny</text>
+<text x="266" y="335" font-size="10" fill="#1f2933">energies lift electrons,</text>
+<text x="266" y="348" font-size="10" fill="#1f2933">so it conducts and</text>
+<text x="266" y="361" font-size="10" fill="#1f2933">reflects visible light</text>
+<text x="266" y="374" font-size="10" fill="#1f2933">(Chapter 6).</text>
+<text x="404" y="322" font-size="10" fill="#1f2933">Small gap (Si 1.12,</text>
+<text x="404" y="335" font-size="10" fill="#1f2933">GaAs 1.42 eV). Photons</text>
+<text x="404" y="348" font-size="10" fill="#1f2933">with E ≥ Eg absorbed;</text>
+<text x="404" y="361" font-size="10" fill="#1f2933">an electron falling back</text>
+<text x="404" y="374" font-size="10" fill="#1f2933">gives LED light, E ≈ Eg.</text>
+<text x="542" y="322" font-size="10" fill="#1f2933">Wide gap (diamond 5.5,</text>
+<text x="542" y="335" font-size="10" fill="#1f2933">Al₂O₃ ≈ 8.8 eV). Visible</text>
+<text x="542" y="348" font-size="10" fill="#1f2933">photons can’t bridge it:</text>
+<text x="542" y="361" font-size="10" fill="#1f2933">transparent and</text>
+<text x="542" y="374" font-size="10" fill="#1f2933">non-conducting.</text>
+<text x="404" y="144.5" font-size="10" fill="#52606d">gaps drawn to the same scale</text>
+</svg>

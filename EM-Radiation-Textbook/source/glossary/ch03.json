@@ -1,0 +1,12 @@
+[
+ {"term": "Electromagnetic spectrum", "definition": "The full range of electromagnetic waves, ordered by wavelength (or frequency or photon energy), from radio waves to gamma rays. All of it travels at c and is made of photons."},
+ {"term": "Radio waves", "definition": "The longest-wavelength EM waves (roughly 30 cm and longer). Made and detected by oscillating currents in antennas; photon energies far too small to affect atoms."},
+ {"term": "Microwaves", "definition": "EM waves from about 1 mm to 30 cm. Used for Wi-Fi, radar and microwave ovens; they can set polar molecules such as water rotating."},
+ {"term": "Infrared (IR)", "definition": "EM waves from about 700 nm to 1 mm. Emitted strongly by objects at everyday temperatures and absorbed by molecular vibrations."},
+ {"term": "Visible light", "definition": "The narrow band from about 400 nm (violet) to 700 nm (red), photon energies about 1.8 to 3.1 eV, that human eyes detect."},
+ {"term": "Ultraviolet (UV)", "definition": "EM waves from about 10 nm to 400 nm. Energetic enough to break chemical bonds (sunburn); the shortest UV can ionize atoms."},
+ {"term": "X-rays", "definition": "EM waves from about 0.01 nm to 10 nm, photon energies of roughly 100 eV to 100 keV. Pass through soft tissue and diffract from crystal planes."},
+ {"term": "Gamma rays", "definition": "The highest-energy photons, usually defined by their origin in atomic nuclei (radioactive decay, nuclear reactions) rather than by a strict wavelength cutoff."},
+ {"term": "Atmospheric window", "definition": "A band of wavelengths that the atmosphere lets through to the ground, chiefly visible/near-infrared light and radio waves."},
+ {"term": "Non-ionizing radiation", "definition": "EM radiation whose photons carry too little energy (below roughly 10 eV) to knock electrons out of atoms: radio, microwave, infrared, visible and most UV."}
+]

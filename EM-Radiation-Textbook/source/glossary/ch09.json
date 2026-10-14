@@ -1,0 +1,22 @@
+[
+  {"term": "Thermal energy", "definition": "The energy of the random jiggling motion of atoms and molecules in a material."},
+  {"term": "Temperature", "definition": "A measure of how vigorous the random atomic motion is on average; at 300 K the typical thermal energy scale is k_B T, about 0.026 eV."},
+  {"term": "Heat", "definition": "Energy in transit from one object to another because of a temperature difference, moved by conduction, convection, or radiation."},
+  {"term": "Thermal radiation", "definition": "The continuous spectrum of electromagnetic waves emitted by every object above absolute zero because its randomly moving charges accelerate."},
+  {"term": "Blackbody", "definition": "An ideal object that absorbs all radiation hitting it; it is also the best possible emitter, and its spectrum depends only on its temperature."},
+  {"term": "Planck's law", "definition": "The formula (1900) giving a blackbody's brightness at each wavelength for a given temperature; deriving it required assuming energy comes in chunks of hf."},
+  {"term": "Wien's displacement law", "definition": "The peak wavelength of a blackbody's spectrum is 2898 micrometer-kelvins divided by its temperature, so hotter objects peak at shorter wavelengths."},
+  {"term": "Stefan-Boltzmann law", "definition": "The total power radiated by a surface is P = emissivity x sigma x area x T^4, so doubling the absolute temperature multiplies the power by 16."},
+  {"term": "Emissivity", "definition": "A number from 0 to 1 giving how well a surface emits thermal radiation compared with a blackbody; shiny metals are about 0.02-0.05, skin and matte black paint about 0.95-0.98."},
+  {"term": "Kirchhoff's law of thermal radiation", "definition": "At each wavelength a surface's emissivity equals its absorptivity: good absorbers are good emitters, and good reflectors are poor emitters."},
+  {"term": "Draper point", "definition": "About 798 K (525 degrees C), the temperature at which a hot object's dull red glow first becomes visible in the dark."},
+  {"term": "Color temperature", "definition": "The temperature of a blackbody whose glow has the same color as a given light source; warm-white bulbs are about 2700 K, daylight about 5000-6500 K."},
+  {"term": "Infrared (IR)", "definition": "Electromagnetic radiation with wavelengths from about 0.7 micrometers to 1 millimeter, longer than red light; everyday objects emit mostly in the thermal infrared near 10 micrometers."},
+  {"term": "Microbolometer", "definition": "A thermal-camera pixel that warms slightly when infrared lands on it, changing its electrical resistance; most such cameras work in the 8-14 micrometer band."},
+  {"term": "Atmospheric window", "definition": "The 8-13 micrometer band where air absorbs little thermal infrared, letting Earth's surface radiate directly to space and letting thermal cameras see through air."},
+  {"term": "Greenhouse effect", "definition": "Warming of Earth's surface because gases such as CO2 and water vapor pass incoming sunlight but absorb and re-emit outgoing thermal infrared, some of it back downward."},
+  {"term": "Dielectric heating", "definition": "Heating by an oscillating electric field that twists polar molecules such as water; because the molecules lag behind the field, energy is lost into random motion. It is how microwave ovens work."},
+  {"term": "Multilayer insulation (MLI)", "definition": "Spacecraft blankets made of many thin aluminized plastic layers separated by vacuum, which block heat flow by radiation."},
+  {"term": "Spacecraft radiator", "definition": "A panel with a high-infrared-emissivity (often white) coating that rejects waste heat to space by thermal radiation, the only cooling route available in vacuum."},
+  {"term": "Temper colors", "definition": "Straw, brown, purple, and blue colors on steel heated to about 200-350 degrees C, caused by thin-film interference in a growing oxide layer, not by glowing."}
+]

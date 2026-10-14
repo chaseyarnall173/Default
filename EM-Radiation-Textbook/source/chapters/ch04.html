@@ -1,0 +1,207 @@
+<section class="chapter" id="ch04">
+<div class="chapter-opener">
+  <div class="chapter-num">Chapter 4</div>
+  <h1 class="chapter-title">Inside the Atom: Scale, Orbitals, and Quantized Energy</h1>
+  <p class="chapter-hook">Almost all of an atom’s mass sits in a speck that fills less than a trillionth of its volume, yet your chair still holds you up. And because the electron around that speck behaves like a trapped wave, an atom can hold energy only in exact, fixed amounts. That one rule is behind every color you will ever see.</p>
+  <div class="big-picture"><h4>The big picture</h4><ul>
+    <li>Atoms are about 0.1–0.5 nm across; the nucleus is 20,000 to 60,000 times smaller still.</li>
+    <li>The electron is not a tiny planet. It is a standing wave spread into a probability cloud (an orbital) with no hard edge.</li>
+    <li>A wave trapped in a small space can vibrate only in certain patterns, so a bound electron can have only certain energies.</li>
+    <li>Hydrogen’s allowed energies are \(E_n = -13.6\ \text{eV}/n^2\); the energy needed to free the electron completely is the ionization energy.</li>
+    <li>Matter feels solid because electron clouds strongly resist overlapping, not because atoms are full.</li>
+  </ul></div>
+  <div class="learning-goals"><h4>After this chapter you can</h4><ul>
+    <li>State the sizes of atoms and nuclei and build an accurate scale model.</li>
+    <li>Describe an orbital as a probability cloud and explain why it has no surface.</li>
+    <li>Explain, with the standing-wave picture, why a bound electron’s energy is quantized.</li>
+    <li>Compute hydrogen’s energy levels, excitation energies, and ionization energies.</li>
+    <li>Explain why mostly-empty atoms make solid, incompressible matter.</li>
+  </ul></div>
+</div>
+
+<h2 id="ch04-1"><span class="sec-num">4.1</span>How big is an atom?</h2>
+<p>No light microscope can show you an atom (Chapter 8 explains why), but atoms can still be measured precisely: by weighing a known volume of solid (Worked Example 4.1) or by diffracting X-rays from a crystal (Chapter 11). Figure 4.1 places the result on a ladder of sizes.</p>
+
+<figure id="fig-4-1"><img src="figures/ch04-powers-of-ten.svg" alt="Logarithmic size scale from 1 mm to 1 fm showing a human hair, red blood cell, green light wavelength, virus, DNA, atoms at 0.1 to 0.5 nm, a gold nucleus at 14 fm and a proton at 1.7 fm.">
+<figcaption><span class="fig-num">Figure 4.1</span> Sizes on a powers-of-ten scale: each tick is 10× smaller than the one to its left. Notice the long stretch between “whole atoms” and “gold nucleus”: four to five powers of ten in which there is nothing but electron cloud.</figcaption></figure>
+
+<div class="box asked"><div class="box-title">You Asked</div><p class="question">“How big is an atom, from one side to the other?”</p>
+<p>About 0.1 to 0.5 nanometers, or one to five ten-billionths of a meter. The smallest atoms (hydrogen and helium) are roughly 0.1 nm across, the atoms in most metals and ceramics are 0.25–0.3 nm, and the largest common one, cesium, is about 0.5 nm.</p>
+<p>For a feel of the scale: about 350,000 copper atoms lined up would span the width of a human hair, and one wavelength of green light (500 nm) is a few thousand atoms long. One caveat: an atom has no hard surface (Section 4.3), so its “diameter” depends on where you draw the edge. That is why tables list slightly different radii for an atom in a metal, in a covalent bond, or as an ion.</p></div>
+
+<div class="box example"><div class="box-title">Worked Example 4.1 <span class="sub">— How far apart are the atoms in copper?</span></div>
+<p class="given"><strong>Given:</strong> copper’s density \(\rho = 8.94\ \text{g/cm}^3\) and molar mass \(M = 63.55\ \text{g/mol}\); Avogadro’s number \(N_A = 6.022\times10^{23}\ \text{mol}^{-1}\).</p>
+<p><strong>Find:</strong> the volume each atom occupies and the typical atom-to-atom spacing.</p>
+<p><strong>Think:</strong> one mole of copper has a mass of 63.55 g and contains \(N_A\) atoms. Divide the mole’s volume by the number of atoms, then take a cube root to get the side of the little cube each atom “owns.”</p>
+<p>\[ V_\text{atom} = \frac{M}{\rho N_A} = \frac{63.55\ \text{g/mol}}{(8.94\ \text{g/cm}^3)(6.022\times10^{23}\ \text{mol}^{-1})} = 1.18\times10^{-23}\ \text{cm}^3 = 1.18\times10^{-29}\ \text{m}^3 \]</p>
+<p>\[ d \approx V_\text{atom}^{1/3} = (1.18\times10^{-29}\ \text{m}^3)^{1/3} = 2.28\times10^{-10}\ \text{m} = 0.228\ \text{nm} \]</p>
+<p>A hair 80 µm wide is therefore \(80\times10^{-6}/0.228\times10^{-9} \approx 350{,}000\) atoms across.</p>
+<p class="answer">Answer: each copper atom gets a cube about 0.23 nm on a side, consistent with Callister’s copper radius of 0.128 nm (diameter 0.256 nm), since real atoms pack as spheres, not cubes.</p></div>
+
+<div class="box matsci"><div class="box-title">Materials Science Connection</div>
+<p>In ME2340 you treat atoms as touching hard spheres: in an FCC metal the lattice parameter is \(a = 2R\sqrt{2}\), so copper’s \(R = 0.128\ \text{nm}\) gives \(a = 0.362\ \text{nm}\), matching the measured 0.3615 nm. The model works, but “touching” needs care. Callister’s \(R\) is half the equilibrium distance between neighboring nuclei, the spacing where attraction and repulsion balance (Section 4.7). It is not a physical surface, which is why the same element has different radii as a neutral atom and as an ion in a ceramic.</p></div>
+
+<h2 id="ch04-2"><span class="sec-num">4.2</span>A tiny, heavy nucleus</h2>
+<p>At the center of every atom is the <strong>nucleus</strong>: protons and neutrons (together called nucleons) bound by the strong nuclear force. Rutherford’s gold-foil experiments (1909–1911) first revealed it: most alpha particles sailed straight through thin gold foil, but a rare few bounced almost straight back, as if they had hit something tiny and massive. Nuclei are measured in <strong>femtometers</strong> (1 fm = \(10^{-15}\) m), and their size follows a simple rule:</p>
+<div class="equation" data-eq="4.1">\[ R \approx (1.2\ \text{fm})\,A^{1/3} \]</div>
+<p class="where">where \(R\) is the nuclear radius and \(A\) the number of nucleons. The cube root appears because nucleons pack like marbles in a bag: volume grows in proportion to the count.</p>
+<ul>
+  <li><strong>Hydrogen</strong> (a single proton): charge radius 0.84 fm, about 1.7 fm across.</li>
+  <li><strong>Gold</strong> (\(A = 197\)): \(R \approx 1.2 \times 5.82 = 7.0\) fm, about 14 fm across.</li>
+  <li><strong>Mass:</strong> a proton outweighs an electron 1836 to 1, so the nucleus holds more than 99.9% of an atom’s mass.</li>
+  <li><strong>Density:</strong> nuclear matter is about \(2\times10^{17}\ \text{kg/m}^3\). A teaspoon of it would weigh roughly a billion tonnes.</li>
+</ul>
+
+<div class="box asked"><div class="box-title">You Asked</div><p class="question">“If a marble is the nucleus and it’s placed at the center of a football field, is the electron probability cloud the size of the football field?”</p>
+<p>No: the cloud is bigger. With a 1.5 cm marble as the nucleus, a heavy atom such as gold would be about 300 m across, and a hydrogen atom nearly a kilometer. Both are far larger than a 110 m football field (Figure 4.2).</p>
+<p>The arithmetic is just the ratio of diameters. For hydrogen, \(2(0.0529\ \text{nm}) / 2(0.84\ \text{fm}) \approx 63{,}000\), so the cloud is \(1.5\ \text{cm} \times 63{,}000 \approx 940\ \text{m}\) across. Heavier atoms have bigger nuclei, so their ratio drops to about 20,000–30,000 (Table 4.1), but even gold’s cloud would be about three field-lengths wide, spilling well past the stands.</p>
+<p>So the analogy is right in spirit: an atom is overwhelmingly empty of mass. It just underestimates the emptiness by a factor of 3 to 9. Two refinements: the cloud has no edge (it thins out smoothly, so “940 m” marks a typical distance, not a wall), and the nucleus is not a hard ball either, so treat these ratios as good to about ±20%.</p></div>
+
+<table id="tab-4-1"><caption><span class="tab-num">Table 4.1</span> Atom vs. nucleus. Atomic diameters are twice the Bohr radius (H) or twice Callister’s atomic radius; nuclear diameters use \(2(0.84\ \text{fm})\) for the proton and Equation 4.1 otherwise.</caption>
+<tr><th>Atom</th><th>Atom diameter</th><th>Nucleus diameter</th><th>Ratio</th><th>Cloud size if nucleus = 1.5 cm marble</th></tr>
+<tr><td>Hydrogen</td><td>0.106 nm</td><td>1.7 fm</td><td>≈ 63,000</td><td>≈ 940 m</td></tr>
+<tr><td>Carbon</td><td>0.142 nm</td><td>5.5 fm</td><td>≈ 26,000</td><td>≈ 390 m</td></tr>
+<tr><td>Iron</td><td>0.248 nm</td><td>9.2 fm</td><td>≈ 27,000</td><td>≈ 400 m</td></tr>
+<tr><td>Gold</td><td>0.288 nm</td><td>14.0 fm</td><td>≈ 21,000</td><td>≈ 310 m</td></tr>
+</table>
+
+<figure id="fig-4-2"><img src="figures/ch04-marble-field.svg" alt="To-scale map: a football field at the center of a fuzzy electron cloud; dashed circles show the hydrogen cloud at 945 m and gold at 309 m; a bar chart compares these with the 110 m field.">
+<figcaption><span class="fig-num">Figure 4.2</span> The marble-in-a-stadium model drawn to scale. The football field (green) sits deep inside even gold’s cloud, and the marble itself would be 1/200 of a pixel. The shading fades smoothly outward because the cloud has no surface.</figcaption></figure>
+
+<div class="box key"><div class="box-title">Key Idea</div><p>An atom is nearly all empty of <em>mass</em>, but it is not empty of <em>electron</em>: the electron’s cloud fills the whole volume. That cloud, not the nucleus, sets an atom’s size, its chemistry, and how it interacts with light.</p></div>
+
+<h2 id="ch04-3"><span class="sec-num">4.3</span>Where is the electron? Orbitals and probability clouds</h2>
+<p>Quantum mechanics gives a strange but well-tested answer: a bound electron has no definite position until something measures it. What the atom does have is an <strong>orbital</strong>, a three-dimensional standing-wave pattern of the electron (its <strong>wavefunction</strong>). Square the wave at any point and you get the probability of finding the electron there. Drawn as shading, that probability is the familiar <strong>electron cloud</strong> (Figure 4.3).</p>
+
+<figure id="fig-4-3"><img src="figures/ch04-orbitals.svg" alt="Left: cross-sections of hydrogen's 1s orbital (a spherical fuzzy ball) and 2p orbital (two lobes separated by a node). Right: radial probability curves peaking at one Bohr radius for 1s and four Bohr radii for 2p.">
+<figcaption><span class="fig-num">Figure 4.3</span> Hydrogen’s electron density, computed from the exact wavefunctions. The 1s ground state is a fuzzy sphere; the excited 2p state has two lobes and a node (zero density) between them. At right: the electron is most likely found about one Bohr radius (\(a_0\) = 0.0529 nm) from the nucleus, but the curves never reach zero. (Shading is boosted so the faint outer parts show.)</figcaption></figure>
+
+<ul>
+  <li><strong>Shapes:</strong> s orbitals are spheres; p orbitals have two lobes; d and f orbitals are more elaborate. Each holds at most two electrons.</li>
+  <li><strong>No hard edge:</strong> the density falls off smoothly forever. Chemistry books draw the surface enclosing 90% of the probability, which for hydrogen’s 1s is a sphere about 0.28 nm across. That boundary is a convention, not a skin.</li>
+  <li><strong>Excited states are bigger:</strong> higher-energy orbitals spread farther out (compare 1s and 2p).</li>
+  <li><strong>Steady, not swirling:</strong> an orbital is a <em>stationary</em> pattern that does not change in time, like a steadily ringing bell. That is why an atom in one orbital does not radiate light (Chapter 5).</li>
+</ul>
+
+<div class="box myth"><div class="box-title">Myth vs. Reality</div>
+<p class="myth-line"><strong>Myth:</strong> Electrons orbit the nucleus like planets around the Sun, and the cloud is a blur of that fast-moving dot.</p>
+<p><strong>Reality:</strong> No electron follows a track. A circling charge would radiate light continuously (Chapter 1), lose energy, and spiral into the nucleus almost instantly. Real atoms are stable, the ground state has no orbital motion at all, and the 1s cloud is a sphere, not a flat ring. The cloud is the shape of the electron’s wave itself, not a long-exposure photo of a moving particle.</p></div>
+
+<h2 id="ch04-4"><span class="sec-num">4.4</span>Why energy comes in steps: the standing-wave picture</h2>
+
+<div class="box analogy"><div class="box-title">Analogy</div><p>Pluck a guitar string and it rings only at certain pitches, because a whole number of half-waves must fit between the two fixed ends. A trapped electron wave works the same way: only the patterns that “fit” the atom are allowed, and each has its own energy.</p></div>
+
+<p>In 1924 Louis de Broglie proposed, and experiments in 1927 confirmed, that electrons travel as waves, with a <strong>de Broglie wavelength</strong> \(\lambda = h/(mv)\), where \(m\) and \(v\) are the electron’s mass and speed (Chapter 8 shows the experimental proof: electrons diffract). An electron bound to a nucleus is a trapped wave. De Broglie’s simple model pictures that wave wrapped around a circle: it must join smoothly onto itself, or successive laps land out of step and cancel (Figure 4.4).</p>
+<div class="equation" data-eq="4.2">\[ n\lambda = 2\pi r_n, \qquad n = 1, 2, 3, \ldots \]</div>
+<p class="where">where \(r_n\) is the radius of the \(n\)th allowed orbit and \(n\) is the number of wavelengths around it.</p>
+
+<figure id="fig-4-4"><img src="figures/ch04-standing-waves.svg" alt="Left: guitar string modes n equals 1, 2, 3 fit whole half-waves; a 2.5 half-wave pattern is crossed out. Right: an electron wave with exactly 4 wavelengths closes smoothly around a nucleus; one with 4.4 wavelengths does not close and is crossed out.">
+<figcaption><span class="fig-num">Figure 4.4</span> Standing waves on a string (left) and de Broglie’s electron wave around a nucleus (right). Only whole-number patterns survive, so only certain orbits, and therefore certain energies, are allowed. This is a helpful model, not the full quantum picture.</figcaption></figure>
+
+<p>Only certain wavelengths fit, and wavelength fixes the electron’s speed and hence its energy, so only certain energies are possible. Niels Bohr had simply assumed this rule in 1913; de Broglie’s wave picture explained it.</p>
+
+<div class="box key"><div class="box-title">Key Idea</div><p><strong>Confinement causes quantization.</strong> Any wave trapped in a limited space (a string, an organ pipe, an electron in an atom) can vibrate only in certain patterns, each with a definite energy. Free electrons, which are not trapped, can have any energy at all.</p></div>
+
+<p><strong>How far to trust the model.</strong> The circle picture gives exactly the right energies for hydrogen, but the real orbitals are 3D standing waves (Figure 4.3), not waves running on circular tracks. Use it for intuition about <em>why</em> energy is quantized, not as a picture of the atom. The full theory, Schrödinger’s wave equation, keeps the central lesson: allowed patterns, allowed energies.</p>
+
+<div class="box example"><div class="box-title">Worked Example 4.2 <span class="sub">— Does the ground-state wave really fit?</span></div>
+<p class="given"><strong>Given:</strong> in the Bohr model the ground-state electron moves at \(v = 2.19\times10^{6}\ \text{m/s}\) on a circle of radius \(a_0 = 0.0529\ \text{nm}\); electron mass \(m = 9.11\times10^{-31}\ \text{kg}\).</p>
+<p><strong>Find:</strong> the de Broglie wavelength, and compare it with the circumference.</p>
+<p><strong>Think:</strong> if \(n = 1\) in Equation 4.2, exactly one wavelength should fit around the circle.</p>
+<p>\[ \lambda = \frac{h}{mv} = \frac{6.626\times10^{-34}\ \text{J}\cdot\text{s}}{(9.11\times10^{-31}\ \text{kg})(2.19\times10^{6}\ \text{m/s})} = 3.32\times10^{-10}\ \text{m} = 0.332\ \text{nm} \]</p>
+<p>\[ 2\pi a_0 = 2\pi (0.0529\ \text{nm}) = 0.332\ \text{nm} \]</p>
+<p class="answer">Answer: λ = 0.332 nm, exactly the circumference: one wavelength fits, so this is the \(n = 1\) state.</p></div>
+
+<div class="box rabbit"><div class="box-title">Rabbit Hole <span class="sub">(optional) — Why doesn’t the electron fall into the nucleus?</span></div>
+<p>Safe to skip. The electron is attracted to the proton, so why doesn’t it collapse onto it? Squeezing a wave into a smaller space shortens its wavelength, and a shorter wavelength means more momentum and more kinetic energy (\(\lambda = h/mv\)). Shrinking the cloud lowers the electric energy but raises the kinetic energy even faster. The ground state is the best compromise, and its size is the Bohr radius. There is simply no lower-energy pattern to fall into.</p></div>
+
+<h2 id="ch04-5"><span class="sec-num">4.5</span>Hydrogen’s energy ladder</h2>
+<p>For hydrogen, the allowed energies come out remarkably simple:</p>
+<div class="equation boxed" data-eq="4.3">\[ E_n = -\frac{13.6\ \text{eV}}{n^2}, \qquad n = 1, 2, 3, \ldots \]</div>
+<p class="where">where \(n\) is the <strong>principal quantum number</strong>. Energies are in electron-volts (1 eV = \(1.602\times10^{-19}\) J).</p>
+<ul>
+  <li><strong>Why negative?</strong> Zero is defined as an electron at rest far from the proton. A bound electron has less energy than that, so you must <em>add</em> energy to free it.</li>
+  <li><strong>Ground state</strong> (\(n = 1\), −13.6 eV): the lowest level, where an undisturbed atom sits. <strong>Excited states</strong> (\(n \ge 2\)) are higher rungs: −3.40, −1.51, −0.85 eV, …</li>
+  <li><strong>Rungs crowd together</strong> just below 0 eV. Above 0 the electron is free and can have any energy: a continuum, not a ladder.</li>
+  <li><strong>Higher rungs are bigger:</strong> in the Bohr model the orbit radius grows as \(r_n = n^2 a_0\), so \(n = 2\) is four times wider than \(n = 1\).</li>
+</ul>
+
+<figure id="fig-4-5"><img src="figures/ch04-hydrogen-ladder.svg" alt="Hydrogen energy-level diagram: n = 1 at -13.6 eV, n = 2 at -3.40 eV, n = 3 at -1.51 eV, n = 4 at -0.85 eV, crowding toward 0 eV, with a shaded continuum above zero. Arrows show 10.2 eV for 1 to 2, 1.89 eV for 2 to 3, 3.40 eV to ionize from n = 2, and 13.6 eV to ionize from n = 1.">
+<figcaption><span class="fig-num">Figure 4.5</span> Hydrogen’s energy ladder, \(E_n = -13.6\ \text{eV}/n^2\). Each arrow is a jump of one exact size. The axis is broken between \(n = 1\) and \(n = 2\); that first gap (10.2 eV) is by far the largest.</figcaption></figure>
+
+<p>Every other element has its own ladder with its own spacings, set by its nuclear charge and its other electrons. No two ladders are alike, which is why each element absorbs and emits its own unique set of colors (Chapter 5).</p>
+
+<div class="box example"><div class="box-title">Worked Example 4.3 <span class="sub">— Climbing hydrogen’s ladder</span></div>
+<p class="given"><strong>Given:</strong> \(E_n = -13.6\ \text{eV}/n^2\).</p>
+<p><strong>Find:</strong> (a) the energy to lift the electron from \(n = 1\) to \(n = 2\); (b) from \(n = 2\) to \(n = 3\); (c) the energy to free it from \(n = 2\).</p>
+<p><strong>Think:</strong> the energy needed for any jump is the difference between the final and initial rungs.</p>
+<p>\(E_1 = -13.6\) eV, \(E_2 = -13.6/4 = -3.40\) eV, \(E_3 = -13.6/9 = -1.51\) eV.</p>
+<p>(a) \(\Delta E = E_2 - E_1 = -3.40 - (-13.6) = 10.2\ \text{eV}\)<br>
+(b) \(\Delta E = E_3 - E_2 = -1.51 - (-3.40) = 1.89\ \text{eV}\)<br>
+(c) \(\Delta E = 0 - E_2 = 3.40\ \text{eV}\)</p>
+<p class="answer">Answer: 10.2 eV, 1.89 eV, and 3.40 eV. The first step is by far the hardest; an already-excited atom is much easier to excite further or to ionize.</p></div>
+
+<h2 id="ch04-6"><span class="sec-num">4.6</span>Ionization energy</h2>
+<p>The <strong>ionization energy</strong> is the minimum energy needed to remove the most loosely held electron from an isolated atom in its ground state, leaving a positive <strong>ion</strong>. For hydrogen it is 13.6 eV: the full height of the ladder from \(n = 1\) to 0. Table 4.2 and Figure 4.6 show measured values.</p>
+
+<table id="tab-4-2"><caption><span class="tab-num">Table 4.2</span> First ionization energies (NIST Atomic Spectra Database, rounded).</caption>
+<tr><th>Element</th><th>Ionization energy (eV)</th><th>Element</th><th>Ionization energy (eV)</th></tr>
+<tr><td>Hydrogen (H)</td><td>13.6</td><td>Sodium (Na)</td><td>5.14</td></tr>
+<tr><td>Helium (He)</td><td>24.6 (highest of any element)</td><td>Argon (Ar)</td><td>15.8</td></tr>
+<tr><td>Lithium (Li)</td><td>5.39</td><td>Potassium (K)</td><td>4.34</td></tr>
+<tr><td>Carbon (C)</td><td>11.3</td><td>Iron (Fe)</td><td>7.90</td></tr>
+<tr><td>Nitrogen (N)</td><td>14.5</td><td>Copper (Cu)</td><td>7.73</td></tr>
+<tr><td>Oxygen (O)</td><td>13.6</td><td>Gold (Au)</td><td>9.23</td></tr>
+<tr><td>Neon (Ne)</td><td>21.6</td><td>Cesium (Cs)</td><td>3.89 (lowest of any element)</td></tr>
+</table>
+
+<figure id="fig-4-6"><img src="figures/ch04-ionization.svg" alt="Line plot of first ionization energy versus atomic number from 1 to 36, with peaks at helium, neon, argon and krypton and dips at lithium, sodium and potassium; a shaded band at 1.8 to 3.1 eV marks visible photon energies, below every point.">
+<figcaption><span class="fig-num">Figure 4.6</span> First ionization energy versus atomic number. Noble gases (full shells) hold their electrons tightly; alkali metals, with a single electron alone in a new outer shell, give one up easily. Every value lies above the energy of any visible photon (shaded band).</figcaption></figure>
+
+<p>The pattern follows the shells. A noble gas has a completely filled outer shell held close to the nucleus. An alkali metal’s outer electron sits alone in a new, larger shell, screened from the nucleus by all the electrons beneath it. Two consequences for this book:</p>
+<ul>
+  <li><strong>Visible light cannot ionize ground-state atoms.</strong> Visible photons carry only 1.8–3.1 eV, less than even cesium’s 3.89 eV. Ionizing atoms takes ultraviolet photons of roughly 4–25 eV; the usual threshold for “ionizing radiation” is about 10 eV (Chapter 10).</li>
+  <li><strong>Excited atoms are easier.</strong> From \(n = 3\), hydrogen needs only 1.51 eV, which a red photon can supply.</li>
+</ul>
+
+<div class="box matsci"><div class="box-title">Materials Science Connection</div>
+<p>Low ionization energies explain ionic bonding in ceramics (Callister, Chapter 2). Sodium gives up its lone outer electron for just 5.14 eV, and chlorine releases energy when it captures one; the resulting Na⁺ and Cl⁻ ions attract strongly. The same logic produces Mg²⁺O²⁻ in MgO and Al³⁺ with O²⁻ in alumina. Once the ions form, every ion has a filled, noble-gas-like shell held very tightly. That is why ionic ceramics are electrical insulators and, as pore-free single crystals, transparent (Chapters 5 and 6).</p></div>
+
+<h2 id="ch04-7"><span class="sec-num">4.7</span>If atoms are empty, why is matter solid?</h2>
+<p>When you press on a table, your atoms’ electron clouds meet the table’s electron clouds, and two effects make overlapping them very costly:</p>
+<ul>
+  <li><strong>Electric repulsion.</strong> The clouds are negatively charged. As they overlap, the electrons repel each other, and each nucleus is less shielded from the other nucleus.</li>
+  <li><strong>The Pauli exclusion principle.</strong> No two electrons can occupy the same quantum state. Forcing two filled clouds into the same space pushes electrons into higher-energy states, and the energy cost soars.</li>
+</ul>
+<p>Figure 4.7 shows the result as an energy curve, the same shape as Callister’s bonding-energy curve. Far apart, two atoms barely notice each other. At the equilibrium spacing \(r_0\) they are “comfortable.” Push closer, and the energy climbs a steep wall. That wall <em>is</em> solidity: it is why solids and liquids are nearly incompressible, and why your hand stops at the tabletop.</p>
+
+<figure id="fig-4-7"><img src="figures/ch04-why-solid.svg" alt="Energy of a pair of atoms versus distance between nuclei: a steep repulsive wall at short distance, an energy minimum at the equilibrium spacing r0, and a gentle rise to zero far away; cartoons show squeezed, comfortable and far-apart electron clouds.">
+<figcaption><span class="fig-num">Figure 4.7</span> Why empty atoms feel solid. Squeezing two atoms closer than \(r_0\) forces their clouds to overlap, which costs energy very steeply (red). The minimum at \(r_0\), typically 0.2–0.3 nm, sets the spacing of atoms in solids.</figcaption></figure>
+
+<div class="box myth"><div class="box-title">Myth vs. Reality</div>
+<p class="myth-line"><strong>Myth:</strong> Since atoms never really touch, you have never actually touched anything.</p>
+<p><strong>Reality:</strong> At the atomic scale, electron clouds pushing on each other at about 0.1–0.3 nm <em>is</em> what touching means. There is no deeper contact to miss: clouds have no surfaces to meet. The push you feel is electromagnetic repulsion plus Pauli exclusion, and it is completely real.</p></div>
+
+<div class="summary"><h2>Chapter summary</h2><ul>
+  <li>Atoms are about 0.1–0.5 nm across. Nuclei are femtometers across (\(R \approx 1.2\ \text{fm}\,A^{1/3}\)) and hold more than 99.9% of the mass.</li>
+  <li>Scaled so the nucleus is a 1.5 cm marble, the electron cloud would be roughly 300 m (gold) to 940 m (hydrogen) across: bigger than a football field.</li>
+  <li>An electron in an atom is a 3D standing wave (orbital). Its square is a probability cloud with no hard edge.</li>
+  <li>Only whole-number standing-wave patterns fit (\(n\lambda = 2\pi r_n\) in de Broglie’s model), so bound electrons have only certain energies.</li>
+  <li>Hydrogen: \(E_n = -13.6\ \text{eV}/n^2\). The ground state is \(n = 1\); 13.6 eV ionizes it.</li>
+  <li>Ionization energies run from about 4 to 25 eV, all above visible photon energies.</li>
+  <li>Matter is solid because overlapping electron clouds repel (electric repulsion plus Pauli exclusion).</li>
+</ul></div>
+
+<div class="check"><h2>Check yourself</h2><ol>
+  <li><span class="tag">Concept</span>Why is it misleading to quote a single, exact diameter for an atom? Why do tables list different radii for the same element?</li>
+  <li><span class="tag">Calc</span>Callister gives aluminum’s atomic radius as 0.143 nm. How many aluminum atoms placed side by side would span 1 mm?</li>
+  <li><span class="tag">Calc</span>Use Equation 4.1 to find the diameter of an iron nucleus (\(A = 56\)). Iron atoms are 0.248 nm across. If the nucleus were a 1.5 cm marble, how wide would the atom be?</li>
+  <li><span class="tag">Concept</span>Give two observations that the “electrons orbit like planets” picture cannot explain.</li>
+  <li><span class="tag">Concept</span>Using the guitar-string analogy, explain why a bound electron has only certain energies while a free electron can have any energy.</li>
+  <li><span class="tag">Calc</span>In the Bohr model the \(n = 2\) electron moves at \(1.09\times10^{6}\) m/s on an orbit of radius \(4a_0 = 0.212\) nm. Find its de Broglie wavelength and show that exactly two wavelengths fit around the orbit.</li>
+  <li><span class="tag">Calc</span>A hydrogen atom is in the \(n = 3\) state. How much energy ionizes it? Could a 2.0 eV (red-orange) photon do it? Could the same photon ionize a ground-state atom?</li>
+  <li><span class="tag">Apply</span>Rank sodium, magnesium and neon by ionization energy and explain the order in terms of electron shells.</li>
+  <li><span class="tag">Concept</span>If atoms are mostly empty, why can’t you push your hand through a table? Name both effects involved.</li>
+  <li><span class="tag">Apply</span>Copper is FCC with \(R = 0.128\) nm. Compute the lattice parameter \(a = 2R\sqrt{2}\) and compare it with the measured 0.3615 nm. In what sense do the “hard spheres” actually touch?</li>
+</ol><p class="small muted">Full solutions are in the Answer Key at the back of the book.</p></div>
+</section>

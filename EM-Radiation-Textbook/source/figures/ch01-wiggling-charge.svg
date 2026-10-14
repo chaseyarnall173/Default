@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 330" width="680" height="330" font-family="Inter, sans-serif">
+<rect width="100%" height="100%" fill="#ffffff"/>
+<defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#d1495b"/></marker><marker id="am" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#52606d"/></marker><marker id="at" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#12a39a"/></marker><marker id="ai" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#1f2933"/></marker></defs>
+<text x="16" y="24" font-size="13" font-weight="700" fill="#1f2933">(a) Jerk a charge once</text>
+<text x="16" y="41" font-size="11.5" fill="#52606d">The news spreads outward at speed c</text>
+<circle cx="165" cy="178" r="80" fill="none" stroke="#52606d" stroke-width="1" stroke-dasharray="4 4"/>
+<circle cx="165" cy="150" r="56" fill="none" stroke="#52606d" stroke-width="1" stroke-dasharray="4 4"/>
+<polyline points="179.0,150.0 221.0,150.0 245.0,178.0 315.0,178.0" fill="none" stroke="#d1495b" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#ar)"/>
+<polyline points="177.1,157.0 213.5,178.0 234.3,218.0 294.9,253.0" fill="none" stroke="#d1495b" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#ar)"/>
+<polyline points="172.0,162.1 193.0,198.5 205.0,247.3 223.9,280.0" fill="none" stroke="#d1495b" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#ar)"/>
+<polyline points="165.0,164.0 165.0,206.0 165.0,258.0 165.0,280.0" fill="none" stroke="#d1495b" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#ar)"/>
+<polyline points="158.0,162.1 137.0,198.5 125.0,247.3 106.1,280.0" fill="none" stroke="#d1495b" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#ar)"/>
+<polyline points="152.9,157.0 116.5,178.0 95.7,218.0 35.1,253.0" fill="none" stroke="#d1495b" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#ar)"/>
+<polyline points="151.0,150.0 109.0,150.0 85.0,178.0 15.0,178.0" fill="none" stroke="#d1495b" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#ar)"/>
+<polyline points="152.9,143.0 116.5,122.0 95.7,138.0 35.1,103.0" fill="none" stroke="#d1495b" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#ar)"/>
+<polyline points="158.0,137.9 137.0,101.5 125.0,108.7 92.3,52.0" fill="none" stroke="#d1495b" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#ar)"/>
+<polyline points="165.0,136.0 165.0,94.0 165.0,98.0 165.0,52.0" fill="none" stroke="#d1495b" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#ar)"/>
+<polyline points="172.0,137.9 193.0,101.5 205.0,108.7 237.7,52.0" fill="none" stroke="#d1495b" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#ar)"/>
+<polyline points="177.1,143.0 213.5,122.0 234.3,138.0 294.9,103.0" fill="none" stroke="#d1495b" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#ar)"/>
+<circle cx="165" cy="178" r="9" fill="none" stroke="#8d5a97" stroke-width="1.4" stroke-dasharray="2 2"/>
+<line x1="139" y1="182" x2="139" y2="148" stroke="#1f2933" stroke-width="1.6" marker-end="url(#ai)"/>
+<circle cx="165" cy="150" r="10" fill="#8d5a97"/>
+<text x="165" y="154.5" font-size="14" font-weight="700" fill="#ffffff" text-anchor="middle">+</text>
+<text x="252" y="64" font-size="11.5" fill="#1f2933">kink = the</text>
+<text x="252" y="79" font-size="11.5" fill="#1f2933">radiation pulse</text>
+<line x1="250" y1="84" x2="229.1" y2="135.0" stroke="#52606d" stroke-width="1"/>
+<text x="16" y="300" font-size="11.5" fill="#52606d">inside: field already points</text>
+<text x="16" y="314" font-size="11.5" fill="#52606d">from the new position</text>
+<text x="226" y="300" font-size="11.5" fill="#52606d">outside: news has</text>
+<text x="226" y="314" font-size="11.5" fill="#52606d">not arrived yet</text>
+<line x1="345" y1="18" x2="345" y2="316" stroke="#d9dee5" stroke-width="1"/>
+<text x="362" y="24" font-size="13" font-weight="700" fill="#1f2933">(b) Keep wiggling it: an antenna</text>
+<text x="362" y="41" font-size="11.5" fill="#52606d">A train of kinks = an electromagnetic wave</text>
+<rect x="387" y="98" width="10" height="160" rx="3" fill="#d9dee5" stroke="#52606d" stroke-width="1.2"/>
+<circle cx="392" cy="114" r="4.2" fill="#12a39a"/>
+<circle cx="392" cy="142" r="4.2" fill="#12a39a"/>
+<circle cx="392" cy="174" r="4.2" fill="#12a39a"/>
+<circle cx="392" cy="202" r="4.2" fill="#12a39a"/>
+<circle cx="392" cy="230" r="4.2" fill="#12a39a"/>
+<line x1="374" y1="138" x2="374" y2="218" stroke="#12a39a" stroke-width="2" marker-start="url(#at)" marker-end="url(#at)"/>
+<text x="388" y="282" font-size="11.5" fill="#1f2933" text-anchor="middle">electrons slosh</text>
+<text x="388" y="296" font-size="11.5" fill="#1f2933" text-anchor="middle">up and down at f</text>
+<line x1="414" y1="178" x2="656" y2="178" stroke="#1f2933" stroke-width="1.4" marker-end="url(#ai)"/>
+<polyline points="414.0,178.0 414.7,175.8 415.3,173.6 416.0,171.5 416.7,169.3 417.4,167.1 418.0,165.0 418.7,162.9 419.4,160.7 420.1,158.7 420.7,156.6 421.4,154.6 422.1,152.5 422.8,150.6 423.4,148.6 424.1,146.7 424.8,144.9 425.4,143.0 426.1,141.2 426.8,139.5 427.5,137.8 428.1,136.2 428.8,134.6 429.5,133.1 430.2,131.6 430.8,130.2 431.5,128.8 432.2,127.5 432.9,126.3 433.5,125.1 434.2,124.0 434.9,122.9 435.5,122.0 436.2,121.1 436.9,120.2 437.6,119.5 438.2,118.8 438.9,118.2 439.6,117.6 440.3,117.2 440.9,116.8 441.6,116.5 442.3,116.3 443.0,116.1 443.6,116.0 444.3,116.0 445.0,116.1 445.6,116.2 446.3,116.5 447.0,116.8 447.7,117.1 448.3,117.6 449.0,118.1 449.7,118.7 450.4,119.4 451.0,120.2 451.7,121.0 452.4,121.9 453.1,122.8 453.7,123.9 454.4,125.0 455.1,126.1 455.7,127.4 456.4,128.7 457.1,130.0 457.8,131.4 458.4,132.9 459.1,134.4 459.8,136.0 460.5,137.6 461.1,139.3 461.8,141.1 462.5,142.8 463.2,144.7 463.8,146.5 464.5,148.4 465.2,150.4 465.8,152.3 466.5,154.3 467.2,156.4 467.9,158.4 468.5,160.5 469.2,162.6 469.9,164.7 470.6,166.9 471.2,169.0 471.9,171.2 472.6,173.4 473.3,175.6 473.9,177.8 474.6,179.9 475.3,182.1 475.9,184.3 476.6,186.5 477.3,188.6 478.0,190.8 478.6,192.9 479.3,195.0 480.0,197.1 480.7,199.2 481.3,201.2 482.0,203.2 482.7,205.2 483.4,207.2 484.0,209.1 484.7,210.9 485.4,212.8 486.0,214.6 486.7,216.3 487.4,218.0 488.1,219.6 488.7,221.2 489.4,222.8 490.1,224.3 490.8,225.7 491.4,227.1 492.1,228.4 492.8,229.6 493.5,230.8 494.1,231.9 494.8,232.9 495.5,233.9 496.1,234.8 496.8,235.7 497.5,236.4 498.2,237.1 498.8,237.8 499.5,238.3 500.2,238.8 500.9,239.2 501.5,239.5 502.2,239.7 502.9,239.9 503.6,240.0 504.2,240.0 504.9,239.9 505.6,239.8 506.2,239.6 506.9,239.3 507.6,238.9 508.3,238.5 508.9,237.9 509.6,237.3 510.3,236.7 511.0,235.9 511.6,235.1 512.3,234.2 513.0,233.3 513.7,232.2 514.3,231.2 515.0,230.0 515.7,228.8 516.3,227.5 517.0,226.1 517.7,224.7 518.4,223.3 519.0,221.7 519.7,220.2 520.4,218.5 521.1,216.9 521.7,215.1 522.4,213.4 523.1,211.5 523.8,209.7 524.4,207.8 525.1,205.9 525.8,203.9 526.4,201.9 527.1,199.9 527.8,197.8 528.5,195.7 529.1,193.6 529.8,191.5 530.5,189.3 531.2,187.2 531.8,185.0 532.5,182.8 533.2,180.7 533.9,178.5 534.5,176.3 535.2,174.1 535.9,171.9 536.5,169.8 537.2,167.6 537.9,165.4 538.6,163.3 539.2,161.2 539.9,159.1 540.6,157.0 541.3,155.0 541.9,153.0 542.6,151.0 543.3,149.0 544.0,147.1 544.6,145.3 545.3,143.4 546.0,141.6 546.6,139.9 547.3,138.2 548.0,136.5 548.7,134.9 549.3,133.4 550.0,131.9 550.7,130.5 551.4,129.1 552.0,127.8 552.7,126.5 553.4,125.3 554.1,124.2 554.7,123.2 555.4,122.2 556.1,121.3 556.7,120.4 557.4,119.6 558.1,118.9 558.8,118.3 559.4,117.8 560.1,117.3 560.8,116.9 561.5,116.5 562.1,116.3 562.8,116.1 563.5,116.0 564.2,116.0 564.8,116.1 565.5,116.2 566.2,116.4 566.8,116.7 567.5,117.1 568.2,117.5 568.9,118.0 569.5,118.6 570.2,119.3 570.9,120.0 571.6,120.8 572.2,121.7 572.9,122.6 573.6,123.6 574.3,124.7 574.9,125.9 575.6,127.1 576.3,128.4 576.9,129.7 577.6,131.1 578.3,132.6 579.0,134.1 579.6,135.7 580.3,137.3 581.0,138.9 581.7,140.7 582.3,142.4 583.0,144.3 583.7,146.1 584.4,148.0 585.0,149.9 585.7,151.9 586.4,153.9 587.0,155.9 587.7,158.0 588.4,160.1 589.1,162.2 589.7,164.3 590.4,166.4 591.1,168.6 591.8,170.7 592.4,172.9 593.1,175.1 593.8,177.3 594.5,179.5 595.1,181.7 595.8,183.8 596.5,186.0 597.1,188.2 597.8,190.3 598.5,192.5 599.2,194.6 599.8,196.7 600.5,198.7 601.2,200.8 601.9,202.8 602.5,204.8 603.2,206.7 603.9,208.7 604.6,210.5 605.2,212.4 605.9,214.2 606.6,215.9 607.2,217.6 607.9,219.3 608.6,220.9 609.3,222.4 609.9,223.9 610.6,225.4 611.3,226.8 612.0,228.1 612.6,229.3 613.3,230.5 614.0,231.7 614.7,232.7 615.3,233.7 616.0,234.6" fill="none" stroke="#d1495b" stroke-width="1.2" stroke-opacity="0.55"/>
+<line x1="421.5" y1="178" x2="421.5" y2="154.3" stroke="#d1495b" stroke-width="2" marker-end="url(#ar)"/>
+<line x1="436.5" y1="178" x2="436.5" y2="120.7" stroke="#d1495b" stroke-width="2" marker-end="url(#ar)"/>
+<line x1="451.5" y1="178" x2="451.5" y2="120.7" stroke="#d1495b" stroke-width="2" marker-end="url(#ar)"/>
+<line x1="466.5" y1="178" x2="466.5" y2="154.3" stroke="#d1495b" stroke-width="2" marker-end="url(#ar)"/>
+<line x1="481.5" y1="178" x2="481.5" y2="201.7" stroke="#d1495b" stroke-width="2" marker-end="url(#ar)"/>
+<line x1="496.5" y1="178" x2="496.5" y2="235.3" stroke="#d1495b" stroke-width="2" marker-end="url(#ar)"/>
+<line x1="511.5" y1="178" x2="511.5" y2="235.3" stroke="#d1495b" stroke-width="2" marker-end="url(#ar)"/>
+<line x1="526.5" y1="178" x2="526.5" y2="201.7" stroke="#d1495b" stroke-width="2" marker-end="url(#ar)"/>
+<line x1="541.5" y1="178" x2="541.5" y2="154.3" stroke="#d1495b" stroke-width="2" marker-end="url(#ar)"/>
+<line x1="556.5" y1="178" x2="556.5" y2="120.7" stroke="#d1495b" stroke-width="2" marker-end="url(#ar)"/>
+<line x1="571.5" y1="178" x2="571.5" y2="120.7" stroke="#d1495b" stroke-width="2" marker-end="url(#ar)"/>
+<line x1="586.5" y1="178" x2="586.5" y2="154.3" stroke="#d1495b" stroke-width="2" marker-end="url(#ar)"/>
+<line x1="601.5" y1="178" x2="601.5" y2="201.7" stroke="#d1495b" stroke-width="2" marker-end="url(#ar)"/>
+<line x1="444.0" y1="98" x2="564.0" y2="98" stroke="#52606d" stroke-width="1.2" marker-start="url(#am)" marker-end="url(#am)"/>
+<text x="504.0" y="91" font-size="13" fill="#1f2933" text-anchor="middle" font-style="italic">λ</text>
+<text x="666" y="94" font-size="12" fill="#1f2933" text-anchor="end" font-weight="600">moves out at c</text>
+<text x="478" y="282" font-size="11.5" fill="#d1495b" font-weight="700">E</text>
+<text x="491" y="282" font-size="11.5" fill="#52606d">field at points along</text>
+<text x="478" y="296" font-size="11.5" fill="#52606d">a line out from the antenna</text>
+</svg>

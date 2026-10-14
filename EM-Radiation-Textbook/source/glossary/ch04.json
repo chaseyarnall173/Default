@@ -1,0 +1,74 @@
+[
+  {
+    "term": "Atom",
+    "definition": "The smallest unit of an element: a tiny, dense nucleus surrounded by an electron cloud, about 0.1–0.5 nm across."
+  },
+  {
+    "term": "Nucleus",
+    "definition": "The central core of an atom, made of protons and neutrons; only femtometers across, it holds more than 99.9% of the atom's mass."
+  },
+  {
+    "term": "Femtometer (fm)",
+    "definition": "10⁻¹⁵ m, the natural length unit for nuclei; a proton's charge radius is about 0.84 fm."
+  },
+  {
+    "term": "Bohr radius (a₀)",
+    "definition": "0.0529 nm: the most probable distance of hydrogen's ground-state electron from the nucleus, and the radius of the n = 1 orbit in the Bohr model."
+  },
+  {
+    "term": "Orbital",
+    "definition": "A three-dimensional standing-wave pattern of an electron in an atom; its square gives the probability of finding the electron at each point."
+  },
+  {
+    "term": "Wavefunction",
+    "definition": "The mathematical wave that describes a quantum particle; its square is the probability density."
+  },
+  {
+    "term": "Electron cloud",
+    "definition": "A picture of an orbital's probability density as shading; it fades smoothly with distance and has no hard edge."
+  },
+  {
+    "term": "De Broglie wavelength",
+    "definition": "The wavelength of a moving particle, λ = h/(mv); for an electron in hydrogen's ground state it is 0.332 nm."
+  },
+  {
+    "term": "Standing wave",
+    "definition": "A wave pattern confined to a region, such as a plucked string, that vibrates in place; only certain wavelengths fit the boundaries."
+  },
+  {
+    "term": "Quantization",
+    "definition": "The restriction of a quantity, such as a bound electron's energy, to certain discrete values; it arises because confined waves allow only certain patterns."
+  },
+  {
+    "term": "Energy level",
+    "definition": "One of the allowed energies of an electron bound in an atom or molecule; for hydrogen, E_n = −13.6 eV/n²."
+  },
+  {
+    "term": "Principal quantum number (n)",
+    "definition": "The whole number 1, 2, 3, … that labels hydrogen's energy levels and sets their energy and size."
+  },
+  {
+    "term": "Ground state",
+    "definition": "The lowest-energy state of an atom (n = 1 for hydrogen), where an undisturbed atom normally sits."
+  },
+  {
+    "term": "Excited state",
+    "definition": "Any state above the ground state; an atom gets there by absorbing energy and usually leaves within nanoseconds."
+  },
+  {
+    "term": "Ionization energy",
+    "definition": "The minimum energy needed to remove the most loosely held electron from an isolated ground-state atom; 13.6 eV for hydrogen, 3.89–24.6 eV across the elements."
+  },
+  {
+    "term": "Ion",
+    "definition": "An atom (or molecule) that has lost or gained electrons and so carries a net electric charge."
+  },
+  {
+    "term": "Pauli exclusion principle",
+    "definition": "No two electrons can occupy the same quantum state; it forces overlapping electron clouds into higher energies and helps make matter solid."
+  },
+  {
+    "term": "Equilibrium spacing (r₀)",
+    "definition": "The distance between neighboring nuclei at which attraction and repulsion balance, typically 0.2–0.3 nm in solids; it sets the atomic radius used in crystal models."
+  }
+]

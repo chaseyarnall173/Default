@@ -1,0 +1,10 @@
+[
+  {"name": "Single-slit first dark fringe", "latex": "\\sin\\theta = \\dfrac{\\lambda}{a}", "meaning": "A slit of width a (m) spreads a wave of wavelength lambda (m) so that the first dark fringe is at angle theta; spreading is about lambda/a radians."},
+  {"name": "Double-slit / grating bright fringes", "latex": "d\\sin\\theta = m\\lambda", "meaning": "Bright fringes appear where the path difference d sin(theta) between neighboring slits (spacing d, in m) equals a whole number m of wavelengths."},
+  {"name": "Double-slit fringe spacing (small angles)", "latex": "\\Delta y = \\dfrac{\\lambda L}{d}", "meaning": "Distance between neighboring bright fringes on a screen a distance L away (all lengths in m)."},
+  {"name": "de Broglie wavelength", "latex": "\\lambda = \\dfrac{h}{p}", "meaning": "Wavelength of a particle with momentum p (kg·m/s); h = 6.626e-34 J·s."},
+  {"name": "Momentum of a slow particle", "latex": "p = \\sqrt{2mK}", "meaning": "Momentum (kg·m/s) of a particle of mass m (kg) and kinetic energy K (J), valid when K is much less than its rest energy."},
+  {"name": "Rayleigh criterion (circular aperture)", "latex": "\\theta_\\text{min} \\approx 1.22\\,\\dfrac{\\lambda}{D}", "meaning": "Smallest resolvable angle (radians) for an eye, camera, or telescope of aperture diameter D (m)."},
+  {"name": "Microscope (Abbe) diffraction limit", "latex": "d_\\text{min} \\approx \\dfrac{\\lambda}{2\\,\\text{NA}}", "meaning": "Smallest resolvable separation (m) for a microscope objective of numerical aperture NA; about 200 nm for visible light."},
+  {"name": "Rayleigh scattering scaling", "latex": "\\sigma_\\text{scatter} \\propto \\dfrac{d^{6}}{\\lambda^{4}}", "meaning": "For particles much smaller than the wavelength, scattering grows steeply with size d and falls steeply with wavelength; per unit area it goes as (d/lambda)^4."}
+]
