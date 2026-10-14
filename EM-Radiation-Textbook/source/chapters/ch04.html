@@ -26,7 +26,7 @@
 <figcaption><span class="fig-num">Figure 4.1</span> Sizes on a powers-of-ten scale: each tick is 10× smaller than the one to its left. Notice the long stretch between “whole atoms” and “gold nucleus”: four to five powers of ten in which there is nothing but electron cloud.</figcaption></figure>
 
 <div class="box asked"><div class="box-title">You Asked</div><p class="question">“How big is an atom, from one side to the other?”</p>
-<p>About 0.1 to 0.5 nanometers, or one to five ten-billionths of a meter. The smallest atoms (hydrogen and helium) are roughly 0.1 nm across, the atoms in most metals and ceramics are 0.25–0.3 nm, and the largest common one, cesium, is about 0.5 nm.</p>
+<p>About 0.1 to 0.5 nanometers, or one to five ten-billionths of a meter. The smallest atoms (hydrogen and helium) are roughly 0.1 nm across, the atoms in most metals are 0.25–0.3 nm, and the largest common one, cesium, is about 0.5 nm.</p>
 <p>For a feel of the scale: about 350,000 copper atoms lined up would span the width of a human hair, and one wavelength of green light (500 nm) is a few thousand atoms long. One caveat: an atom has no hard surface (Section 4.3), so its “diameter” depends on where you draw the edge. That is why tables list slightly different radii for an atom in a metal, in a covalent bond, or as an ion.</p></div>
 
 <div class="box example"><div class="box-title">Worked Example 4.1 <span class="sub">— How far apart are the atoms in copper?</span></div>
@@ -36,10 +36,8 @@
 <p>\[ V_\text{atom} = \frac{M}{\rho N_A} = \frac{63.55\ \text{g/mol}}{(8.94\ \text{g/cm}^3)(6.022\times10^{23}\ \text{mol}^{-1})} = 1.18\times10^{-23}\ \text{cm}^3 = 1.18\times10^{-29}\ \text{m}^3 \]</p>
 <p>\[ d \approx V_\text{atom}^{1/3} = (1.18\times10^{-29}\ \text{m}^3)^{1/3} = 2.28\times10^{-10}\ \text{m} = 0.228\ \text{nm} \]</p>
 <p>A hair 80 µm wide is therefore \(80\times10^{-6}/0.228\times10^{-9} \approx 350{,}000\) atoms across.</p>
-<p class="answer">Answer: each copper atom gets a cube about 0.23 nm on a side, consistent with Callister’s copper radius of 0.128 nm (diameter 0.256 nm), since real atoms pack as spheres, not cubes.</p></div>
+<p class="answer">Answer: each copper atom gets a cube about 0.23 nm on a side, consistent with copper’s tabulated atomic radius of 0.128 nm (diameter 0.256 nm), since real atoms pack as spheres, not cubes.</p></div>
 
-<div class="box matsci"><div class="box-title">Materials Science Connection</div>
-<p>In ME2340 you treat atoms as touching hard spheres: in an FCC metal the lattice parameter is \(a = 2R\sqrt{2}\), so copper’s \(R = 0.128\ \text{nm}\) gives \(a = 0.362\ \text{nm}\), matching the measured 0.3615 nm. The model works, but “touching” needs care. Callister’s \(R\) is half the equilibrium distance between neighboring nuclei, the spacing where attraction and repulsion balance (Section 4.7). It is not a physical surface, which is why the same element has different radii as a neutral atom and as an ion in a ceramic.</p></div>
 
 <h2 id="ch04-2"><span class="sec-num">4.2</span>A tiny, heavy nucleus</h2>
 <p>At the center of every atom is the <strong>nucleus</strong>: protons and neutrons (together called nucleons) bound by the strong nuclear force. Rutherford’s gold-foil experiments (1909–1911) first revealed it: most alpha particles sailed straight through thin gold foil, but a rare few bounced almost straight back, as if they had hit something tiny and massive. Nuclei are measured in <strong>femtometers</strong> (1 fm = \(10^{-15}\) m), and their size follows a simple rule:</p>
@@ -57,7 +55,7 @@
 <p>The arithmetic is just the ratio of diameters. For hydrogen, \(2(0.0529\ \text{nm}) / 2(0.84\ \text{fm}) \approx 63{,}000\), so the cloud is \(1.5\ \text{cm} \times 63{,}000 \approx 940\ \text{m}\) across. Heavier atoms have bigger nuclei, so their ratio drops to about 20,000–30,000 (Table 4.1), but even gold’s cloud would be about three field-lengths wide, spilling well past the stands.</p>
 <p>So the analogy is right in spirit: an atom is overwhelmingly empty of mass. It just underestimates the emptiness by a factor of 3 to 9. Two refinements: the cloud has no edge (it thins out smoothly, so “940 m” marks a typical distance, not a wall), and the nucleus is not a hard ball either, so treat these ratios as good to about ±20%.</p></div>
 
-<table id="tab-4-1"><caption><span class="tab-num">Table 4.1</span> Atom vs. nucleus. Atomic diameters are twice the Bohr radius (H) or twice Callister’s atomic radius; nuclear diameters use \(2(0.84\ \text{fm})\) for the proton and Equation 4.1 otherwise.</caption>
+<table id="tab-4-1"><caption><span class="tab-num">Table 4.1</span> Atom vs. nucleus. Atomic diameters are twice the Bohr radius (H) or twice the tabulated atomic radius; nuclear diameters use \(2(0.84\ \text{fm})\) for the proton and Equation 4.1 otherwise.</caption>
 <tr><th>Atom</th><th>Atom diameter</th><th>Nucleus diameter</th><th>Ratio</th><th>Cloud size if nucleus = 1.5 cm marble</th></tr>
 <tr><td>Hydrogen</td><td>0.106 nm</td><td>1.7 fm</td><td>≈ 63,000</td><td>≈ 940 m</td></tr>
 <tr><td>Carbon</td><td>0.142 nm</td><td>5.5 fm</td><td>≈ 26,000</td><td>≈ 390 m</td></tr>
@@ -164,8 +162,6 @@
   <li><strong>Excited atoms are easier.</strong> From \(n = 3\), hydrogen needs only 1.51 eV, which a red photon can supply.</li>
 </ul>
 
-<div class="box matsci"><div class="box-title">Materials Science Connection</div>
-<p>Low ionization energies explain ionic bonding in ceramics (Callister, Chapter 2). Sodium gives up its lone outer electron for just 5.14 eV, and chlorine releases energy when it captures one; the resulting Na⁺ and Cl⁻ ions attract strongly. The same logic produces Mg²⁺O²⁻ in MgO and Al³⁺ with O²⁻ in alumina. Once the ions form, every ion has a filled, noble-gas-like shell held very tightly. That is why ionic ceramics are electrical insulators and, as pore-free single crystals, transparent (Chapters 5 and 6).</p></div>
 
 <h2 id="ch04-7"><span class="sec-num">4.7</span>If atoms are empty, why is matter solid?</h2>
 <p>When you press on a table, your atoms’ electron clouds meet the table’s electron clouds, and two effects make overlapping them very costly:</p>
@@ -173,7 +169,7 @@
   <li><strong>Electric repulsion.</strong> The clouds are negatively charged. As they overlap, the electrons repel each other, and each nucleus is less shielded from the other nucleus.</li>
   <li><strong>The Pauli exclusion principle.</strong> No two electrons can occupy the same quantum state. Forcing two filled clouds into the same space pushes electrons into higher-energy states, and the energy cost soars.</li>
 </ul>
-<p>Figure 4.7 shows the result as an energy curve, the same shape as Callister’s bonding-energy curve. Far apart, two atoms barely notice each other. At the equilibrium spacing \(r_0\) they are “comfortable.” Push closer, and the energy climbs a steep wall. That wall <em>is</em> solidity: it is why solids and liquids are nearly incompressible, and why your hand stops at the tabletop.</p>
+<p>Figure 4.7 shows the result as an energy curve. Far apart, two atoms barely notice each other. At the equilibrium spacing \(r_0\) they are “comfortable.” Push closer, and the energy climbs a steep wall. That wall <em>is</em> solidity: it is why solids and liquids are nearly incompressible, and why your hand stops at the tabletop.</p>
 
 <figure id="fig-4-7"><img src="figures/ch04-why-solid.svg" alt="Energy of a pair of atoms versus distance between nuclei: a steep repulsive wall at short distance, an energy minimum at the equilibrium spacing r0, and a gentle rise to zero far away; cartoons show squeezed, comfortable and far-apart electron clouds.">
 <figcaption><span class="fig-num">Figure 4.7</span> Why empty atoms feel solid. Squeezing two atoms closer than \(r_0\) forces their clouds to overlap, which costs energy very steeply (red). The minimum at \(r_0\), typically 0.2–0.3 nm, sets the spacing of atoms in solids.</figcaption></figure>
@@ -194,7 +190,7 @@
 
 <div class="check"><h2>Check yourself</h2><ol>
   <li><span class="tag">Concept</span>Why is it misleading to quote a single, exact diameter for an atom? Why do tables list different radii for the same element?</li>
-  <li><span class="tag">Calc</span>Callister gives aluminum’s atomic radius as 0.143 nm. How many aluminum atoms placed side by side would span 1 mm?</li>
+  <li><span class="tag">Calc</span>Aluminum’s atomic radius is about 0.143 nm. How many aluminum atoms placed side by side would span 1 mm?</li>
   <li><span class="tag">Calc</span>Use Equation 4.1 to find the diameter of an iron nucleus (\(A = 56\)). Iron atoms are 0.248 nm across. If the nucleus were a 1.5 cm marble, how wide would the atom be?</li>
   <li><span class="tag">Concept</span>Give two observations that the “electrons orbit like planets” picture cannot explain.</li>
   <li><span class="tag">Concept</span>Using the guitar-string analogy, explain why a bound electron has only certain energies while a free electron can have any energy.</li>
@@ -202,6 +198,5 @@
   <li><span class="tag">Calc</span>A hydrogen atom is in the \(n = 3\) state. How much energy ionizes it? Could a 2.0 eV (red-orange) photon do it? Could the same photon ionize a ground-state atom?</li>
   <li><span class="tag">Apply</span>Rank sodium, magnesium and neon by ionization energy and explain the order in terms of electron shells.</li>
   <li><span class="tag">Concept</span>If atoms are mostly empty, why can’t you push your hand through a table? Name both effects involved.</li>
-  <li><span class="tag">Apply</span>Copper is FCC with \(R = 0.128\) nm. Compute the lattice parameter \(a = 2R\sqrt{2}\) and compare it with the measured 0.3615 nm. In what sense do the “hard spheres” actually touch?</li>
 </ol><p class="small muted">Full solutions are in the Answer Key at the back of the book.</p></div>
 </section>

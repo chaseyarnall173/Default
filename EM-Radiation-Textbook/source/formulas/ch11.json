@@ -1,10 +1,22 @@
 [
-  {"name": "Shortest tube wavelength (Duane–Hunt)", "latex": "\\lambda_\\text{min} = \\frac{hc}{eV} = \\frac{1240\\ \\text{eV}\\cdot\\text{nm}}{eV}", "meaning": "Shortest X-ray wavelength (nm) from a tube at voltage V; eV is the electron kinetic energy in eV (numerically equal to V in volts)."},
-  {"name": "Moseley's law (approximate)", "latex": "E_{K\\alpha} \\approx 10.2\\ \\text{eV}\\,(Z-1)^2", "meaning": "Approximate Kα photon energy for an element of atomic number Z; about 8.0 keV for copper (Z = 29)."},
-  {"name": "Bragg's law", "latex": "n\\lambda = 2d\\sin\\theta", "meaning": "Condition for constructive X-ray diffraction from planes spaced d (nm) apart; λ wavelength (nm), θ angle from the planes, n = 1, 2, 3, … the order. Diffractometers report 2θ."},
-  {"name": "Cubic interplanar spacing", "latex": "d_{hkl} = \\frac{a}{\\sqrt{h^{2}+k^{2}+l^{2}}}", "meaning": "Spacing (nm) between adjacent (hkl) planes in a cubic crystal with lattice parameter a (nm)."},
-  {"name": "Lattice parameter vs atomic radius", "latex": "a_\\text{FCC} = 2R\\sqrt{2},\\qquad a_\\text{BCC} = \\frac{4R}{\\sqrt{3}}", "meaning": "Cube edge a from atomic radius R for hard-sphere atoms touching along the face diagonal (FCC) or body diagonal (BCC)."},
-  {"name": "Indexing a cubic pattern", "latex": "\\sin^2\\theta = \\frac{\\lambda^2}{4a^2}\\,(h^2+k^2+l^2)", "meaning": "sin²θ values are proportional to N = h²+k²+l²; their ratios reveal SC (1,2,3,4,5,6,8), BCC (2,4,6,8,…), or FCC (3,4,8,11,12,…)."},
-  {"name": "Planar density and spacing", "latex": "PD = n_v\\, d", "meaning": "Atoms per unit area on a plane (nm⁻²) equals atoms per unit volume (nm⁻³) times the spacing between adjacent atom-bearing planes (nm); exact for one atom per lattice point."},
-  {"name": "Relativistic electron wavelength", "latex": "\\lambda_e = \\frac{h}{\\sqrt{2m_e eV\\left(1+\\dfrac{eV}{2m_ec^2}\\right)}}", "meaning": "de Broglie wavelength (m) of an electron accelerated through V volts; 0.0037 nm at 100 kV, 0.0025 nm at 200 kV."}
+ {
+  "name": "Shortest tube wavelength (Duane–Hunt)",
+  "latex": "\\lambda_\\text{min} = \\frac{hc}{eV} = \\frac{1240\\ \\text{eV}\\cdot\\text{nm}}{eV}",
+  "meaning": "Shortest X-ray wavelength (nm) from a tube at voltage V; eV is the electron kinetic energy in eV (numerically equal to V in volts)."
+ },
+ {
+  "name": "Moseley's law (approximate)",
+  "latex": "E_{K\\alpha} \\approx 10.2\\ \\text{eV}\\,(Z-1)^2",
+  "meaning": "Approximate Kα photon energy for an element of atomic number Z; about 8.0 keV for copper (Z = 29)."
+ },
+ {
+  "name": "Bragg's law",
+  "latex": "n\\lambda = 2d\\sin\\theta",
+  "meaning": "Condition for constructive X-ray diffraction from planes spaced d (nm) apart; λ wavelength (nm), θ angle from the planes, n = 1, 2, 3, … the order. Diffractometers report 2θ."
+ },
+ {
+  "name": "Relativistic electron wavelength",
+  "latex": "\\lambda_e = \\frac{h}{\\sqrt{2m_e eV\\left(1+\\dfrac{eV}{2m_ec^2}\\right)}}",
+  "meaning": "de Broglie wavelength (m) of an electron accelerated through V volts; 0.0037 nm at 100 kV, 0.0025 nm at 200 kV."
+ }
 ]

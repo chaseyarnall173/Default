@@ -31,7 +31,7 @@ PARTS = [
      ["ch06", "ch07", "ch08", "ch09"]),
     ("IV", "Radiation",
      "At the high-energy end of the spectrum, single photons can rip electrons off atoms. This part covers "
-     "ionizing radiation, shielding, space, and the X-ray tools materials scientists use to see crystals.",
+     "ionizing radiation, shielding, space, and X-rays.",
      ["ch10", "ch11"]),
 ]
 FRONT = ["front/welcome.html"]          # before the generated Contents
@@ -251,7 +251,6 @@ def sources_html(chapters):
 <li><strong>HyperPhysics</strong> (Georgia State University): short, linked concept pages on waves, optics, quantum physics and radiation.</li>
 <li><strong>OpenStax <em>University Physics</em></strong>, Volumes 2 and 3 (free online): electromagnetic waves, geometric and wave optics, photons and atoms.</li>
 <li><strong>NASA Science, “Tour of the Electromagnetic Spectrum”</strong>: one illustrated page per band.</li>
-<li><strong>Callister &amp; Rethwisch, <em>Materials Science and Engineering</em></strong>: Ch. 3 (crystal planes and X-ray diffraction) and the Optical Properties chapter (band gaps, color, opacity).</li>
 <li><strong>U.S. NRC, EPA and CDC radiation pages</strong>: doses, shielding and health effects.</li>
 <li><strong>NIST</strong>: physical constants, atomic spectra and X-ray attenuation data.</li>
 </ul>

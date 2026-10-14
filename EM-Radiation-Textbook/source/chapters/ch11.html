@@ -1,20 +1,19 @@
 <section class="chapter" id="ch11">
 <div class="chapter-opener">
   <div class="chapter-num">Chapter 11</div>
-  <h1 class="chapter-title">X-Rays and Materials Science</h1>
-  <p class="chapter-hook">The same invisible light that shows your dentist a cavity also told us how the atoms in a copper wire are stacked. Both tricks work because an X-ray's wavelength is about the size of an atom.</p>
+  <h1 class="chapter-title">X-Rays: Shadows and Diffraction</h1>
+  <p class="chapter-hook">The same invisible light that shows your dentist a cavity also reveals how the atoms in a solid are arranged. Both tricks work because an X-ray's wavelength is about the size of an atom.</p>
   <div class="big-picture"><h4>The big picture</h4><ul>
     <li>X-ray tubes make a continuous "braking" spectrum plus sharp characteristic lines that fingerprint the target metal.</li>
     <li>An X-ray image is a shadow: absorption rises steeply with atomic number, so bone and metal block far more than flesh.</li>
     <li>Crystal planes scatter X-rays in step only at angles satisfying Bragg's law, \(n\lambda = 2d\sin\theta\).</li>
-    <li>Peak positions give d-spacings, which give the lattice parameter and the crystal structure (FCC vs. BCC) through selection rules.</li>
+    <li>Electrons have far shorter wavelengths than light, which lets electron microscopes see details light never can.</li>
   </ul></div>
   <div class="learning-goals"><h4>After this chapter you can</h4><ul>
     <li>Explain how an X-ray tube makes bremsstrahlung and Kα/Kβ lines, and find \(\lambda_\text{min}\) from the voltage.</li>
     <li>Explain why bones and metal show up on X-rays, using the Z-dependence of absorption.</li>
-    <li>Derive and use Bragg's law and \(d_{hkl} = a/\sqrt{h^2+k^2+l^2}\).</li>
-    <li>Relate (110) and (220), and explain why (100) is missing for BCC and FCC.</li>
-    <li>Connect interplanar spacing with planar density, and index a powder pattern to find the structure and lattice parameter.</li>
+    <li>Derive and use Bragg's law.</li>
+    <li>Explain why electron microscopes can resolve much finer detail than light microscopes.</li>
   </ul></div>
 </div>
 
@@ -96,102 +95,13 @@
 
 
 
-<h2 id="ch11-6"><span class="sec-num">11.6</span>Planes, Miller indices, and d-spacings</h2>
-
-
-
-<p>For a cubic crystal, the spacing between adjacent \((hkl)\) planes is</p>
-<div class="equation boxed" data-eq="11.3">\[ d_{hkl} = \frac{a}{\sqrt{h^{2}+k^{2}+l^{2}}} \]</div>
-<p class="where">So \(d_{100} = a\), \(d_{110} = a/\sqrt2\), \(d_{111} = a/\sqrt3\), \(d_{200} = a/2\), \(d_{220} = a/\sqrt8\). Larger indices mean more closely spaced planes.</p>
-
-<div class="box matsci"><div class="box-title">Materials Science Connection</div>
-  <p><strong>Miller indices, the ME2340 version.</strong> For a plane: take its intercepts with x, y, z in units of the lattice parameter \(a\), take reciprocals, clear fractions, and write \((hkl)\), with a bar for negatives. A direction \([uvw]\) is the vector components, reduced to smallest integers. Braces \(\{hkl\}\) and angle brackets \(\langle uvw\rangle\) denote whole families. In cubic crystals, \([hkl]\) is perpendicular to \((hkl)\).</p>
-  <p><strong>Lattice parameter from atomic radius.</strong> Atoms touch along the face diagonal in FCC (\(4R = a\sqrt2\), so \(a = 2R\sqrt2\)) and along the body diagonal in BCC (\(4R = a\sqrt3\), so \(a = 4R/\sqrt3\)). Copper (FCC, R = 0.1278 nm) has \(a = 0.3615\) nm; α-iron (BCC, R = 0.1241 nm) has \(a = 0.2866\) nm. An X-ray pattern measures \(a\) directly, which is how those radii were found in the first place.</p></div>
-
-<div class="box asked"><div class="box-title">You Asked</div><p class="question">“How can parallel planes have different Miller indices — what's the deal with (110) vs (220), or (100) vs (200)?”</p>
-  <p>(220) planes have the same orientation as (110) planes but are packed twice as closely: \(d_{220} = d_{110}/2\). The (220) set includes every (110) plane plus an extra plane halfway between each pair (Figure 11.6a).</p>
-  <p>Geometrically, a (220) plane cuts the axes at \(a/2\), \(a/2\), \(\infty\) instead of \(a\), \(a\), \(\infty\). In plain geometry you would reduce (220) to (110). X-ray crystallographers keep the extra factor deliberately, because it matches Bragg's law: \(2\lambda = 2d_{110}\sin\theta\) is the same equation as \(\lambda = 2(d_{110}/2)\sin\theta = 2d_{220}\sin\theta\). A "(220) reflection" <em>is</em> the second-order (\(n = 2\)) reflection from the (110) planes. Labeling it (220) lets us always write Bragg's law with \(n = 1\).</p>
-  <p>The (100)/(200) case adds a twist. In BCC, the body-center atoms lie on planes exactly halfway between the (100) planes of corner atoms (Figure 11.6b). At the angle where corner planes scatter in step (path difference λ), the halfway planes are off by λ/2. They hold the same number of atoms, so they cancel the corner planes exactly, and no (100) peak appears. At the (200) angle, all planes, spaced \(a/2\), are in step. FCC behaves the same way because its face-center atoms also sit on the halfway planes. That is why BCC and FCC patterns list (200), never (100).</p></div>
-
-<figure id="fig-11-6"><img src="figures/ch11-planes.svg" alt="Left: top view of a cubic lattice with solid blue (110) plane traces and red dashed traces halfway between, together forming the (220) set with half the spacing. Right: side view of BCC with blue corner-atom planes a apart and red body-center planes halfway between.">
-<figcaption><span class="fig-num">Figure 11.6</span> (a) The (220) set is the (110) set plus a plane halfway between each pair, so \(d_{220} = d_{110}/2\). (b) In BCC, body-center atoms fill the halfway planes. They scatter exactly out of step at the (100) angle and cancel it.</figcaption></figure>
-
-<table><caption><span class="tab-num">Table 11.1</span> Which \((hkl)\) reflections appear (cubic crystals, one atom per lattice point). \(N = h^2+k^2+l^2\).</caption>
-<tr><th>Lattice</th><th>Rule for a reflection to appear</th><th>First allowed reflections</th><th>N values</th></tr>
-<tr><td>Simple cubic</td><td>all \(h, k, l\)</td><td>100, 110, 111, 200, 210, 211, 220</td><td>1, 2, 3, 4, 5, 6, 8 (never 7)</td></tr>
-<tr><td>BCC (Fe, Cr, W)</td><td>\(h+k+l\) even</td><td>110, 200, 211, 220, 310, 222, 321</td><td>2, 4, 6, 8, 10, 12, 14</td></tr>
-<tr><td>FCC (Cu, Al, Ni)</td><td>\(h, k, l\) all odd or all even</td><td>111, 200, 220, 311, 222, 400, 331</td><td>3, 4, 8, 11, 12, 16, 19</td></tr>
-</table>
-
-<div class="box rabbit"><div class="box-title">Rabbit Hole <span class="sub">(optional) — The structure factor</span></div><p>Safe to skip. Add the wave from every atom \(j\) in the unit cell, at fractional position \((x_j, y_j, z_j)\), with phase \(2\pi(hx_j+ky_j+lz_j)\): \(F_{hkl} = \sum_j f_j\, e^{2\pi i(hx_j+ky_j+lz_j)}\). For BCC (atoms at 0,0,0 and ½,½,½), \(F = f[1 + e^{i\pi(h+k+l)}]\), which is \(2f\) when \(h+k+l\) is even and 0 when it is odd. FCC's four atoms give \(4f\) or 0 by the same logic. Intensity goes as \(|F|^2\), and Table 11.1 falls right out.</p></div>
-
-<h2 id="ch11-7"><span class="sec-num">11.7</span>Interplanar spacing and planar density</h2>
-
-<div class="box asked long"><div class="box-title">You Asked</div><p class="question">“If the interplanar spacing is higher, does that mean the density is higher?”</p>
-  <p>Within one crystal, yes for the <em>planar</em> density: the families of planes with the largest spacing are the most densely packed planes. It says nothing about the material's mass density (g/cm³), which is the same however you slice it.</p>
-  <p>The reason is bookkeeping. Every atom lies on some plane of a given family, and the number of atoms per unit volume \(n_v\) is fixed. Stack planes with \(PD\) atoms per unit area at spacing \(d\), and a slab of area \(A\) and thickness \(L\) holds \(PD \cdot A \cdot (L/d)\) atoms. Setting that equal to \(n_v A L\):</p>
-  <div class="equation" data-eq="11.4">\[ PD = n_v\, d \]</div>
-  <p>So widely spaced planes must be crowded and closely spaced planes sparse. Picture slicing a loaf into thick slices or thin ones: same bread, different amount per slice. For FCC, (111) has the largest spacing (\(a/\sqrt3\)) and is the close-packed plane; for BCC, (110) is both. Figure 11.7 and Worked Example 11.2 check this for copper.</p>
-  <p>Two caveats. First, use the distance between <em>adjacent atom-bearing</em> planes. For FCC (100) that is \(a/2\) (\(d_{200}\)), because face-center atoms sit halfway. Second, the relation is exact for crystals with one atom per lattice point (FCC and BCC metals). In crystals with several atoms per lattice point (NaCl, diamond, HCP), the planes in a family may not be identical or evenly spaced, so it becomes an approximation.</p></div>
-
-<figure id="fig-11-7"><img src="figures/ch11-planar-density.svg" alt="Hard-sphere views of FCC (100), (110), and (111) planes with planar densities 2.00, 1.41, and 2.31 per a squared and spacings 0.500a, 0.354a, and 0.577a.">
-<figcaption><span class="fig-num">Figure 11.7</span> Three planes in an FCC crystal (hard spheres). The (111) plane is the densest and the most widely spaced; (110) is the sparsest and most closely spaced. Planar density × spacing is the same for all three.</figcaption></figure>
-
-<div class="box example"><div class="box-title">Worked Example 11.2 <span class="sub">— Planar density vs. spacing in copper</span></div>
-  <p class="given"><strong>Given:</strong> Copper is FCC with \(R = 0.1278\) nm.</p>
-  <p><strong>Find:</strong> Planar density \(PD\) and adjacent-plane spacing \(d\) for (100), (110), (111), and check that \(PD/d = n_v\).</p>
-  <p><strong>Think:</strong> \(a = 2R\sqrt2\). Count atoms centered on each plane section (Callister style), divide by its area, then compare with \(n_v = 4/a^3\).</p>
-  <p>\(a = 2(0.1278)\sqrt2 = 0.3615\) nm, so \(n_v = 4/a^3 = 84.7\ \text{atoms/nm}^3\).</p>
-  <p>(100): 2 atoms on \(a^2\): \(PD = 2/a^2 = 15.3\ \text{nm}^{-2}\); \(d = a/2 = 0.181\) nm; \(PD/d = 84.7\).</p>
-  <p>(110): 2 atoms on \(a \times a\sqrt2\): \(PD = 10.8\ \text{nm}^{-2}\); \(d = a/(2\sqrt2) = 0.128\) nm; \(PD/d = 84.7\).</p>
-  <p>(111): 2 atoms on a triangle of area \((\sqrt3/2)a^2\): \(PD = 17.7\ \text{nm}^{-2}\); \(d = a/\sqrt3 = 0.209\) nm; \(PD/d = 84.7\).</p>
-  <p class="answer">Answer: (111) has the largest d (0.209 nm) and the highest PD (17.7 atoms/nm²); (110) has the smallest of both. All three give \(PD/d = n_v = 84.7\) atoms/nm³.</p></div>
-
-<div class="box matsci"><div class="box-title">Materials Science Connection</div><p>This is why metals slip on their densest planes. Close-packed planes are the farthest apart and the smoothest, so they slide past each other most easily. FCC metals slip on {111} planes and BCC metals mostly on {110}, which you'll see as "slip systems" in the dislocations chapter of Callister. In a diffraction pattern, those same planes usually give the first strong peak, (111) for FCC and (110) for BCC, because the largest d gives the smallest angle.</p></div>
-
-<h2 id="ch11-8"><span class="sec-num">11.8</span>Reading a diffraction pattern</h2>
-<p>In <strong>powder diffraction</strong>, the sample contains millions of randomly oriented grains, so every plane family finds some grains at its Bragg angle. The detector sweeps \(2\theta\) and records a peak for each allowed family (Figure 11.8).</p>
-
-<p>Peak positions are only the start. A pattern also reveals:</p>
-<ul>
-  <li><strong>Phase identification</strong>: each crystalline compound has a fingerprint pattern. One example is telling FCC austenite from BCC ferrite in a steel.</li>
-  <li><strong>Composition and strain</strong>: alloying or residual stress shifts \(a\) slightly, so peaks shift.</li>
-  <li><strong>Grain size</strong>: very small crystallites (below about 100 nm) broaden the peaks.</li>
-  <li><strong>Amorphous material</strong>: glass and many polymers give broad humps instead of sharp peaks, because they have no long-range order.</li>
-</ul>
-
-<figure id="fig-11-8"><img src="figures/ch11-xrd-patterns.svg" alt="Two simulated powder diffraction patterns versus two-theta with copper K-alpha radiation. Copper FCC shows peaks labeled 111 at 43.4 degrees, 200, 220, 311, 222, 400. Alpha iron BCC shows peaks labeled 110 at 44.7 degrees, 200, 211, 220, 310. Open triangles mark forbidden positions such as 100 and 110 for copper and 100 and 111 for iron.">
-<figcaption><span class="fig-num">Figure 11.8</span> Simulated powder patterns with Cu Kα. Peak positions come from Bragg's law and Table 11.1; heights are approximate (computed from multiplicity, scattering factors, and geometry factors). The FCC pairs (111)/(200) and (311)/(222) look nothing like BCC's evenly stepped sequence, so the structure can be read at a glance.</figcaption></figure>
-
-<div class="box example"><div class="box-title">Worked Example 11.3 <span class="sub">— BCC iron, (220) planes (Callister-style)</span></div>
-  <p class="given"><strong>Given:</strong> α-iron is BCC with \(a = 0.2866\) nm. Monochromatic X-rays with \(\lambda = 0.1790\) nm (Co Kα); first-order reflection (\(n = 1\)) from (220) planes.</p>
-  <p><strong>Find:</strong> \(d_{220}\) and the diffraction angle \(2\theta\).</p>
-  <p><strong>Think:</strong> Eq. 11.3 for d, then Bragg's law for θ. (220) is allowed for BCC since 2 + 2 + 0 is even.</p>
-  <p>\[ d_{220} = \frac{0.2866\ \text{nm}}{\sqrt{2^2+2^2+0^2}} = \frac{0.2866}{2.828} = 0.1013\ \text{nm} \]</p>
-  <p>\[ \sin\theta = \frac{n\lambda}{2d} = \frac{0.1790}{2(0.1013)} = 0.8833 \;\Rightarrow\; \theta = 62.04^\circ,\quad 2\theta = 124.08^\circ \]</p>
-  <p class="answer">Answer: \(d_{220} = 0.1013\) nm and \(2\theta \approx 124.1^\circ\). (Callister's printed 124.26° comes from rounding \(\sin\theta\) to 0.884 before taking the arcsine. Carry four digits and you get 124.08°.)</p></div>
-
-<div class="box example"><div class="box-title">Worked Example 11.4 <span class="sub">— Identify an unknown cubic metal</span></div>
-  <p class="given"><strong>Given:</strong> Cu Kα (\(\lambda = 0.1542\) nm) peaks at \(2\theta\) = 38.5°, 44.7°, 65.1°, 78.2°, 82.4°.</p>
-  <p><strong>Find:</strong> The structure and lattice parameter.</p>
-  <p><strong>Think:</strong> Bragg plus Eq. 11.3 give \(\sin^2\theta = (\lambda^2/4a^2)\,N\), so the \(\sin^2\theta\) values must be in the ratio of the allowed N values in Table 11.1.</p>
-  <ul>
-    <li>\(\sin^2\theta\): 0.1087, 0.1446, 0.2895, 0.3978, 0.4339</li>
-    <li>Divided by the first: 1, 1.330, 2.663, 3.659, 3.992. These are not integers, so try ×2 (BCC) or ×3 (FCC).</li>
-    <li>×3: 3.00, 3.99, 7.99, 10.98, 11.97 → N = 3, 4, 8, 11, 12. That is FCC: (111), (200), (220), (311), (222).</li>
-    <li>\(a = \lambda\sqrt{N}/(2\sin\theta)\): from (111), \(0.1542\sqrt3/(2 \times 0.3297) = 0.405\) nm. The other peaks agree within 0.1%.</li>
-  </ul>
-  <p class="answer">Answer: FCC with \(a \approx 0.405\) nm, which matches aluminum (\(a = 0.4049\) nm).</p></div>
-
-
-
-<h2 id="ch11-9"><span class="sec-num">11.9</span>Electron microscopes and electron diffraction</h2>
+<h2 id="ch11-6"><span class="sec-num">11.6</span>Electron microscopes and electron diffraction</h2>
 <p>Electrons are waves too, with \(\lambda = h/p\) (Chapter 8). Accelerate one through 100 kV and, including a small relativistic correction,</p>
-<div class="equation" data-eq="11.5">\[ \lambda_e = \frac{h}{\sqrt{2m_e eV\left(1+\dfrac{eV}{2m_ec^2}\right)}} = 0.0037\ \text{nm} \quad (100\ \text{kV}) \]</div>
-<p>That is about 40 times shorter than Cu Kα, so electron Bragg angles are tiny. For copper's (111) planes, \(\sin\theta = 0.0037/(2 \times 0.2087)\), so \(\theta \approx 0.5^\circ\). Electrons interact with matter far more strongly than X-rays, so samples must be very thin (under about 100 nm) and held in vacuum.</p>
+<div class="equation" data-eq="11.3">\[ \lambda_e = \frac{h}{\sqrt{2m_e eV\left(1+\dfrac{eV}{2m_ec^2}\right)}} = 0.0037\ \text{nm} \quad (100\ \text{kV}) \]</div>
+<p>That is about 40 times shorter than Cu Kα, so electron Bragg angles are tiny. For atomic planes 0.21 nm apart, \(\sin\theta = 0.0037/(2 \times 0.21)\), so \(\theta \approx 0.5^\circ\). Electrons interact with matter far more strongly than X-rays, so samples must be very thin (under about 100 nm) and held in vacuum.</p>
 <ul>
-  <li><strong>TEM</strong> (transmission electron microscope): shines electrons through a thin foil. It can image dislocations and even columns of atoms, and it records electron diffraction patterns from regions a few nanometers across.</li>
-  <li><strong>SEM</strong> (scanning electron microscope): scans a focused beam over a surface and collects knocked-out electrons to image fracture surfaces and microstructure.</li>
+  <li><strong>TEM</strong> (transmission electron microscope): shines electrons through a thin foil. It can image defects and even columns of atoms, and it records electron diffraction patterns from regions a few nanometers across.</li>
+  <li><strong>SEM</strong> (scanning electron microscope): scans a focused beam over a surface and collects knocked-out electrons to image surfaces in fine detail.</li>
   <li><strong>EDS</strong>: the beam knocks out inner-shell electrons, just as in an X-ray tube, so the sample emits its own characteristic X-rays. Their energies (Section 11.2) identify the elements present.</li>
 </ul>
 
@@ -199,10 +109,7 @@
   <li>X-ray tubes: bremsstrahlung gives a continuum down to \(\lambda_\text{min} = hc/eV\); K-shell vacancies give element-specific Kα/Kβ lines (Cu Kα = 0.1542 nm).</li>
   <li>X-ray images are shadows: photoelectric absorption scales roughly as \(Z^3\text{–}Z^4/E^3\), so bone and metal absorb far more than soft tissue. CT maps μ in 3D.</li>
   <li>Bragg's law \(n\lambda = 2d\sin\theta\), with θ from the planes; patterns are plotted against 2θ.</li>
-  <li>Cubic spacing: \(d_{hkl} = a/\sqrt{h^2+k^2+l^2}\). (220) planes are parallel to (110) at half the spacing, and a (220) reflection is the second order of (110).</li>
-  <li>BCC needs \(h+k+l\) even; FCC needs all odd or all even. (100) vanishes in both because halfway-plane atoms scatter exactly out of step.</li>
-  <li>Planar density = \(n_v \times d\): the widest-spaced planes are the densest (FCC {111}, BCC {110}), and they are also the slip planes.</li>
-  <li>100 kV electrons have λ ≈ 0.0037 nm, enabling TEM, electron diffraction, and EDS.</li>
+  <li>100 kV electrons have λ ≈ 0.0037 nm, enabling electron microscopes (TEM, SEM), electron diffraction, and EDS.</li>
 </ul></div>
 
 <div class="check"><h2>Check yourself</h2><ol>
@@ -211,11 +118,7 @@
   <li><span class="tag">Calc</span>At 30 keV, lead has \(\mu/\rho = 30.3\) cm²/g (\(\rho = 11.35\) g/cm³). What fraction of 30 keV photons gets through a 0.25 mm lead apron?</li>
   <li><span class="tag">Concept</span>Why do mammograms use low tube voltages (about 25–30 kV)?</li>
   <li><span class="tag">Concept</span>A friend says diffraction peaks are mirror "reflections" from atomic planes. What is right and wrong about that?</li>
-  <li><span class="tag">Calc</span>Find \(d_{111}\) and \(d_{200}\) for aluminum (FCC, \(a = 0.4049\) nm), and the 2θ angle of each with Cu Kα (\(\lambda = 0.1542\) nm).</li>
-  <li><span class="tag">Calc</span>Using \(\lambda = 0.1542\) nm and \(d_{110} = 0.2027\) nm for iron, find the angle of the first-order (110) reflection and of the second-order (110) reflection. Show that the second matches the (220) peak.</li>
-  <li><span class="tag">Concept</span>For BCC iron, which of (100), (110), (111), (200), (210), (211) appear? Explain the rule physically.</li>
-  <li><span class="tag">Apply</span>For BCC iron (\(a = 0.2866\) nm), compute the planar density of (110) and (100) from atom counting, and verify \(PD = n_v d\) for each. Which plane would you expect to be the slip plane?</li>
-  <li><span class="tag">Apply</span>An unknown metal gives Cu Kα peaks at 2θ = 40.3°, 58.3°, 73.3°, 87.1°, 100.8°, 115.1°, 131.4°. Show that it is BCC, not simple cubic, and find \(a\). Which metal could it be?</li>
-  <li><span class="tag">Calc</span>Find the wavelength of 200 kV TEM electrons with Eq. 11.5, and compare with the nonrelativistic \(h/\sqrt{2m_e eV}\).</li>
+  <li><span class="tag">Calc</span>X-rays with \(\lambda = 0.154\) nm reflect in first order from atomic planes 0.200 nm apart. Find θ, and the angle 2θ a diffractometer would record.</li>
+  <li><span class="tag">Calc</span>Find the wavelength of 200 kV TEM electrons with Eq. 11.3, and compare with the nonrelativistic \(h/\sqrt{2m_e eV}\).</li>
 </ol><p class="small muted">Full solutions are in the Answer Key at the back of the book.</p></div>
 </section>

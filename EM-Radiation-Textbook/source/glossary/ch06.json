@@ -1,22 +1,78 @@
 [
-  {"term": "Reflection", "definition": "Light sent back from a surface. Physically, it is the backward wave radiated in step by electrons that the incoming light drives at a boundary."},
-  {"term": "Transmission", "definition": "Light passing through a material. The transmitted wave is the incoming wave plus the forward waves re-radiated by the material's driven electrons."},
-  {"term": "Absorption", "definition": "Removal of light energy by a material, usually ending up as heat; it happens when the light's frequency matches a natural frequency (an energy gap) of the material's electrons or bonds."},
-  {"term": "Scattering", "definition": "Redirection of light into many directions by small particles, pores, boundaries, or density fluctuations; it is counted as diffuse reflection or diffuse transmission."},
-  {"term": "Absorption coefficient", "definition": "The constant α in I = I₀e^(−αx), in m⁻¹; after a depth of 1/α, about 37% of the light remains."},
-  {"term": "Specular reflection", "definition": "Mirror-like reflection from a surface whose bumps are much smaller than the wavelength, so parallel rays stay parallel and an image survives."},
-  {"term": "Diffuse reflection", "definition": "Reflection from a rough surface (bumps comparable to the wavelength or larger); each ray obeys the law of reflection locally, but rays leave in all directions."},
-  {"term": "Coherent re-radiation", "definition": "Radiation from electrons forced to oscillate by a light wave, at the same frequency and with a fixed phase relationship to it; the basis of reflection and refraction."},
-  {"term": "Plasma frequency", "definition": "The frequency below which a metal's free electrons can follow an EM wave and reflect it; for most metals it lies in the ultraviolet, and above it the metal becomes transparent."},
-  {"term": "Skin depth", "definition": "The thin surface layer (tens of nanometers for visible light in metals) within which a metal cancels and absorbs an incoming EM wave."},
-  {"term": "Index of refraction (n)", "definition": "The ratio n = c/v of the speed of light in vacuum to the speed of wave crests in a material; it also gives the factor by which the wavelength shrinks."},
-  {"term": "Snell's law", "definition": "The rule n₁ sin θ₁ = n₂ sin θ₂ for how much light bends when it crosses a boundary between materials, with angles measured from the normal."},
-  {"term": "Critical angle", "definition": "The angle of incidence, given by sin θc = n₂/n₁, beyond which light traveling from a higher-index to a lower-index material cannot escape."},
-  {"term": "Total internal reflection", "definition": "Complete (100%) reflection of light inside a higher-index material when it strikes the boundary beyond the critical angle; it guides light in optical fibers."},
-  {"term": "Optical fiber", "definition": "A thin glass core surrounded by lower-index cladding that guides light over long distances by repeated total internal reflection."},
-  {"term": "Dispersion", "definition": "The dependence of refractive index on wavelength; in glass and water n is larger for violet than for red, which separates colors in prisms and rainbows."},
-  {"term": "Focal length", "definition": "The distance from a lens to the point where it brings parallel rays to a focus (converging lens) or from which they appear to diverge (diverging lens)."},
-  {"term": "Diopter", "definition": "The unit of lens power, P = 1/f with f in meters; the human eye has roughly 60 diopters, about two-thirds of it from the cornea."},
-  {"term": "Birefringence", "definition": "A direction-dependent refractive index found in non-cubic crystals such as quartz, calcite, and sapphire; it makes grain boundaries in polycrystalline ceramics scatter light."},
-  {"term": "Translucent", "definition": "Letting light through only diffusely, so objects behind cannot be seen clearly; caused by internal scattering, as in dense polycrystalline alumina."}
+ {
+  "term": "Reflection",
+  "definition": "Light sent back from a surface. Physically, it is the backward wave radiated in step by electrons that the incoming light drives at a boundary."
+ },
+ {
+  "term": "Transmission",
+  "definition": "Light passing through a material. The transmitted wave is the incoming wave plus the forward waves re-radiated by the material's driven electrons."
+ },
+ {
+  "term": "Absorption",
+  "definition": "Removal of light energy by a material, usually ending up as heat; it happens when the light's frequency matches a natural frequency (an energy gap) of the material's electrons or bonds."
+ },
+ {
+  "term": "Absorption coefficient",
+  "definition": "The constant α in I = I₀e^(−αx), in m⁻¹; after a depth of 1/α, about 37% of the light remains."
+ },
+ {
+  "term": "Specular reflection",
+  "definition": "Mirror-like reflection from a surface whose bumps are much smaller than the wavelength, so parallel rays stay parallel and an image survives."
+ },
+ {
+  "term": "Diffuse reflection",
+  "definition": "Reflection from a rough surface (bumps comparable to the wavelength or larger); each ray obeys the law of reflection locally, but rays leave in all directions."
+ },
+ {
+  "term": "Coherent re-radiation",
+  "definition": "Radiation from electrons forced to oscillate by a light wave, at the same frequency and with a fixed phase relationship to it; the basis of reflection and refraction."
+ },
+ {
+  "term": "Plasma frequency",
+  "definition": "The frequency below which a metal's free electrons can follow an EM wave and reflect it; for most metals it lies in the ultraviolet, and above it the metal becomes transparent."
+ },
+ {
+  "term": "Skin depth",
+  "definition": "The thin surface layer (tens of nanometers for visible light in metals) within which a metal cancels and absorbs an incoming EM wave."
+ },
+ {
+  "term": "Index of refraction (n)",
+  "definition": "The ratio n = c/v of the speed of light in vacuum to the speed of wave crests in a material; it also gives the factor by which the wavelength shrinks."
+ },
+ {
+  "term": "Snell's law",
+  "definition": "The rule n₁ sin θ₁ = n₂ sin θ₂ for how much light bends when it crosses a boundary between materials, with angles measured from the normal."
+ },
+ {
+  "term": "Critical angle",
+  "definition": "The angle of incidence, given by sin θc = n₂/n₁, beyond which light traveling from a higher-index to a lower-index material cannot escape."
+ },
+ {
+  "term": "Total internal reflection",
+  "definition": "Complete (100%) reflection of light inside a higher-index material when it strikes the boundary beyond the critical angle; it guides light in optical fibers."
+ },
+ {
+  "term": "Optical fiber",
+  "definition": "A thin glass core surrounded by lower-index cladding that guides light over long distances by repeated total internal reflection."
+ },
+ {
+  "term": "Dispersion",
+  "definition": "The dependence of refractive index on wavelength; in glass and water n is larger for violet than for red, which separates colors in prisms and rainbows."
+ },
+ {
+  "term": "Focal length",
+  "definition": "The distance from a lens to the point where it brings parallel rays to a focus (converging lens) or from which they appear to diverge (diverging lens)."
+ },
+ {
+  "term": "Diopter",
+  "definition": "The unit of lens power, P = 1/f with f in meters; the human eye has roughly 60 diopters, about two-thirds of it from the cornea."
+ },
+ {
+  "term": "Birefringence",
+  "definition": "A direction-dependent refractive index found in non-cubic crystals such as quartz, calcite, and sapphire."
+ },
+ {
+  "term": "Translucent",
+  "definition": "Letting light through only diffusely, so objects behind cannot be seen clearly; caused by internal scattering, as in dense polycrystalline alumina."
+ }
 ]

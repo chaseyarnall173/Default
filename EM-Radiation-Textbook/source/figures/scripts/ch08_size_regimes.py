@@ -63,9 +63,9 @@ for xt, lab, col in [(0.0035, "Rayleigh: d ≪ λ\nscattering ∝ (d/λ)⁴", "#
     ax.text(xt, 4e-2 if xt > 0.5 else 1.2e-1, lab, ha="center", va="top", fontsize=9.5, color=col)
 ax.text(2.2e-3, 1e-13, "slope 4: halve d/λ and\nscattering drops 16×", fontsize=9.5,
         color=MUTED, rotation=0, ha="left")
-# examples for visible light (lambda = 500 nm) and the Astrophage case
+# examples for visible light (lambda = 500 nm)
 ex = [(0.3e-9 / 500e-9, "air molecule\nin sunlight"), (0.1 / 500, None),
-      (10 / 25.984, "Astrophage (10 µm)\nin 26 µm IR"),
+      (0.2e-6 / 500e-9, "smoke particle\n(0.2 µm) in sunlight"),
       (10e-6 / 500e-9, "cloud droplet\nin sunlight")]
 for r, lab in ex:
     if lab is None:
