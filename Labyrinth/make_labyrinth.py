@@ -9,7 +9,7 @@ Edit MAZE (or the settings below) and re-run:
     python3 make_labyrinth.py [output_dir]
 
 Outputs
-  Labyrinth_Board.dxf              laser layout (sheet 1 + sheet 2), layers
+  Labyrinth_Board.dxf              laser layout, one 12 x 16 sheet per panel
   Labyrinth_preview.png            picture of the DXF
   Labyrinth_board_top.png          top view of the assembled playfield
   Labyrinth_Template_Letter.pdf    cardboard template, 4 letter pages at 1:1
@@ -35,8 +35,8 @@ T = 0.125           # plywood thickness = wall thickness (measure your sheet)
 N = 9               # cells per side
 PITCH = (BOARD - T) / N          # wall centre to wall centre
 CLEAR = PITCH - T                # corridor width between wall faces
-WALL_H = 0.5        # maze wall height above the floor
-RIM_H = 0.75        # outer rim height above the floor
+WALL_H = 2.0        # maze wall height above the floor
+RIM_H = 3.0         # outer rim height above the floor
 BALL_D = 0.625      # 5/8 in steel ball
 
 # Hole diameters: all standard drill press (Forstner) bit sizes.
@@ -51,7 +51,11 @@ TRAP_HINGE_GAP = 1 / 16     # flap clearance, hinge side
 BED_W, BED_H = 16.0, 12.0   # laser bed (2018 FYE guide: 12 x 16) - confirm
 BORDER = 0.25               # keep parts this far inside the bed
 GAP = 0.125                 # space between parts
-SHEET_X = (0.0, BED_W + 2.0)
+MAX_SHEETS = 6              # the class budget is about 2
+
+
+def sheet_x(s):
+    return s * (BED_W + 2.0)
 
 # S start, 1/3/5 prize holes, X loss hole, T trapdoor.
 # Walls: '---' between rows, '|' between columns.
@@ -316,7 +320,7 @@ def build_trapdoor(cell, cx, cy):
 
 # ----------------------------------------------------------- sheet nesting
 def nest(runs):
-    """Lay the floor plate and every strip out on two laser sheets."""
+    """Lay the floor plate and every strip out on as few sheets as fit."""
     pieces = [(r["height"], r["length"], r["name"]) for r in runs]
     pieces.sort(key=lambda p: (-p[0], -p[1]))
     flap_a = TRAP - 2 * TRAP_GAP
@@ -324,10 +328,9 @@ def nest(runs):
     pieces.append((flap_b, flap_a, "FLAP"))     # small, goes in last
 
     y_lo, y_hi = BORDER, BED_H - BORDER
-    regions = [  # usable x range per sheet
-        [SHEET_X[0] + BORDER + BOARD + GAP, SHEET_X[0] + BED_W - BORDER],
-        [SHEET_X[1] + BORDER, SHEET_X[1] + BED_W - BORDER],
-    ]
+    regions = [[sheet_x(0) + BORDER + BOARD + GAP, BED_W - BORDER]]
+    regions += [[sheet_x(s) + BORDER, sheet_x(s) + BED_W - BORDER]
+                for s in range(1, MAX_SHEETS)]
     cols = []   # [sheet, x, width, y_cursor]
     nxt = [reg[0] for reg in regions]
     placed = []
@@ -345,44 +348,45 @@ def nest(runs):
                     nxt[s] += w + GAP
                     break
         if spot is None:
-            raise SystemExit("parts do not fit on two sheets - "
-                             "shorten walls or use a third sheet")
+            raise SystemExit("parts do not fit on %d sheets" % MAX_SHEETS)
         s, x, _, y = spot
         placed.append((s, x, y, w, L, name))
         spot[3] = y + L + GAP
-    return placed, nxt, regions
+    used = 1 + max(s for s, *_ in placed)
+    return placed, nxt[:used], regions[:used]
 
 
 def build_sheets(placed, nxt, regions):
-    for s, ox in enumerate(SHEET_X):
+    count = len(regions)
+    for s in range(count):
+        ox = sheet_x(s)
         rect(ox, 0, ox + BED_W, BED_H, "REFERENCE", "sheet")
         rect(ox + BORDER, BORDER, ox + BED_W - BORDER, BED_H - BORDER,
              "REFERENCE", "sheet", dashed=True)
-        text("SHEET %d OF 2  -  1/8 PLYWOOD, LASER BED %g x %g IN "
-             "(CONFIRM WITH FYELIC)" % (s + 1, BED_W, BED_H),
+        text("SHEET %d OF %d  -  1/8 PLYWOOD, LASER BED %g x %g IN "
+             "(CONFIRM WITH FYELIC)" % (s + 1, count, BED_W, BED_H),
              ox + BED_W / 2, BED_H + 0.35, 0.22, "REFERENCE", "sheet")
     for s, x, y, w, L, name in placed:
         rect(x, y, x + w, y + L, "CUT", "sheet")
         if name == "RIM-FRONT":
-            text("THE LABYRINTH", x + w / 2, y + L / 2, 0.42, "RASTER",
-                 "sheet", rot=90)
+            text("THE LABYRINTH", x + w / 2, y + L / 2,
+                 min(0.8, 0.5 * w), "RASTER", "sheet", rot=90)
         else:
             text(name, x + w / 2, y + L / 2, min(0.18, w * 0.4),
                  "REFERENCE", "sheet", rot=90)
-    free = regions[1][1] - nxt[1]
+    free = regions[-1][1] - nxt[-1]
     if free > 1.0:
-        x0 = nxt[1]
-        rect(x0, BORDER, regions[1][1], BED_H - BORDER, "REFERENCE", "sheet",
+        x0, x1 = nxt[-1], regions[-1][1]
+        rect(x0, BORDER, x1, BED_H - BORDER, "REFERENCE", "sheet",
              dashed=True)
         text("FREE: %.1f x %.1f IN" % (free, BED_H - 2 * BORDER),
-             (x0 + regions[1][1]) / 2, BED_H / 2 + 0.25, 0.22, "REFERENCE",
-             "sheet")
-        text("frame / gimbal / joystick box", (x0 + regions[1][1]) / 2,
+             (x0 + x1) / 2, BED_H / 2 + 0.25, 0.22, "REFERENCE", "sheet")
+        text("frame / brackets / joystick box", (x0 + x1) / 2,
              BED_H / 2 - 0.15, 0.16, "REFERENCE", "sheet")
 
 
 def floor_to_sheet(x, y):
-    return x + SHEET_X[0] + BORDER, y + BORDER
+    return x + sheet_x(0) + BORDER, y + BORDER
 
 
 # --------------------------------------------------------------------- DXF
@@ -468,14 +472,14 @@ def ident(x, y):
     return x, y
 
 
-def write_preview(dxf_path, png_path):
+def write_preview(dxf_path, png_path, sheets=2):
     """Render the saved DXF itself, so the picture shows what AutoCAD gets."""
     from ezdxf.addons.drawing import Frontend, RenderContext
     from ezdxf.addons.drawing.matplotlib import MatplotlibBackend
     from ezdxf.addons.drawing.config import Configuration, BackgroundPolicy
 
     doc = ezdxf.readfile(dxf_path)
-    fig = plt.figure(figsize=(15, 7.2), dpi=150)
+    fig = plt.figure(figsize=(7.5 * sheets, 7.2), dpi=120)
     ax = fig.add_axes([0.01, 0.01, 0.98, 0.98])
     cfg = Configuration(background_policy=BackgroundPolicy.WHITE)
     Frontend(RenderContext(doc), MatplotlibBackend(ax), config=cfg) \
@@ -703,7 +707,8 @@ def main():
     os.makedirs(OUT_DIR, exist_ok=True)
     dxf_path = os.path.join(OUT_DIR, "Labyrinth_Board.dxf")
     write_dxf(dxf_path, notes)
-    write_preview(dxf_path, os.path.join(OUT_DIR, "Labyrinth_preview.png"))
+    write_preview(dxf_path, os.path.join(OUT_DIR, "Labyrinth_preview.png"),
+                  len(regions))
     write_board_top(os.path.join(OUT_DIR, "Labyrinth_board_top.png"))
     write_templates(os.path.join(OUT_DIR, "Labyrinth_Template_Letter.pdf"),
                     os.path.join(OUT_DIR, "Labyrinth_Template_FullSize.pdf"),
@@ -714,7 +719,8 @@ def main():
     for name, L, h, q in cl:
         print("  %-9s L=%.3f  H=%.3f  x%d  (sheet %s)"
               % (name, L, h, q, "+".join(map(str, sorted(sheet_of[name])))))
-    print("sheet 2 free width: %.2f in" % (regions[1][1] - nxt[1]))
+    print("laser sheets needed: %d (class budget is about 2); free on the "
+          "last sheet: %.2f in wide" % (len(regions), regions[-1][1] - nxt[-1]))
     return dxf_path
 
 

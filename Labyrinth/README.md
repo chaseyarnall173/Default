@@ -12,6 +12,7 @@ re-run `python3 make_labyrinth.py`.
 | `Labyrinth_board_top.png` | Top view of the finished board (slides, report) |
 | `Labyrinth_preview.png` | Picture of the DXF: sheet 1 + sheet 2 |
 | `Labyrinth_3D.scr` | AutoCAD script: in a new drawing type `SCRIPT` and pick it to build the whole game in 3D: board, frame, axis holes, servo cutouts, posts, base (`make_autocad_script.py` rebuilds it) |
+| `Labyrinth_axis1_bracket.png` | Close-up from below of the axis-1 brackets under the board (servo 1 on the left, pin on the right) |
 | `Labyrinth_axes_explained.png` | Four pictures of how the two axes move, coloured by what moves with what (`make_axis_views.py` rebuilds it from the 3D model) |
 | `Labyrinth_two_axis.mp4` | 20 s video of the same (`make_axis_views.py --video`) |
 | `pico/servo_test.py` | Bench test for one servo: centre, sweep, step response, smallest visible step |
@@ -26,7 +27,7 @@ re-run `python3 make_labyrinth.py`.
 | Floor plate | 11.5 × 11.5 in | The laser bed is 12 × 16 in and the guide asks for a ¼ in border, so 11.5 in is the biggest square that fits. Change `BOARD` if the frame has to fit inside 12 × 12 |
 | Ball | ⅝ in steel ball bearing | Heavy, so it rolls smoothly and the same way every time. 3D-printed balls are light and slightly rough |
 | Grid | 9 × 9 cells, 1.264 in apart | Corridor is 1.139 in between walls, about 1.8 balls wide |
-| Walls / rim | ⅛ in ply, ½ in tall / ¾ in tall | ½ in is taller than the ball's radius, so the ball can't hop a wall |
+| Walls / rim | ⅛ in ply, 2 in tall / 3 in tall | Team choice. The ball can never hop a wall. Tall walls hide the ball from low angles, so check the view in the cardboard prototype |
 | **5 coin** hole | ¾ in drill | Smallest, at the far corner (back-right) |
 | **3 coin** hole | ⅞ in drill | Side pocket just before the 5 |
 | **1 coin** hole | 1 in drill | Side pocket before that, easiest to sink |
@@ -57,7 +58,7 @@ releases the ball at about 6°. Test that in cardboard first.
 4. Drill the holes on the drill press with the same bits you'll use in
    Milestone 3. Clamp the board on scrap wood and put the bit point on the
    crosshair. This doubles as practice for the auxiliary-tool part.
-5. Cut wall strips ½ in tall to the lengths in the cut list (page 1). Each
+5. Cut wall strips 2 in tall (rim strips 3 in) to the lengths in the cut list (page 1). Each
    strip has a letter (A–J) that matches the shaded footprint on the
    template. Hot glue them on.
 6. Trapdoor: cut out the hatched square, cut the flap from the same board,
@@ -139,10 +140,11 @@ DXF, so do AutoCAD-only edits in your `.dwg` copy once the maze is final.
 5. Send one sheet per job: `PLOT` → Plot area **Window** → click two opposite
    corners of that sheet's rectangle → scale **1:1**, with **Fit to paper
    unchecked**. Fit to paper silently rescales everything.
-6. Budget (2 sheets): sheet 1 is the floor plus the 4 rim pieces. Sheet 2 is
-   the 34 wall strips plus the trapdoor flap, with about **9.5 × 11.5 in
-   free** for the frame/gimbal parts. Laser-cut holes come out about one kerf
-   larger; drilled holes come out exactly the bit size.
+6. Budget: with 2 in walls and a 3 in rim the board alone needs **3 sheets**
+   (the class allows about 2), before the frame, brackets and posts. Ask
+   for an extra sheet, or cut the tall walls from another material.
+   Laser-cut holes come out about one kerf larger; drilled holes come out
+   exactly the bit size.
 
 ### Drill press (our auxiliary tool)
 

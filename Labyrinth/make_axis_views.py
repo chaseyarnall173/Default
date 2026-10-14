@@ -27,7 +27,7 @@ from mpl_toolkits.mplot3d.art3d import Poly3DCollection
 import make_autocad_script as cad
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-C, PIN_Z, B = cad.C, cad.PIN_Z, cad.B
+C, PIN_Z, B = cad.C, cad.AXIS_Z, cad.B
 SHOW_TILT = 15.0          # pictures exaggerate the tilt so it is visible
 REAL_TILT = 6.0
 
@@ -90,10 +90,11 @@ def parse(path):
 
 
 # ---------------------------------------------------------- geometry
-def box_faces(lo, hi, seg=1.2):
-    def grid(a, b):
-        return np.linspace(a, b, max(1, math.ceil((b - a) / seg)) + 1)
-    X, Y, Z = grid(lo[0], hi[0]), grid(lo[1], hi[1]), grid(lo[2], hi[2])
+def box_faces(lo, hi, seg=1.0, zseg=0.5):
+    def grid(a, b, step):
+        return np.linspace(a, b, max(1, math.ceil((b - a) / step)) + 1)
+    X, Y = grid(lo[0], hi[0], seg), grid(lo[1], hi[1], seg)
+    Z = grid(lo[2], hi[2], zseg)
     f = []
     for zc in (lo[2], hi[2]):
         for i in range(len(X) - 1):
@@ -186,7 +187,7 @@ def rot2(pts, b):
 LIGHT = np.array([-0.35, -0.55, 0.76]) / np.linalg.norm([-0.35, -0.55, 0.76])
 
 
-def draw(ax, prepared, servo1_deg, servo2_deg, labels=False):
+def draw(ax, prepared, servo1_deg, servo2_deg, labels=False, axes=True):
     a = math.radians(servo1_deg)        # + = back of the board goes up
     b = math.radians(servo2_deg)        # + = right side goes down
     polys, cols = [], []
@@ -209,27 +210,29 @@ def draw(ax, prepared, servo1_deg, servo2_deg, labels=False):
     # pivot lines: axis 2 never moves, axis 1 rides on the frame
     ax2 = np.array([[C, -3.0, PIN_Z], [C, B + 2.6, PIN_Z]])
     ax1 = rot2(np.array([[-2.6, C, PIN_Z], [B + 1.6, C, PIN_Z]]), b)
-    ax.plot(*ax2.T, ls="--", lw=2.2, color="#1450a0", zorder=5)
     ax.plot(*ax1.T, ls="--", lw=2.2, color="#c0392b", zorder=5)
-    ax.text(*ax2[1] + [0, 0.4, 0.3], "AXIS 2", color="#1450a0",
-            fontsize=10, weight="bold", zorder=6)
-    ax.text(*ax1[0] + [-0.6, 0, 0.3], "AXIS 1", color="#c0392b",
-            fontsize=10, weight="bold", zorder=6)
+    if axes:
+        ax.plot(*ax2.T, ls="--", lw=2.2, color="#1450a0", zorder=5)
+        ax.text(*ax2[1] + [0, 0.4, 0.3], "AXIS 2", color="#1450a0",
+                fontsize=10, weight="bold", zorder=6)
+        ax.text(*ax1[0] + [-0.6, 0, 0.3], "AXIS 1", color="#c0392b",
+                fontsize=10, weight="bold", zorder=6)
     if labels:
         for p, s, col in (
                 ((C + 3.4, -2.6, -2.9), "SERVO 2\nbolted to the post\n"
                  "(never moves)", "#333"),
-                ((-1.2, C + 2.4, 2.0), "SERVO 1\nbolted to the frame",
+                ((-1.4, C + 2.6, 0.9), "SERVO 1\nbolted to the frame",
                  "#1450a0"),
-                ((B + 1.0, -0.6, 1.4), "OUTER FRAME", "#1450a0"),
-                ((C + 1.5, C + 1.5, 2.3), "BOARD", "#a85a10")):
+                ((B + 1.0, -0.6, 1.1), "OUTER FRAME", "#1450a0"),
+                ((C + 1.5, C + 1.5, 3.6), "BOARD", "#a85a10"),
+                ((-0.4, C - 2.6, -1.9), "bracket under\nthe board", "#a85a10")):
             ax.text(*p, s, color=col, fontsize=9, weight="bold",
                     ha="center", zorder=6)
     ax.set_xlim(-2.3, B + 1.5)
     ax.set_ylim(-2.7, B + 1.6)
-    ax.set_zlim(-5.1, 2.4)
-    ax.set_box_aspect((B + 3.8, B + 4.3, 7.5), zoom=1.3)
-    ax.view_init(elev=24, azim=-58)
+    ax.set_zlim(-5.1, 3.4)
+    ax.set_box_aspect((B + 3.8, B + 4.3, 8.5), zoom=1.3)
+    ax.view_init(elev=38, azim=-58)
     ax.set_axis_off()
 
 
@@ -244,9 +247,10 @@ PANELS = [
      "servo 1, bolted to the frame.", 0, SHOW_TILT, False),
     ("3  Servo 1 turns -> ONLY the board tips front / back",
      "Servo 1 is bolted to the frame and its horn is screwed to the "
-     "board's left rim.\nThe board swings on AXIS 1 (left servo shaft + "
-     "right pin). The frame does not move,\nbecause servo 1 pushes "
-     "against the frame it is bolted to.", SHOW_TILT, 0, False),
+     "bracket under the board.\nThe board swings on AXIS 1 (left servo "
+     "shaft + pin in the right bracket). The frame does\nnot move, "
+     "because servo 1 pushes against the frame it is bolted to.",
+     SHOW_TILT, 0, False),
     ("4  Both at once -> the board leans any direction",
      "Servo 2 sets left/right, servo 1 sets front/back. AXIS 1 is carried "
      "around by the\nframe, so servo 1 always tips the board relative to "
@@ -328,12 +332,65 @@ def video(prepared, path, fps=20):
     print("wrote", path)
 
 
+HIDE_IN_CLOSEUP = {"FRAME-FRONT", "POST-FRONT", "SERVO-2", "RIM-FRONT",
+                   "CONTROLS", "JOYSTICK", "BASE", "BALL", "LABELS",
+                   "TRAPDOOR-SERVO", "TRAPDOOR-FLAP"}
+
+
+def crop(prepared, lo, hi):
+    """Keep only faces whose centre lies inside the box lo..hi."""
+    out = {}
+    for group, items in prepared.items():
+        out[group] = [(f, c) for f, c in items
+                      if np.all(f.mean(axis=0) >= lo)
+                      and np.all(f.mean(axis=0) <= hi)]
+    return out
+
+
+def closeup(solids, path):
+    """Looking up from the front at each end of axis 1: brackets glued
+    under the floor, servo 1 + horn on the left, the pin on the right."""
+    keep = [s for s in solids if s[1] not in HIDE_IN_CLOSEUP]
+    prepared = prepare(keep)
+    fig = plt.figure(figsize=(16, 7.5), dpi=110)
+    for k, (x0, x1, title, notes) in enumerate((
+            (-2.2, 2.4, "LEFT end: servo 1 turns the board",
+             "servo 1 sits in the frame's left plate; its horn is screwed "
+             "to the left bracket"),
+            (B - 2.4, B + 0.6, "RIGHT end: plain pin",
+             "1/4 in pin through the right bracket and the frame's right "
+             "strip"))):
+        lo = np.array([x0, C - 2.2, -2.0])
+        hi = np.array([x1, C + 2.2, 0.6])
+        ax = fig.add_axes([0.5 * k, 0.06, 0.5, 0.8], projection="3d")
+        draw(ax, crop(prepared, lo, hi), 0, 0, axes=False)
+        ax.set_xlim(x0, x1)
+        ax.set_ylim(C - 2.2, C + 2.2)
+        ax.set_zlim(-2.0, 0.6)
+        ax.set_box_aspect((x1 - x0, 4.4, 2.6), zoom=1.0)
+        ax.view_init(elev=-14, azim=-75)
+        fig.text(0.25 + 0.5 * k, 0.9, title, ha="center", fontsize=14,
+                 weight="bold")
+        fig.text(0.25 + 0.5 * k, 0.865, notes, ha="center", fontsize=10.5,
+                 color="#333")
+    fig.suptitle("Axis 1 seen from below the board (front parts and base "
+                 "hidden)", fontsize=16, weight="bold", y=0.985)
+    fig.text(0.5, 0.025, "orange = board, floor and the two brackets glued "
+             "under it   blue = frame + servo 1   dark dots = axle / screw "
+             "holes   red line = axis 1, %.2f in below the floor top"
+             % -PIN_Z, ha="center", fontsize=10.5, color="#333")
+    fig.savefig(path, facecolor="white")
+    plt.close(fig)
+    print("wrote", path)
+
+
 def main():
     solids = parse(os.path.join(HERE, "Labyrinth_3D.scr"))
     prepared = prepare(solids)
     out = sys.argv[sys.argv.index("--out") + 1] if "--out" in sys.argv \
         else HERE
     picture(prepared, os.path.join(out, "Labyrinth_axes_explained.png"))
+    closeup(solids, os.path.join(out, "Labyrinth_axis1_bracket.png"))
     if "--video" in sys.argv:
         video(prepared, os.path.join(out, "Labyrinth_two_axis.mp4"))
 
