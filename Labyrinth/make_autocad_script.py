@@ -48,8 +48,9 @@ HORN_SCREW_R, HORN_SCREW_DX, HORN_HUB_R = 0.05, 0.3, 0.1
 WINDOW_CLEAR = 0.01           # servo cutout is this much bigger all round
 
 FR_GAP = 0.5                  # gap between board and frame (3 sides)
-FR_Z0, FR_Z1 = -1.2, 1.8      # frame strips: 1/8 thick, 3 in tall
+FR_Z0, FR_Z1 = -1.2, ml.RIM_H # frame strips: top level with the board's rim
 BAY_CLEAR = 0.25              # servo bay: room behind servo 1's body
+BAY_Z1 = AXIS_Z + SERVO_W / 2 + 0.3   # servo bay walls stop just above it
 LP_Z0 = -1.45                 # the frame's left plate goes a bit lower
 # brackets under the floor for axis 1 (left: servo horn, right: pin)
 BRK_W, BRK_T, BRK_Z0 = 1.5, 0.25, -1.1   # drop plate: width, thick, bottom
@@ -122,7 +123,7 @@ class Model:
 
 
 # -------------------------------------------------------------- the servo
-def servo(m, to_world, layer, color):
+def servo(m, to_world, layer, color, horn_layer):
     """Servo body, mounting tabs, output boss and round horn."""
     x0, x1 = -SHAFT_FROM_END, SERVO_LEN - SHAFT_FROM_END
     xm, hy = (x0 + x1) / 2, SERVO_W / 2
@@ -131,7 +132,7 @@ def servo(m, to_world, layer, color):
     m.box(*to_world(xm - SERVO_TAB_SPAN / 2, -hy, TAB_Z),
           *to_world(xm + SERVO_TAB_SPAN / 2, hy, -SERVO_TAB_FROM_TOP))
     m.cyl(to_world(0, 0, 0), to_world(0, 0, BOSS_H), BOSS_R)
-    m.use("HORNS", 9)
+    m.use(horn_layer, 9)
     m.cyl(to_world(0, 0, BOSS_H), to_world(0, 0, BOSS_H + HORN_T), HORN_R)
 
 
@@ -226,10 +227,10 @@ def build():
                [lambda: m.cyl((fi1 - 0.05, C, AXIS_Z), (fx1 + 0.05, C, AXIS_Z),
                               PIN_HOLE_R)])
     m.cut_part("FRAME-FRONT", 150,
-               lambda: m.box(fx0, fy0, FR_Z0, fx1, fi0, FR_Z1),
+               lambda: m.box(lp0, fy0, FR_Z0, fx1, fi0, FR_Z1),
                horn_hole_cuts(m, "y", fy0 - 0.05, fi0 + 0.05, C))
     m.cut_part("FRAME-BACK", 150,
-               lambda: m.box(fx0, fi1, FR_Z0, fx1, fy1, FR_Z1),
+               lambda: m.box(lp0, fi1, FR_Z0, fx1, fy1, FR_Z1),
                [lambda: m.cyl((C, fi1 - 0.05, AXIS_Z), (C, fy1 + 0.05, AXIS_Z),
                               PIN_HOLE_R)])
 
@@ -247,8 +248,10 @@ def build():
 
     # ---- parts without holes
     m.lines += ["-LAYER", "T", "*", ""]
-    m.use("FRAME-BAY", 150)                        # outer wall of servo bay
-    m.box(bay0, fi0, FR_Z0, bay1, fi1, FR_Z1)
+    m.use("FRAME-BAY", 150)                        # low servo bay, left
+    m.box(bay0, fi0, FR_Z0, bay1, fi1, BAY_Z1)     # outer wall
+    m.box(bay0, fy0, FR_Z0, lp0, fi0, BAY_Z1)      # front side
+    m.box(bay0, fi1, FR_Z0, lp0, fy1, BAY_Z1)      # back side
     for name in ("RIM-FRONT", "RIM-BACK", "RIM-LEFT", "RIM-RIGHT"):
         m.use(name, 22)
         m.box(*rim[name][:2], 0, *rim[name][2:], ml.RIM_H)
@@ -269,8 +272,8 @@ def build():
     m.cyl((B - BRK_T, C, AXIS_Z), (fx1 + 0.1, C, AXIS_Z), PIN_R)
     m.use("PIN-AXIS2", 5)
     m.cyl((C, fi1, AXIS_Z), (C, pb1 + 0.1, AXIS_Z), PIN_R)
-    servo(m, s1, "SERVO-1", 240)
-    servo(m, s2, "SERVO-2", 240)
+    servo(m, s1, "SERVO-1", 240, "HORN-1")
+    servo(m, s2, "SERVO-2", 240, "HORN-2")
     bx0 = fx0 - 0.5
     by0 = s2(0, 0, -SERVO_BODY_H)[1] - 0.5
     bx1, by1 = fx1 + 1.0, pb1 + 0.5
@@ -294,7 +297,8 @@ def build():
             m.text(f, mx + 0.3 * ux, my + 0.3 * uy, 0.002, 0.26)
     m.finish()
     info = dict(base=(bx1 - bx0, by1 - by0), left_plate=(lp0, lp1),
-                front_post=(pf0, pf1), frame=(fx0, fx1, fy0, fy1))
+                front_post=(pf0, pf1), frame=(fx0, fx1, fy0, fy1),
+                frame_inside=(fi0, fi1))
     return m, info
 
 
@@ -312,7 +316,7 @@ def check(m, info):
     lo, hi = first(m, "SERVO-2", "box")
     pf0, pf1 = info["front_post"]
     assert lo[1] < pf0 and hi[1] > pf1, "servo 2 must pass the front post"
-    horns = [s[2] for s in m.solids if s[0] == "HORNS"]
+    horns = [first(m, "HORN-1", "cyl"), first(m, "HORN-2", "cyl")]
     assert abs(max(horns[0][0][0], horns[0][1][0]) - 0.0) < 1e-6, \
         "servo 1 horn must sit on the left bracket"
     assert abs(max(horns[1][0][1], horns[1][1][1]) - FR_FRONT_OUT) < 1e-6, \
@@ -328,9 +332,122 @@ def check(m, info):
           % (fx1 - fx0, fy1 - fy0, *info["base"]))
 
 
+BOARD_LAYERS = ("FLOOR", "RIM-FRONT", "RIM-BACK", "RIM-LEFT", "RIM-RIGHT",
+                "WALLS", "BRACKET-LEFT", "BRACKET-RIGHT", "TRAPDOOR-FLAP",
+                "TRAPDOOR-SERVO", "BALL", "HORN-1")
+FRAME_LAYERS = ("FRAME-LEFT", "FRAME-RIGHT", "FRAME-FRONT", "FRAME-BACK",
+                "FRAME-BAY", "SERVO-1", "PIN-AXIS1", "HORN-2")
+
+
+def corners(kind, d):
+    if kind == "box":
+        (x0, y0, z0), (x1, y1, z1) = d
+        return [(x, y, z) for x in (x0, x1) for y in (y0, y1)
+                for z in (z0, z1)]
+    if kind == "cyl":
+        (p0, p1, r) = d
+        return [(p[0] + dx, p[1] + dy, p[2] + dz) for p in (p0, p1)
+                for dx in (-r, r) for dy in (-r, r) for dz in (-r, r)]
+    (c, r) = d
+    return [(c[0] + dx, c[1] + dy, c[2] + dz) for dx in (-r, r)
+            for dy in (-r, r) for dz in (-r, r)]
+
+
+def max_tilt(m, info):
+    """Largest axis-1 tilt (degrees) before the board touches the frame.
+    Axis 2 never moves the board against the frame - they turn together."""
+    import math
+    fi0, fi1 = info["frame_inside"]
+    pts = [p for layer, kind, d in m.solids if layer in BOARD_LAYERS
+           for p in corners(kind, d)]
+    a = 0.0
+    while a < 30:
+        a += 0.1
+        for sgn in (1, -1):
+            r = math.radians(a * sgn)
+            for x, y, z in pts:
+                yy = C + (y - C) * math.cos(r) - (z - AXIS_Z) * math.sin(r)
+                zz = AXIS_Z + (y - C) * math.sin(r) + (z - AXIS_Z) * math.cos(r)
+                if FR_Z0 <= zz <= FR_Z1 and not fi0 < yy < fi1:
+                    return a - 0.1
+    return a
+
+
+def write_lsp(path):
+    """AutoLISP: TILTDEMO swings the model in AutoCAD, servo by servo."""
+    lsp = r""";; The Labyrinth - tilt animation for the 3D model built by Labyrinth_3D.scr
+;; Load:  Manage tab > Applications > Load Application (APPLOAD), pick this
+;;        file, Load (or drag the file onto the drawing).
+;; Run:   type TILTDEMO   (TILTSPEED changes how fast it moves)
+;; The model always ends back level.
+
+(setq lab:C %(C)s  lab:AZ %(AZ)s  lab:B %(B)s  lab:tilt %(TILT)s  lab:ms 40)
+
+(defun lab:board () (ssget "_X" '((8 . "%(BOARD)s"))))
+(defun lab:frame () (ssget "_X" '((8 . "%(FRAME)s"))))
+
+;; axis 1 runs left-right under the board; it rides on the frame, so after
+;; the frame has turned b degrees on axis 2 its end points move too
+(defun lab:axis1 (b / r)
+  (setq r (* pi (/ b 180.0)))
+  (list (list (+ lab:C (* (- 0 lab:C) (cos r))) lab:C
+              (- lab:AZ (* (- 0 lab:C) (sin r))))
+        (list (+ lab:C (* (- lab:B lab:C) (cos r))) lab:C
+              (- lab:AZ (* (- lab:B lab:C) (sin r))))))
+
+(defun lab:turn (sets p1 p2 ang)
+  (command "_.ROTATE3D")
+  (foreach s sets (if s (command s)))
+  (command "" p1 p2 ang "_.DELAY" lab:ms))
+
+;; swing one axis 0 -> +tilt -> -tilt -> 0, one degree per step
+(defun lab:swing (sets p1 p2)
+  (repeat (fix lab:tilt) (lab:turn sets p1 p2 1))
+  (repeat (fix (* 2 lab:tilt)) (lab:turn sets p1 p2 -1))
+  (repeat (fix lab:tilt) (lab:turn sets p1 p2 1)))
+
+(defun c:TILTDEMO (/ echo snap board frame a2a a2b ax1)
+  (setq echo (getvar "CMDECHO") snap (getvar "OSMODE"))
+  (setvar "CMDECHO" 0) (setvar "OSMODE" 0)   ; snaps would move the axis points
+  (setq board (lab:board) frame (lab:frame))
+  (setq a2a (list lab:C 0.0 lab:AZ) a2b (list lab:C 1.0 lab:AZ))
+  (princ "\n1) servo 1 only: the board tips front/back, the frame stays still")
+  (setq ax1 (lab:axis1 0))
+  (lab:swing (list board) (car ax1) (cadr ax1))
+  (princ "\n2) servo 2 only: the frame tips left/right and carries the board")
+  (lab:swing (list board frame) a2a a2b)
+  (princ "\n3) both: frame tipped, then the board tips inside it")
+  (repeat (fix lab:tilt) (lab:turn (list board frame) a2a a2b 1))
+  (setq ax1 (lab:axis1 lab:tilt))
+  (lab:swing (list board) (car ax1) (cadr ax1))
+  (repeat (fix lab:tilt) (lab:turn (list board frame) a2a a2b -1))
+  (setvar "CMDECHO" echo) (setvar "OSMODE" snap)
+  (princ "\nDone - back to level.")
+  (princ))
+
+(defun c:TILTSPEED (/ v)
+  (setq v (getint (strcat "\nPause per step in ms <" (itoa lab:ms) ">: ")))
+  (if v (setq lab:ms v))
+  (princ))
+
+(princ "\nLabyrinth animation loaded - type TILTDEMO.")
+(princ)
+""" % dict(C=n(C), AZ=n(AXIS_Z), B=n(B), TILT="6",
+           BOARD=",".join(BOARD_LAYERS + ("LABELS",)),
+           FRAME=",".join(FRAME_LAYERS))
+    with open(path, "w", newline="\r\n") as fh:
+        fh.write(lsp)
+    print("wrote", path)
+
+
 def main():
     m, info = build()
     check(m, info)
+    tilt = max_tilt(m, info)
+    assert tilt >= 8.0, "board hits the frame at %.1f deg" % tilt
+    print("board can tip %.1f deg on axis 1 before touching the frame "
+          "(game uses 6)" % tilt)
+    write_lsp(os.path.join(OUT_DIR, "Labyrinth_animate.lsp"))
     path = os.path.join(OUT_DIR, "Labyrinth_3D.scr")
     with open(path, "w", newline="\r\n") as fh:
         fh.write("\n".join(m.lines) + "\n")

@@ -34,6 +34,7 @@ REAL_TILT = 6.0
 FIXED = {"BASE", "POST-FRONT", "POST-BACK", "SERVO-2", "CONTROLS",
          "JOYSTICK", "PIN-AXIS2"}
 FRAME = {"FRAME-LEFT", "FRAME-RIGHT", "FRAME-FRONT", "FRAME-BACK", "FRAME-BAY",
+         "HORN-2",
          "SERVO-1", "PIN-AXIS1"}
 GROUP_COLOR = {"fixed": "#8f9399", "frame": "#3f7fd0", "board": "#e39b45"}
 SHADE = {"WALLS": 0.78, "RIM-FRONT": 0.66, "RIM-BACK": 0.66,

@@ -12,6 +12,7 @@ re-run `python3 make_labyrinth.py`.
 | `Labyrinth_board_top.png` | Top view of the finished board (slides, report) |
 | `Labyrinth_preview.png` | Picture of the DXF: sheet 1 + sheet 2 |
 | `Labyrinth_3D.scr` | AutoCAD script: in a new drawing type `SCRIPT` and pick it to build the whole game in 3D: board, frame, axis holes, servo cutouts, posts, base (`make_autocad_script.py` rebuilds it) |
+| `Labyrinth_animate.lsp` | AutoCAD animation: load it with `APPLOAD` in the drawing built by `Labyrinth_3D.scr`, then type `TILTDEMO` |
 | `Labyrinth_axis1_bracket.png` | Close-up from below of the axis-1 brackets under the board (servo 1 on the left, pin on the right) |
 | `Labyrinth_axes_explained.png` | Four pictures of how the two axes move, coloured by what moves with what (`make_axis_views.py` rebuilds it from the 3D model) |
 | `Labyrinth_two_axis.mp4` | 20 s video of the same (`make_axis_views.py --video`) |
@@ -27,7 +28,7 @@ re-run `python3 make_labyrinth.py`.
 | Floor plate | 11.5 × 11.5 in | The laser bed is 12 × 16 in and the guide asks for a ¼ in border, so 11.5 in is the biggest square that fits. Change `BOARD` if the frame has to fit inside 12 × 12 |
 | Ball | ⅝ in steel ball bearing | Heavy, so it rolls smoothly and the same way every time. 3D-printed balls are light and slightly rough |
 | Grid | 9 × 9 cells, 1.264 in apart | Corridor is 1.139 in between walls, about 1.8 balls wide |
-| Walls / rim | ⅛ in ply, 2 in tall / 2 in tall (blue frame: 3 in) | Team choice. The ball can never hop a wall. Tall walls hide the ball from low angles, so check the view in the cardboard prototype |
+| Walls / rim | ⅛ in ply, 2 in tall / 2 in tall (blue frame level with the rim, servo bay lower) | Team choice. The ball can never hop a wall. Tall walls hide the ball from low angles, so check the view in the cardboard prototype |
 | **5 coin** hole | ¾ in drill | Smallest, at the far corner (back-right) |
 | **3 coin** hole | ⅞ in drill | Side pocket just before the 5 |
 | **1 coin** hole | 1 in drill | Side pocket before that, easiest to sink |
