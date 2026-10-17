@@ -47,8 +47,9 @@ HORN_R, HORN_T = 0.34, 0.1
 HORN_SCREW_R, HORN_SCREW_DX, HORN_HUB_R = 0.05, 0.3, 0.1
 WINDOW_CLEAR = 0.01           # servo cutout is this much bigger all round
 
-FR_GAP = 0.25                 # gap between board and frame (3 sides)
-FR_Z0, FR_Z1 = -1.2, 0.8      # frame strips: 1/8 thick, 2 in tall
+FR_GAP = 0.5                  # gap between board and frame (3 sides)
+FR_Z0, FR_Z1 = -1.2, 1.8      # frame strips: 1/8 thick, 3 in tall
+BAY_CLEAR = 0.25              # servo bay: room behind servo 1's body
 LP_Z0 = -1.45                 # the frame's left plate goes a bit lower
 # brackets under the floor for axis 1 (left: servo horn, right: pin)
 BRK_W, BRK_T, BRK_Z0 = 1.5, 0.25, -1.1   # drop plate: width, thick, bottom
@@ -213,7 +214,9 @@ def build():
     fi0, fi1 = -FR_GAP, B + FR_GAP                 # inside faces
     lp1 = s1(0, 0, TAB_Z)[0]                       # left plate, under tabs
     lp0 = lp1 - T
-    fx0, fx1 = lp0, fi1 + T                        # frame outside, x
+    bay1 = s1(0, 0, -SERVO_BODY_H)[0] - BAY_CLEAR   # servo bay outer wall
+    bay0 = bay1 - T
+    fx0, fx1 = bay0, fi1 + T                       # frame outside, x
     fy0, fy1 = fi0 - T, fi1 + T                    # frame outside, y
     m.cut_part("FRAME-LEFT", 150,
                lambda: m.box(lp0, fi0, LP_Z0, lp1, fi1, FR_Z1),
@@ -244,6 +247,8 @@ def build():
 
     # ---- parts without holes
     m.lines += ["-LAYER", "T", "*", ""]
+    m.use("FRAME-BAY", 150)                        # outer wall of servo bay
+    m.box(bay0, fi0, FR_Z0, bay1, fi1, FR_Z1)
     for name in ("RIM-FRONT", "RIM-BACK", "RIM-LEFT", "RIM-RIGHT"):
         m.use(name, 22)
         m.box(*rim[name][:2], 0, *rim[name][2:], ml.RIM_H)
@@ -266,7 +271,7 @@ def build():
     m.cyl((C, fi1, AXIS_Z), (C, pb1 + 0.1, AXIS_Z), PIN_R)
     servo(m, s1, "SERVO-1", 240)
     servo(m, s2, "SERVO-2", 240)
-    bx0 = s1(0, 0, -SERVO_BODY_H)[0] - 0.5
+    bx0 = fx0 - 0.5
     by0 = s2(0, 0, -SERVO_BODY_H)[1] - 0.5
     bx1, by1 = fx1 + 1.0, pb1 + 0.5
     m.use("BASE", 251)

@@ -36,7 +36,7 @@ N = 9               # cells per side
 PITCH = (BOARD - T) / N          # wall centre to wall centre
 CLEAR = PITCH - T                # corridor width between wall faces
 WALL_H = 2.0        # maze wall height above the floor
-RIM_H = 3.0         # outer rim height above the floor
+RIM_H = 2.0         # outer rim height above the floor (same as walls)
 BALL_D = 0.625      # 5/8 in steel ball
 
 # Hole diameters: all standard drill press (Forstner) bit sizes.

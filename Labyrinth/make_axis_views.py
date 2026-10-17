@@ -33,7 +33,7 @@ REAL_TILT = 6.0
 
 FIXED = {"BASE", "POST-FRONT", "POST-BACK", "SERVO-2", "CONTROLS",
          "JOYSTICK", "PIN-AXIS2"}
-FRAME = {"FRAME-LEFT", "FRAME-RIGHT", "FRAME-FRONT", "FRAME-BACK",
+FRAME = {"FRAME-LEFT", "FRAME-RIGHT", "FRAME-FRONT", "FRAME-BACK", "FRAME-BAY",
          "SERVO-1", "PIN-AXIS1"}
 GROUP_COLOR = {"fixed": "#8f9399", "frame": "#3f7fd0", "board": "#e39b45"}
 SHADE = {"WALLS": 0.78, "RIM-FRONT": 0.66, "RIM-BACK": 0.66,
@@ -228,10 +228,10 @@ def draw(ax, prepared, servo1_deg, servo2_deg, labels=False, axes=True):
                 ((-0.4, C - 2.6, -1.9), "bracket under\nthe board", "#a85a10")):
             ax.text(*p, s, color=col, fontsize=9, weight="bold",
                     ha="center", zorder=6)
-    ax.set_xlim(-2.3, B + 1.5)
+    ax.set_xlim(-2.8, B + 1.5)
     ax.set_ylim(-2.7, B + 1.6)
     ax.set_zlim(-5.1, 3.4)
-    ax.set_box_aspect((B + 3.8, B + 4.3, 8.5), zoom=1.3)
+    ax.set_box_aspect((B + 4.3, B + 4.3, 8.5), zoom=1.3)
     ax.view_init(elev=38, azim=-58)
     ax.set_axis_off()
 
@@ -354,7 +354,7 @@ def closeup(solids, path):
     prepared = prepare(keep)
     fig = plt.figure(figsize=(16, 7.5), dpi=110)
     for k, (x0, x1, title, notes) in enumerate((
-            (-2.2, 2.4, "LEFT end: servo 1 turns the board",
+            (-2.6, 2.4, "LEFT end: servo 1 turns the board",
              "servo 1 sits in the frame's left plate; its horn is screwed "
              "to the left bracket"),
             (B - 2.4, B + 0.6, "RIGHT end: plain pin",

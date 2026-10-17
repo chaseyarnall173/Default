@@ -27,7 +27,7 @@ re-run `python3 make_labyrinth.py`.
 | Floor plate | 11.5 × 11.5 in | The laser bed is 12 × 16 in and the guide asks for a ¼ in border, so 11.5 in is the biggest square that fits. Change `BOARD` if the frame has to fit inside 12 × 12 |
 | Ball | ⅝ in steel ball bearing | Heavy, so it rolls smoothly and the same way every time. 3D-printed balls are light and slightly rough |
 | Grid | 9 × 9 cells, 1.264 in apart | Corridor is 1.139 in between walls, about 1.8 balls wide |
-| Walls / rim | ⅛ in ply, 2 in tall / 3 in tall | Team choice. The ball can never hop a wall. Tall walls hide the ball from low angles, so check the view in the cardboard prototype |
+| Walls / rim | ⅛ in ply, 2 in tall / 2 in tall (blue frame: 3 in) | Team choice. The ball can never hop a wall. Tall walls hide the ball from low angles, so check the view in the cardboard prototype |
 | **5 coin** hole | ¾ in drill | Smallest, at the far corner (back-right) |
 | **3 coin** hole | ⅞ in drill | Side pocket just before the 5 |
 | **1 coin** hole | 1 in drill | Side pocket before that, easiest to sink |
@@ -58,7 +58,7 @@ releases the ball at about 6°. Test that in cardboard first.
 4. Drill the holes on the drill press with the same bits you'll use in
    Milestone 3. Clamp the board on scrap wood and put the bit point on the
    crosshair. This doubles as practice for the auxiliary-tool part.
-5. Cut wall strips 2 in tall (rim strips 3 in) to the lengths in the cut list (page 1). Each
+5. Cut wall and rim strips 2 in tall to the lengths in the cut list (page 1). Each
    strip has a letter (A–J) that matches the shaded footprint on the
    template. Hot glue them on.
 6. Trapdoor: cut out the hatched square, cut the flap from the same board,
@@ -140,7 +140,7 @@ DXF, so do AutoCAD-only edits in your `.dwg` copy once the maze is final.
 5. Send one sheet per job: `PLOT` → Plot area **Window** → click two opposite
    corners of that sheet's rectangle → scale **1:1**, with **Fit to paper
    unchecked**. Fit to paper silently rescales everything.
-6. Budget: with 2 in walls and a 3 in rim the board alone needs **3 sheets**
+6. Budget: with 2 in walls and rim the board alone needs **3 sheets**
    (the class allows about 2), before the frame, brackets and posts. Ask
    for an extra sheet, or cut the tall walls from another material.
    Laser-cut holes come out about one kerf larger; drilled holes come out
