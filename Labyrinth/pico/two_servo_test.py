@@ -47,6 +47,7 @@ while True:
     swing(inner, INNER_TILT)
     time.sleep(0.5)
     print("3) both: maze leans in a circle")
+    glide(inner, 0, INNER_TILT)    # start the circle at front/back = +tilt
     for i in range(0, 361, 5):
         a = math.radians(i)
         angle(outer, OUTER_TILT * math.sin(a))
