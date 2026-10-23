@@ -11,7 +11,7 @@ inner = PWM(Pin(17))
 outer.freq(50)
 inner.freq(50)
 
-OUTER_TRIM = -5     # outer servo's 0 is 5 deg off level; flip to -5 if worse
+OUTER_TRIM = -5     # outer servo's 0 is 5 deg off level (use tilt_control's saved value)
 INNER_TRIM = 0      # change if the board isn't level front/back
 FLIP_OUTER = False  # True if "RIGHT" moves make the ball go LEFT
 FLIP_INNER = True   # True if "BACK" moves make the ball come toward you
