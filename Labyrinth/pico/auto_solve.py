@@ -16,7 +16,7 @@ INNER_TRIM = 0      # change if the board isn't level front/back
 FLIP_OUTER = False  # True if "RIGHT" moves make the ball go LEFT
 FLIP_INNER = False  # True if "BACK" moves make the ball come toward you
 TIME_SCALE = 1.0    # all push times x this (ball too slow: 1.2, too fast: 0.8)
-STEP_MODE = True    # True: press Enter in Thonny before each move
+STEP_MODE = False   # True: press Enter before every move (for tuning)
 SETTLE_S = 0.6      # level pause after each move so the ball stops
 RAMP_DEG_S = 120    # how fast the board changes angle
 
@@ -78,7 +78,7 @@ def go(lr, fb, seconds):
 print("LEVEL CHECK: the board should be flat for 5 s.")
 print("If it leans left/right, change OUTER_TRIM; front/back, INNER_TRIM.")
 go(0, 0, 5)
-input("Put the ball on START, then press Enter ")
+input("Put the ball on START, then press Enter to run the maze ")
 
 for name, steps in MOVES:
     if STEP_MODE:
