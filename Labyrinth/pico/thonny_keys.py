@@ -17,7 +17,7 @@ servo2.freq(50)
 OUTER_TRIM = 5      # use the number that makes the board level
 INNER_TRIM = 0
 FLIP_OUTER = False  # True if d makes the ball go left
-FLIP_INNER = False  # True if w makes the ball come toward you
+FLIP_INNER = True   # True if w makes the ball come toward you
 STEP = 2            # degrees per letter
 MAX_TILT = 15       # board hits the frame at about 16
 

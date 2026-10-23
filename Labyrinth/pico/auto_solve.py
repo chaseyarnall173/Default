@@ -14,7 +14,7 @@ inner.freq(50)
 OUTER_TRIM = 5      # outer servo's 0 is 5 deg off level; flip to -5 if worse
 INNER_TRIM = 0      # change if the board isn't level front/back
 FLIP_OUTER = False  # True if "RIGHT" moves make the ball go LEFT
-FLIP_INNER = False  # True if "BACK" moves make the ball come toward you
+FLIP_INNER = True   # True if "BACK" moves make the ball come toward you
 TIME_SCALE = 1.0    # all push times x this (ball too slow: 1.2, too fast: 0.8)
 STEP_MODE = False   # True: press Enter before every move (for tuning)
 SETTLE_S = 0.6      # level pause after each move so the ball stops

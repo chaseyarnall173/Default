@@ -24,7 +24,7 @@ servo2.freq(50)
 OUTER_TRIM = 5      # same as auto_solve.py: use the number that makes it level
 INNER_TRIM = 0
 FLIP_OUTER = False  # True if RIGHT arrow makes the ball go left
-FLIP_INNER = False  # True if UP arrow makes the ball come toward you
+FLIP_INNER = True   # True if UP arrow makes the ball come toward you
 STEP = 2            # degrees per key press
 MAX_TILT = 15       # never tilt more than this (board hits frame at ~16)
 SPEED = 90          # degrees per second the board moves
