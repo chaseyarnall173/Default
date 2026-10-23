@@ -3,6 +3,7 @@
 #   LET GO = board stays where it is
 #   hold two keys = diagonal, hold SHIFT too = extra slow (fine control)
 #   SPACE = glide back to level
+#   1-9 = speed (1 = slow, 9 = fast), shown in the window
 #   ENTER = "the board is level right now" (saves it as the new level)
 # It sends its own little program to the Pico, so nothing needs copying.
 # Close Thonny first, then in PowerShell:   python tilt_control.py
@@ -18,10 +19,9 @@ OUTER_TRIM = -5     # servo angle that makes the board level (ENTER sets it)
 INNER_TRIM = 0
 FLIP_OUTER = False  # True if RIGHT makes the ball go left
 FLIP_INNER = True   # True if UP makes the ball come toward you
-RATE = 12           # degrees per second while holding a key
-SLOW_RATE = 4       # degrees per second while holding SHIFT + key
+SPEED = 5           # starting speed 1-9 (change it live with the 1-9 keys)
 MAX_TILT = 15       # furthest from level (board hits the frame at ~16)
-SMOOTH = 0.15       # seconds the board takes to catch up (bigger = calmer)
+SMOOTH = 0.06       # seconds the board takes to catch up (bigger = calmer)
 RATE_MS = 20        # send to the Pico every 20 ms (50 times a second)
 
 TRIM_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)),
@@ -76,6 +76,7 @@ held = set()
 target = [0.0, 0.0]                     # where you've steered to
 now = [0.0, 0.0]                        # where the board is (smoothed)
 trim = [OUTER_TRIM, INNER_TRIM]
+speed = [SPEED]
 
 win = tk.Tk()
 win.title("Labyrinth tilt")
@@ -88,7 +89,7 @@ dot = canvas.create_oval(140, 140, 160, 160, fill="red")
 label = tk.Label(win, font=("Arial", 12))
 label.pack()
 tk.Label(win, text="hold arrows = tilt   SHIFT = slow   SPACE = level\n"
-                   "ENTER = save this as level",
+                   "1-9 = speed   ENTER = save this as level",
          font=("Arial", 10)).pack()
 
 WASD = {"w": "Up", "a": "Left", "s": "Down", "d": "Right"}
@@ -97,6 +98,8 @@ WASD = {"w": "Up", "a": "Left", "s": "Down", "d": "Right"}
 def press(e):
     key = WASD.get(e.keysym.lower(), e.keysym)
     held.add(key)
+    if key in "123456789" and len(key) == 1:
+        speed[0] = int(key)
     if key == "Return":                 # this position is level
         for k in (0, 1):
             trim[k] = servo_deg(k)
@@ -117,7 +120,7 @@ def servo_deg(k):
 def tick():
     dt = RATE_MS / 1000
     slow = "Shift_L" in held or "Shift_R" in held
-    rate = (SLOW_RATE if slow else RATE) * dt
+    rate = speed[0] * 10 * dt / (3 if slow else 1)   # speed 5 = 50 deg/s
     push = [("Right" in held) - ("Left" in held),
             ("Up" in held) - ("Down" in held)]
     for k in (0, 1):
@@ -131,8 +134,8 @@ def tick():
         print(extra.decode(errors="replace"), end="")   # Pico errors
     x, y = 150 + now[0] * 130 / MAX_TILT, 150 - now[1] * 130 / MAX_TILT
     canvas.coords(dot, x - 10, y - 10, x + 10, y + 10)
-    label.config(text="left/right %+5.1f   front/back %+5.1f   (level trim %+.1f, %+.1f)"
-                 % (now[0], now[1], trim[0], trim[1]))
+    label.config(text="speed %d   left/right %+5.1f   front/back %+5.1f"
+                 % (speed[0], now[0], now[1]))
     win.after(RATE_MS, tick)
 
 
