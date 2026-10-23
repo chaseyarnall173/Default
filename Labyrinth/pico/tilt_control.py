@@ -22,17 +22,20 @@ FLIP_INNER = True   # True if UP makes the ball come toward you
 SPEED = 5           # starting speed 1-9 (change it live with the 1-9 keys)
 MAX_TILT = 15       # furthest from level (board hits the frame at ~16)
 SMOOTH = 0          # seconds of smoothing (0 = instant, 0.05 = a bit calmer)
-RATE_MS = 10        # send to the Pico every 10 ms (100 times a second)
+RATE_MS = 20        # send to the Pico every 20 ms (= the servo's own rate)
+LOW_VOLTS = 4.4     # below this the USB power is sagging (servos get weak)
 
 TRIM_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)),
                          "tilt_trim.json")
 if os.path.exists(TRIM_FILE):
     OUTER_TRIM, INNER_TRIM = json.load(open(TRIM_FILE))
 
-# the program that runs on the Pico: reads "servo1 servo2" lines
+# the program that runs on the Pico: reads "servo1 servo2" lines, always
+# jumps to the newest one (so it can never fall behind), and reports the
+# power voltage twice a second
 PICO_CODE = b"""
-from machine import Pin, PWM
-import sys
+from machine import Pin, PWM, ADC
+import sys, select
 s1 = PWM(Pin(16))
 s2 = PWM(Pin(17))
 s1.freq(50)
@@ -40,13 +43,26 @@ s2.freq(50)
 def w(s, d):
     d = max(-30, min(30, d))
     s.duty_ns(int((1500 + d * 7.4) * 1000))
+try:
+    vsys = ADC(29)
+except Exception:
+    vsys = None
+waiting = select.poll()
+waiting.register(sys.stdin, select.POLLIN)
+n = 0
 while True:
+    line = sys.stdin.readline()
+    while waiting.poll(0):
+        line = sys.stdin.readline()
     try:
-        a, b = sys.stdin.readline().split()
+        a, b = line.split()
         w(s1, float(a))
         w(s2, float(b))
     except ValueError:
         pass
+    n += 1
+    if vsys and n % 25 == 0:
+        print("V %.2f" % (vsys.read_u16() * 9.9 / 65535))
 """
 
 
@@ -78,6 +94,8 @@ target = [0.0, 0.0]                     # where you've steered to
 now = [0.0, 0.0]                        # where the board is (smoothed)
 trim = [OUTER_TRIM, INNER_TRIM]
 speed = [SPEED]
+volts = [None]
+inbox = [b""]
 
 win = tk.Tk()
 win.title("Labyrinth tilt")
@@ -135,13 +153,21 @@ def tick():
         target[k] = max(-MAX_TILT, min(MAX_TILT, target[k] + push[k] * rate))
         now[k] += (target[k] - now[k]) * (min(1.0, dt / SMOOTH) if SMOOTH else 1)
     pico.write(b"%.2f %.2f\n" % (servo_deg(0), servo_deg(1)))
-    extra = pico.read(pico.in_waiting or 1)
-    if extra.strip():
-        print(extra.decode(errors="replace"), end="")   # Pico errors
+    inbox[0] += pico.read(pico.in_waiting or 1)
+    while b"\n" in inbox[0]:
+        line, inbox[0] = inbox[0].split(b"\n", 1)
+        line = line.decode(errors="replace").strip()
+        if line.startswith("V "):
+            volts[0] = float(line[2:])
+        elif line:
+            print(line)                 # Pico errors
     x, y = 150 + now[0] * 130 / MAX_TILT, 150 - now[1] * 130 / MAX_TILT
     canvas.coords(dot, x - 10, y - 10, x + 10, y + 10)
-    label.config(text="speed %d   left/right %+5.1f   front/back %+5.1f"
-                 % (speed[0], now[0], now[1]))
+    power = "power ?" if volts[0] is None else "power %.2f V" % volts[0]
+    low = volts[0] is not None and volts[0] < LOW_VOLTS
+    label.config(text="speed %d   left/right %+5.1f   front/back %+5.1f   %s"
+                 % (speed[0], now[0], now[1], power),
+                 fg="red" if low else "black")
     win.after(RATE_MS, tick)
 
 
