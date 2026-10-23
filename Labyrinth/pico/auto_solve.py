@@ -65,14 +65,14 @@ def set_tilt(lr, fb):
 
 def go(lr, fb, seconds):
     """Ramp to the tilt, then hold it for the rest of the time."""
-    t, dt = 0.0, 0.01
-    while t < seconds:
+    start = time.ticks_ms()
+    dt = 0.01
+    while time.ticks_diff(time.ticks_ms(), start) < seconds * 1000:
         step = RAMP_DEG_S * dt
         now[0] += max(-step, min(step, lr - now[0]))
         now[1] += max(-step, min(step, fb - now[1]))
         set_tilt(now[0], now[1])
         time.sleep(dt)
-        t += dt
 
 
 print("LEVEL CHECK: the board should be flat for 5 s.")
