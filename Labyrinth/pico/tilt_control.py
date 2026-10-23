@@ -16,13 +16,13 @@ import serial
 import serial.tools.list_ports
 
 OUTER_TRIM = -5     # servo angle that makes the board level (ENTER sets it)
-INNER_TRIM = 0
+INNER_TRIM = -10    # was 0: the outer-servo side sat 10 deg low (+10 if worse)
 FLIP_OUTER = False  # True if RIGHT makes the ball go left
 FLIP_INNER = True   # True if UP makes the ball come toward you
 SPEED = 5           # starting speed 1-9 (change it live with the 1-9 keys)
 MAX_TILT = 15       # furthest from level (board hits the frame at ~16)
-SMOOTH = 0.06       # seconds the board takes to catch up (bigger = calmer)
-RATE_MS = 20        # send to the Pico every 20 ms (50 times a second)
+SMOOTH = 0          # seconds of smoothing (0 = instant, 0.05 = a bit calmer)
+RATE_MS = 10        # send to the Pico every 10 ms (100 times a second)
 
 TRIM_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)),
                          "tilt_trim.json")
@@ -73,6 +73,7 @@ if b"OK" not in pico.read(100):
     print("Pico didn't answer - unplug it, plug it back in, try again")
 
 held = set()
+fresh = set()                           # keys pressed since the last tick
 target = [0.0, 0.0]                     # where you've steered to
 now = [0.0, 0.0]                        # where the board is (smoothed)
 trim = [OUTER_TRIM, INNER_TRIM]
@@ -97,6 +98,8 @@ WASD = {"w": "Up", "a": "Left", "s": "Down", "d": "Right"}
 
 def press(e):
     key = WASD.get(e.keysym.lower(), e.keysym)
+    if key not in held:
+        fresh.add(key)
     held.add(key)
     if key in "123456789" and len(key) == 1:
         speed[0] = int(key)
@@ -121,13 +124,16 @@ def tick():
     dt = RATE_MS / 1000
     slow = "Shift_L" in held or "Shift_R" in held
     rate = speed[0] * 10 * dt / (3 if slow else 1)   # speed 5 = 50 deg/s
+    if fresh:                           # a key was just pressed: move now
+        rate = max(rate, 1.5)
+        fresh.clear()
     push = [("Right" in held) - ("Left" in held),
             ("Up" in held) - ("Down" in held)]
     for k in (0, 1):
-        if "space" in held:
-            target[k] = 0.0
+        if "space" in held:             # glide back to level, not a jump
+            target[k] -= max(-2 * rate, min(2 * rate, target[k]))
         target[k] = max(-MAX_TILT, min(MAX_TILT, target[k] + push[k] * rate))
-        now[k] += (target[k] - now[k]) * min(1.0, dt / SMOOTH)
+        now[k] += (target[k] - now[k]) * (min(1.0, dt / SMOOTH) if SMOOTH else 1)
     pico.write(b"%.2f %.2f\n" % (servo_deg(0), servo_deg(1)))
     extra = pico.read(pico.in_waiting or 1)
     if extra.strip():
