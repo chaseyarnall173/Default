@@ -21,7 +21,7 @@ servo2 = PWM(Pin(17))   # inner board, front/back
 servo1.freq(50)
 servo2.freq(50)
 
-OUTER_TRIM = 5      # same as auto_solve.py: use the number that makes it level
+OUTER_TRIM = -5     # same as auto_solve.py: use the number that makes it level
 INNER_TRIM = 0
 FLIP_OUTER = False  # True if RIGHT arrow makes the ball go left
 FLIP_INNER = True   # True if UP arrow makes the ball come toward you

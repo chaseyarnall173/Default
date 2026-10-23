@@ -14,7 +14,7 @@ servo2 = PWM(Pin(17))   # inner board, front/back
 servo1.freq(50)
 servo2.freq(50)
 
-OUTER_TRIM = 5      # use the number that makes the board level
+OUTER_TRIM = -5     # use the number that makes the board level
 INNER_TRIM = 0
 FLIP_OUTER = False  # True if d makes the ball go left
 FLIP_INNER = True   # True if w makes the ball come toward you
