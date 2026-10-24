@@ -1,45 +1,46 @@
-"""Joystick drives both servos: the starting point for the real control loop.
+"""Joystick tilts the maze. Runs on the Pico by itself - no laptop needed.
 
 Wiring
   joystick GND  -> Pico GND (pin 38)
   joystick +5V  -> Pico 3V3(OUT) (pin 36)   NOT 5 V: the ADC pins max at 3.3 V
   joystick VRx  -> GP26 (pin 31)       VRy -> GP27 (pin 32)
   joystick SW   -> GP22 (pin 29)       hold the button = board goes level
-  servo X signal -> GP16 (pin 21)      servo Y signal -> GP17 (pin 22)
-  both servos red -> VBUS (pin 40, USB 5 V)   brown/black -> GND (pin 38)
-  Get one servo working on its own first. Two servos moving fast at the
-  same time can draw more than a laptop USB port gives.
+  Servo 1 (outer board, left/right) white -> GP16 (pin 21)
+  Servo 2 (inner board, front/back) white -> GP17 (pin 22)
+  both servos red -> VBUS (pin 40)     both servos black -> GND (pin 38)
 
-Leave the stick alone for the first second while it calibrates its centre.
-Save it on the Pico as main.py to make it run whenever the Pico powers up.
+The stick works like the knobs on a real labyrinth: push it halfway and
+the board tilts halfway, let go and the board goes back to level.
+Leave the stick alone for the first second while it finds its centre.
+Save it on the Pico as main.py and it runs whenever the Pico gets power,
+so you can run the game off a USB wall charger (stronger than a laptop).
 """
 import time
 from machine import ADC, Pin, PWM
 
 # ---- tune these during playtesting -----------------------------------
-SWING = 45.0      # servo degrees at full stick (the linkage turns this into
-                  # about 6 deg of board tilt - lower it if the board tilts
-                  # more than that)
-DEADZONE = 0.06   # part of the stick travel ignored around centre
+MAX_TILT = 10     # board tilt (degrees) at full stick - never more than 15
+DEADZONE = 0.08   # part of the stick travel ignored around centre
 EXPO = 0.5        # 0 = straight line, 1 = very soft near centre (finer)
-SMOOTH = 0.4      # 1 = no smoothing; lower is smoother but adds lag
-TRIM_X, TRIM_Y = 0.0, 0.0       # servo degrees that make the board level
-INVERT_X, INVERT_Y = False, False
-LOOP_MS = 15      # keep this short - long loops ARE the input delay
+SPEED = 120       # fastest the board may move, degrees per second
+OUTER_TRIM = -5   # servo angle that levels the board (same numbers as
+INNER_TRIM = -10  # tilt_control.py - use what ENTER saved there)
+FLIP_OUTER = False  # True if stick right makes the ball go left
+FLIP_INNER = True   # True if stick up makes the ball come toward you
+SWAP_AXES = False   # True if left/right on the stick moves front/back
+LOOP_MS = 10
 # -----------------------------------------------------------------------
-
-MIN_US, MAX_US, RANGE_DEG = 500, 2500, 270   # 270 degree servo
 
 stick_x, stick_y = ADC(26), ADC(27)
 button = Pin(22, Pin.IN, Pin.PULL_UP)
-servo_x, servo_y = PWM(Pin(16)), PWM(Pin(17))
-for s in (servo_x, servo_y):
-    s.freq(50)
+servo1, servo2 = PWM(Pin(16)), PWM(Pin(17))
+servo1.freq(50)
+servo2.freq(50)
 
 
-def go(servo, angle):
-    us = (MIN_US + MAX_US) / 2 + angle * (MAX_US - MIN_US) / RANGE_DEG
-    servo.duty_ns(int(max(MIN_US, min(MAX_US, us)) * 1000))
+def write(servo, deg):
+    deg = max(-30, min(30, deg))
+    servo.duty_ns(int((1500 + deg * 7.4) * 1000))
 
 
 def centre_of(adc):
@@ -65,29 +66,30 @@ def shape(v):
     return sign * ((1 - EXPO) * v + EXPO * v ** 3)
 
 
-go(servo_x, TRIM_X)
-go(servo_y, TRIM_Y)
-print("calibrating - don't touch the stick")
+write(servo1, OUTER_TRIM)
+write(servo2, INNER_TRIM)
+print("finding the stick centre - don't touch it")
 mid_x, mid_y = centre_of(stick_x), centre_of(stick_y)
 print("centre x=%d y=%d - go!" % (mid_x, mid_y))
 
-fx = fy = 0.0
+now = [0.0, 0.0]                  # [left/right, front/back] board tilt
+step = SPEED * LOOP_MS / 1000
 n = 0
 while True:
     t0 = time.ticks_ms()
-    if button.value() == 0:                 # pressed: level the board
-        x = y = 0.0
+    if button.value() == 0:       # pressed: level the board
+        want = [0.0, 0.0]
     else:
         x = shape(normalise(stick_x.read_u16(), mid_x))
         y = shape(normalise(stick_y.read_u16(), mid_y))
-    fx += SMOOTH * (x - fx)
-    fy += SMOOTH * (y - fy)
-    ax = TRIM_X + SWING * (-fx if INVERT_X else fx)
-    ay = TRIM_Y + SWING * (-fy if INVERT_Y else fy)
-    go(servo_x, ax)
-    go(servo_y, ay)
+        if SWAP_AXES:
+            x, y = y, x
+        want = [x * MAX_TILT, y * MAX_TILT]
+    for k in (0, 1):              # glide, so a flick can't jerk the board
+        now[k] += max(-step, min(step, want[k] - now[k]))
+    write(servo1, (-now[0] if FLIP_OUTER else now[0]) + OUTER_TRIM)
+    write(servo2, (-now[1] if FLIP_INNER else now[1]) + INNER_TRIM)
     n += 1
-    if n % 13 == 0:                         # print about 5 times a second
-        print("x %+6.1f deg   y %+6.1f deg   loop %d ms"
-              % (ax, ay, time.ticks_diff(time.ticks_ms(), t0)))
+    if n % 20 == 0:               # print about 5 times a second
+        print("left/right %+5.1f   front/back %+5.1f" % (now[0], now[1]))
     time.sleep_ms(max(0, LOOP_MS - time.ticks_diff(time.ticks_ms(), t0)))
