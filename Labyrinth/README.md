@@ -59,7 +59,7 @@ hangs below them and settles level by itself.
 |---|---|---|
 | Axis | runs front to back through the board's centre | runs left to right through the board's centre |
 | Servo end | body through a cutout in the outer box's **front wall**, horn screwed to the board's front rim | body fixed to the **right post**, horn screwed to the outer box's right wall |
-| Other end | dowel glued in the board's back rim, turning in a bearing in the outer box's back wall | dowel in the left post, turning in a bearing in the outer box's left wall |
+| Other end | dowel glued in the board's back rim, turning in a bearing glued to the inside of the outer box's back wall (both sit in the gap; nothing goes through the wall) | dowel in the left post, turning in a bearing in the outer box's left wall |
 
 The model checks that both servos pass through their cutouts, the horns
 sit on their faces, the dowels are on the axes, and the board can tip

@@ -20,7 +20,8 @@ floor top, so the board hangs below them and settles level by itself.
   inner servo (board tips left/right, axis 1 runs front-back): its body
       sits in a cutout in the outer box's FRONT wall and its horn screws to
       the board's front rim. At the back a dowel glued in the board's back
-      rim turns in a bearing in the outer box's back wall.
+      rim turns in a bearing glued to the INSIDE of the outer box's back
+      wall - both sit in the gap, nothing goes through that wall.
   outer servo (outer box + board tip front/back, axis 2 runs left-right):
       its body is fixed to the RIGHT post and its horn screws to the outer
       box's right wall. On the left a dowel in the left post turns in a
@@ -328,11 +329,6 @@ def build():
                lambda: m.box(LEFT_OUT, FRONT_OUT, FR_Z0, RIGHT_OUT, FRONT_IN,
                              FR_Z1),
                mount_cuts(m, s_in, T))
-    m.cut_part("FRAME-BACK", 150,
-               lambda: m.box(LEFT_OUT, BACK_IN, FR_Z0, RIGHT_OUT, BACK_OUT,
-                             FR_Z1),
-               [lambda: m.cyl((C, BACK_IN - 0.05, AXIS_Z),
-                              (C, BACK_OUT + 0.05, AXIS_Z), BEAR_R + 0.005)])
     m.cut_part("FRAME-LEFT", 150,
                lambda: m.box(LEFT_OUT, FRONT_IN, FR_Z0, LEFT_IN, BACK_IN,
                              FR_Z1),
@@ -361,6 +357,8 @@ def build():
 
     # ---- parts without holes
     m.lines += ["-LAYER", "T", "*", ""]
+    m.use("FRAME-BACK", 150)                   # bearing sits on its inside
+    m.box(LEFT_OUT, BACK_IN, FR_Z0, RIGHT_OUT, BACK_OUT, FR_Z1)
     for name in ("RIM-LEFT", "RIM-RIGHT"):
         m.use(name, 22)
         m.box(*rim[name][:2], 0, *rim[name][2:], ml.RIM_H)
@@ -377,12 +375,12 @@ def build():
           tx + th - ml.TRAP_GAP, ty + th - ml.TRAP_GAP, 0)
     m.use("TRAPDOOR-SERVO", 140)                   # micro servo under floor
     m.box(tx - 0.45, ty - th - 0.55, -1.3, tx + 0.45, ty - th - 0.07, -T)
-    m.use("BEARING-1", 8)                      # back wall bearing
-    m.cyl((C, BACK_IN, AXIS_Z), (C, BACK_IN + BEAR_T, AXIS_Z), BEAR_R)
+    m.use("BEARING-1", 8)                      # on the back wall's inside
+    m.cyl((C, BACK_IN - BEAR_T, AXIS_Z), (C, BACK_IN, AXIS_Z), BEAR_R)
     m.use("BEARING-2", 8)                      # left wall bearing
     m.cyl((LEFT_IN, C, AXIS_Z), (LEFT_IN - BEAR_T, C, AXIS_Z), BEAR_R)
     m.use("PIN-AXIS1", 1)                      # dowel: board back rim
-    m.cyl((C, B - T, AXIS_Z), (C, BACK_OUT + 0.15, AXIS_Z), PIN_R)
+    m.cyl((C, B - T, AXIS_Z), (C, BACK_IN - 0.02, AXIS_Z), PIN_R)
     m.use("PIN-AXIS2", 5)                      # dowel: left post
     m.cyl((pl0 - 0.1, C, AXIS_Z), (LEFT_IN, C, AXIS_Z), PIN_R)
     servo(m, s_in, "SERVO-INNER", 240, "HORN-INNER")
