@@ -5,7 +5,7 @@ Units are inches. The floor's front-left corner is at 0,0 and its top at
 Z = 0. The player stands at the front (-Y side).
 
 Board (the inner box): floor with 8 holes and the trapdoor opening, the
-flap, the rim and 34 maze walls (2 in tall), labels, the ball at START.
+flap, the rim and 33 maze walls (2 in tall), labels, the ball at START.
 
 Under the board, moving with it: the collection tray floor - two flat
 triangles that meet on the diagonal from the back-left corner down to

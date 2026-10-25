@@ -37,7 +37,9 @@ re-run `python3 make_labyrinth.py`.
 
 All hole sizes are standard Forstner bit sizes, so the drill press makes
 them exactly. The route from START to the 5 is about 54 cells long. Every
-cell is reachable, and there is exactly one way through. The script checks
+cell is reachable. The team took out one short wall near the front
+(right of the X hole in the second row), so there are now two ways past
+it. The script checks
 both every time it runs.
 
 **Why START is a ring, not a divot.** A ball sitting in a hole only rolls
