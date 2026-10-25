@@ -14,7 +14,6 @@ re-run `python3 make_labyrinth.py`.
 | `Labyrinth_3D.scr` | AutoCAD script: in a new drawing type `SCRIPT` and pick it to build the whole game in 3D: board, frame, axis holes, servo cutouts, posts, base (`make_autocad_script.py` rebuilds it) |
 | `Labyrinth_tray.png` | The collection tray under the board: heights, which way a dropped ball rolls, cut list (`make_tray_views.py` rebuilds it) |
 | `Labyrinth_animate.lsp` | AutoCAD animation: load it with `APPLOAD` in the drawing built by `Labyrinth_3D.scr`, then type `TILTDEMO` |
-| `Labyrinth_axis1_bracket.png` | Close-up from below of the axis-1 brackets under the board (servo 1 on the left, pin on the right) |
 | `Labyrinth_axes_explained.png` | Four pictures of how the two axes move, coloured by what moves with what (`make_axis_views.py` rebuilds it from the 3D model) |
 | `Labyrinth_two_axis.mp4` | 20 s video of the same (`make_axis_views.py --video`) |
 | `pico/servo_test.py` | Bench test for one servo: centre, sweep, step response, smallest visible step |
@@ -29,7 +28,7 @@ re-run `python3 make_labyrinth.py`.
 | Floor plate | 11.5 × 11.5 in | The laser bed is 12 × 16 in and the guide asks for a ¼ in border, so 11.5 in is the biggest square that fits. Change `BOARD` if the frame has to fit inside 12 × 12 |
 | Ball | ⅝ in steel ball bearing | Heavy, so it rolls smoothly and the same way every time. 3D-printed balls are light and slightly rough |
 | Grid | 9 × 9 cells, 1.264 in apart | Corridor is 1.139 in between walls, about 1.8 balls wide |
-| Walls / rim | ⅛ in ply, 2 in tall / 2 in tall (blue frame level with the rim, servo bay lower) | Team choice. The ball can never hop a wall. Tall walls hide the ball from low angles, so check the view in the cardboard prototype |
+| Walls / rim | ⅛ in ply, 2 in tall / 2 in tall (outer box level with the rim) | Team choice. The ball can never hop a wall. Tall walls hide the ball from low angles, so check the view in the cardboard prototype |
 | **5 coin** hole | ¾ in drill | Smallest, at the far corner (back-right) |
 | **3 coin** hole | ⅞ in drill | Side pocket just before the 5 |
 | **1 coin** hole | 1 in drill | Side pocket before that, easiest to sink |
@@ -47,6 +46,22 @@ in ball needs 37° of tilt to escape, and this board only tilts about 6°. The
 start is instead a dead-end pocket with a thin engraved ring. The ball stays
 put while the board is level. If you really want a detent, a 1/16 in hole
 releases the ball at about 6°. Test that in cardboard first.
+
+## Mounting (as built)
+
+The outer box (four walls) hangs between two posts, and the board hangs
+inside the outer box. Both pivots are halfway up the rim, so the board
+hangs below them and settles level by itself.
+
+| | Inner servo (board tips left / right) | Outer servo (outer box + board tip front / back) |
+|---|---|---|
+| Axis | runs front to back through the board's centre | runs left to right through the board's centre |
+| Servo end | body through a cutout in the outer box's **front wall**, horn screwed to the board's front rim | body fixed to the **right post**, horn screwed to the outer box's right wall |
+| Other end | dowel glued in the board's back rim, turning in a bearing in the outer box's back wall | dowel in the left post, turning in a bearing in the outer box's left wall |
+
+The model checks that both servos pass through their cutouts, the horns
+sit on their faces, the dowels are on the axes, and the board can tip
+11.3 deg before it touches the outer box (the game uses 5 to 6).
 
 ## Collection tray
 
@@ -165,7 +180,7 @@ DXF, so do AutoCAD-only edits in your `.dwg` copy once the maze is final.
    corners of that sheet's rectangle → scale **1:1**, with **Fit to paper
    unchecked**. Fit to paper silently rescales everything.
 6. Budget: with 2 in walls and rim the board alone needs **3 sheets**
-   (the class allows about 2), before the frame, brackets and posts. Ask
+   (the class allows about 2), before the outer box and posts. Ask
    for an extra sheet, or cut the tall walls from another material.
    Laser-cut holes come out about one kerf larger; drilled holes come out
    exactly the bit size.

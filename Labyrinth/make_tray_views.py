@@ -20,9 +20,10 @@ import make_labyrinth as ml
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 B, T = cad.B, cad.T
-HIDE = {"BASE", "POST-FRONT", "POST-BACK", "SERVO-2", "CONTROLS", "JOYSTICK",
-        "FRAME-FRONT", "FRAME-BACK", "FRAME-LEFT", "FRAME-RIGHT", "FRAME-BAY",
-        "HORN-2", "PIN-AXIS2", "PIN-AXIS1", "SERVO-1", "HORN-1", "TRAY-CUP"}
+HIDE = {"BASE", "POST-LEFT", "POST-RIGHT", "SERVO-OUTER", "SERVO-INNER",
+        "CONTROLS", "JOYSTICK", "FRAME-FRONT", "FRAME-BACK", "FRAME-LEFT",
+        "FRAME-RIGHT", "HORN-OUTER", "HORN-INNER", "PIN-AXIS1", "PIN-AXIS2",
+        "BEARING-1", "BEARING-2"}
 
 
 def length(p, q):
@@ -110,7 +111,7 @@ def main():
     ax = fig.add_axes([0.0, 0.2, 0.5, 0.72], projection="3d")
     model_view(ax, solids)
     fig.text(0.25, 0.92, "Board + tray seen from below, front-right corner "
-             "nearest you (frame, servos, base hidden)", ha="center", fontsize=11)
+             "nearest you (outer box, servos, base hidden)", ha="center", fontsize=11)
     drain_map(fig.add_axes([0.53, 0.2, 0.42, 0.7]))
     rows = cut_list()
     fig.text(0.04, 0.165, "Cut list (inches) - just the two floor triangles "

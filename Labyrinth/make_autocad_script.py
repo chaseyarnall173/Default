@@ -4,26 +4,27 @@
 Units are inches. The floor's front-left corner is at 0,0 and its top at
 Z = 0. The player stands at the front (-Y side).
 
-Board: floor with 8 holes and the trapdoor opening, the flap in the
-opening, the 3 in rim and 34 maze walls (2 in tall) standing on top of the
-floor, two brackets under the floor for axis 1, labels, the ball at START.
+Board (the inner box): floor with 8 holes and the trapdoor opening, the
+flap, the rim and 34 maze walls (2 in tall), labels, the ball at START.
 
 Under the board, moving with it: the collection tray floor - two flat
 triangles that meet on the diagonal from the back-left corner down to
 the front-right corner (the corner in line with START's row and the 5
 hole's column), so a ball that drops through any hole rolls into that
-corner. A triangle is always flat, so stiff wood works. The tray's
-walls are left out of this model on purpose. Each triangle is a box
-cut by three SLICE planes, so no UCS changes are needed.
+corner. The tray's walls are left out on purpose. Each triangle is a
+box cut by three SLICE planes, so no UCS changes are needed.
 
-Outside, direct drive (servos on the stands, no pushrods). Both pivot axes
-sit AXIS_Z below the floor and cross under the board's centre:
-  axis 1 (front/back tilt): servo 1 sits in a cutout in the frame's LEFT
-      plate; its horn screws to the LEFT BRACKET under the board. A 1/4 in
-      pin goes through the RIGHT BRACKET and the frame's right strip.
-  axis 2 (left/right tilt): servo 2 sits in a cutout in the FRONT post; its
-      horn screws to the frame's front strip. A 1/4 in pin goes through
-      holes in the frame's back strip and the back post.
+Mounting, as built: the outer box (4 walls) hangs between two posts and
+the board hangs inside the outer box. Both pivots sit AXIS_Z above the
+floor top, so the board hangs below them and settles level by itself.
+  inner servo (board tips left/right, axis 1 runs front-back): its body
+      sits in a cutout in the outer box's FRONT wall and its horn screws to
+      the board's front rim. At the back a dowel glued in the board's back
+      rim turns in a bearing in the outer box's back wall.
+  outer servo (outer box + board tip front/back, axis 2 runs left-right):
+      its body is fixed to the RIGHT post and its horn screws to the outer
+      box's right wall. On the left a dowel in the left post turns in a
+      bearing in the outer box's left wall.
 
 Servo size is the listing's 40 x 20 x 40.5 mm. Tab span, tab hole spacing
 and tab height are typical 25 kg servo values - measure yours and change
@@ -41,8 +42,9 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 OUT_DIR = sys.argv[1] if len(sys.argv) > 1 else HERE
 B, T = ml.BOARD, ml.T
 C = B / 2                     # board centre, x and y
-AXIS_Z = -0.6                 # both pivot axes, below the floor (top = 0)
-PIN_R, PIN_HOLE_R = 0.125, 0.13          # 1/4 in pin, hole a bit bigger
+AXIS_Z = ml.RIM_H / 2         # both pivot axes, halfway up the rim
+PIN_R, PIN_HOLE_R = 0.125, 0.13          # 1/4 in dowel, hole a bit bigger
+BEAR_R, BEAR_T = 0.433, 0.276            # 608 bearing: 22 mm OD, 7 mm wide
 
 # servo, local frame: shaft along +z at x = y = 0, top face at z = 0
 SERVO_LEN, SERVO_W, SERVO_BODY_H = 1.58, 0.79, 1.48
@@ -54,22 +56,19 @@ BOSS_R, BOSS_H = 0.24, 0.12
 HORN_R, HORN_T = 0.34, 0.1
 HORN_SCREW_R, HORN_SCREW_DX, HORN_HUB_R = 0.05, 0.3, 0.1
 WINDOW_CLEAR = 0.01           # servo cutout is this much bigger all round
+TAB_Z = -SERVO_TAB_FROM_TOP - SERVO_TAB_T   # tab underside, local z
+HORN_UP = BOSS_H + HORN_T     # horn face, above the servo's top face
 
-FR_GAP = 0.5                  # gap between board and frame (3 sides)
-FR_Z0, FR_Z1 = -1.2, ml.RIM_H # frame strips: top level with the board's rim
-BAY_CLEAR = 0.25              # servo bay: room behind servo 1's body
-BAY_Z1 = AXIS_Z + SERVO_W / 2 + 0.3   # servo bay walls stop just above it
-LP_Z0 = -1.45                 # the frame's left plate goes a bit lower
-# brackets under the floor for axis 1 (left: servo horn, right: pin)
-BRK_W, BRK_T, BRK_Z0 = 1.5, 0.25, -1.1   # drop plate: width, thick, bottom
-BRK_FLANGE = 1.0              # flange glued under the floor
+FR_GAP = 0.5                  # board to outer box: left, right, back
+FR_Z0, FR_Z1 = -1.2, ml.RIM_H # outer box walls: top level with the rim
+POST_GAP = 0.25               # outer box to the left post
+POST_T = 0.75                 # posts: 3/4 in thick
+POST_W = 1.5
 BASE_Z0, BASE_Z1 = -5.0, -4.5
 # collection tray floor under the board (moves with the board)
-TRAY_IN = BRK_T               # starts just inside the axis-1 brackets
+TRAY_IN = 0.0
 TRAY_Z = {"FR": -2.4, "BL": -1.4, "BR": -1.7, "FL": -1.7}   # floor top
 GAME_TILT = 6.0               # tilt the clearance checks allow for
-POST_T = 0.5                  # posts: 1/2 in thick (4 layers of 1/8 ply)
-TAB_Z = -SERVO_TAB_FROM_TOP - SERVO_TAB_T   # tab underside, local z
 
 
 def n(v):
@@ -189,17 +188,22 @@ def mount_cuts(m, to_world, plate_t):
     return cuts
 
 
-def s1(x, y, z):
-    """Servo 1: shaft along +x into the left rim, body lying along y."""
-    return (z - (BOSS_H + HORN_T), C + x, AXIS_Z + y)
+def s_in(x, y, z):
+    """Inner servo: shaft along +y into the board's front rim (horn face
+    at y = 0), body hanging down, outside the outer box's front wall."""
+    return (C + y, z - HORN_UP, AXIS_Z - x)
 
 
-FR_FRONT_OUT = -FR_GAP - T
+FRONT_IN = s_in(0, 0, TAB_Z)[1]     # outer box front wall: inside face
+FRONT_OUT = FRONT_IN - T
+LEFT_IN, RIGHT_IN, BACK_IN = -FR_GAP, B + FR_GAP, B + FR_GAP
+LEFT_OUT, RIGHT_OUT, BACK_OUT = LEFT_IN - T, RIGHT_IN + T, BACK_IN + T
 
 
-def s2(x, y, z):
-    """Servo 2: shaft along +y into the frame's front strip, body down."""
-    return (C + y, z - (BOSS_H + HORN_T) + FR_FRONT_OUT, AXIS_Z - x)
+def s_out(x, y, z):
+    """Outer servo: shaft along -x into the outer box's right wall (horn
+    face on its outside), body hanging down, fixed to the right post."""
+    return (RIGHT_OUT + HORN_UP - z, C + y, AXIS_Z - x)
 
 
 def horn_hole_cuts(m, along, a0, a1, centre):
@@ -270,11 +274,11 @@ def tray_check(m, info):
         for b in (-GAME_TILT, GAME_TILT):
             q = pts.copy()
             ra, rb = math.radians(a), math.radians(b)
-            yy, zz = q[:, 1] - C, q[:, 2] - AXIS_Z
-            q[:, 1] = C + yy * math.cos(ra) - zz * math.sin(ra)
-            q[:, 2] = AXIS_Z + yy * math.sin(ra) + zz * math.cos(ra)
-            xx, zz = q[:, 0] - C, q[:, 2] - AXIS_Z
-            q[:, 2] = AXIS_Z - xx * math.sin(rb) + zz * math.cos(rb)
+            xx, zz = q[:, 0] - C, q[:, 2] - AXIS_Z     # inner servo
+            q[:, 0] = C + xx * math.cos(ra) + zz * math.sin(ra)
+            q[:, 2] = AXIS_Z - xx * math.sin(ra) + zz * math.cos(ra)
+            yy, zz = q[:, 1] - C, q[:, 2] - AXIS_Z     # outer servo
+            q[:, 2] = AXIS_Z + yy * math.sin(rb) + zz * math.cos(rb)
             low = min(low, q[:, 2].min())
     gap = low - BASE_Z1
     assert gap > 0.1, "tray hits the base at %.0f deg" % GAME_TILT
@@ -308,64 +312,58 @@ def build():
     cuts.append(lambda: m.box(tx - th, ty - th, -0.2, tx + th, ty + th, 0.1))
     m.cut_part("FLOOR", 42, lambda: m.box(0, 0, -T, B, B, 0), cuts)
 
-    # ---- brackets under the floor: drop plates with the axis-1 holes
-    y0b, y1b = C - BRK_W / 2, C + BRK_W / 2
-    m.cut_part("BRACKET-LEFT", 40,
-               lambda: m.box(0, y0b, BRK_Z0, BRK_T, y1b, -T - T),
-               horn_hole_cuts(m, "x", -0.05, BRK_T + 0.05, C))
-    m.cut_part("BRACKET-RIGHT", 40,
-               lambda: m.box(B - BRK_T, y0b, BRK_Z0, B, y1b, -T - T),
-               [lambda: m.cyl((B - BRK_T - 0.05, C, AXIS_Z),
-                              (B + 0.05, C, AXIS_Z), PIN_HOLE_R)])
-
-    # ---- outer frame
-    fi0, fi1 = -FR_GAP, B + FR_GAP                 # inside faces
-    lp1 = s1(0, 0, TAB_Z)[0]                       # left plate, under tabs
-    lp0 = lp1 - T
-    bay1 = s1(0, 0, -SERVO_BODY_H)[0] - BAY_CLEAR   # servo bay outer wall
-    bay0 = bay1 - T
-    fx0, fx1 = bay0, fi1 + T                       # frame outside, x
-    fy0, fy1 = fi0 - T, fi1 + T                    # frame outside, y
-    m.cut_part("FRAME-LEFT", 150,
-               lambda: m.box(lp0, fi0, LP_Z0, lp1, fi1, FR_Z1),
-               mount_cuts(m, s1, T))
-    m.cut_part("FRAME-RIGHT", 150,
-               lambda: m.box(fi1, fi0, FR_Z0, fx1, fi1, FR_Z1),
-               [lambda: m.cyl((fi1 - 0.05, C, AXIS_Z), (fx1 + 0.05, C, AXIS_Z),
+    # ---- board rim: front takes the inner horn, back takes the dowel
+    m.cut_part("RIM-FRONT", 22,
+               lambda: m.box(*rim["RIM-FRONT"][:2], 0,
+                             *rim["RIM-FRONT"][2:], ml.RIM_H),
+               horn_hole_cuts(m, "y", -0.05, T + 0.05, C))
+    m.cut_part("RIM-BACK", 22,
+               lambda: m.box(*rim["RIM-BACK"][:2], 0,
+                             *rim["RIM-BACK"][2:], ml.RIM_H),
+               [lambda: m.cyl((C, B - T - 0.05, AXIS_Z), (C, B + 0.05, AXIS_Z),
                               PIN_HOLE_R)])
+
+    # ---- outer box: 4 walls
     m.cut_part("FRAME-FRONT", 150,
-               lambda: m.box(lp0, fy0, FR_Z0, fx1, fi0, FR_Z1),
-               horn_hole_cuts(m, "y", fy0 - 0.05, fi0 + 0.05, C))
+               lambda: m.box(LEFT_OUT, FRONT_OUT, FR_Z0, RIGHT_OUT, FRONT_IN,
+                             FR_Z1),
+               mount_cuts(m, s_in, T))
     m.cut_part("FRAME-BACK", 150,
-               lambda: m.box(lp0, fi1, FR_Z0, fx1, fy1, FR_Z1),
-               [lambda: m.cyl((C, fi1 - 0.05, AXIS_Z), (C, fy1 + 0.05, AXIS_Z),
-                              PIN_HOLE_R)])
+               lambda: m.box(LEFT_OUT, BACK_IN, FR_Z0, RIGHT_OUT, BACK_OUT,
+                             FR_Z1),
+               [lambda: m.cyl((C, BACK_IN - 0.05, AXIS_Z),
+                              (C, BACK_OUT + 0.05, AXIS_Z), BEAR_R + 0.005)])
+    m.cut_part("FRAME-LEFT", 150,
+               lambda: m.box(LEFT_OUT, FRONT_IN, FR_Z0, LEFT_IN, BACK_IN,
+                             FR_Z1),
+               [lambda: m.cyl((LEFT_OUT - 0.05, C, AXIS_Z),
+                              (LEFT_IN + 0.05, C, AXIS_Z), BEAR_R + 0.005)])
+    m.cut_part("FRAME-RIGHT", 150,
+               lambda: m.box(RIGHT_IN, FRONT_IN, FR_Z0, RIGHT_OUT, BACK_IN,
+                             FR_Z1),
+               horn_hole_cuts(m, "x", RIGHT_IN - 0.05, RIGHT_OUT + 0.05, C))
 
-    # ---- posts
-    pf1 = s2(0, 0, TAB_Z)[1]                       # front post, under tabs
-    pf0 = pf1 - POST_T
-    m.cut_part("POST-FRONT", 33,
-               lambda: m.box(C - 0.75, pf0, BASE_Z1, C + 0.75, pf1, 0.5),
-               mount_cuts(m, s2, POST_T))
-    pb0, pb1 = fy1 + 0.125, fy1 + 0.125 + POST_T
-    m.cut_part("POST-BACK", 33,
-               lambda: m.box(C - 0.5, pb0, BASE_Z1, C + 0.5, pb1, 0.2),
-               [lambda: m.cyl((C, pb0 - 0.05, AXIS_Z), (C, pb1 + 0.05, AXIS_Z),
+    # ---- posts: right holds the outer servo, left holds the dowel
+    pr0 = s_out(0, 0, TAB_Z)[0]                    # right post, under tabs
+    pr1 = pr0 + POST_T
+    post_top = AXIS_Z + SERVO_LEN - SHAFT_FROM_END + 0.3
+    m.cut_part("POST-RIGHT", 33,
+               lambda: m.box(pr0, C - POST_W / 2, BASE_Z1, pr1, C + POST_W / 2,
+                             post_top),
+               mount_cuts(m, s_out, POST_T))
+    pl1 = LEFT_OUT - POST_GAP
+    pl0 = pl1 - POST_T
+    m.cut_part("POST-LEFT", 33,
+               lambda: m.box(pl0, C - POST_W / 2, BASE_Z1, pl1, C + POST_W / 2,
+                             AXIS_Z + 1.0),
+               [lambda: m.cyl((pl0 - 0.05, C, AXIS_Z), (pl1 + 0.05, C, AXIS_Z),
                               PIN_HOLE_R)])
 
     # ---- parts without holes
     m.lines += ["-LAYER", "T", "*", ""]
-    m.use("FRAME-BAY", 150)                        # low servo bay, left
-    m.box(bay0, fi0, FR_Z0, bay1, fi1, BAY_Z1)     # outer wall
-    m.box(bay0, fy0, FR_Z0, lp0, fi0, BAY_Z1)      # front side
-    m.box(bay0, fi1, FR_Z0, lp0, fy1, BAY_Z1)      # back side
-    for name in ("RIM-FRONT", "RIM-BACK", "RIM-LEFT", "RIM-RIGHT"):
+    for name in ("RIM-LEFT", "RIM-RIGHT"):
         m.use(name, 22)
         m.box(*rim[name][:2], 0, *rim[name][2:], ml.RIM_H)
-    m.use("BRACKET-LEFT", 40)                      # flanges under the floor
-    m.box(0, y0b, -T - T, BRK_FLANGE, y1b, -T)
-    m.use("BRACKET-RIGHT", 40)
-    m.box(B - BRK_FLANGE, y0b, -T - T, B, y1b, -T)
     m.use("WALLS", 32)
     for r in walls:
         x0, y0, x1, y1 = r["rect"]
@@ -379,15 +377,20 @@ def build():
           tx + th - ml.TRAP_GAP, ty + th - ml.TRAP_GAP, 0)
     m.use("TRAPDOOR-SERVO", 140)                   # micro servo under floor
     m.box(tx - 0.45, ty - th - 0.55, -1.3, tx + 0.45, ty - th - 0.07, -T)
-    m.use("PIN-AXIS1", 1)
-    m.cyl((B - BRK_T, C, AXIS_Z), (fx1 + 0.1, C, AXIS_Z), PIN_R)
-    m.use("PIN-AXIS2", 5)
-    m.cyl((C, fi1, AXIS_Z), (C, pb1 + 0.1, AXIS_Z), PIN_R)
-    servo(m, s1, "SERVO-1", 240, "HORN-1")
-    servo(m, s2, "SERVO-2", 240, "HORN-2")
-    bx0 = fx0 - 0.5
-    by0 = s2(0, 0, -SERVO_BODY_H)[1] - 0.5
-    bx1, by1 = fx1 + 1.0, pb1 + 0.5
+    m.use("BEARING-1", 8)                      # back wall bearing
+    m.cyl((C, BACK_IN, AXIS_Z), (C, BACK_IN + BEAR_T, AXIS_Z), BEAR_R)
+    m.use("BEARING-2", 8)                      # left wall bearing
+    m.cyl((LEFT_IN, C, AXIS_Z), (LEFT_IN - BEAR_T, C, AXIS_Z), BEAR_R)
+    m.use("PIN-AXIS1", 1)                      # dowel: board back rim
+    m.cyl((C, B - T, AXIS_Z), (C, BACK_OUT + 0.15, AXIS_Z), PIN_R)
+    m.use("PIN-AXIS2", 5)                      # dowel: left post
+    m.cyl((pl0 - 0.1, C, AXIS_Z), (LEFT_IN, C, AXIS_Z), PIN_R)
+    servo(m, s_in, "SERVO-INNER", 240, "HORN-INNER")
+    servo(m, s_out, "SERVO-OUTER", 240, "HORN-OUTER")
+    bx0 = pl0 - 0.5
+    by0 = s_in(0, 0, -SERVO_BODY_H)[1] - 1.8      # room for the controls
+    bx1 = s_out(0, 0, -SERVO_BODY_H)[0] + 0.5
+    by1 = BACK_OUT + 0.6
     m.use("BASE", 251)
     m.box(bx0, by0, BASE_Z0, bx1, by1, BASE_Z1)
     m.use("CONTROLS", 250)                         # joystick box, front left
@@ -407,9 +410,9 @@ def build():
             ux, uy = cell[1] - mouth[1], mouth[0] - cell[0]
             m.text(f, mx + 0.3 * ux, my + 0.3 * uy, 0.002, 0.26)
     m.finish()
-    info = dict(base=(bx1 - bx0, by1 - by0), holes=holes, trap=trap, left_plate=(lp0, lp1),
-                front_post=(pf0, pf1), frame=(fx0, fx1, fy0, fy1),
-                frame_inside=(fi0, fi1))
+    info = dict(base=(bx1 - bx0, by1 - by0), holes=holes, trap=trap,
+                right_post=(pr0, pr1),
+                frame=(LEFT_OUT, RIGHT_OUT, FRONT_OUT, BACK_OUT))
     return m, info
 
 
@@ -420,35 +423,35 @@ def first(m, layer, kind):
 
 def check(m, info):
     """Servo bodies must pass through their cutouts, horns must sit on
-    their faces, pins must be on the pivot axes and fit their holes."""
-    lo, hi = first(m, "SERVO-1", "box")
-    lp0, lp1 = info["left_plate"]
-    assert lo[0] < lp0 and hi[0] > lp1, "servo 1 must pass the left plate"
-    lo, hi = first(m, "SERVO-2", "box")
-    pf0, pf1 = info["front_post"]
-    assert lo[1] < pf0 and hi[1] > pf1, "servo 2 must pass the front post"
-    horns = [first(m, "HORN-1", "cyl"), first(m, "HORN-2", "cyl")]
-    assert abs(max(horns[0][0][0], horns[0][1][0]) - 0.0) < 1e-6, \
-        "servo 1 horn must sit on the left bracket"
-    assert abs(max(horns[1][0][1], horns[1][1][1]) - FR_FRONT_OUT) < 1e-6, \
-        "servo 2 horn must sit on the frame's front strip"
+    their faces, dowels must be on the pivot axes and fit their holes."""
+    lo, hi = first(m, "SERVO-INNER", "box")
+    assert lo[1] < FRONT_OUT and hi[1] > FRONT_IN, \
+        "inner servo must pass the outer box's front wall"
+    lo, hi = first(m, "SERVO-OUTER", "box")
+    pr0, pr1 = info["right_post"]
+    assert lo[0] < pr0 and hi[0] > pr1, "outer servo must pass the right post"
+    p0, p1, _ = first(m, "HORN-INNER", "cyl")
+    assert abs(max(p0[1], p1[1])) < 1e-6, "inner horn must sit on the rim"
+    p0, p1, _ = first(m, "HORN-OUTER", "cyl")
+    assert abs(min(p0[0], p1[0]) - RIGHT_OUT) < 1e-6, \
+        "outer horn must sit on the outer box's right wall"
     for name in ("PIN-AXIS1", "PIN-AXIS2"):
         p0, p1, r = first(m, name, "cyl")
         assert abs(p0[2] - AXIS_Z) < 1e-9 and abs(p1[2] - AXIS_Z) < 1e-9
         assert r < PIN_HOLE_R
-    fx0, fx1, fy0, fy1 = info["frame"]
+    x0, x1, y0, y1 = info["frame"]
     print("checked: servos pass through their cutouts, horns sit on the "
-          "bracket / frame, pins sit on the pivot axes")
-    print("frame %.3f x %.3f in outside, base %.2f x %.2f in"
-          % (fx1 - fx0, fy1 - fy0, *info["base"]))
+          "rim / outer box, dowels sit on the pivot axes")
+    print("outer box %.3f x %.3f in outside, base %.2f x %.2f in"
+          % (x1 - x0, y1 - y0, *info["base"]))
 
 
 TRAY_LAYERS = ("TRAY-FLOOR",)
 BOARD_LAYERS = ("FLOOR", "RIM-FRONT", "RIM-BACK", "RIM-LEFT", "RIM-RIGHT",
-                "WALLS", "BRACKET-LEFT", "BRACKET-RIGHT", "TRAPDOOR-FLAP",
-                "TRAPDOOR-SERVO", "BALL", "HORN-1") + TRAY_LAYERS
+                "WALLS", "TRAPDOOR-FLAP", "TRAPDOOR-SERVO", "BALL",
+                "HORN-INNER", "PIN-AXIS1") + TRAY_LAYERS
 FRAME_LAYERS = ("FRAME-LEFT", "FRAME-RIGHT", "FRAME-FRONT", "FRAME-BACK",
-                "FRAME-BAY", "SERVO-1", "PIN-AXIS1", "HORN-2")
+                "SERVO-INNER", "HORN-OUTER", "BEARING-1", "BEARING-2")
 
 
 def corners(kind, d):
@@ -470,10 +473,9 @@ def corners(kind, d):
 
 
 def max_tilt(m, info):
-    """Largest axis-1 tilt (degrees) before the board touches the frame.
-    Axis 2 never moves the board against the frame - they turn together."""
+    """Largest inner-servo tilt (degrees) before the board touches the
+    outer box. The outer servo turns both together, so it can't."""
     import math
-    fi0, fi1 = info["frame_inside"]
     pts = [p for layer, kind, d in m.solids if layer in BOARD_LAYERS
            for p in corners(kind, d)]
     a = 0.0
@@ -482,9 +484,9 @@ def max_tilt(m, info):
         for sgn in (1, -1):
             r = math.radians(a * sgn)
             for x, y, z in pts:
-                yy = C + (y - C) * math.cos(r) - (z - AXIS_Z) * math.sin(r)
-                zz = AXIS_Z + (y - C) * math.sin(r) + (z - AXIS_Z) * math.cos(r)
-                if FR_Z0 <= zz <= FR_Z1 and not fi0 < yy < fi1:
+                xx = C + (x - C) * math.cos(r) + (z - AXIS_Z) * math.sin(r)
+                zz = AXIS_Z - (x - C) * math.sin(r) + (z - AXIS_Z) * math.cos(r)
+                if FR_Z0 <= zz <= FR_Z1 and not LEFT_IN < xx < RIGHT_IN:
                     return a - 0.1
     return a
 
@@ -502,14 +504,15 @@ def write_lsp(path):
 (defun lab:board () (ssget "_X" '((8 . "%(BOARD)s"))))
 (defun lab:frame () (ssget "_X" '((8 . "%(FRAME)s"))))
 
-;; axis 1 runs left-right under the board; it rides on the frame, so after
-;; the frame has turned b degrees on axis 2 its end points move too
+;; axis 1 (inner servo) runs front-back through the board's centre; it
+;; rides on the outer box, so after the outer servo has turned b degrees
+;; (about axis 2, left-right) its end points move too
 (defun lab:axis1 (b / r)
   (setq r (* pi (/ b 180.0)))
-  (list (list (+ lab:C (* (- 0 lab:C) (cos r))) lab:C
-              (- lab:AZ (* (- 0 lab:C) (sin r))))
-        (list (+ lab:C (* (- lab:B lab:C) (cos r))) lab:C
-              (- lab:AZ (* (- lab:B lab:C) (sin r))))))
+  (list (list lab:C (+ lab:C (* (- 0 lab:C) (cos r)))
+              (+ lab:AZ (* (- 0 lab:C) (sin r))))
+        (list lab:C (+ lab:C (* (- lab:B lab:C) (cos r)))
+              (+ lab:AZ (* (- lab:B lab:C) (sin r))))))
 
 (defun lab:turn (sets p1 p2 ang)
   (command "_.ROTATE3D")
@@ -526,13 +529,13 @@ def write_lsp(path):
   (setq echo (getvar "CMDECHO") snap (getvar "OSMODE"))
   (setvar "CMDECHO" 0) (setvar "OSMODE" 0)   ; snaps would move the axis points
   (setq board (lab:board) frame (lab:frame))
-  (setq a2a (list lab:C 0.0 lab:AZ) a2b (list lab:C 1.0 lab:AZ))
-  (princ "\n1) servo 1 only: the board tips front/back, the frame stays still")
+  (setq a2a (list 0.0 lab:C lab:AZ) a2b (list 1.0 lab:C lab:AZ))
+  (princ "\n1) inner servo only: the board tips left/right, the outer box stays still")
   (setq ax1 (lab:axis1 0))
   (lab:swing (list board) (car ax1) (cadr ax1))
-  (princ "\n2) servo 2 only: the frame tips left/right and carries the board")
+  (princ "\n2) outer servo only: the outer box tips front/back and carries the board")
   (lab:swing (list board frame) a2a a2b)
-  (princ "\n3) both: frame tipped, then the board tips inside it")
+  (princ "\n3) both: outer box tipped, then the board tips inside it")
   (repeat (fix lab:tilt) (lab:turn (list board frame) a2a a2b 1))
   (setq ax1 (lab:axis1 lab:tilt))
   (lab:swing (list board) (car ax1) (cadr ax1))
@@ -560,9 +563,9 @@ def main():
     m, info = build()
     check(m, info)
     tilt = max_tilt(m, info)
-    assert tilt >= 8.0, "board hits the frame at %.1f deg" % tilt
-    print("board can tip %.1f deg on axis 1 before touching the frame "
-          "(game uses 6)" % tilt)
+    assert tilt >= 8.0, "board hits the outer box at %.1f deg" % tilt
+    print("board can tip %.1f deg on the inner servo before touching the "
+          "outer box (game uses 6)" % tilt)
     tray_check(m, info)
     write_lsp(os.path.join(OUT_DIR, "Labyrinth_animate.lsp"))
     path = os.path.join(OUT_DIR, "Labyrinth_3D.scr")
