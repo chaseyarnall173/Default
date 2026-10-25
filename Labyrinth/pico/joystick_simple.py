@@ -1,11 +1,23 @@
-# Needs servo.py saved on the Pico too.
 # Wiring: joystick GND -> pin 33   +5V -> pin 36   VRx -> pin 32
 #         VRy -> pin 34   SW -> pin 29
 #         outer servo white -> pin 21   inner servo white -> pin 22
 #         both servo red -> pin 40      both servo black -> pin 38
-from machine import ADC, Pin
-from servo import Servo
+from machine import ADC, Pin, PWM
 import time
+
+
+class Servo:
+    """Works like Arduino's Servo: write(0..180), same pulses as Arduino."""
+
+    def __init__(self, pin):
+        self.pwm = PWM(Pin(pin))
+        self.pwm.freq(50)
+
+    def write(self, angle):
+        angle = max(0, min(180, angle))
+        us = 544 + angle * (2400 - 544) / 180
+        self.pwm.duty_ns(int(us * 1000))
+
 
 servo_x = Servo(16)                    # outer board, pin 21
 servo_y = Servo(17)                    # inner board, pin 22
