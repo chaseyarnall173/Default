@@ -3,7 +3,8 @@
 Wiring
   joystick GND  -> Pico GND (pin 38)
   joystick +5V  -> Pico 3V3(OUT) (pin 36)   NOT 5 V: the ADC pins max at 3.3 V
-  joystick VRx  -> GP26 (pin 31)       VRy -> GP27 (pin 32)
+  joystick VRx  -> GP27 (pin 32)       VRy -> GP28 (pin 34)
+  (pin 33 is a GND pin, not an input - don't put VRx there)
   joystick SW   -> GP22 (pin 29)       hold the button = board goes level
   Servo 1 (outer board, left/right) white -> GP16 (pin 21)
   Servo 2 (inner board, front/back) white -> GP17 (pin 22)
@@ -31,7 +32,7 @@ SWAP_AXES = False   # True if left/right on the stick moves front/back
 LOOP_MS = 10
 # -----------------------------------------------------------------------
 
-stick_x, stick_y = ADC(26), ADC(27)
+stick_x, stick_y = ADC(27), ADC(28)
 button = Pin(22, Pin.IN, Pin.PULL_UP)
 servo1, servo2 = PWM(Pin(16)), PWM(Pin(17))
 servo1.freq(50)
