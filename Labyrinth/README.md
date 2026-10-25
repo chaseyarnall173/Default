@@ -51,22 +51,22 @@ releases the ball at about 6°. Test that in cardboard first.
 ## Collection tray
 
 Every ball that drops through a hole (prize holes, loss holes, the
-trapdoor) lands in a tray hung under the floor. The tray moves with the
-board. Its floor is two flat triangles that meet on the diagonal from the
+trapdoor) lands on a tray floor hung under the board. It moves with the
+board. The floor is two flat triangles that meet on the diagonal from the
 back-left corner down to the **front-right corner** (the corner in line
-with START's row and the 5 hole's column), so the ball rolls to that
-corner and out a 1 in notch in the front wall into a cup on the base.
+with START's row and the 5 hole's column), so balls roll to that corner.
 A triangle is always flat, so it works in stiff wood as well as cardboard.
+The tray walls are left out of the model for now - just the triangles.
 
-- Floor heights (below the floor top): back-left 1.6 in, front-left and
-  back-right 2.1 in, front-right 3.4 in. The valley slopes 6.6 deg, so a
-  ball still rolls with the board tilted 5 deg the wrong way.
-- The side walls sit just inside the axis-1 brackets and glue to them;
-  wall tops stop 1/4 in under the floor so they clear the bracket flanges.
-- The base sits 1 in lower than before (top at -5.5 in) so the tray
-  clears the cup at 6 deg on both axes. The script checks this, the
-  trapdoor flap's swing, and that every hole is over the tray.
-- Cut list: run `python3 make_tray_views.py`, or see `Labyrinth_tray.png`.
+- Floor heights below the floor top: back-left 1.4 in, front-left and
+  back-right 1.7 in, front-right 2.4 in. Gentle: the valley slopes 3.6 deg,
+  so tilting the board toward the front-right corner empties it.
+- Each triangle is built in AutoCAD as a box cut by three `SLICE` planes,
+  so the script never changes the UCS.
+- The script checks that every hole is over the tray, the floor drains to
+  the corner, the trapdoor flap and its servo clear it, and the tray clears
+  the base at 6 deg on both axes.
+- Triangle sizes: run `python3 make_tray_views.py`, or see `Labyrinth_tray.png`.
 
 ![Collection tray](Labyrinth_tray.png)
 

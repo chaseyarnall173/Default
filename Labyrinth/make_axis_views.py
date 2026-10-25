@@ -59,18 +59,17 @@ def parse(path):
                 last_servo = layer
             i += 3
             continue
-        if t == "UCS" and lines[i + 1] != "W":    # tray triangle
-            a, b, c = (np.array(P(lines[i + k])) for k in (1, 2, 3))
-            th = -float(lines[i + 12])
-            nrm = np.cross(b - a, c - a)
-            nrm /= np.linalg.norm(nrm)
-            if nrm[2] < 0:
-                nrm = -nrm
-            out.append(("board", layer, "prism", (a, b, c, th, nrm), False))
-            i += 15
-            continue
         if t in ("BOX", "CYLINDER", "SPHERE"):
-            if t == "BOX":
+            if t == "BOX" and lines[i + 3] == "SLICE":   # tray triangle:
+                top = [np.array(P(lines[i + 3 + 8 + k])) for k in (4, 5, 6)]
+                low = np.array(P(lines[i + 3 + 16 + 4]))  # box cut by 3 planes
+                nrm = np.cross(top[1] - top[0], top[2] - top[0])
+                nrm /= np.linalg.norm(nrm)
+                if nrm[2] < 0:
+                    nrm = -nrm
+                th = (top[0][2] - low[2]) * nrm[2]
+                data, i = ("prism", (*top, th, nrm)), i + 3 + 24
+            elif t == "BOX":
                 data, i = ("box", (P(lines[i + 1]), P(lines[i + 2]))), i + 3
             elif t == "CYLINDER":
                 data = ("cyl", (P(lines[i + 1]), P(lines[i + 4]),

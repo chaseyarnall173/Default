@@ -31,17 +31,7 @@ def length(p, q):
 
 def cut_list():
     tc = cad.tray_corners()
-    zfr = cad.TRAY_Z["FR"]
-    deep = cad.TRAY_TOP - (zfr - T)
-    shallow = cad.TRAY_TOP - (min(cad.TRAY_Z["BL"], cad.TRAY_Z["BR"]) - T)
-    wide, long_ = B - 2 * cad.TRAY_IN, B - 2 * T
-    rows = [
-        ("front wall", "%.3f x %.3f, notch %.2f x %.2f at the right end"
-         % (wide, deep, cad.EXIT_W, cad.EXIT_H)),
-        ("right wall", "%.3f x %.3f" % (long_, deep)),
-        ("back wall", "%.3f x %.3f" % (wide, shallow)),
-        ("left wall", "%.3f x %.3f" % (long_, shallow)),
-    ]
+    rows = []
     for name, k in (("right triangle", "BR"), ("left triangle", "FL")):
         a, b, c = tc["FR"], tc[k], tc["BL"]
         rows.append((name, "sides %.3f (FR-%s), %.3f (%s-BL), %.3f "
@@ -95,10 +85,9 @@ def drain_map(ax):
         elif f == "S":
             ax.text(cx, cy, "START", ha="center", va="center", fontsize=8,
                     weight="bold", color="#2e7d32")
-    ax.add_patch(plt.Rectangle((x1 - cad.EXIT_W, -0.35), cad.EXIT_W, 0.45,
-                               color="#2e7d32"))
-    ax.text(x1 - cad.EXIT_W / 2, -0.75, "EXIT -> cup", ha="center",
-            fontsize=9, weight="bold", color="#2e7d32")
+    ax.annotate("balls collect here", (x1 - 0.2, y0 + 0.2), (x1 - 4.2, -0.8),
+                color="#2e7d32", weight="bold", fontsize=9,
+                arrowprops=dict(arrowstyle="->", color="#2e7d32", lw=1.5))
     for k, (dx, dy) in {"FL": (-0.2, -0.5), "FR": (0.2, 0.35),
                         "BR": (0.2, 0.3), "BL": (-0.2, 0.3)}.items():
         x, y, z = tc[k]
@@ -124,17 +113,17 @@ def main():
              "nearest you (frame, servos, base hidden)", ha="center", fontsize=11)
     drain_map(fig.add_axes([0.53, 0.2, 0.42, 0.7]))
     rows = cut_list()
-    fig.text(0.04, 0.165, "Cut list (inches) - walls glue to each other and "
-             "to the brackets; the triangles sit inside on the slope",
+    fig.text(0.04, 0.165, "Cut list (inches) - just the two floor triangles "
+             "(walls not in this version)",
              fontsize=11, weight="bold")
     for k, (name, size) in enumerate(rows):
-        fig.text(0.04 + 0.47 * (k // 3), 0.13 - 0.032 * (k % 3),
+        fig.text(0.04, 0.13 - 0.032 * k,
                  "%-15s %s" % (name, size), fontsize=10,
                  family="DejaVu Sans Mono")
     fig.text(0.04, 0.02, "Lowest point %.1f in under the floor top; the "
-             "tray swings with the board and clears the cup at %d deg. "
-             "Valley slope %.1f deg, so balls still roll with the board "
-             "tilted 5 deg the wrong way." % (
+             "tray swings with the board and clears the base at %d deg. "
+             "Valley slope %.1f deg - tilt the board toward the "
+             "front-right corner to empty it." % (
                  -cad.TRAY_Z["FR"], cad.GAME_TILT, math.degrees(math.atan(
                      (cad.TRAY_Z["BL"] - cad.TRAY_Z["FR"]) / math.dist(
                          cad.tray_corners()["BL"][:2],
