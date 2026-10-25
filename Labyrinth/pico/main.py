@@ -6,7 +6,7 @@
 from machine import Pin
 
 FILE = "joystick_simple"
-BUTTON_FILE = "both_axes_test"
+BUTTON_FILE = "joystick_servos"
 
 button = Pin(22, Pin.IN, Pin.PULL_UP)       # joystick SW, pin 29
 name = BUTTON_FILE if button.value() == 0 else FILE
