@@ -32,7 +32,7 @@ SHOW_TILT = 15.0          # pictures exaggerate the tilt so it is visible
 REAL_TILT = 6.0
 
 FIXED = {"BASE", "POST-FRONT", "POST-BACK", "SERVO-2", "CONTROLS",
-         "JOYSTICK", "PIN-AXIS2"}
+         "JOYSTICK", "PIN-AXIS2", "TRAY-CUP"}
 FRAME = {"FRAME-LEFT", "FRAME-RIGHT", "FRAME-FRONT", "FRAME-BACK", "FRAME-BAY",
          "HORN-2",
          "SERVO-1", "PIN-AXIS1"}
@@ -58,6 +58,16 @@ def parse(path):
             if layer.startswith("SERVO"):
                 last_servo = layer
             i += 3
+            continue
+        if t == "UCS" and lines[i + 1] != "W":    # tray triangle
+            a, b, c = (np.array(P(lines[i + k])) for k in (1, 2, 3))
+            th = -float(lines[i + 12])
+            nrm = np.cross(b - a, c - a)
+            nrm /= np.linalg.norm(nrm)
+            if nrm[2] < 0:
+                nrm = -nrm
+            out.append(("board", layer, "prism", (a, b, c, th, nrm), False))
+            i += 15
             continue
         if t in ("BOX", "CYLINDER", "SPHERE"):
             if t == "BOX":
@@ -146,7 +156,19 @@ def sphere_faces(c, r, nu=12, nv=8):
     return f
 
 
+def prism_faces(a, b, c, th, nrm):
+    top = [np.asarray(p, float) for p in (a, b, c)]
+    bot = [p - th * nrm for p in top]
+    f = [top, bot]
+    for k in range(3):
+        j = (k + 1) % 3
+        f.append([top[k], top[j], bot[j], bot[k]])
+    return f
+
+
 def faces_of(kind, data):
+    if kind == "prism":
+        return prism_faces(*data)
     if kind == "box":
         return box_faces(*data)
     if kind == "cyl":
@@ -231,8 +253,8 @@ def draw(ax, prepared, servo1_deg, servo2_deg, labels=False, axes=True):
                     ha="center", zorder=6)
     ax.set_xlim(-2.8, B + 1.5)
     ax.set_ylim(-2.7, B + 1.6)
-    ax.set_zlim(-5.1, 3.4)
-    ax.set_box_aspect((B + 4.3, B + 4.3, 8.5), zoom=1.3)
+    ax.set_zlim(-6.1, 3.4)
+    ax.set_box_aspect((B + 4.3, B + 4.3, 9.5), zoom=1.3)
     ax.view_init(elev=38, azim=-58)
     ax.set_axis_off()
 

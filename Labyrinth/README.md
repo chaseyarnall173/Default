@@ -12,6 +12,7 @@ re-run `python3 make_labyrinth.py`.
 | `Labyrinth_board_top.png` | Top view of the finished board (slides, report) |
 | `Labyrinth_preview.png` | Picture of the DXF: sheet 1 + sheet 2 |
 | `Labyrinth_3D.scr` | AutoCAD script: in a new drawing type `SCRIPT` and pick it to build the whole game in 3D: board, frame, axis holes, servo cutouts, posts, base (`make_autocad_script.py` rebuilds it) |
+| `Labyrinth_tray.png` | The collection tray under the board: heights, which way a dropped ball rolls, cut list (`make_tray_views.py` rebuilds it) |
 | `Labyrinth_animate.lsp` | AutoCAD animation: load it with `APPLOAD` in the drawing built by `Labyrinth_3D.scr`, then type `TILTDEMO` |
 | `Labyrinth_axis1_bracket.png` | Close-up from below of the axis-1 brackets under the board (servo 1 on the left, pin on the right) |
 | `Labyrinth_axes_explained.png` | Four pictures of how the two axes move, coloured by what moves with what (`make_axis_views.py` rebuilds it from the 3D model) |
@@ -46,6 +47,28 @@ in ball needs 37° of tilt to escape, and this board only tilts about 6°. The
 start is instead a dead-end pocket with a thin engraved ring. The ball stays
 put while the board is level. If you really want a detent, a 1/16 in hole
 releases the ball at about 6°. Test that in cardboard first.
+
+## Collection tray
+
+Every ball that drops through a hole (prize holes, loss holes, the
+trapdoor) lands in a tray hung under the floor. The tray moves with the
+board. Its floor is two flat triangles that meet on the diagonal from the
+back-left corner down to the **front-right corner** (the corner in line
+with START's row and the 5 hole's column), so the ball rolls to that
+corner and out a 1 in notch in the front wall into a cup on the base.
+A triangle is always flat, so it works in stiff wood as well as cardboard.
+
+- Floor heights (below the floor top): back-left 1.6 in, front-left and
+  back-right 2.1 in, front-right 3.4 in. The valley slopes 6.6 deg, so a
+  ball still rolls with the board tilted 5 deg the wrong way.
+- The side walls sit just inside the axis-1 brackets and glue to them;
+  wall tops stop 1/4 in under the floor so they clear the bracket flanges.
+- The base sits 1 in lower than before (top at -5.5 in) so the tray
+  clears the cup at 6 deg on both axes. The script checks this, the
+  trapdoor flap's swing, and that every hole is over the tray.
+- Cut list: run `python3 make_tray_views.py`, or see `Labyrinth_tray.png`.
+
+![Collection tray](Labyrinth_tray.png)
 
 ## Milestone 2: cardboard prototype (no laser yet)
 

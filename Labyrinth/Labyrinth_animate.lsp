@@ -6,7 +6,7 @@
 
 (setq lab:C 5.75  lab:AZ -0.6  lab:B 11.5  lab:tilt 6  lab:ms 40)
 
-(defun lab:board () (ssget "_X" '((8 . "FLOOR,RIM-FRONT,RIM-BACK,RIM-LEFT,RIM-RIGHT,WALLS,BRACKET-LEFT,BRACKET-RIGHT,TRAPDOOR-FLAP,TRAPDOOR-SERVO,BALL,HORN-1,LABELS"))))
+(defun lab:board () (ssget "_X" '((8 . "FLOOR,RIM-FRONT,RIM-BACK,RIM-LEFT,RIM-RIGHT,WALLS,BRACKET-LEFT,BRACKET-RIGHT,TRAPDOOR-FLAP,TRAPDOOR-SERVO,BALL,HORN-1,TRAY-FRONT,TRAY-BACK,TRAY-LEFT,TRAY-RIGHT,TRAY-FLOOR,LABELS"))))
 (defun lab:frame () (ssget "_X" '((8 . "FRAME-LEFT,FRAME-RIGHT,FRAME-FRONT,FRAME-BACK,FRAME-BAY,SERVO-1,PIN-AXIS1,HORN-2"))))
 
 ;; axis 1 runs left-right under the board; it rides on the frame, so after

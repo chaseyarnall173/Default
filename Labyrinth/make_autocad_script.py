@@ -8,6 +8,13 @@ Board: floor with 8 holes and the trapdoor opening, the flap in the
 opening, the 3 in rim and 34 maze walls (2 in tall) standing on top of the
 floor, two brackets under the floor for axis 1, labels, the ball at START.
 
+Under the board, moving with it: a collection tray. Its floor is two
+flat 45-45-90 triangles that meet on the diagonal from the back-left
+corner down to the front-right corner (the corner in line with START's
+row and the 5 hole's column), so any ball that drops through a hole
+rolls into that corner and out a notch in the tray's front wall, into a
+cup on the base. A triangle is always flat, so stiff wood works.
+
 Outside, direct drive (servos on the stands, no pushrods). Both pivot axes
 sit AXIS_Z below the floor and cross under the board's centre:
   axis 1 (front/back tilt): servo 1 sits in a cutout in the frame's LEFT
@@ -55,7 +62,14 @@ LP_Z0 = -1.45                 # the frame's left plate goes a bit lower
 # brackets under the floor for axis 1 (left: servo horn, right: pin)
 BRK_W, BRK_T, BRK_Z0 = 1.5, 0.25, -1.1   # drop plate: width, thick, bottom
 BRK_FLANGE = 1.0              # flange glued under the floor
-BASE_Z0, BASE_Z1 = -5.0, -4.5
+BASE_Z0, BASE_Z1 = -6.0, -5.5   # low enough for the tray to swing
+# collection tray under the floor (moves with the board)
+TRAY_IN = BRK_T               # side walls start just inside the brackets
+TRAY_TOP = -2 * T             # wall tops, just under the bracket flanges
+TRAY_Z = {"FR": -3.4, "BL": -1.6, "BR": -2.1, "FL": -2.1}   # floor top
+EXIT_W, EXIT_H = 1.0, 0.9     # ball exit notch, front wall, right end
+CUP_H = 0.5                   # cup on the base under the exit
+GAME_TILT = 6.0               # tilt the clearance checks allow for
 POST_T = 0.5                  # posts: 1/2 in thick (4 layers of 1/8 ply)
 TAB_Z = -SERVO_TAB_FROM_TOP - SERVO_TAB_T   # tab underside, local z
 
@@ -98,6 +112,26 @@ class Model:
         """Cylinder of radius r from point p0 to point p1."""
         self.lines += ["CYLINDER", pt(*p0), n(r), "A", pt(*p1)]
         self.solids.append((self.layer, "cyl", (p0, p1, r)))
+
+    def tri_plate(self, a, b, c, t):
+        """Flat triangle a-b-c (top face) made t thick downwards: set a
+        UCS in the triangle's plane, draw it, extrude, back to World."""
+        import numpy as np
+        a, b, c = (np.array(v, float) for v in (a, b, c))
+        u = (b - a) / np.linalg.norm(b - a)
+        w = c - a
+        v = w - (w @ u) * u
+        v /= np.linalg.norm(v)
+        if np.cross(u, v)[2] < 0:              # keep the top face up
+            return self.tri_plate(a, c, b, t)
+        nrm = np.cross(u, v)
+        bx, cx, cy = (b - a) @ u, w @ u, w @ v
+        self.lines += ["UCS", pt(*a), pt(*b), pt(*c),
+                       "PLINE", "0,0", "%s,0" % n(bx),
+                       "%s,%s" % (n(cx), n(cy)), "C",
+                       "EXTRUDE", "L", "", n(-t), "UCS", "W"]
+        self.solids.append((self.layer, "prism",
+                            (tuple(a), tuple(b), tuple(c), t, tuple(nrm))))
 
     def sphere(self, c, r):
         self.lines += ["SPHERE", pt(*c), n(r)]
@@ -178,6 +212,76 @@ def horn_hole_cuts(m, along, a0, a1, centre):
     return cuts
 
 
+# ------------------------------------------------------- collection tray
+def tray_corners():
+    """Top of the tray floor at its 4 inside corners."""
+    x0, x1 = TRAY_IN + T, B - TRAY_IN - T
+    y0, y1 = T, B - T
+    return {"FL": (x0, y0, TRAY_Z["FL"]), "FR": (x1, y0, TRAY_Z["FR"]),
+            "BR": (x1, y1, TRAY_Z["BR"]), "BL": (x0, y1, TRAY_Z["BL"])}
+
+
+def tray_z(x, y):
+    """Height of the tray floor's top at x, y (two flat triangles)."""
+    import numpy as np
+    tc = tray_corners()
+    x0, x1, y0, y1 = tc["FL"][0], tc["FR"][0], tc["FL"][1], tc["BL"][1]
+    u, v = (x - x0) / (x1 - x0), (y - y0) / (y1 - y0)   # 0..1, BL->FR is u+v=1
+    tri = ("FR", "BR", "BL") if u + v >= 1 else ("FR", "BL", "FL")
+    p = [np.array(tc[k]) for k in tri]
+    nrm = np.cross(p[1] - p[0], p[2] - p[0])
+    return p[0][2] - (nrm[0] * (x - p[0][0]) + nrm[1] * (y - p[0][1])) / nrm[2]
+
+
+def tray_check(m, info):
+    """Every hole drops into the tray, the floor drains to the front-right
+    corner, nothing hits the trapdoor, and the tray clears the cup and
+    base at GAME_TILT on both axes."""
+    import math
+    import numpy as np
+    tc = tray_corners()
+    x0, x1, y0, y1 = tc["FL"][0], tc["FR"][0], tc["FL"][1], tc["BL"][1]
+    r = ml.BALL_D / 2
+    for _, hx, hy, _ in info["holes"] + [("T",) + info["trap"]]:
+        assert x0 + r <= hx <= x1 - r and y0 + r <= hy <= y1 - r, \
+            "hole at %.2f,%.2f misses the tray" % (hx, hy)
+    # drains: heights above FR along the diagonal (h1) and at the side
+    # corners (h2); each triangle slopes toward the diagonal if h2 > h1/2
+    h1 = TRAY_Z["BL"] - TRAY_Z["FR"]
+    for k in ("BR", "FL"):
+        assert TRAY_Z[k] - TRAY_Z["FR"] > h1 / 2, "tray would trap balls"
+    diag = math.hypot(x1 - x0, y1 - y0)
+    valley = math.degrees(math.atan(h1 / diag))
+    edge = math.degrees(math.atan((TRAY_Z["FL"] - TRAY_Z["FR"]) / (x1 - x0)))
+    # trapdoor: flap (TRAP wide, hinged) and its servo stay above the tray
+    tx, ty, th = info["trap"]
+    lowest = min(-T - 2 * th, -1.3)            # flap swung open / servo
+    room = lowest - max(tray_z(x, y) for x in (tx - th, tx + th)
+                        for y in (ty - th - 0.55, ty + th))
+    assert room > 0.1, "trapdoor flap would hit the tray"
+    # swing: lowest tray point at +/- GAME_TILT on both axes
+    pts = np.array([p for layer, kind, d in m.solids if layer in TRAY_LAYERS
+                    for p in corners(kind, d)])
+    low = 1e9
+    for a in (-GAME_TILT, GAME_TILT):
+        for b in (-GAME_TILT, GAME_TILT):
+            q = pts.copy()
+            ra, rb = math.radians(a), math.radians(b)
+            yy, zz = q[:, 1] - C, q[:, 2] - AXIS_Z
+            q[:, 1] = C + yy * math.cos(ra) - zz * math.sin(ra)
+            q[:, 2] = AXIS_Z + yy * math.sin(ra) + zz * math.cos(ra)
+            xx, zz = q[:, 0] - C, q[:, 2] - AXIS_Z
+            q[:, 2] = AXIS_Z - xx * math.sin(rb) + zz * math.cos(rb)
+            low = min(low, q[:, 2].min())
+    gap = low - (BASE_Z1 + CUP_H)
+    assert gap > 0.1, "tray hits the cup at %.0f deg" % GAME_TILT
+    print("tray: catches all %d holes + trapdoor; floor drains to the "
+          "front-right corner (valley %.1f deg, front edge %.1f deg); "
+          "clears the trapdoor by %.2f in and the cup by %.2f in at "
+          "%.0f deg tilt" % (len(info["holes"]), valley, edge, room, gap,
+                             GAME_TILT))
+
+
 # --------------------------------------------------------------- the model
 def build():
     m = Model()
@@ -246,6 +350,14 @@ def build():
                [lambda: m.cyl((C, pb0 - 0.05, AXIS_Z), (C, pb1 + 0.05, AXIS_Z),
                               PIN_HOLE_R)])
 
+    # ---- collection tray: front wall has the exit notch
+    tc = tray_corners()
+    zfr = TRAY_Z["FR"]
+    m.cut_part("TRAY-FRONT", 30,
+               lambda: m.box(TRAY_IN, 0, zfr - T, B - TRAY_IN, T, TRAY_TOP),
+               [lambda: m.box(tc["FR"][0] - EXIT_W, -0.05, zfr - 0.02,
+                              tc["FR"][0] + 0.01, T + 0.05, zfr + EXIT_H)])
+
     # ---- parts without holes
     m.lines += ["-LAYER", "T", "*", ""]
     m.use("FRAME-BAY", 150)                        # low servo bay, left
@@ -263,6 +375,17 @@ def build():
     for r in walls:
         x0, y0, x1, y1 = r["rect"]
         m.box(x0, y0, 0, x1, y1, r["height"])
+    m.use("TRAY-BACK", 30)
+    m.box(TRAY_IN, B - T, min(TRAY_Z["BL"], TRAY_Z["BR"]) - T,
+          B - TRAY_IN, B, TRAY_TOP)
+    m.use("TRAY-LEFT", 30)
+    m.box(TRAY_IN, T, min(TRAY_Z["FL"], TRAY_Z["BL"]) - T,
+          TRAY_IN + T, B - T, TRAY_TOP)
+    m.use("TRAY-RIGHT", 30)
+    m.box(B - TRAY_IN - T, T, TRAY_Z["FR"] - T, B - TRAY_IN, B - T, TRAY_TOP)
+    m.use("TRAY-FLOOR", 31)                    # two flat triangles
+    m.tri_plate(tc["FR"], tc["BR"], tc["BL"], T)
+    m.tri_plate(tc["FR"], tc["BL"], tc["FL"], T)
     m.use("TRAPDOOR-FLAP", 40)
     m.box(tx - th + ml.TRAP_GAP, ty - th + ml.TRAP_HINGE_GAP, -T,
           tx + th - ml.TRAP_GAP, ty + th - ml.TRAP_GAP, 0)
@@ -279,6 +402,12 @@ def build():
     bx1, by1 = fx1 + 1.0, pb1 + 0.5
     m.use("BASE", 251)
     m.box(bx0, by0, BASE_Z0, bx1, by1, BASE_Z1)
+    m.use("TRAY-CUP", 251)                     # catches balls from the exit
+    cx0, cx1 = tc["FR"][0] - EXIT_W - 0.6, tc["FR"][0] + 0.6
+    cy0, cy1 = -1.4, 0.8
+    for x0_, y0_, x1_, y1_ in ((cx0, cy0, cx1, cy0 + T), (cx0, cy1 - T, cx1, cy1),
+                               (cx0, cy0, cx0 + T, cy1), (cx1 - T, cy0, cx1, cy1)):
+        m.box(x0_, y0_, BASE_Z1, x1_, y1_, BASE_Z1 + CUP_H)
     m.use("CONTROLS", 250)                         # joystick box, front left
     m.box(0.6, by0 + 0.2, BASE_Z1, 3.6, by0 + 1.4, BASE_Z1 + 0.9)
     m.use("JOYSTICK", 7)
@@ -296,7 +425,7 @@ def build():
             ux, uy = cell[1] - mouth[1], mouth[0] - cell[0]
             m.text(f, mx + 0.3 * ux, my + 0.3 * uy, 0.002, 0.26)
     m.finish()
-    info = dict(base=(bx1 - bx0, by1 - by0), left_plate=(lp0, lp1),
+    info = dict(base=(bx1 - bx0, by1 - by0), holes=holes, trap=trap, left_plate=(lp0, lp1),
                 front_post=(pf0, pf1), frame=(fx0, fx1, fy0, fy1),
                 frame_inside=(fi0, fi1))
     return m, info
@@ -332,9 +461,11 @@ def check(m, info):
           % (fx1 - fx0, fy1 - fy0, *info["base"]))
 
 
+TRAY_LAYERS = ("TRAY-FRONT", "TRAY-BACK", "TRAY-LEFT", "TRAY-RIGHT",
+               "TRAY-FLOOR")
 BOARD_LAYERS = ("FLOOR", "RIM-FRONT", "RIM-BACK", "RIM-LEFT", "RIM-RIGHT",
                 "WALLS", "BRACKET-LEFT", "BRACKET-RIGHT", "TRAPDOOR-FLAP",
-                "TRAPDOOR-SERVO", "BALL", "HORN-1")
+                "TRAPDOOR-SERVO", "BALL", "HORN-1") + TRAY_LAYERS
 FRAME_LAYERS = ("FRAME-LEFT", "FRAME-RIGHT", "FRAME-FRONT", "FRAME-BACK",
                 "FRAME-BAY", "SERVO-1", "PIN-AXIS1", "HORN-2")
 
@@ -348,6 +479,10 @@ def corners(kind, d):
         (p0, p1, r) = d
         return [(p[0] + dx, p[1] + dy, p[2] + dz) for p in (p0, p1)
                 for dx in (-r, r) for dy in (-r, r) for dz in (-r, r)]
+    if kind == "prism":
+        a, b, c, t, nrm = d
+        return [tuple(p[i] - k * t * nrm[i] for i in range(3))
+                for p in (a, b, c) for k in (0, 1)]
     (c, r) = d
     return [(c[0] + dx, c[1] + dy, c[2] + dz) for dx in (-r, r)
             for dy in (-r, r) for dz in (-r, r)]
@@ -447,6 +582,7 @@ def main():
     assert tilt >= 8.0, "board hits the frame at %.1f deg" % tilt
     print("board can tip %.1f deg on axis 1 before touching the frame "
           "(game uses 6)" % tilt)
+    tray_check(m, info)
     write_lsp(os.path.join(OUT_DIR, "Labyrinth_animate.lsp"))
     path = os.path.join(OUT_DIR, "Labyrinth_3D.scr")
     with open(path, "w", newline="\r\n") as fh:
