@@ -41,7 +41,9 @@ them exactly. The route from START to the 5 is about 54 cells long. Every
 cell is reachable. The team took out one short wall near the front
 (right of the X hole in the second row), so there are now two ways past
 it. Later playtest edits: the X hole below the trapdoor was moved to the
-L corner left of the trapdoor, a new X hole sits in the middle of the cell on the way to the 5, and the wall under the trapdoor is 1 cm shorter. The script checks
+L corner left of the trapdoor, a new X hole sits in the lower-left corner
+of the cell on the way to the 5 (pushed into the corner so a careful ball
+can still pass), and the wall under the trapdoor is 1 cm shorter. The script checks
 both every time it runs.
 
 **Why START is a ring, not a divot.** A ball sitting in a hole only rolls
