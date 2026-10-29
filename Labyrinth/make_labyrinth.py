@@ -13,6 +13,7 @@ Outputs
   Labyrinth_preview.png            picture of the DXF
   Labyrinth_board_top.png          top view of the assembled playfield
   Labyrinth_Template_Letter.pdf    cardboard template, 4 letter pages at 1:1
+  Labyrinth_wall_list.csv          every wall piece: length, height, count
   Labyrinth_Template_FullSize.pdf  same template on one 13 x 13 in page
 """
 import os
@@ -713,6 +714,12 @@ def main():
     write_templates(os.path.join(OUT_DIR, "Labyrinth_Template_Letter.pdf"),
                     os.path.join(OUT_DIR, "Labyrinth_Template_FullSize.pdf"),
                     runs, cl)
+    csv_path = os.path.join(OUT_DIR, "Labyrinth_wall_list.csv")
+    with open(csv_path, "w", newline="") as fh:
+        fh.write("piece,length_in,height_in,thickness_in,quantity,laser_sheet\n")
+        for name, L, h, q in cl:
+            fh.write("%s,%.3f,%.3f,%.3f,%d,%s\n" % (
+                name, L, h, T, q, "+".join(map(str, sorted(sheet_of[name])))))
     print("cells reachable from START: %d / %d" % (reach, N * N))
     print("pitch %.4f  corridor %.4f  walls: %d interior pieces, %.1f in"
           % (PITCH, CLEAR, sum(1 for r in runs if not r["rim"]), wall_len))

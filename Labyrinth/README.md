@@ -7,6 +7,7 @@ re-run `python3 make_labyrinth.py`.
 | File | Use it for |
 |---|---|
 | `Labyrinth_Board.dxf` | Open in AutoCAD. Laser layout, 1:1, inches, layers already set up |
+| `Labyrinth_wall_list.csv` | Every wall piece (letter A–J and the 4 rims): length, height, thickness, how many, which laser sheet. Opens in Excel |
 | `Labyrinth_Template_Letter.pdf` | **Milestone 2 cardboard prototype.** Page 1 has instructions + cut list; pages A1–B2 are the floor at 1:1 on 4 letter sheets |
 | `Labyrinth_Template_FullSize.pdf` | Same floor on one 13 × 13 in page (plotter / large printer) |
 | `Labyrinth_board_top.png` | Top view of the finished board (slides, report) |
