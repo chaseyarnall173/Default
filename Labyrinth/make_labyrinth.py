@@ -114,7 +114,7 @@ HW, VW, FEATURES = parse(MAZE)
 # Holes pushed into a corner of their cell instead of the middle, so a ball
 # hugging the far walls can still roll past: cell -> (x, y) shift in inches.
 CORNER = PITCH / 2 - T / 2 - HOLE_D["X"] / 2 - 0.03
-HOLE_SHIFT = {(2, 7): (-CORNER, -CORNER)}     # lower-left corner on the way to 5
+HOLE_SHIFT = {}
 
 
 def gx(j):
