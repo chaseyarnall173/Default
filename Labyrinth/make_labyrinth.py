@@ -66,13 +66,13 @@ MAZE = """
 +   +   +   +---+   +---+   +   +   +
 |   |       |   |   | 1 |       |   |
 +   +   +---+   +   +   +   +   +   +
-|   |           |           |       |
+|   |           |           | X     |
 +   +---+---+---+---+---+---+---+---+
 |   |       |                       |
 +   +   +---+---+---+---+   +---+   +
-|   |             T         | X     |
+|   | X           T         | X     |
 +   +---+   +---+---+---+   +---+   +
-|           | X                 |   |
+|           |                   |   |
 +---+---+---+---+---+---+---+---+   +
 | X                 |           |   |
 +---+   +---+   +---+   +---+   +   +
@@ -81,6 +81,11 @@ MAZE = """
 | S         |               |       |
 +---+---+---+---+---+---+---+---+---+
 """
+
+
+# Shorten a straight wall piece: (direction, grid line, first cell) ->
+# (inches off the start, inches off the end). Row walls run left to right.
+WALL_TRIM = {("h", 5, 3): (0.0, 0.394)}   # below the trapdoor: 1 cm shorter
 
 
 # --------------------------------------------------------------- parse maze
@@ -106,6 +111,12 @@ def parse(text):
 
 HW, VW, FEATURES = parse(MAZE)
 
+# Holes pushed into a corner of their cell instead of the middle, so a ball
+# hugging the far walls can still roll past: cell -> (x, y) shift in inches.
+CORNER = PITCH / 2 - T / 2 - HOLE_D["X"] / 2 - 0.03
+HOLE_SHIFT = {(4, 1): (-CORNER, -CORNER),     # the L corner left of the trapdoor
+              (2, 7): (-CORNER, -CORNER)}     # lower-left corner on the way to 5
+
 
 def gx(j):
     return T / 2 + j * PITCH
@@ -117,7 +128,8 @@ def gy(i):
 
 def centre(cell):
     i, j = cell
-    return gx(j) + PITCH / 2, gy(i) - PITCH / 2
+    dx, dy = HOLE_SHIFT.get(cell, (0.0, 0.0))
+    return gx(j) + PITCH / 2 + dx, gy(i) - PITCH / 2 + dy
 
 
 def neighbours(cell):
@@ -183,6 +195,8 @@ def wall_runs():
             x0 = gx(j0) - ends[0] * T / 2
             x1 = gx(j) + ends[1] * T / 2
             y = gy(i)
+            t0, t1 = WALL_TRIM.get(("h", i, j0), (0.0, 0.0))
+            x0, x1 = x0 + t0, x1 - t1
             runs.append({"dir": "h", "rect": (x0, y - T / 2, x1, y + T / 2),
                          "rim": i in (0, N), "edge": i})
     for j in range(N + 1):
