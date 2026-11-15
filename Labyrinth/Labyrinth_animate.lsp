@@ -4,9 +4,9 @@
 ;; Run:   type TILTDEMO   (TILTSPEED changes how fast it moves)
 ;; The model always ends back level.
 
-(setq lab:C 5.75  lab:AZ 1  lab:B 11.5  lab:tilt 6  lab:ms 40)
+(setq lab:C 5.75  lab:AZ 0.675  lab:B 11.5  lab:tilt 6  lab:ms 40)
 
-(defun lab:board () (ssget "_X" '((8 . "FLOOR,RIM-FRONT,RIM-BACK,RIM-LEFT,RIM-RIGHT,WALLS,TRAPDOOR-FLAP,TRAPDOOR-SERVO,BALL,HORN-INNER,PIN-AXIS1,TRAY-FLOOR,LABELS"))))
+(defun lab:board () (ssget "_X" '((8 . "FLOOR,RIM-FRONT,RIM-BACK,RIM-LEFT,RIM-RIGHT,WALLS,TRAPDOOR-FLAP,TRAPDOOR-SERVO,BALL,HORN-INNER,PIN-AXIS1,TRAY-LEFT,TRAY-FRONT,TRAY-RIGHT,TRAY-BACK,TRAY-FLOOR,LABELS"))))
 (defun lab:frame () (ssget "_X" '((8 . "FRAME-LEFT,FRAME-RIGHT,FRAME-FRONT,FRAME-BACK,SERVO-INNER,HORN-OUTER,BEARING-1,BEARING-2"))))
 
 ;; axis 1 (inner servo) runs front-back through the board's centre; it

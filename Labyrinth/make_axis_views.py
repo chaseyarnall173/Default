@@ -40,7 +40,13 @@ GROUP_COLOR = {"fixed": "#8f9399", "frame": "#3f7fd0", "board": "#e39b45"}
 SHADE = {"WALLS": 0.78, "RIM-FRONT": 0.66, "RIM-BACK": 0.66,
          "RIM-LEFT": 0.66, "RIM-RIGHT": 0.66, "BALL": 1.25, "BASE": 0.72,
          "SERVO-INNER": 0.8, "SERVO-OUTER": 0.8, "CONTROLS": 0.5,
-         "TRAY-FLOOR": 0.9}
+         "TRAY-FLOOR": 0.9, "TRAY-LEFT": 0.6, "TRAY-FRONT": 0.6,
+         "TRAY-RIGHT": 0.6, "TRAY-BACK": 0.6}
+# real paint colours for the AutoCAD colour numbers the model uses
+ACI_RGB = {1: "#d9443a", 14: "#9e2a22", 2: "#e3c03a", 5: "#2f86b8", 42: "#d8b98c",
+           150: "#3b6fd6", 240: "#2b2b2b", 8: "#9a9a9a", 9: "#d0d0d0",
+           33: "#b48a5a", 251: "#8a8a8a", 250: "#4a4a4a", 7: "#f2f2f2"}
+LAYER_ACI = {}            # filled in by parse()
 
 
 # ------------------------------------------------------- read the model
@@ -56,6 +62,8 @@ def parse(path):
         t = lines[i]
         if t == "-LAYER" and lines[i + 1] == "M":
             layer = lines[i + 2]
+            if lines[i + 3] == "C":
+                LAYER_ACI[layer] = int(lines[i + 4])
             i += 3
             continue
         if t in ("BOX", "CYLINDER", "SPHERE"):
@@ -78,8 +86,7 @@ def parse(path):
                 data, i = ("sphere", (P(lines[i + 1]),
                                       float(lines[i + 2]))), i + 3
             if layer == "TMP":
-                if data[0] == "cyl":
-                    pending.append(data)
+                pending.append(data)       # holes, slots and openings
                 continue
             if layer in FIXED:
                 group = "fixed"
@@ -172,13 +179,19 @@ def faces_of(kind, data):
     return sphere_faces(*data)
 
 
-def prepare(solids):
-    """Faces as arrays, grouped, with a base colour each."""
+def prepare(solids, real=False):
+    """Faces as arrays, grouped, with a base colour each: by what moves
+    with what, or (real=True) the parts' real paint colours."""
     prepared = {"fixed": [], "frame": [], "board": []}
     for group, layer, kind, data, hole in solids:
-        rgb = np.array(matplotlib.colors.to_rgb(GROUP_COLOR[group]))
-        rgb = (np.array([0.08, 0.08, 0.08]) if hole
-               else np.clip(rgb * SHADE.get(layer, 1.0), 0, 1))
+        if real:
+            rgb = np.array(matplotlib.colors.to_rgb(
+                ACI_RGB.get(LAYER_ACI.get(layer), "#999999")))
+        else:
+            rgb = np.array(matplotlib.colors.to_rgb(GROUP_COLOR[group]))
+            rgb = np.clip(rgb * SHADE.get(layer, 1.0), 0, 1)
+        if hole:
+            rgb = np.array([0.08, 0.08, 0.08])
         for f in faces_of(kind, data):
             prepared[group].append((np.asarray(f, float), rgb))
     return prepared
@@ -206,7 +219,8 @@ def rot2(pts, b):
 LIGHT = np.array([-0.35, -0.55, 0.76]) / np.linalg.norm([-0.35, -0.55, 0.76])
 
 
-def draw(ax, prepared, servo1_deg, servo2_deg, labels=False, axes=True):
+def draw(ax, prepared, servo1_deg, servo2_deg, labels=False, axes=True,
+         pivots=True):
     a = math.radians(servo1_deg)        # inner servo: + = left side down
     b = math.radians(servo2_deg)        # outer servo: + = back goes up
     polys, cols = [], []
@@ -229,8 +243,9 @@ def draw(ax, prepared, servo1_deg, servo2_deg, labels=False, axes=True):
     # pivot lines: axis 2 never moves, axis 1 rides on the outer box
     ax2 = np.array([[-3.0, C, PIN_Z], [B + 3.4, C, PIN_Z]])
     ax1 = rot2(np.array([[C, -3.0, PIN_Z], [C, B + 1.8, PIN_Z]]), b)
-    ax.plot(*ax1.T, ls="--", lw=2.2, color="#c0392b", zorder=5)
-    if axes:
+    if pivots:
+        ax.plot(*ax1.T, ls="--", lw=2.2, color="#c0392b", zorder=5)
+    if axes and pivots:
         ax.plot(*ax2.T, ls="--", lw=2.2, color="#1450a0", zorder=5)
         ax.text(*ax2[1] + [0.3, 0, 0.3], "AXIS 2", color="#1450a0",
                 fontsize=10, weight="bold", zorder=6)
@@ -308,6 +323,54 @@ def picture(prepared, path):
     print("wrote", path)
 
 
+BOARD_ONLY = ("FLOOR", "RIM-", "WALLS", "TRAY-", "TRAPDOOR-", "BALL",
+              "HORN-INNER", "PIN-AXIS1")
+MODEL_VIEWS = [
+    # title, elev, azim, limits, layers to show (None = all)
+    ("Whole game, from the front left", 30, -58, None, None),
+    ("Board from above (trapdoor opening drawn dark)", 72, -90,
+     (-0.6, B + 0.6, -0.6, B + 0.6, -3, 2.6),
+     ("FLOOR", "RIM-", "WALLS", "BALL")),
+    ("Board + tray from below, START corner nearest:\ncorner cut-out "
+     "3 in along each wall, 1.625 in tall", -24, -125,
+     (-0.5, B + 0.5, -0.5, B + 0.5, -3.0, 2.2), BOARD_ONLY),
+    ("Underside of the floor (tray left off):\ntrapdoor SG90 lying flat "
+     "beside the opening, shaft on the hinge line", -50, -105,
+     (2.5, 9.0, 2.5, 8.5, -1.6, 0.3), ("FLOOR", "TRAPDOOR-SERVO")),
+]
+
+
+def model_picture(solids, path):
+    """The model in its real colours, from four sides."""
+    fig = plt.figure(figsize=(16, 14.5), dpi=110)
+    fig.suptitle("The Labyrinth - 3D model as built (real colours)",
+                 fontsize=19, weight="bold", y=0.99)
+    fig.text(0.5, 0.962, "red floor and outer box, blue maze walls, yellow "
+             "rim and tray walls; axles %.3f in above the bottom of the "
+             "outer box walls" % cad.AXLE_UP, ha="center", fontsize=11,
+             color="#555")
+    for k, (title, elev, azim, lim, keep) in enumerate(MODEL_VIEWS):
+        part = [s_ for s_ in solids
+                if keep is None or s_[1].startswith(keep)]
+        r, c = divmod(k, 2)
+        y_t = (0.935, 0.47)[r]
+        ax = fig.add_axes([0.01 + 0.495 * c, y_t - 0.45, 0.48, 0.42],
+                          projection="3d")
+        draw(ax, prepare(part, real=True), 0, 0, pivots=False)
+        if lim:
+            x0, x1, y0, y1, z0, z1 = lim
+            ax.set_xlim(x0, x1)
+            ax.set_ylim(y0, y1)
+            ax.set_zlim(z0, z1)
+            ax.set_box_aspect((x1 - x0, y1 - y0, z1 - z0), zoom=1.2)
+        ax.view_init(elev=elev, azim=azim)
+        fig.text(0.25 + 0.495 * c, y_t, title, ha="center", va="top",
+                 fontsize=13, weight="bold")
+    fig.savefig(path, facecolor="white")
+    plt.close(fig)
+    print("wrote", path)
+
+
 def video(prepared, path, fps=20):
     from matplotlib.animation import FFMpegWriter
     scenes = [
@@ -356,6 +419,7 @@ def main():
     out = sys.argv[sys.argv.index("--out") + 1] if "--out" in sys.argv \
         else HERE
     picture(prepared, os.path.join(out, "Labyrinth_axes_explained.png"))
+    model_picture(solids, os.path.join(out, "Labyrinth_model.png"))
     if "--video" in sys.argv:
         video(prepared, os.path.join(out, "Labyrinth_two_axis.mp4"))
 

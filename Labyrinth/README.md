@@ -6,21 +6,23 @@ re-run `python3 make_labyrinth.py`.
 
 | File | Use it for |
 |---|---|
-| `Labyrinth_Board.dxf` | Open in AutoCAD. Laser layout, 1:1, inches, layers already set up |
+| `Labyrinth_Board.dxf` | The older 9 × 9 grid design from `make_labyrinth.py` (before the team's own laser drawing). The 3D model no longer uses it |
 | `Labyrinth_wall_list.csv` | Every wall piece (letter A–J and the 4 rims): length, height, thickness, how many, which laser sheet. Opens in Excel |
 | `Labyrinth_Template_Letter.pdf` | **Milestone 2 cardboard prototype.** Page 1 has instructions + cut list; pages A1–B2 are the floor at 1:1 on 4 letter sheets |
 | `Labyrinth_Template_FullSize.pdf` | Same floor on one 13 × 13 in page (plotter / large printer) |
 | `Labyrinth_board_top.png` | Top view of the finished board (slides, report) |
 | `Labyrinth_preview.png` | Picture of the DXF: sheet 1 + sheet 2 |
-| `Labyrinth_3D.scr` | AutoCAD script: in a new drawing type `SCRIPT` and pick it to build the whole game in 3D: board, frame, axis holes, servo cutouts, posts, base (`make_autocad_script.py` rebuilds it) |
-| `Labyrinth_tray.png` | The collection tray under the board: heights, which way a dropped ball rolls, cut list (`make_tray_views.py` rebuilds it) |
+| `Labyrinth_3D.scr` | AutoCAD script: in a new drawing type `SCRIPT` and pick it to build the whole game in 3D **as built**: maze, colours, tray, outer box, servos, posts, base (`make_autocad_script.py` rebuilds it from `as_built.py`) |
+| `as_built.py` | The built maze in numbers: every wall, hole, the trapdoor, the tray, the paint colours. Traced from the team's laser drawing and checked against photos of the plywood board |
+| `Labyrinth_model.png` | The 3D model in its real colours from four sides (`make_axis_views.py` rebuilds it) |
+| `Labyrinth_tray.png` | The collection tray: view from below and the five tray pieces with sizes (`make_tray_views.py` rebuilds it) |
 | `Labyrinth_animate.lsp` | AutoCAD animation: load it with `APPLOAD` in the drawing built by `Labyrinth_3D.scr`, then type `TILTDEMO` |
 | `Labyrinth_axes_explained.png` | Four pictures of how the two axes move, coloured by what moves with what (`make_axis_views.py` rebuilds it from the 3D model) |
 | `Labyrinth_two_axis.mp4` | 20 s video of the same (`make_axis_views.py --video`) |
 | `pico/servo_test.py` | Bench test for one servo: centre, sweep, step response, smallest visible step |
 | `pico/joystick_servos.py` | Joystick drives both servos, with deadzone, expo, smoothing and a level button: the start of the real control loop |
 
-![Top view](Labyrinth_board_top.png)
+![3D model as built](Labyrinth_model.png)
 
 ## The design numbers
 
@@ -55,9 +57,9 @@ releases the ball at about 6°. Test that in cardboard first.
 
 ## Mounting (as built)
 
-The outer box (four walls) hangs between two posts, and the board hangs
-inside the outer box. Both pivots are halfway up the rim, so the board
-hangs below them and settles level by itself.
+The outer box (four red walls) hangs between two posts, and the board
+hangs inside the outer box. Both axles sit 1.875 in above the bottom of
+the outer box's walls (`AXLE_UP` in `make_autocad_script.py`).
 
 | | Inner servo (board tips left / right) | Outer servo (outer box + board tip front / back) |
 |---|---|---|
@@ -67,27 +69,41 @@ hangs below them and settles level by itself.
 
 The model checks that both servos pass through their cutouts, the horns
 sit on their faces, the dowels are on the axes, and the board can tip
-11.3 deg before it touches the outer box (the game uses 5 to 6).
+12.3 deg before it touches the outer box (the game uses 5 to 6).
+
+## The board as built
+
+Red floor, yellow rim, 34 blue maze walls (2 in tall), 9 holes all 7/8 in
+(1, 3, 5 and six loss holes), a 1 in trapdoor in the middle. The trapdoor's
+SG90 lies flat against the underside of the floor beside the opening, its
+shaft on the flap's hinge line, so it only hangs about 1/2 in below the
+floor. All of it comes from `as_built.py`; change a number there and
+re-run `python3 make_autocad_script.py`.
 
 ## Collection tray
 
-Every ball that drops through a hole (prize holes, loss holes, the
-trapdoor) lands on a tray floor hung under the board. It moves with the
-board. The floor is two flat triangles that meet on the diagonal from the
-back-left corner down to the **front-right corner** (the corner in line
-with START's row and the 5 hole's column), so balls roll to that corner.
-A triangle is always flat, so it works in stiff wood as well as cardboard.
-The tray walls are left out of the model for now - just the triangles.
+A box hung under the board that moves with it: its four walls carry the
+rim on down 2.375 in, standing on an 11.5 × 11.5 floor. Every ball that
+drops through a hole or the trapdoor lands in it.
 
-- Floor heights below the floor top: back-left 1.4 in, front-left and
-  back-right 1.7 in, front-right 2.4 in. Gentle: the valley slopes 3.6 deg,
-  so tilting the board toward the front-right corner empties it.
-- Each triangle is built in AutoCAD as a box cut by three `SLICE` planes,
-  so the script never changes the UCS.
-- The script checks that every hole is over the tray, the floor drains to
-  the corner, the trapdoor flap and its servo clear it, and the tray clears
-  the base at 6 deg on both axes.
-- Triangle sizes: run `python3 make_tray_views.py`, or see `Labyrinth_tray.png`.
+| Piece | Size (in) | How many |
+|---|---|---|
+| Left wall | 11.5 × 2.375, 3 × 1.625 corner cut out | 1 |
+| Front wall | 11.25 × 2.375, 3 × 1.625 corner cut out | 1 |
+| Back wall | 11.25 × 2.375 | 1 |
+| Right wall | 11.5 × 2.375 | 1 |
+| Floor | 11.5 × 11.5 | 1 |
+
+The two cut-outs meet at the **START corner**. Pressing the button tilts
+the board toward that corner, so the ball rolls there. The 0.75 in strip
+under each cut-out sits on the tray floor and is taller than the 18 mm
+ball, so the ball stops in the corner and the player reaches in through
+the opening. If the strip goes at the top instead (opening at the tray
+floor, ball rolls out), set `TRAY_LIP_AT_FLOOR = False` in `as_built.py`.
+
+The script checks that every hole and the trapdoor are over the tray, the
+open flap and its servo clear the tray floor, and the tray clears the base
+at 6 deg on both axes.
 
 ![Collection tray](Labyrinth_tray.png)
 
