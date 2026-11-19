@@ -13,6 +13,7 @@ Outputs
   Labyrinth_preview.png            picture of the DXF
   Labyrinth_board_top.png          top view of the assembled playfield
   Labyrinth_Template_Letter.pdf    cardboard template, 4 letter pages at 1:1
+  Labyrinth_wall_list.csv          every wall piece: length, height, count
   Labyrinth_Template_FullSize.pdf  same template on one 13 x 13 in page
 """
 import os
@@ -36,7 +37,7 @@ N = 9               # cells per side
 PITCH = (BOARD - T) / N          # wall centre to wall centre
 CLEAR = PITCH - T                # corridor width between wall faces
 WALL_H = 2.0        # maze wall height above the floor
-RIM_H = 3.0         # outer rim height above the floor
+RIM_H = 2.0         # outer rim height above the floor (same as walls)
 BALL_D = 0.625      # 5/8 in steel ball
 
 # Hole diameters: all standard drill press (Forstner) bit sizes.
@@ -65,21 +66,26 @@ MAZE = """
 +   +   +   +---+   +---+   +   +   +
 |   |       |   |   | 1 |       |   |
 +   +   +---+   +   +   +   +   +   +
-|   |           |           |       |
+|   |           |           | X     |
 +   +---+---+---+---+---+---+---+---+
 |   |       |                       |
 +   +   +---+---+---+---+   +---+   +
-|   |             T         | X     |
+|   | X           T         | X     |
 +   +---+   +---+---+---+   +---+   +
-|           | X                 |   |
+|           |                   |   |
 +---+---+---+---+---+---+---+---+   +
 | X                 |           |   |
 +---+   +---+   +---+   +---+   +   +
-|       |   |   | X |   |   |   |   |
+|       |   |   | X |       |   |   |
 +---+   +   +   +   +   +   +   +   +
 | S         |               |       |
 +---+---+---+---+---+---+---+---+---+
 """
+
+
+# Shorten a straight wall piece: (direction, grid line, first cell) ->
+# (inches off the start, inches off the end). Row walls run left to right.
+WALL_TRIM = {("h", 5, 3): (0.0, 0.394)}   # below the trapdoor: 1 cm shorter
 
 
 # --------------------------------------------------------------- parse maze
@@ -105,6 +111,11 @@ def parse(text):
 
 HW, VW, FEATURES = parse(MAZE)
 
+# Holes pushed into a corner of their cell instead of the middle, so a ball
+# hugging the far walls can still roll past: cell -> (x, y) shift in inches.
+CORNER = PITCH / 2 - T / 2 - HOLE_D["X"] / 2 - 0.03
+HOLE_SHIFT = {(2, 7): (-CORNER, -CORNER)}     # lower-left corner on the way to 5
+
 
 def gx(j):
     return T / 2 + j * PITCH
@@ -116,7 +127,8 @@ def gy(i):
 
 def centre(cell):
     i, j = cell
-    return gx(j) + PITCH / 2, gy(i) - PITCH / 2
+    dx, dy = HOLE_SHIFT.get(cell, (0.0, 0.0))
+    return gx(j) + PITCH / 2 + dx, gy(i) - PITCH / 2 + dy
 
 
 def neighbours(cell):
@@ -182,6 +194,8 @@ def wall_runs():
             x0 = gx(j0) - ends[0] * T / 2
             x1 = gx(j) + ends[1] * T / 2
             y = gy(i)
+            t0, t1 = WALL_TRIM.get(("h", i, j0), (0.0, 0.0))
+            x0, x1 = x0 + t0, x1 - t1
             runs.append({"dir": "h", "rect": (x0, y - T / 2, x1, y + T / 2),
                          "rim": i in (0, N), "edge": i})
     for j in range(N + 1):
@@ -713,6 +727,12 @@ def main():
     write_templates(os.path.join(OUT_DIR, "Labyrinth_Template_Letter.pdf"),
                     os.path.join(OUT_DIR, "Labyrinth_Template_FullSize.pdf"),
                     runs, cl)
+    csv_path = os.path.join(OUT_DIR, "Labyrinth_wall_list.csv")
+    with open(csv_path, "w", newline="") as fh:
+        fh.write("piece,length_in,height_in,thickness_in,quantity,laser_sheet\n")
+        for name, L, h, q in cl:
+            fh.write("%s,%.3f,%.3f,%.3f,%d,%s\n" % (
+                name, L, h, T, q, "+".join(map(str, sorted(sheet_of[name])))))
     print("cells reachable from START: %d / %d" % (reach, N * N))
     print("pitch %.4f  corridor %.4f  walls: %d interior pieces, %.1f in"
           % (PITCH, CLEAR, sum(1 for r in runs if not r["rim"]), wall_len))

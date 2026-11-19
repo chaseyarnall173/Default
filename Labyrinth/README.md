@@ -6,19 +6,23 @@ re-run `python3 make_labyrinth.py`.
 
 | File | Use it for |
 |---|---|
-| `Labyrinth_Board.dxf` | Open in AutoCAD. Laser layout, 1:1, inches, layers already set up |
+| `Labyrinth_Board.dxf` | The older 9 × 9 grid design from `make_labyrinth.py` (before the team's own laser drawing). The 3D model no longer uses it |
+| `Labyrinth_wall_list.csv` | Every wall piece (letter A–J and the 4 rims): length, height, thickness, how many, which laser sheet. Opens in Excel |
 | `Labyrinth_Template_Letter.pdf` | **Milestone 2 cardboard prototype.** Page 1 has instructions + cut list; pages A1–B2 are the floor at 1:1 on 4 letter sheets |
 | `Labyrinth_Template_FullSize.pdf` | Same floor on one 13 × 13 in page (plotter / large printer) |
 | `Labyrinth_board_top.png` | Top view of the finished board (slides, report) |
 | `Labyrinth_preview.png` | Picture of the DXF: sheet 1 + sheet 2 |
-| `Labyrinth_3D.scr` | AutoCAD script: in a new drawing type `SCRIPT` and pick it to build the whole game in 3D: board, frame, axis holes, servo cutouts, posts, base (`make_autocad_script.py` rebuilds it) |
-| `Labyrinth_axis1_bracket.png` | Close-up from below of the axis-1 brackets under the board (servo 1 on the left, pin on the right) |
+| `Labyrinth_3D.scr` | AutoCAD script: in a new drawing type `SCRIPT` and pick it to build the whole game in 3D **as built**: maze, colours, tray, outer box, servos, posts, base (`make_autocad_script.py` rebuilds it from `as_built.py`) |
+| `as_built.py` | The built maze in numbers: every wall, hole, the trapdoor, the tray, the paint colours. Traced from the team's laser drawing and checked against photos of the plywood board |
+| `Labyrinth_model.png` | The 3D model in its real colours from four sides (`make_axis_views.py` rebuilds it) |
+| `Labyrinth_tray.png` | The collection tray: view from below and the five tray pieces with sizes (`make_tray_views.py` rebuilds it) |
+| `Labyrinth_animate.lsp` | AutoCAD animation: load it with `APPLOAD` in the drawing built by `Labyrinth_3D.scr`, then type `TILTDEMO` |
 | `Labyrinth_axes_explained.png` | Four pictures of how the two axes move, coloured by what moves with what (`make_axis_views.py` rebuilds it from the 3D model) |
 | `Labyrinth_two_axis.mp4` | 20 s video of the same (`make_axis_views.py --video`) |
 | `pico/servo_test.py` | Bench test for one servo: centre, sweep, step response, smallest visible step |
 | `pico/joystick_servos.py` | Joystick drives both servos, with deadzone, expo, smoothing and a level button: the start of the real control loop |
 
-![Top view](Labyrinth_board_top.png)
+![3D model as built](Labyrinth_model.png)
 
 ## The design numbers
 
@@ -27,7 +31,7 @@ re-run `python3 make_labyrinth.py`.
 | Floor plate | 11.5 × 11.5 in | The laser bed is 12 × 16 in and the guide asks for a ¼ in border, so 11.5 in is the biggest square that fits. Change `BOARD` if the frame has to fit inside 12 × 12 |
 | Ball | ⅝ in steel ball bearing | Heavy, so it rolls smoothly and the same way every time. 3D-printed balls are light and slightly rough |
 | Grid | 9 × 9 cells, 1.264 in apart | Corridor is 1.139 in between walls, about 1.8 balls wide |
-| Walls / rim | ⅛ in ply, 2 in tall / 3 in tall | Team choice. The ball can never hop a wall. Tall walls hide the ball from low angles, so check the view in the cardboard prototype |
+| Walls / rim | ⅛ in ply, 2 in tall / 2 in tall (outer box level with the rim) | Team choice. The ball can never hop a wall. Tall walls hide the ball from low angles, so check the view in the cardboard prototype |
 | **5 coin** hole | ¾ in drill | Smallest, at the far corner (back-right) |
 | **3 coin** hole | ⅞ in drill | Side pocket just before the 5 |
 | **1 coin** hole | 1 in drill | Side pocket before that, easiest to sink |
@@ -36,7 +40,12 @@ re-run `python3 make_labyrinth.py`.
 
 All hole sizes are standard Forstner bit sizes, so the drill press makes
 them exactly. The route from START to the 5 is about 54 cells long. Every
-cell is reachable, and there is exactly one way through. The script checks
+cell is reachable. The team took out one short wall near the front
+(right of the X hole in the second row), so there are now two ways past
+it. Later playtest edits: the X hole below the trapdoor was moved to the
+L corner left of the trapdoor, a new X hole sits in the lower-left corner
+of the cell on the way to the 5 (pushed into the corner so a careful ball
+can still pass), and the wall under the trapdoor is 1 cm shorter. The script checks
 both every time it runs.
 
 **Why START is a ring, not a divot.** A ball sitting in a hole only rolls
@@ -45,6 +54,58 @@ in ball needs 37° of tilt to escape, and this board only tilts about 6°. The
 start is instead a dead-end pocket with a thin engraved ring. The ball stays
 put while the board is level. If you really want a detent, a 1/16 in hole
 releases the ball at about 6°. Test that in cardboard first.
+
+## Mounting (as built)
+
+The outer box (four red walls) hangs between two posts, and the board
+hangs inside the outer box. Both axles sit 1.875 in above the bottom of
+the outer box's walls (`AXLE_UP` in `make_autocad_script.py`).
+
+| | Inner servo (board tips left / right) | Outer servo (outer box + board tip front / back) |
+|---|---|---|
+| Axis | runs front to back through the board's centre | runs left to right through the board's centre |
+| Servo end | body through a cutout in the outer box's **front wall**, horn screwed to the board's front rim | body fixed to the **right post**, horn screwed to the outer box's right wall |
+| Other end | dowel glued in the board's back rim, turning in a bearing glued to the inside of the outer box's back wall (both sit in the gap; nothing goes through the wall) | dowel in the left post, turning in a bearing in the outer box's left wall |
+
+The model checks that both servos pass through their cutouts, the horns
+sit on their faces, the dowels are on the axes, and the board can tip
+12.3 deg before it touches the outer box (the game uses 5 to 6).
+
+## The board as built
+
+Red floor, yellow rim, 34 blue maze walls (2 in tall), 9 holes all 7/8 in
+(1, 3, 5 and six loss holes), a 1 in trapdoor in the middle. The trapdoor's
+SG90 lies flat against the underside of the floor beside the opening, its
+shaft on the flap's hinge line, so it only hangs about 1/2 in below the
+floor. All of it comes from `as_built.py`; change a number there and
+re-run `python3 make_autocad_script.py`.
+
+## Collection tray
+
+A box hung under the board that moves with it: its four walls carry the
+rim on down 2.375 in, standing on an 11.5 × 11.5 floor. Every ball that
+drops through a hole or the trapdoor lands in it.
+
+| Piece | Size (in) | How many |
+|---|---|---|
+| Left wall | 11.5 × 2.375, 3 × 1.625 corner cut out | 1 |
+| Front wall | 11.25 × 2.375, 3 × 1.625 corner cut out | 1 |
+| Back wall | 11.25 × 2.375 | 1 |
+| Right wall | 11.5 × 2.375 | 1 |
+| Floor | 11.5 × 11.5 | 1 |
+
+The two cut-outs meet at the **START corner**. Pressing the button tilts
+the board toward that corner, so the ball rolls there. The 0.75 in strip
+under each cut-out sits on the tray floor and is taller than the 18 mm
+ball, so the ball stops in the corner and the player reaches in through
+the opening. If the strip goes at the top instead (opening at the tray
+floor, ball rolls out), set `TRAY_LIP_AT_FLOOR = False` in `as_built.py`.
+
+The script checks that every hole and the trapdoor are over the tray, the
+open flap and its servo clear the tray floor, and the tray clears the base
+at 6 deg on both axes.
+
+![Collection tray](Labyrinth_tray.png)
 
 ## Milestone 2: cardboard prototype (no laser yet)
 
@@ -58,7 +119,7 @@ releases the ball at about 6°. Test that in cardboard first.
 4. Drill the holes on the drill press with the same bits you'll use in
    Milestone 3. Clamp the board on scrap wood and put the bit point on the
    crosshair. This doubles as practice for the auxiliary-tool part.
-5. Cut wall strips 2 in tall (rim strips 3 in) to the lengths in the cut list (page 1). Each
+5. Cut wall and rim strips 2 in tall to the lengths in the cut list (page 1). Each
    strip has a letter (A–J) that matches the shaded footprint on the
    template. Hot glue them on.
 6. Trapdoor: cut out the hatched square, cut the flap from the same board,
@@ -140,8 +201,8 @@ DXF, so do AutoCAD-only edits in your `.dwg` copy once the maze is final.
 5. Send one sheet per job: `PLOT` → Plot area **Window** → click two opposite
    corners of that sheet's rectangle → scale **1:1**, with **Fit to paper
    unchecked**. Fit to paper silently rescales everything.
-6. Budget: with 2 in walls and a 3 in rim the board alone needs **3 sheets**
-   (the class allows about 2), before the frame, brackets and posts. Ask
+6. Budget: with 2 in walls and rim the board alone needs **3 sheets**
+   (the class allows about 2), before the outer box and posts. Ask
    for an extra sheet, or cut the tall walls from another material.
    Laser-cut holes come out about one kerf larger; drilled holes come out
    exactly the bit size.
